@@ -1,13 +1,13 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header :class="state.darkMode ? 'bg-dark' : 'bg-primary'">
+    <q-header :class="darkMode ? 'bg-dark' : 'bg-primary'">
       <q-toolbar>
         <q-btn class="q-mr-sm" dense flat icon="mdi-cat" />
         <span class="text-subtitle1"> Matija Novosel </span>
         <q-space />
         <q-toggle
           v-model="state.darkMode"
-          :icon="state.darkMode ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'"
+          :icon="darkMode ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'"
         />
       </q-toolbar>
     </q-header>
@@ -18,21 +18,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, reactive, watch } from "vue";
+import { defineComponent, inject, onMounted, reactive, watch } from "vue";
 import { useQuasar } from "quasar";
-import { useStorage } from "@vueuse/core";
+import { RemovableRef } from "@vueuse/core";
 
 interface State {
   darkMode: boolean;
 }
 
-const items = ["App", "File", "Edit", "View", "Window", "Help"];
-
 export default defineComponent({
   name: "MainLayout",
   setup() {
     const $q = useQuasar();
-    const darkMode = useStorage("dark-mode", false);
+    const darkMode = inject<RemovableRef<boolean>>("dark-mode");
 
     const state: State = reactive({
       darkMode: false
@@ -42,16 +40,19 @@ export default defineComponent({
       () => state.darkMode,
       (val) => {
         $q.dark.set(val);
-        darkMode.value = val;
+        if (darkMode) {
+          darkMode.value = val;
+        }
       }
     );
 
     onMounted(() => {
-      state.darkMode = darkMode.value;
+      if (darkMode) {
+        state.darkMode = darkMode.value;
+      }
     });
 
     return {
-      items,
       state,
       darkMode
     };
