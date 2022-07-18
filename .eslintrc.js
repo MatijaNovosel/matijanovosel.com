@@ -35,6 +35,7 @@ module.exports = {
   rules: {
     "generator-star-spacing": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/unbound-method": "off",
     "arrow-parens": "off",
     "@typescript-eslint/camelcase": "off",
     camelcase: "off",

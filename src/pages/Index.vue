@@ -1,5 +1,6 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="q-pt-md">
+    <p>Welcome to my website.</p>
     <div
       class="cursor-grab q-pa-sm move-box rounded-borders text-center text-white"
       ref="pukeko"
@@ -26,7 +27,7 @@ export default defineComponent({
     const darkMode = inject<RemovableRef<boolean>>("dark-mode");
     const pukekoMoved = inject<RemovableRef<boolean>>("pukeko-moved");
 
-    const initialX = 30;
+    const initialX = 20;
     const initialY = 70;
 
     const {

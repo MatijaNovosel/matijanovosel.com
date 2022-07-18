@@ -11,9 +11,11 @@ export default defineComponent({
   setup() {
     const darkMode = useLocalStorage("dark-mode", false);
     const pukekoMoved = useLocalStorage("pukeko-moved", false);
+    const language = useLocalStorage("language", "en-US");
 
     provide("dark-mode", darkMode);
     provide("pukeko-moved", pukekoMoved);
+    provide("language", language);
 
     return {};
   }
