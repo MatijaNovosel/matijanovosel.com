@@ -1,6 +1,8 @@
 <template>
   <q-page class="q-pt-md">
-    <p>Welcome to my website.</p>
+    <p>
+      {{ $t("welcomeToMyWebsite") }}
+    </p>
     <div
       class="cursor-grab q-pa-sm move-box rounded-borders text-center text-white"
       ref="pukeko"

@@ -12,7 +12,18 @@
           v-model="state.darkMode"
           :icon="darkMode ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'"
         />
-        <q-select class="q-ml-md text-white" borderless dense v-model="state.language" :options="options" />
+        <q-select class="q-ml-md text-white" borderless dense v-model="state.language" :options="options">
+          <template #selected-item="scope">
+            <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
+          </template>
+          <template #option="scope">
+            <q-item v-bind="scope.itemProps">
+              <q-item-section>
+                <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
+              </q-item-section>
+            </q-item>
+          </template>
+        </q-select>
       </q-toolbar>
     </q-header>
     <q-page-container class="row justify-center">
@@ -28,7 +39,7 @@ import { computed, defineComponent, inject, onMounted, reactive, Ref, ref, watch
 import { useQuasar } from "quasar";
 import { RemovableRef } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
-import { SelectItem } from "src/models/general";
+import { IDictionary, SelectItem } from "src/models/general";
 
 interface State {
   darkMode: boolean;
@@ -42,6 +53,11 @@ export default defineComponent({
     const { t, locale } = useI18n({ useScope: "global" });
     const darkMode = inject<RemovableRef<boolean>>("dark-mode");
     const language = inject<RemovableRef<string>>("language");
+
+    const flagSvg: IDictionary = {
+      "en-US": "/gb.svg",
+      hr: "/hr.svg"
+    };
 
     const maxContainerWidth = computed(() => {
       switch ($q.screen.name) {
@@ -72,6 +88,10 @@ export default defineComponent({
     ]);
 
     const containerStyle = computed(() => ({ maxWidth: `${maxContainerWidth.value}px` }));
+
+    const getFlagImageSource = (val: string) => {
+      return flagSvg[val];
+    };
 
     const state: State = reactive({
       darkMode: false,
@@ -120,7 +140,8 @@ export default defineComponent({
       darkMode,
       tab: ref("home"),
       containerStyle,
-      options
+      options,
+      getFlagImageSource
     };
   }
 });
