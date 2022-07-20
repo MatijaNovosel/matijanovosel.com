@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pt-md text-center text-body1">
+  <q-page class="row justify-center items-center text-center">
     <p>Blogs go here</p>
   </q-page>
 </template>

@@ -1,15 +1,9 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header class="row justify-center bg-dark">
-      <q-toolbar class="q-px-md q-py-md" :style="containerStyle">
-        <q-item class="q-px-none" v-if="mdAndUp()">
-          <q-item-section>
-            <q-item-label> Matija Novosel </q-item-label>
-            <q-item-label caption> Fullstack developer </q-item-label>
-          </q-item-section>
-        </q-item>
+  <q-layout view="lHh Lpr lFf" class="bg-black">
+    <q-header class="row justify-center bg-black">
+      <q-toolbar class="q-pt-md" :style="containerStyle">
         <q-space />
-        <q-tabs narrow-indicator v-model="tab" align="center">
+        <q-tabs no-caps inline-label narrow-indicator v-model="tab">
           <q-route-tab
             exact
             active-class="text-orange"
@@ -18,25 +12,14 @@
             :name="tab.name"
             :icon="tab.icon"
             :to="tab.to"
+            :label="smAndDown() ? undefined : tab.name"
           />
         </q-tabs>
         <q-space v-if="smAndDown()" />
-        <q-select v-if="mdAndUp()" borderless dense v-model="state.language" :options="options">
-          <template #selected-item="scope">
-            <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
-          </template>
-          <template #option="scope">
-            <q-item style="min-height: 35px !important; height: 35px !important" v-bind="scope.itemProps">
-              <q-item-section>
-                <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
-              </q-item-section>
-            </q-item>
-          </template>
-        </q-select>
       </q-toolbar>
     </q-header>
     <q-page-container class="row justify-center">
-      <div class="full-width q-px-md" :style="containerStyle">
+      <div class="full-width q-px-md bg-black" :style="containerStyle">
         <router-view />
       </div>
     </q-page-container>
@@ -44,25 +27,16 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, inject, onMounted, reactive, Ref, ref, watch } from "vue";
+import { computed, defineComponent, ref } from "vue";
 import { useQuasar } from "quasar";
-import { RemovableRef } from "@vueuse/core";
-import { useI18n } from "vue-i18n";
-import { IDictionary, SelectItem } from "src/models/general";
+import { IDictionary } from "src/models/general";
 import { RouteNames } from "src/router/routeNames";
-import { smAndDown, mdAndUp } from "src/utils/helpers";
-
-interface State {
-  darkMode: boolean;
-  language: SelectItem<string>;
-}
+import { smAndDown } from "src/utils/helpers";
 
 export default defineComponent({
   name: "MainLayout",
   setup() {
     const $q = useQuasar();
-    const { t, locale } = useI18n({ useScope: "global" });
-    const language = inject<RemovableRef<string>>("language");
 
     const tabs = [
       {
@@ -95,11 +69,6 @@ export default defineComponent({
       }
     ];
 
-    const flagSvg: IDictionary<string> = {
-      "en-US": "/gb.svg",
-      hr: "/hr.svg"
-    };
-
     const containerSizes: IDictionary<number> = {
       xs: 500,
       sm: 600,
@@ -108,61 +77,13 @@ export default defineComponent({
       xl: 1000
     };
 
-    const options: Ref<SelectItem<string>[]> = computed(() => [
-      {
-        label: t("hr"),
-        value: "hr"
-      },
-      {
-        label: t("en-US"),
-        value: "en-US"
-      }
-    ]);
-
     const containerStyle = computed(() => ({ maxWidth: `${containerSizes[$q.screen.name]}px` }));
 
-    const getFlagImageSource = (val: string) => {
-      return flagSvg[val];
-    };
-
-    const state: State = reactive({
-      darkMode: false,
-      language: options.value[0]
-    });
-
-    watch(
-      () => state.language,
-      ({ value }) => {
-        if (language) {
-          locale.value = value;
-          language.value = value;
-          const entry = options.value.find((lang) => lang.value === language.value);
-          if (entry) {
-            state.language.label = t(entry.value);
-          }
-        }
-      }
-    );
-
-    onMounted(() => {
-      if (language) {
-        locale.value = language.value;
-        const entry = options.value.find((lang) => lang.value === language.value);
-        if (entry) {
-          state.language = entry;
-        }
-      }
-    });
-
     return {
-      state,
       tab: ref("home"),
       containerStyle,
-      options,
-      getFlagImageSource,
       tabs,
-      smAndDown,
-      mdAndUp
+      smAndDown
     };
   }
 });
@@ -170,12 +91,7 @@ export default defineComponent({
 
 <style scoped>
 :deep(.q-tab__icon) {
-  font-size: 18px;
-}
-
-.q-toolbar {
-  min-height: 0px !important;
-  height: 48px !important;
+  font-size: 16px;
 }
 
 :deep(.q-tab__indicator) {

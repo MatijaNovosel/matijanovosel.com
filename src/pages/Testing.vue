@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pt-md text-body1">
+  <q-page class="row justify-center items-center text-center">
     <p>Testing</p>
     <div
       class="cursor-grab q-pa-sm move-box rounded-borders text-center text-white bg-orange"

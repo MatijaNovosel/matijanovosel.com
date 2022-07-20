@@ -1,48 +1,11 @@
 <template>
-  <q-page class="q-pt-md">
-    <p class="text-body1">Hi, here's some vue code:</p>
-    <div
-      style="
-        color: rgb(171, 178, 191);
-        background-color: rgb(40, 44, 52);
-        font-family: Consolas, 'Courier New', monospace;
-        line-height: 19px;
-        white-space: pre;
-        padding: 10px;
-        border-radius: 8px;
-        margin-bottom: 14px;
-      "
-    >
-      <div><span style="color: #61afef">watch</span>(</div>
-      <div>
-        &nbsp; () <span style="color: #c678dd">=&gt;</span> <span style="color: #e5c07b">state</span>.<span
-          style="color: #e06c75"
-          >darkMode</span
-        >,
-      </div>
-      <div>
-        &nbsp; (<span style="color: #e06c75; font-style: italic">val</span>)
-        <span style="color: #c678dd">=&gt;</span> {
-      </div>
-      <div>
-        &nbsp; &nbsp; <span style="color: #e5c07b">$q</span>.<span style="color: #e06c75">dark</span>.<span
-          style="color: #61afef"
-          >set</span
-        >(<span style="color: #e06c75; font-style: italic">val</span>);
-      </div>
-      <div>
-        &nbsp; &nbsp; <span style="color: #c678dd">if</span> (<span style="color: #e5c07b">darkMode</span>) {
-      </div>
-      <div>
-        &nbsp; &nbsp; &nbsp; <span style="color: #e5c07b">darkMode</span>.<span style="color: #e06c75"
-          >value</span
-        >
-        <span style="color: #56b6c2">=</span> <span style="color: #e06c75; font-style: italic">val</span>;
-      </div>
-      <div>&nbsp; &nbsp; }</div>
-      <div>&nbsp; }</div>
-      <div>);</div>
+  <q-page class="row justify-center items-center text-center">
+    <div class="col">
+      <p class="text-h5">👋 Hi, I'm</p>
+      <p class="text-h2 text-bold">Matija Novosel</p>
+      <p class="text-h6 text-weight-light text-grey-5">Fullstack developer</p>
     </div>
+    <span class="footer-text"> © Matija Novosel </span>
   </q-page>
 </template>
 
@@ -56,3 +19,11 @@ export default defineComponent({
   }
 });
 </script>
+
+<style>
+.footer-text {
+  position: absolute;
+  bottom: 35px;
+  left: 0px;
+}
+</style>
