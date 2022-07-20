@@ -1,22 +1,31 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header class="row justify-center" :class="darkMode ? 'bg-dark' : 'bg-primary'">
-      <q-toolbar :style="containerStyle">
-        <span class="text-subtitle1"> Matija Novosel </span>
+  <q-layout view="lHh Lpr lFf" :class="darkMode ? 'bg-dark' : 'bg-grey-3'">
+    <q-header class="row justify-center" :class="darkMode ? 'bg-black' : 'bg-blue-6'">
+      <q-toolbar :class="darkMode ? 'bg-dark' : 'bg-blue-5'" class="q-px-md q-py-md" :style="containerStyle">
+        <q-item class="q-px-none">
+          <q-item-section avatar>
+            <q-avatar :color="darkMode ? 'orange' : 'blue-3'" text-color="white" icon="mdi-cat" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label> Matija Novosel </q-item-label>
+            <q-item-label caption> Fullstack developer </q-item-label>
+          </q-item-section>
+        </q-item>
         <q-space />
-        <q-tabs v-model="tab" align="center">
+        <q-tabs narrow-indicator v-model="tab" align="center">
           <q-route-tab v-for="(tab, i) in tabs" :key="i" :name="tab.name" :icon="tab.icon" :to="tab.to" />
         </q-tabs>
         <q-toggle
           v-model="state.darkMode"
           :icon="darkMode ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'"
+          :color="darkMode ? 'orange' : 'primary'"
         />
-        <q-select class="q-ml-md text-white" borderless dense v-model="state.language" :options="options">
+        <q-select class="language-select" borderless dense v-model="state.language" :options="options">
           <template #selected-item="scope">
             <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
           </template>
           <template #option="scope">
-            <q-item v-bind="scope.itemProps">
+            <q-item style="min-height: 35px !important; height: 35px !important" v-bind="scope.itemProps">
               <q-item-section>
                 <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
               </q-item-section>
@@ -26,7 +35,7 @@
       </q-toolbar>
     </q-header>
     <q-page-container class="row justify-center">
-      <div class="q-px-md full-width" :style="containerStyle">
+      <div :class="darkMode ? 'bg-grey-9' : 'bg-grey-2'" class="full-width q-px-md" :style="containerStyle">
         <router-view />
       </div>
     </q-page-container>
@@ -67,6 +76,13 @@ export default defineComponent({
         icon: "fas fa-boxes-stacked",
         to: {
           name: RouteNames.PROJECTS
+        }
+      },
+      {
+        name: "blog",
+        icon: "fas fa-book",
+        to: {
+          name: RouteNames.BLOG
         }
       },
       {
@@ -163,8 +179,31 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.q-tab__icon {
+<style scoped>
+div >>> .q-tab__icon {
   font-size: 20px;
+}
+
+.q-toolbar {
+  min-height: 0px !important;
+  height: 60px !important;
+}
+
+div >>> .q-tab__indicator {
+  height: 2px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+div >>> .q-tab__indicator::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+  position: absolute;
+  top: -5px;
+  right: 15px;
 }
 </style>
