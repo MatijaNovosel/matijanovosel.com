@@ -25,6 +25,7 @@ module.exports = configure(function (ctx) {
       open: true
     },
     framework: {
+      config: { dark: true },
       plugins: []
     },
     animations: [],

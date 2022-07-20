@@ -2,11 +2,10 @@
   <q-page class="q-pt-md">
     <p>Testing</p>
     <div
-      class="cursor-grab q-pa-sm move-box rounded-borders text-center text-white"
+      class="cursor-grab q-pa-sm move-box rounded-borders text-center text-white bg-orange"
       ref="pukeko"
       :style="pukekoStyle"
       style="touch-action: none; position: fixed"
-      :class="darkMode ? 'bg-orange' : 'bg-primary'"
     >
       <span class="q-pb-sm">
         {{ pukekoText }}
@@ -24,7 +23,6 @@ export default defineComponent({
   name: "Testing",
   setup() {
     const pukeko = ref<HTMLElement | null>(null);
-    const darkMode = inject<RemovableRef<boolean>>("dark-mode");
     const pukekoMoved = inject<RemovableRef<boolean>>("pukeko-moved");
 
     const initialX = 20;
@@ -48,7 +46,6 @@ export default defineComponent({
     return {
       pukekoStyle,
       pukeko,
-      darkMode,
       pukekoMoved,
       pukekoText: computed(() => {
         return pukekoMoved && pukekoMoved.value ? "Why did you move me 😭" : "Move me around 😳";
