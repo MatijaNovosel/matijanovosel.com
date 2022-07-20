@@ -3,6 +3,6 @@ export interface SelectItem<T> {
   value: T;
 }
 
-export interface IDictionary {
-  [index: string]: string;
+export interface IDictionary<T> {
+  [index: string]: T;
 }

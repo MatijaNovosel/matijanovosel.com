@@ -5,8 +5,7 @@
         <span class="text-subtitle1"> Matija Novosel </span>
         <q-space />
         <q-tabs v-model="tab" align="center">
-          <q-tab name="home" icon="mdi-home" />
-          <q-tab name="projects" icon="mdi-package-variant" />
+          <q-route-tab v-for="(tab, i) in tabs" :key="i" :name="tab.name" :icon="tab.icon" :to="tab.to" />
         </q-tabs>
         <q-toggle
           v-model="state.darkMode"
@@ -40,6 +39,7 @@ import { useQuasar } from "quasar";
 import { RemovableRef } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { IDictionary, SelectItem } from "src/models/general";
+import { RouteNames } from "src/router/routeNames";
 
 interface State {
   darkMode: boolean;
@@ -54,27 +54,42 @@ export default defineComponent({
     const darkMode = inject<RemovableRef<boolean>>("dark-mode");
     const language = inject<RemovableRef<string>>("language");
 
-    const flagSvg: IDictionary = {
+    const tabs = [
+      {
+        name: "home",
+        icon: "fas fa-home",
+        to: {
+          name: RouteNames.HOME
+        }
+      },
+      {
+        name: "projects",
+        icon: "fas fa-boxes-stacked",
+        to: {
+          name: RouteNames.PROJECTS
+        }
+      },
+      {
+        name: "testing",
+        icon: "fas fa-kiwi-bird",
+        to: {
+          name: RouteNames.TESTING
+        }
+      }
+    ];
+
+    const flagSvg: IDictionary<string> = {
       "en-US": "/gb.svg",
       hr: "/hr.svg"
     };
 
-    const maxContainerWidth = computed(() => {
-      switch ($q.screen.name) {
-        case "xs":
-          return 500;
-        case "sm":
-          return 600;
-        case "md":
-          return 700;
-        case "lg":
-          return 900;
-        case "xl":
-          return 1000;
-        default:
-          return 700;
-      }
-    });
+    const containerSizes: IDictionary<number> = {
+      xs: 500,
+      sm: 600,
+      md: 700,
+      lg: 900,
+      xl: 1000
+    };
 
     const options: Ref<SelectItem<string>[]> = computed(() => [
       {
@@ -87,7 +102,7 @@ export default defineComponent({
       }
     ]);
 
-    const containerStyle = computed(() => ({ maxWidth: `${maxContainerWidth.value}px` }));
+    const containerStyle = computed(() => ({ maxWidth: `${containerSizes[$q.screen.name]}px` }));
 
     const getFlagImageSource = (val: string) => {
       return flagSvg[val];
@@ -141,8 +156,15 @@ export default defineComponent({
       tab: ref("home"),
       containerStyle,
       options,
-      getFlagImageSource
+      getFlagImageSource,
+      tabs
     };
   }
 });
 </script>
+
+<style>
+.q-tab__icon {
+  font-size: 20px;
+}
+</style>

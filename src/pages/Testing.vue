@@ -1,8 +1,6 @@
 <template>
   <q-page class="q-pt-md">
-    <p>
-      {{ $t("welcomeToMyWebsite") }}
-    </p>
+    <p>Testing</p>
     <div
       class="cursor-grab q-pa-sm move-box rounded-borders text-center text-white"
       ref="pukeko"
@@ -23,7 +21,7 @@ import { defineComponent, inject, ref, computed, watch } from "vue";
 import { RemovableRef, useDraggable } from "@vueuse/core";
 
 export default defineComponent({
-  name: "PageIndex",
+  name: "Testing",
   setup() {
     const pukeko = ref<HTMLElement | null>(null);
     const darkMode = inject<RemovableRef<boolean>>("dark-mode");

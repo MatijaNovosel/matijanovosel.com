@@ -12,7 +12,7 @@ module.exports = configure(function (ctx) {
     },
     boot: ["i18n"],
     css: ["app.scss"],
-    extras: ["mdi-v5", "roboto-font", "material-icons"],
+    extras: ["mdi-v5", "roboto-font", "material-icons", "fontawesome-v6"],
     build: {
       vueRouterMode: "history",
       chainWebpack() {}
