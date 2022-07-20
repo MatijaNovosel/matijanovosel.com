@@ -2,10 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="row justify-center bg-dark">
       <q-toolbar class="q-px-md q-py-md" :style="containerStyle">
-        <q-item class="q-px-none">
-          <q-item-section avatar>
-            <q-avatar size="30px" color="orange" text-color="white" icon="mdi-cat" />
-          </q-item-section>
+        <q-item class="q-px-none" v-if="mdAndUp()">
           <q-item-section>
             <q-item-label> Matija Novosel </q-item-label>
             <q-item-label caption> Fullstack developer </q-item-label>
@@ -23,7 +20,8 @@
             :to="tab.to"
           />
         </q-tabs>
-        <q-select class="language-select" borderless dense v-model="state.language" :options="options">
+        <q-space v-if="smAndDown()" />
+        <q-select v-if="mdAndUp()" borderless dense v-model="state.language" :options="options">
           <template #selected-item="scope">
             <img width="60" height="20" :src="getFlagImageSource(scope.opt.value)" />
           </template>
@@ -52,6 +50,7 @@ import { RemovableRef } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { IDictionary, SelectItem } from "src/models/general";
 import { RouteNames } from "src/router/routeNames";
+import { smAndDown, mdAndUp } from "src/utils/helpers";
 
 interface State {
   darkMode: boolean;
@@ -161,15 +160,17 @@ export default defineComponent({
       containerStyle,
       options,
       getFlagImageSource,
-      tabs
+      tabs,
+      smAndDown,
+      mdAndUp
     };
   }
 });
 </script>
 
 <style scoped>
-div >>> .q-tab__icon {
-  font-size: 20px;
+:deep(.q-tab__icon) {
+  font-size: 18px;
 }
 
 .q-toolbar {
@@ -177,7 +178,7 @@ div >>> .q-tab__icon {
   height: 48px !important;
 }
 
-div >>> .q-tab__indicator {
+:deep(.q-tab__indicator) {
   height: 3px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
