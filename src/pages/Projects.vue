@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pt-md text-center">
+  <q-page class="q-pt-md text-center text-body1">
     <p>Projects go here</p>
   </q-page>
 </template>

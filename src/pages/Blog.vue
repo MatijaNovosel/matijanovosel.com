@@ -1,8 +1,6 @@
 <template>
-  <q-page class="q-pt-md">
-    <p>
-      {{ $t("welcomeToMyWebsite") }}
-    </p>
+  <q-page class="q-pt-md text-center text-body1">
+    <p>Blogs go here</p>
   </q-page>
 </template>
 

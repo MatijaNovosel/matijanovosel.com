@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pt-md">
-    <p>Hi, here's some vue code:</p>
+    <p class="text-body1">Hi, here's some vue code:</p>
     <div
       style="
         color: rgb(171, 178, 191);
