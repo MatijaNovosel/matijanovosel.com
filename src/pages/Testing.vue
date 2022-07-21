@@ -10,7 +10,7 @@
       <span class="q-pb-sm">
         {{ pukekoText }}
       </span>
-      <img width="200" height="200" src="/pukeko.png" class="rounded-borders" />
+      <img width="200" height="200" src="/pukeko.jpg" class="rounded-borders" />
     </div>
   </q-page>
 </template>
