@@ -115,6 +115,9 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       clearTimeout(intervalId || -1);
+      engine.world.bodies.forEach((body) => {
+        Composite.remove(engine.world, body);
+      });
       Render.stop(render);
     });
 
