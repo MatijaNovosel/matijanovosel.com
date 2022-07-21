@@ -29,18 +29,44 @@ export default defineComponent({
     let render: Render;
     let intervalId: ReturnType<typeof setTimeout> | null = null;
 
-    const heightOffset = 30;
+    const offset = 30;
     const { width, height } = useElementSize(page);
+
+    const createEmojiImage = (): string => {
+      const drawing = document.createElement("canvas");
+
+      drawing.width = 150;
+      drawing.height = 150;
+
+      const ctx = drawing.getContext("2d");
+      let url = "";
+
+      if (ctx) {
+        ctx.beginPath();
+        ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+        ctx.font = "32pt sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
+
+        url = drawing.toDataURL("image/png");
+      }
+
+      drawing.remove();
+
+      return url;
+    };
 
     watch([width, height], async () => {
       await nextTick(() => {
         if (render) {
           render.bounds.max.x = width.value;
-          render.bounds.max.y = height.value - heightOffset;
+          render.bounds.max.y = height.value - offset;
           render.options.width = width.value;
-          render.options.height = height.value - heightOffset;
+          render.options.height = height.value - offset;
           render.canvas.width = width.value;
-          render.canvas.height = height.value - heightOffset;
+          render.canvas.height = height.value - offset;
         }
       });
     });
@@ -53,7 +79,7 @@ export default defineComponent({
           wireframes: false,
           background: "black",
           width: width.value,
-          height: height.value - heightOffset
+          height: height.value - offset
         }
       });
 
@@ -61,27 +87,8 @@ export default defineComponent({
       Runner.run(runner, engine);
 
       intervalId = setInterval(() => {
-        const drawing = document.createElement("canvas");
-
-        drawing.width = 150;
-        drawing.height = 150;
-
-        const ctx = drawing.getContext("2d");
-        let url = "";
-
-        if (ctx) {
-          ctx.beginPath();
-          ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
-          ctx.closePath();
-          ctx.fill();
-          ctx.font = "32pt sans-serif";
-          ctx.textAlign = "center";
-          ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
-
-          url = drawing.toDataURL("image/png");
-        }
-
-        const obj = Bodies.circle(randInt(0, width.value), 120, 20, {
+        const url = createEmojiImage();
+        const obj = Bodies.circle(randInt(offset, width.value - offset), 60, 20, {
           frictionAir: 0.1,
           friction: 1,
           density: 0.6,
@@ -93,10 +100,12 @@ export default defineComponent({
             }
           }
         });
+
         Composite.add(engine.world, obj);
+
         setTimeout(() => {
           Composite.remove(engine.world, obj);
-        }, 1200);
+        }, 2000);
       }, 200);
     });
 
