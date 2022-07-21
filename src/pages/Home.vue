@@ -6,7 +6,10 @@
       <p class="text-h2 text-bold">Matija Novosel</p>
       <p class="text-h6 text-weight-light text-grey-5">a Fullstack developer</p>
     </div>
-    <span class="footer-text" style="z-index: 2"> © Matija Novosel </span>
+    <span class="footer-text-left" style="z-index: 2"> © Matija Novosel </span>
+    <a href="https://github.com/MatijaNovosel/cv" class="footer-text-right text-white" style="z-index: 2">
+      Source
+    </a>
   </q-page>
 </template>
 
@@ -92,6 +95,7 @@ export default defineComponent({
           frictionAir: 0.1,
           friction: 1,
           density: 0.6,
+          angle: randInt(0, 360),
           render: {
             sprite: {
               texture: url,
@@ -105,7 +109,7 @@ export default defineComponent({
 
         setTimeout(() => {
           Composite.remove(engine.world, obj);
-        }, 2000);
+        }, 8000);
       }, 200);
     });
 
@@ -123,10 +127,16 @@ export default defineComponent({
 </script>
 
 <style>
-.footer-text {
+.footer-text-left {
   position: absolute;
   bottom: 35px;
   left: 0px;
+}
+
+.footer-text-right {
+  position: absolute;
+  bottom: 35px;
+  right: 0px;
 }
 
 canvas {
