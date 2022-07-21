@@ -4,7 +4,7 @@
     <div class="col" style="z-index: 2">
       <p class="text-h5">👋 Hi, I'm</p>
       <p class="text-h2 text-bold">Matija Novosel</p>
-      <p class="text-h6 text-weight-light text-grey-5">Fullstack developer</p>
+      <p class="text-h6 text-weight-light text-grey-5">a Fullstack developer</p>
     </div>
     <span class="footer-text" style="z-index: 2"> © Matija Novosel </span>
   </q-page>
@@ -15,6 +15,7 @@ import { defineComponent, nextTick, onBeforeUnmount, onMounted, ref, watch } fro
 import { Engine, Render, Bodies, Composite, Runner } from "matter-js";
 import { randInt } from "src/utils/helpers";
 import { useElementSize } from "@vueuse/core";
+import emojis from "src/utils/emojis";
 
 export default defineComponent({
   name: "Home",
@@ -60,11 +61,42 @@ export default defineComponent({
       Runner.run(runner, engine);
 
       intervalId = setInterval(() => {
-        const obj = Bodies.circle(randInt(0, width.value), 120, 20);
+        const drawing = document.createElement("canvas");
+
+        drawing.width = 150;
+        drawing.height = 150;
+
+        const ctx = drawing.getContext("2d");
+        let url = "";
+
+        if (ctx) {
+          ctx.beginPath();
+          ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fill();
+          ctx.font = "32pt sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
+
+          url = drawing.toDataURL("image/png");
+        }
+
+        const obj = Bodies.circle(randInt(0, width.value), 120, 20, {
+          frictionAir: 0.1,
+          friction: 1,
+          density: 0.6,
+          render: {
+            sprite: {
+              texture: url,
+              xScale: 1,
+              yScale: 1
+            }
+          }
+        });
         Composite.add(engine.world, obj);
         setTimeout(() => {
           Composite.remove(engine.world, obj);
-        }, 700);
+        }, 1200);
       }, 200);
     });
 
