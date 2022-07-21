@@ -10,10 +10,7 @@ export default defineComponent({
   name: "App",
   setup() {
     const pukekoMoved = useLocalStorage("pukeko-moved", false);
-    const language = useLocalStorage("language", "en-US");
-
     provide("pukeko-moved", pukekoMoved);
-    provide("language", language);
 
     return {};
   }
