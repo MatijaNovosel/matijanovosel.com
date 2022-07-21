@@ -10,7 +10,7 @@ module.exports = configure(function (ctx) {
         }
       }
     },
-    boot: ["i18n"],
+    boot: [],
     css: ["app.scss"],
     extras: ["mdi-v5", "roboto-font", "material-icons", "fontawesome-v6"],
     build: {
