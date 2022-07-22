@@ -1,8 +1,8 @@
 <template>
   <canvas ref="matter" id="matter" />
   <q-page class="row justify-center items-center text-center" ref="page">
-    <div class="col" style="z-index: 2">
-      <p class="text-h5">👋 Hi, I'm</p>
+    <div class="col center" style="z-index: 2">
+      <p class="text-h5"><span class="wave">👋</span> Hi, I'm</p>
       <p class="text-h2 text-bold">Matija Novosel</p>
       <p class="text-h6 text-weight-light text-grey-5">a Fullstack developer</p>
     </div>
@@ -149,5 +149,20 @@ canvas {
   z-index: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+.center {
+  margin-top: -65px;
+}
+
+.wave {
+  -webkit-animation-name: wave-animation;
+  animation-name: wave-animation;
+  -webkit-animation-duration: 2.5s;
+  animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
 }
 </style>

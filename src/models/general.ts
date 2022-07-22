@@ -3,6 +3,14 @@ export interface SelectItem<T> {
   value: T;
 }
 
+export interface TabItem {
+  name: string | undefined;
+  icon: string;
+  to: {
+    name: string;
+  };
+}
+
 export interface IDictionary<T> {
   [index: string]: T;
 }

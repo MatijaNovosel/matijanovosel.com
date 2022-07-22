@@ -29,7 +29,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from "vue";
 import { useQuasar } from "quasar";
-import { IDictionary } from "src/models/general";
+import { IDictionary, TabItem } from "src/models/general";
 import { RouteNames } from "src/router/routeNames";
 import { smAndDown } from "src/utils/helpers";
 
@@ -38,12 +38,19 @@ export default defineComponent({
   setup() {
     const $q = useQuasar();
 
-    const tabs = [
+    const tabs: TabItem[] = [
       {
         name: "home",
         icon: "fas fa-home",
         to: {
           name: RouteNames.HOME
+        }
+      },
+      {
+        name: "about-me",
+        icon: "fas fa-user",
+        to: {
+          name: RouteNames.ABOUT_ME
         }
       },
       {
@@ -61,7 +68,7 @@ export default defineComponent({
         }
       },
       {
-        name: "testing",
+        name: undefined,
         icon: "fas fa-kiwi-bird",
         to: {
           name: RouteNames.TESTING
