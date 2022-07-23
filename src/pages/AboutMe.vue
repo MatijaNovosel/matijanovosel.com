@@ -243,6 +243,6 @@ export default defineComponent({
 }
 
 .q-timeline__content {
-  padding-bottom: 10px !important;
+  padding-bottom: 20px !important;
 }
 </style>
