@@ -8,12 +8,12 @@
         'q-mt-xl': n !== 1
       }"
     >
-      <div class="col-7">
+      <div class="col-12 col-md-7">
         <img class="project-img" height="250" src="/bg-proj.jpg" />
       </div>
-      <div class="col-5 q-pl-xl row justify-center">
+      <div class="col-12 col-md-5 q-pl-none q-pl-md-xl q-pt-md q-pt-md-none row justify-center">
         <div class="column justify-center align-center content-center">
-          <span class="text-h4 text-bold"> LMS </span>
+          <span class="text-h4 text-bold text-left"> LMS </span>
           <span class="text-body1 q-my-md">
             An application intended for both teachers and students with the purpose of making learning easier.
           </span>
