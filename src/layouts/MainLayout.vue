@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf" class="bg-black">
-    <q-header class="row justify-center bg-black">
+    <q-header :reveal-offset="100" reveal class="row justify-center bg-black">
       <q-toolbar class="q-pt-md" :style="containerStyle">
         <q-space />
         <q-tabs no-caps inline-label narrow-indicator v-model="tab">

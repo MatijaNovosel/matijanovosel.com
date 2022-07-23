@@ -14,3 +14,9 @@ export interface TabItem {
 export interface IDictionary<T> {
   [index: string]: T;
 }
+
+export interface TechnologyItem {
+  tooltip: string;
+  color: string;
+  icon: string;
+}
