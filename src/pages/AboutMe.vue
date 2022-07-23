@@ -1,5 +1,5 @@
 <template>
-  <q-page class="text-center q-mx-auto q-pt-lg q-pt-md-xl" :style="containerStyle">
+  <q-page class="text-center q-mx-auto q-pt-lg q-pt-md-xl q-pb-lg" :style="containerStyle">
     <img class="me-img" src="/me.jpg" />
     <p class="text-h3 text-bold q-mt-md">Matija Novosel</p>
     <p class="text-h6 text-weight-light text-grey-5">Fullstack developer</p>
@@ -11,6 +11,88 @@
           interested in doing so from a young age. Currently finishing my Masters degree at the Zagreb
           university of applied sciences.
         </p>
+      </div>
+      <div class="col-12 text-left q-mb-sm">
+        <span class="text-subtitle1 text-grey-5 text-bold"> Work experience </span>
+        <q-timeline color="secondary">
+          <q-timeline-entry subtitle="August 2021 - Current">
+            <template #title>
+              <div class="column">
+                <a href="https://king-ict.com/" class="text-white"> King ICT </a>
+                <span class="q-mt-xs text-orange-2 text-subtitle2"> Software developer (student) </span>
+              </div>
+            </template>
+            <div class="column">
+              <span> 🔸 Software development using full stack web technologies </span>
+              <span> 🔸 Development of mobile applications </span>
+              <span> 🔸 Mentoring and creating educational content </span>
+            </div>
+          </q-timeline-entry>
+          <q-timeline-entry subtitle="July 2019 - July 2021">
+            <template #title>
+              <div class="column">
+                <a href="https://www.omega-software.hr/" class="text-white"> Omega software </a>
+                <span class="q-mt-xs text-orange-2 text-subtitle2">
+                  Junior software developer (student)
+                </span>
+              </div>
+            </template>
+            <div class="column">
+              <span>
+                🔸 Software development on multiple company projects using full stack web technologies
+              </span>
+              <span>
+                🔸 Mentoring and creating educational Javascript content for new and future employees
+              </span>
+            </div>
+          </q-timeline-entry>
+          <q-timeline-entry subtitle="May 2018 - January 2019">
+            <template #title>
+              <div class="column">
+                <a href="https://www.maidea.com/" class="text-white"> Maidea </a>
+                <span class="q-mt-xs text-orange-2 text-subtitle2">
+                  Junior software developer (student)
+                </span>
+              </div>
+            </template>
+            <p>🔸 Software development using full stack web technologies.</p>
+          </q-timeline-entry>
+          <q-timeline-entry heading />
+        </q-timeline>
+      </div>
+      <div class="col-12 text-left">
+        <span class="text-subtitle1 text-grey-5 text-bold"> Education </span>
+        <q-timeline color="secondary">
+          <q-timeline-entry subtitle="September 2020 - Current">
+            <template #title>
+              <div class="column">
+                <a href="https://www.tvz.hr/" class="text-white"> Zagreb university of applied sciences </a>
+                <span class="q-mt-xs text-orange-2 text-subtitle2">
+                  Master's degree (struc. spec. ing. techn. inf.)
+                </span>
+              </div>
+            </template>
+          </q-timeline-entry>
+          <q-timeline-entry subtitle="September 2017 - July 2020">
+            <template #title>
+              <div class="column">
+                <a href="https://www.tvz.hr/" class="text-white"> Zagreb university of applied sciences </a>
+                <span class="q-mt-xs text-orange-2 text-subtitle2">
+                  Bachelor of Engineering in Information Technology (bacc. ing. techn. inf.)
+                </span>
+              </div>
+            </template>
+          </q-timeline-entry>
+          <q-timeline-entry subtitle="September 2013 - July 2017">
+            <template #title>
+              <div class="column">
+                <a href="https://www.tsrb.hr/" class="text-white"> Tehnička škola Ruđera Boškovića </a>
+                <span class="q-mt-xs text-orange-2 text-subtitle2"> Computer technician </span>
+              </div>
+            </template>
+          </q-timeline-entry>
+          <q-timeline-entry heading />
+        </q-timeline>
       </div>
       <div class="col-12 col-md-6 text-left q-mb-md q-mb-md-none">
         <span class="text-subtitle1 text-grey-5 text-bold"> Contact </span>
@@ -115,6 +197,11 @@ const technologies: TechnologyItem[] = [
     color: "blue",
     icon: "mdi-cellphone-information",
     tooltip: "Flutter"
+  },
+  {
+    color: "purple",
+    icon: "mdi-database",
+    tooltip: "MySQL, MSSQL, PostgreSQL"
   }
 ];
 
@@ -139,5 +226,13 @@ export default defineComponent({
   width: 250px;
   height: 250px;
   border-radius: 8px;
+}
+
+.q-timeline__heading-title {
+  padding: 0px !important;
+}
+
+.q-timeline__content {
+  padding-bottom: 10px !important;
 }
 </style>
