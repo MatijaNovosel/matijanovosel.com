@@ -106,7 +106,9 @@
         </div>
       </div>
       <div class="col-12 col-md-6 text-left q-mb-md q-mb-md-none">
-        <span class="text-subtitle1 text-grey-5 text-bold"> Technologies </span>
+        <span class="text-subtitle1 text-grey-5 text-bold">
+          * Technologies <q-tooltip> Hover over the icons! </q-tooltip>
+        </span>
         <div class="row q-mt-sm">
           <q-icon
             class="q-pa-xs"
