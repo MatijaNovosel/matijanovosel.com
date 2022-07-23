@@ -9,7 +9,8 @@
         <p class="text-justify text-orange-2 q-mt-sm text-body1">
           Hi. I'm a programmer from Croatia. I like developing applications of all sorts and have been
           interested in doing so from a young age. Currently finishing my Masters degree at the Zagreb
-          university of applied sciences.
+          university of applied sciences. Besides programming I enjoy video games, drawing and listening to
+          music.
         </p>
       </div>
       <div class="col-12 text-left q-mb-sm">
@@ -96,12 +97,19 @@
       </div>
       <div class="col-12 col-md-6 text-left q-mb-md q-mb-md-none">
         <span class="text-subtitle1 text-grey-5 text-bold"> Contact </span>
-        <div class="row q-mt-sm text-body1 text-orange-2">
-          <div class="col-12">
-            <span> Zagreb, Croatia </span>
-          </div>
-          <div class="col-12">
-            <span> mnovosel5@gmail.com </span>
+        <div class="column q-mt-sm text-body1 text-orange-2">
+          <span> Zagreb, Croatia </span>
+          <span> mnovosel5@gmail.com </span>
+          <div class="q-mt-sm">
+            <a class="text-decoration-none text-white" href="https://github.com/MatijaNovosel">
+              <q-icon size="35px" name="mdi-github" />
+            </a>
+            <a
+              class="text-decoration-none text-blue q-ml-sm"
+              href="https://www.linkedin.com/in/matija-novosel-616403161/"
+            >
+              <q-icon size="35px" name="mdi-linkedin" />
+            </a>
           </div>
         </div>
       </div>
@@ -115,7 +123,7 @@
             v-for="(technology, i) in technologies"
             :key="i"
             :color="technology.color"
-            size="30px"
+            size="35px"
             :name="technology.icon"
           >
             <q-tooltip> {{ technology.tooltip }} </q-tooltip>
