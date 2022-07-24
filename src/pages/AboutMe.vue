@@ -1,5 +1,8 @@
 <template>
-  <q-page class="text-center q-mx-auto q-pt-lg q-pt-md-xl q-pb-lg" :style="containerStyle">
+  <q-page
+    class="text-center q-mx-auto q-pt-lg q-pt-md-xl q-pb-lg q-px-md q-px-md-none"
+    :style="containerStyle"
+  >
     <img class="me-img" src="/me.jpg" />
     <p class="text-h3 text-bold q-mt-md">Matija Novosel</p>
     <p class="text-h6 text-weight-light text-grey-5">Fullstack developer</p>
