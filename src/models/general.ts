@@ -20,3 +20,10 @@ export interface TechnologyItem {
   color: string;
   icon: string;
 }
+
+export interface ProjectItem {
+  title: string;
+  description: string;
+  link: string;
+  img: string;
+}

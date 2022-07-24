@@ -18,7 +18,7 @@
       </div>
       <div class="col-12 text-left q-mb-sm">
         <span class="text-subtitle1 text-grey-5 text-bold"> Work experience </span>
-        <q-timeline color="secondary">
+        <q-timeline color="orange-5">
           <q-timeline-entry subtitle="August 2021 - Current">
             <template #title>
               <div class="column">
@@ -66,7 +66,7 @@
       </div>
       <div class="col-12 text-left">
         <span class="text-subtitle1 text-grey-5 text-bold"> Education </span>
-        <q-timeline color="secondary">
+        <q-timeline color="orange-5">
           <q-timeline-entry subtitle="September 2020 - Current">
             <template #title>
               <div class="column">
