@@ -1,7 +1,7 @@
 <template>
-  <q-page class="q-py-xl">
+  <q-page class="q-pt-none q-pb-lg q-pt-md-lg">
     <div
-      class="row"
+      class="row q-pt-lg q-pt-md-xl"
       v-for="(project, i) in projects"
       :key="i"
       :class="{
@@ -9,7 +9,7 @@
       }"
     >
       <div class="col-12 col-md-7">
-        <img class="project-img" height="300" :src="project.img" />
+        <img class="project-img" :height="smAndDown() ? 200 : 300" :src="project.img" />
       </div>
       <div class="col-12 col-md-5 q-pl-none q-pl-md-xl q-pt-md q-pt-md-none row align-center">
         <div class="column justify-center">
@@ -30,6 +30,7 @@
 <script lang="ts">
 import { ProjectItem } from "src/models/general";
 import { defineComponent } from "vue";
+import { smAndDown } from "../utils/helpers";
 
 const projects: ProjectItem[] = [
   {
@@ -88,7 +89,8 @@ export default defineComponent({
   name: "Projects",
   setup() {
     return {
-      projects
+      projects,
+      smAndDown
     };
   }
 });
