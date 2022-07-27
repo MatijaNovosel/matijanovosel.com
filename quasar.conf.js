@@ -44,11 +44,12 @@ module.exports = configure(function (ctx) {
       manifest: {
         name: "cv",
         short_name: "cv",
-        description: "CV website.",
+        description:
+          "Matija Novosel - A fullstack developer from Croatia, I like developing applications of all sorts.",
         display: "standalone",
         orientation: "portrait",
-        background_color: "#ffffff",
-        theme_color: "#027be3",
+        background_color: "#000000",
+        theme_color: "#1d1d1d",
         icons: [
           {
             src: "icons/icon-128x128.png",

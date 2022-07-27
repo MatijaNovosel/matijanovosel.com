@@ -9,7 +9,14 @@
       }"
     >
       <div class="col-12 col-md-7">
-        <img class="project-img" :height="smAndDown() ? 200 : 300" :src="project.img" />
+        <div
+          class="project-img"
+          :style="{
+            backgroundImage: `url(${project.img})`,
+            backgroundSize: 'cover',
+            height: `${smAndDown() ? 300 : 200}px`
+          }"
+        />
       </div>
       <div class="col-12 col-md-5 q-pl-none q-pl-md-xl q-pt-md q-pt-md-none row align-center">
         <div class="column justify-center">
