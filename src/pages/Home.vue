@@ -15,15 +15,13 @@
 
 <script lang="ts" setup>
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
-import { Engine, Render, Bodies, Composite, Runner, MouseConstraint, Mouse, Events } from "matter-js";
-import { randInt } from "src/utils/helpers";
+import { Engine, Render, Bodies, Composite, Runner } from "matter-js";
+import { randFloat, randInt } from "src/utils/helpers";
 import { useElementSize } from "@vueuse/core";
 import emojis from "src/utils/emojis";
 
 const engine = Engine.create();
 const runner = Runner.create();
-let mouseConstraint: MouseConstraint | null = null;
-let canvasMouse: Mouse | null = null;
 
 const matter = ref<HTMLCanvasElement>();
 const page = ref<HTMLElement | null>(null);
@@ -88,21 +86,10 @@ onMounted(() => {
   Render.run(render);
   Runner.run(runner, engine);
 
-  canvasMouse = Mouse.create(matter.value as HTMLElement);
-  canvasMouse.pixelRatio = 2;
-
-  mouseConstraint = MouseConstraint.create(engine, {
-    mouse: canvasMouse
-  });
-
-  Composite.add(engine.world, mouseConstraint);
-
-  Events.on(mouseConstraint, "mousedown", (event) => {
-    console.log(event);
-  });
-
   intervalId = setInterval(() => {
     const url = createEmojiImage();
+    const scale = randFloat(1, 1.7);
+
     const obj = Bodies.circle(randInt(offset, width.value - offset), 60, 20, {
       frictionAir: 0.1,
       friction: 1,
@@ -111,8 +98,8 @@ onMounted(() => {
       render: {
         sprite: {
           texture: url,
-          xScale: 1,
-          yScale: 1
+          xScale: scale,
+          yScale: scale
         }
       }
     });
