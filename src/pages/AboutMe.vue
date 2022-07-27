@@ -129,7 +129,7 @@
             size="35px"
             :name="technology.icon"
           >
-            <q-tooltip> {{ technology.tooltip }} </q-tooltip>
+            <q-tooltip anchor="top middle" self="bottom middle"> {{ technology.tooltip }} </q-tooltip>
           </q-icon>
         </div>
       </div>

@@ -144,16 +144,19 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.footer-text-left {
+<style lang="scss">
+.footer-text {
   position: absolute;
   bottom: 35px;
+}
+
+.footer-text-left {
+  @extend .footer-text;
   left: 0px;
 }
 
 .footer-text-right {
-  position: absolute;
-  bottom: 35px;
+  @extend .footer-text;
   right: 0px;
 }
 

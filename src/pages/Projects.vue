@@ -14,7 +14,7 @@
           :style="{
             backgroundImage: `url(${project.img})`,
             backgroundSize: 'cover',
-            height: `${smAndDown() ? 300 : 200}px`
+            height: `${smAndDown() ? 200 : 300}px`
           }"
         />
       </div>
