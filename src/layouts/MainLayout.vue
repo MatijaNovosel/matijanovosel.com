@@ -6,7 +6,7 @@
         <q-tabs no-caps inline-label narrow-indicator v-model="tab">
           <q-route-tab
             exact
-            active-class="text-orange"
+            active-class="text-orange-4"
             v-for="(tab, i) in tabs"
             :key="i"
             :name="tab.name"
