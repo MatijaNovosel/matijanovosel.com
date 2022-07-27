@@ -34,9 +34,8 @@
   </q-page>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { ProjectItem } from "src/models/general";
-import { defineComponent } from "vue";
 import { smAndDown } from "../utils/helpers";
 
 const projects: ProjectItem[] = [
@@ -91,16 +90,6 @@ const projects: ProjectItem[] = [
     title: "FinApp mobile"
   }
 ];
-
-export default defineComponent({
-  name: "Projects",
-  setup() {
-    return {
-      projects,
-      smAndDown
-    };
-  }
-});
 </script>
 
 <style>

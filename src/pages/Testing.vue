@@ -15,42 +15,32 @@
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent, inject, ref, computed, watch } from "vue";
+<script lang="ts" setup>
+import { inject, ref, computed, watch } from "vue";
 import { RemovableRef, useDraggable } from "@vueuse/core";
 
-export default defineComponent({
-  name: "Testing",
-  setup() {
-    const pukeko = ref<HTMLElement | null>(null);
-    const pukekoMoved = inject<RemovableRef<boolean>>("pukeko-moved");
+const pukeko = ref<HTMLElement | null>(null);
+const pukekoMoved = inject<RemovableRef<boolean>>("pukeko-moved");
 
-    const initialX = 20;
-    const initialY = 70;
+const initialX = 20;
+const initialY = 70;
 
-    const {
-      x,
-      y,
-      style: pukekoStyle
-    } = useDraggable(pukeko, {
-      initialValue: { x: initialX, y: initialY },
-      preventDefault: true
-    });
+const {
+  x,
+  y,
+  style: pukekoStyle
+} = useDraggable(pukeko, {
+  initialValue: { x: initialX, y: initialY },
+  preventDefault: true
+});
 
-    watch([x, y], () => {
-      if (pukekoMoved && !pukekoMoved.value) {
-        pukekoMoved.value = true;
-      }
-    });
+const pukekoText = computed(() => {
+  return pukekoMoved && pukekoMoved.value ? "Why did you move me 😭" : "Move me around 😳";
+});
 
-    return {
-      pukekoStyle,
-      pukeko,
-      pukekoMoved,
-      pukekoText: computed(() => {
-        return pukekoMoved && pukekoMoved.value ? "Why did you move me 😭" : "Move me around 😳";
-      })
-    };
+watch([x, y], () => {
+  if (pukekoMoved && !pukekoMoved.value) {
+    pukekoMoved.value = true;
   }
 });
 </script>

@@ -137,10 +137,10 @@
   </q-page>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useQuasar } from "quasar";
 import { IDictionary, TechnologyItem } from "src/models/general";
-import { computed, defineComponent } from "vue";
+import { computed } from "vue";
 
 const containerSizes: IDictionary<number> = {
   xs: 500,
@@ -218,20 +218,11 @@ const technologies: TechnologyItem[] = [
   }
 ];
 
-export default defineComponent({
-  name: "AboutMe",
-  setup() {
-    const $q = useQuasar();
-    const containerStyle = computed(() => ({
-      maxWidth: `${containerSizes[$q.screen.name]}px`
-    }));
+const $q = useQuasar();
 
-    return {
-      containerStyle,
-      technologies
-    };
-  }
-});
+const containerStyle = computed(() => ({
+  maxWidth: `${containerSizes[$q.screen.name]}px`
+}));
 </script>
 
 <style>

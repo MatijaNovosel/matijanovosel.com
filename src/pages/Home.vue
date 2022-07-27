@@ -13,134 +13,124 @@
   </q-page>
 </template>
 
-<script lang="ts">
-import { defineComponent, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+<script lang="ts" setup>
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { Engine, Render, Bodies, Composite, Runner, MouseConstraint, Mouse, Events } from "matter-js";
 import { randInt } from "src/utils/helpers";
 import { useElementSize } from "@vueuse/core";
 import emojis from "src/utils/emojis";
 
-export default defineComponent({
-  name: "Home",
-  setup() {
-    const engine = Engine.create();
-    const runner = Runner.create();
-    let mouseConstraint: MouseConstraint | null = null;
-    let canvasMouse: Mouse | null = null;
+const engine = Engine.create();
+const runner = Runner.create();
+let mouseConstraint: MouseConstraint | null = null;
+let canvasMouse: Mouse | null = null;
 
-    const matter = ref<HTMLCanvasElement>();
-    const page = ref<HTMLElement | null>(null);
+const matter = ref<HTMLCanvasElement>();
+const page = ref<HTMLElement | null>(null);
 
-    let render: Render;
-    let intervalId: ReturnType<typeof setTimeout> | null = null;
+let render: Render;
+let intervalId: ReturnType<typeof setTimeout> | null = null;
 
-    const offset = 30;
-    const { width, height } = useElementSize(page);
+const offset = 30;
+const { width, height } = useElementSize(page);
 
-    const createEmojiImage = (): string => {
-      const drawing = document.createElement("canvas");
+const createEmojiImage = (): string => {
+  const drawing = document.createElement("canvas");
 
-      drawing.width = 150;
-      drawing.height = 150;
+  drawing.width = 150;
+  drawing.height = 150;
 
-      const ctx = drawing.getContext("2d");
-      let url = "";
+  const ctx = drawing.getContext("2d");
+  let url = "";
 
-      if (ctx) {
-        ctx.beginPath();
-        ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
-        ctx.closePath();
-        ctx.fill();
-        ctx.font = "32pt sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
+  if (ctx) {
+    ctx.beginPath();
+    ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fill();
+    ctx.font = "32pt sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
 
-        url = drawing.toDataURL("image/png");
-      }
-
-      drawing.remove();
-
-      return url;
-    };
-
-    watch([width, height], async () => {
-      await nextTick(() => {
-        if (render) {
-          render.bounds.max.x = width.value;
-          render.bounds.max.y = height.value - offset;
-          render.options.width = width.value;
-          render.options.height = height.value - offset;
-          render.canvas.width = width.value;
-          render.canvas.height = height.value - offset;
-        }
-      });
-    });
-
-    onMounted(() => {
-      render = Render.create({
-        canvas: matter.value,
-        engine,
-        options: {
-          wireframes: false,
-          background: "black",
-          width: width.value,
-          height: height.value - offset
-        }
-      });
-
-      Render.run(render);
-      Runner.run(runner, engine);
-
-      canvasMouse = Mouse.create(matter.value as HTMLElement);
-      canvasMouse.pixelRatio = 2;
-
-      mouseConstraint = MouseConstraint.create(engine, {
-        mouse: canvasMouse
-      });
-
-      Composite.add(engine.world, mouseConstraint);
-
-      Events.on(mouseConstraint, "mousedown", (event) => {
-        console.log(event);
-      });
-
-      intervalId = setInterval(() => {
-        const url = createEmojiImage();
-        const obj = Bodies.circle(randInt(offset, width.value - offset), 60, 20, {
-          frictionAir: 0.1,
-          friction: 1,
-          density: 0.6,
-          angle: randInt(0, 360),
-          render: {
-            sprite: {
-              texture: url,
-              xScale: 1,
-              yScale: 1
-            }
-          }
-        });
-
-        Composite.add(engine.world, obj);
-
-        setTimeout(() => {
-          Composite.remove(engine.world, obj);
-        }, 8000);
-      }, 200);
-    });
-
-    onBeforeUnmount(() => {
-      clearTimeout(intervalId || -1);
-      engine.world.bodies.forEach((body) => {
-        Composite.remove(engine.world, body);
-      });
-      Render.stop(render);
-    });
-
-    return {
-      matter,
-      page
-    };
+    url = drawing.toDataURL("image/png");
   }
+
+  drawing.remove();
+
+  return url;
+};
+
+watch([width, height], async () => {
+  await nextTick(() => {
+    if (render) {
+      render.bounds.max.x = width.value;
+      render.bounds.max.y = height.value - offset;
+      render.options.width = width.value;
+      render.options.height = height.value - offset;
+      render.canvas.width = width.value;
+      render.canvas.height = height.value - offset;
+    }
+  });
+});
+
+onMounted(() => {
+  render = Render.create({
+    canvas: matter.value,
+    engine,
+    options: {
+      wireframes: false,
+      background: "black",
+      width: width.value,
+      height: height.value - offset
+    }
+  });
+
+  Render.run(render);
+  Runner.run(runner, engine);
+
+  canvasMouse = Mouse.create(matter.value as HTMLElement);
+  canvasMouse.pixelRatio = 2;
+
+  mouseConstraint = MouseConstraint.create(engine, {
+    mouse: canvasMouse
+  });
+
+  Composite.add(engine.world, mouseConstraint);
+
+  Events.on(mouseConstraint, "mousedown", (event) => {
+    console.log(event);
+  });
+
+  intervalId = setInterval(() => {
+    const url = createEmojiImage();
+    const obj = Bodies.circle(randInt(offset, width.value - offset), 60, 20, {
+      frictionAir: 0.1,
+      friction: 1,
+      density: 0.6,
+      angle: randInt(0, 360),
+      render: {
+        sprite: {
+          texture: url,
+          xScale: 1,
+          yScale: 1
+        }
+      }
+    });
+
+    Composite.add(engine.world, obj);
+
+    setTimeout(() => {
+      Composite.remove(engine.world, obj);
+    }, 8000);
+  }, 200);
+});
+
+onBeforeUnmount(() => {
+  clearTimeout(intervalId || -1);
+  engine.world.bodies.forEach((body) => {
+    Composite.remove(engine.world, body);
+  });
+  Render.stop(render);
 });
 </script>
 
