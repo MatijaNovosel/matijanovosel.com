@@ -66,13 +66,6 @@ export default defineComponent({
         to: {
           name: RouteNames.BLOG
         }
-      },
-      {
-        name: undefined,
-        icon: "fas fa-kiwi-bird",
-        to: {
-          name: RouteNames.TESTING
-        }
       }
     ];
 

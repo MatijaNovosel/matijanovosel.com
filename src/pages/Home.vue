@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { Engine, Render, Bodies, Composite, Runner } from "matter-js";
-import { randFloat, randInt } from "src/utils/helpers";
+import { randInt } from "src/utils/helpers";
 import { useElementSize } from "@vueuse/core";
 import emojis from "src/utils/emojis";
 
@@ -88,7 +88,6 @@ onMounted(() => {
 
   intervalId = setInterval(() => {
     const url = createEmojiImage();
-    const scale = randFloat(1, 1.7);
 
     const obj = Bodies.circle(randInt(offset, width.value - offset), 60, 20, {
       frictionAir: 0.1,
@@ -98,8 +97,8 @@ onMounted(() => {
       render: {
         sprite: {
           texture: url,
-          xScale: scale,
-          yScale: scale
+          xScale: 1,
+          yScale: 1
         }
       }
     });
