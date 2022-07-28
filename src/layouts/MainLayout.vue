@@ -26,67 +26,56 @@
   </q-layout>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, ref } from "vue";
+<script lang="ts" setup>
+import { computed, ref } from "vue";
 import { useQuasar } from "quasar";
 import { IDictionary, TabItem } from "src/models/general";
 import { RouteNames } from "src/router/routeNames";
 import { smAndDown } from "src/utils/helpers";
 
-export default defineComponent({
-  name: "MainLayout",
-  setup() {
-    const $q = useQuasar();
+const $q = useQuasar();
 
-    const tabs: TabItem[] = [
-      {
-        name: "home",
-        icon: "fas fa-home",
-        to: {
-          name: RouteNames.HOME
-        }
-      },
-      {
-        name: "about-me",
-        icon: "fas fa-user",
-        to: {
-          name: RouteNames.ABOUT_ME
-        }
-      },
-      {
-        name: "projects",
-        icon: "fas fa-boxes-stacked",
-        to: {
-          name: RouteNames.PROJECTS
-        }
-      },
-      {
-        name: "blog",
-        icon: "fas fa-book",
-        to: {
-          name: RouteNames.BLOG
-        }
-      }
-    ];
-
-    const containerSizes: IDictionary<number> = {
-      xs: 500,
-      sm: 600,
-      md: 700,
-      lg: 900,
-      xl: 1000
-    };
-
-    const containerStyle = computed(() => ({ maxWidth: `${containerSizes[$q.screen.name]}px` }));
-
-    return {
-      tab: ref("home"),
-      containerStyle,
-      tabs,
-      smAndDown
-    };
+const tabs: TabItem[] = [
+  {
+    name: "home",
+    icon: "fas fa-home",
+    to: {
+      name: RouteNames.HOME
+    }
+  },
+  {
+    name: "about-me",
+    icon: "fas fa-user",
+    to: {
+      name: RouteNames.ABOUT_ME
+    }
+  },
+  {
+    name: "projects",
+    icon: "fas fa-boxes-stacked",
+    to: {
+      name: RouteNames.PROJECTS
+    }
+  },
+  {
+    name: "blog",
+    icon: "fas fa-book",
+    to: {
+      name: RouteNames.BLOG
+    }
   }
-});
+];
+
+const containerSizes: IDictionary<number> = {
+  xs: 500,
+  sm: 600,
+  md: 700,
+  lg: 900,
+  xl: 1000
+};
+
+const containerStyle = computed(() => ({ maxWidth: `${containerSizes[$q.screen.name]}px` }));
+const tab = ref("home");
 </script>
 
 <style scoped>
