@@ -29,7 +29,7 @@ module.exports = configure(function (ctx) {
       cssAddon: true,
       plugins: []
     },
-    animations: [],
+    animations: ["fadeIn", "fadeOut"],
     ssr: {
       pwa: false,
       prodPort: 3000,
