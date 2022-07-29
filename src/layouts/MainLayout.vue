@@ -20,14 +20,16 @@
     </q-header>
     <q-page-container class="row justify-center">
       <div class="full-width q-px-md bg-black" :style="containerStyle">
-        <transition
-          enter-active-class="animated fadeIn"
-          leave-active-class="animated fadeOut"
-          appear
-          :duration="300"
-        >
-          <router-view />
-        </transition>
+        <router-view v-slot="{ Component }">
+          <transition
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut"
+            appear
+            :duration="300"
+          >
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </div>
     </q-page-container>
   </q-layout>

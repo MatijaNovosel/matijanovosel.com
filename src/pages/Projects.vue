@@ -1,7 +1,8 @@
 <template>
-  <q-page class="q-pt-none q-pb-lg q-pt-md-lg">
+  <q-page class="q-pt-none q-pb-lg q-pt-md-lg text-center">
+    <div class="text-h4 text-bold q-mt-md" v-if="smAndDown()">Projects</div>
     <div
-      class="row q-pt-lg q-pt-md-xl"
+      class="row q-pt-lg q-pt-md-xl text-left"
       v-for="(project, i) in projects"
       :key="i"
       :class="{
@@ -14,6 +15,7 @@
           :style="{
             backgroundImage: `url(${project.img})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center center',
             height: `${smAndDown() ? 200 : 300}px`
           }"
         />
