@@ -13,15 +13,15 @@
             backgroundImage: `url(${blog.img})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
-            height: `${smAndDown() ? 200 : 300}px`
+            height: `${smAndDown() ? 200 : 250}px`
           }"
         />
         <div class="column justify-center">
           <span class="text-grey-7">
             {{ formatMonth(blog.createdAt) }}
           </span>
-          <span class="text-h5 text-bold text-left q-pt-sm"> {{ blog.title }} </span>
-          <span class="text-body1 q-my-md text-grey-5">
+          <span class="text-h5 text-bold text-left"> {{ blog.title }} </span>
+          <span class="text-body1 q-mb-md q-mt-sm text-grey-5">
             {{ blog.subtitle }}
           </span>
           <div>
@@ -44,7 +44,7 @@ const blogs: BlogItem[] = [
     img: "/vue.jpg",
     subtitle: "Is the setup directive more intuitive than the defineComponent function?",
     tags: ["vue3", "vue", "javascript"],
-    createdAt: new Date()
+    createdAt: new Date(1659171113919)
   },
   {
     title: "Vue 2 vs Vue 3",
@@ -53,7 +53,7 @@ const blogs: BlogItem[] = [
     subtitle:
       "After having created a great divide in the Vue community, how does Vue 3 stand up to its earlier version?",
     tags: ["vue3", "vue2", "vue", "javascript"],
-    createdAt: new Date()
+    createdAt: new Date(1659084740258)
   }
 ];
 </script>

@@ -22,8 +22,8 @@
       </div>
       <div class="col-12 col-md-5 q-pl-none q-pl-md-xl q-pt-md q-pt-md-none row align-center">
         <div class="column justify-center">
-          <span class="text-h4 text-bold text-left"> {{ project.title }} </span>
-          <span class="text-body1 q-my-md text-grey-5">
+          <span class="text-h5 text-bold text-left"> {{ project.title }} </span>
+          <span class="text-body1 q-mt-xs q-mb-md text-grey-5">
             {{ project.description }}
           </span>
           <q-btn no-caps style="width: 150px" color="dark" class="q-py-sm rounded-btn" :href="project.link">

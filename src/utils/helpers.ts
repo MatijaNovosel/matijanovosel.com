@@ -35,5 +35,8 @@ export const randFloat = (min: number, max: number) => {
 };
 
 export const formatMonth = (date: Date) => {
-  return `${month[date.getMonth()]} ${date.getDay()}`;
+  return `${month[date.getUTCMonth() + 1]} ${date.getUTCDate()} '${date
+    .getUTCFullYear()
+    .toString()
+    .substring(2, 4)}`;
 };
