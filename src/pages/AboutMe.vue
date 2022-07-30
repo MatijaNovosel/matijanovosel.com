@@ -3,8 +3,8 @@
     class="text-center q-mx-auto q-pt-lg q-pt-md-xl q-pb-lg q-px-md q-px-md-none"
     :style="containerStyle"
   >
-    <img class="me-img" src="/me.jpg" />
-    <p class="text-h3 text-bold q-mt-md">Matija Novosel</p>
+    <img class="me-img" src="/me.jpg" :style="meImgStyle" />
+    <p :class="smAndDown() ? 'text-h4' : 'text-h3'" class="text-bold q-mt-md q-mb-xs">Matija Novosel</p>
     <p class="text-h6 text-weight-light text-grey-5">Fullstack developer</p>
     <div class="row">
       <div class="col-12 text-left q-mb-none q-mb-md-md">
@@ -140,6 +140,7 @@
 <script lang="ts" setup>
 import { useQuasar } from "quasar";
 import { IDictionary, TechnologyItem } from "src/models/general";
+import { smAndDown } from "src/utils/helpers";
 import { computed } from "vue";
 
 const containerSizes: IDictionary<number> = {
@@ -223,13 +224,20 @@ const $q = useQuasar();
 const containerStyle = computed(() => ({
   maxWidth: `${containerSizes[$q.screen.name]}px`
 }));
+
+const meImgStyle = computed(() => {
+  const dimension = `${smAndDown() ? 200 : 250}px`;
+
+  return {
+    width: dimension,
+    height: dimension
+  };
+});
 </script>
 
 <style>
 .me-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 .q-timeline__heading-title {

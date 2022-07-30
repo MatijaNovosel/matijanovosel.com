@@ -3,7 +3,7 @@
     <div class="text-h4 text-bold q-my-md">Blog</div>
     <div class="row">
       <div
-        class="col-12 col-md-6 q-pa-none q-pa-md-md text-left q-mb-lg q-mb-md-none"
+        class="col-12 col-md-6 q-pa-none q-pa-md-md text-left q-mb-lg q-mb-md-none shrink cursor-pointer"
         v-for="(blog, i) in blogs"
         :key="i"
       >
