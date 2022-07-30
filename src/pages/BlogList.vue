@@ -57,7 +57,7 @@ const blogs: BlogItem[] = [
       "After having created a great divide in the Vue community, how does Vue 3 stand up to its earlier version?",
     tags: ["vue3", "vue2", "vue", "javascript"],
     createdAt: new Date(1659084740258),
-    to: "1-script-setup-vs-define-component"
+    to: "2-vue-2-vs-vue-3"
   }
 ];
 </script>

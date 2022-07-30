@@ -19,14 +19,16 @@
     </q-header>
     <q-page-container class="row justify-center">
       <div class="full-width q-px-md bg-black" :style="containerStyle">
-        <router-view v-slot="{ Component }">
+        <router-view v-slot="{ Component, route }">
           <transition
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut"
             appear
             :duration="300"
           >
-            <component :is="Component" />
+            <div :key="route.path">
+              <component :is="Component" />
+            </div>
           </transition>
         </router-view>
       </div>

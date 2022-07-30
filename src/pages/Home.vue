@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <canvas ref="matter" id="matter" />
-    <q-page class="row justify-center items-center text-center" ref="page">
-      <div class="col center" style="z-index: 2">
-        <p class="text-h5"><span class="wave">👋</span> Hi, I'm</p>
-        <p class="text-h2 text-bold">Matija Novosel</p>
-        <p class="text-h6 text-weight-light text-grey-5">a Fullstack developer</p>
-      </div>
-      <span class="footer-text-left" style="z-index: 2"> © Matija Novosel </span>
-      <a href="https://github.com/MatijaNovosel/cv" class="footer-text-right text-white" style="z-index: 2">
-        Source
-      </a>
-    </q-page>
-  </div>
+  <canvas ref="matter" id="matter" />
+  <q-page class="row justify-center items-center text-center" ref="page">
+    <div class="col center" style="z-index: 2">
+      <p class="text-h5"><span class="wave">👋</span> Hi, I'm</p>
+      <p class="text-h2 text-bold">Matija Novosel</p>
+      <p class="text-h6 text-weight-light text-grey-5">a Fullstack developer</p>
+    </div>
+    <span class="footer-text-left" style="z-index: 2"> © Matija Novosel </span>
+    <a href="https://github.com/MatijaNovosel/cv" class="footer-text-right text-white" style="z-index: 2">
+      Source
+    </a>
+  </q-page>
 </template>
 
 <script lang="ts" setup>

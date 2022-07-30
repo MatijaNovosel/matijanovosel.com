@@ -23,7 +23,12 @@ const routes: RouteRecordRaw[] = [
           {
             path: "1-script-setup-vs-define-component",
             name: "1-script-setup-vs-define-component",
-            component: () => import("pages/blogs/1ScriptSetupVsDefineComponent.vue")
+            component: () => import("src/pages/blogs/1ScriptSetupVsDefineComponent.vue")
+          },
+          {
+            path: "2-vue-2-vs-vue-3",
+            name: "2-vue-2-vs-vue-3",
+            component: () => import("src/pages/blogs/2Vue2VsVue3.vue")
           }
         ]
       },
