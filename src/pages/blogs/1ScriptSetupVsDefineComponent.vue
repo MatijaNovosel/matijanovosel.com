@@ -21,7 +21,7 @@
   </div>
   <div class="bg-dark q-pa-md q-mb-xl blog-desc">
     <span>
-      With the creation of Vue 3, the community has been introduced to a new, more function oriented, way of
+      With the creation of Vue 3 the community has been introduced to a new, more function oriented, way of
       coding.
     </span>
   </div>

@@ -5,7 +5,6 @@
         <q-space />
         <q-tabs no-caps inline-label narrow-indicator v-model="tab">
           <q-route-tab
-            exact
             active-class="text-orange-4"
             v-for="(tab, i) in tabs"
             :key="i"
@@ -67,10 +66,10 @@ const tabs: TabItem[] = [
     }
   },
   {
-    name: "blog",
+    name: "blogs",
     icon: "fas fa-book",
     to: {
-      name: RouteNames.BLOG
+      name: RouteNames.BLOGS
     }
   }
 ];

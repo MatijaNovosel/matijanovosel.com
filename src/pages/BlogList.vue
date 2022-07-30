@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pt-none q-pb-lg q-pt-md-lg text-center">
+  <div class="text-center">
     <div class="text-h4 text-bold q-my-md">Blog</div>
     <div class="row">
       <div
@@ -32,7 +32,7 @@
         </router-link>
       </div>
     </div>
-  </q-page>
+  </div>
 </template>
 
 <script lang="ts" setup>
