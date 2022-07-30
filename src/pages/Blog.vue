@@ -7,27 +7,29 @@
         v-for="(blog, i) in blogs"
         :key="i"
       >
-        <div
-          class="blog-img q-mb-md"
-          :style="{
-            backgroundImage: `url(${blog.img})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            height: `${smAndDown() ? 200 : 250}px`
-          }"
-        />
-        <div class="column justify-center">
-          <span class="text-grey-7">
-            {{ formatMonth(blog.createdAt) }}
-          </span>
-          <span class="text-h5 text-bold text-left"> {{ blog.title }} </span>
-          <span class="text-body1 q-mb-md q-mt-sm text-grey-5">
-            {{ blog.subtitle }}
-          </span>
-          <div>
-            <span v-for="(tag, j) in blog.tags" :key="j" class="text-grey-7 q-mr-sm"> #{{ tag }} </span>
+        <router-link style="text-decoration: none; color: inherit" :to="{ name: blog.to }">
+          <div
+            class="blog-img q-mb-md"
+            :style="{
+              backgroundImage: `url(${blog.img})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              height: `${smAndDown() ? 200 : 250}px`
+            }"
+          />
+          <div class="column justify-center">
+            <span class="text-grey-7">
+              {{ formatMonth(blog.createdAt) }}
+            </span>
+            <span class="text-h5 text-bold text-left"> {{ blog.title }} </span>
+            <span class="text-body1 q-mb-md q-mt-sm text-grey-5">
+              {{ blog.subtitle }}
+            </span>
+            <div>
+              <span v-for="(tag, j) in blog.tags" :key="j" class="text-grey-7 q-mr-sm"> #{{ tag }} </span>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </q-page>
@@ -44,7 +46,8 @@ const blogs: BlogItem[] = [
     img: "/vue.jpg",
     subtitle: "Is the setup directive more intuitive than the defineComponent function?",
     tags: ["vue3", "vue", "javascript"],
-    createdAt: new Date(1659171113919)
+    createdAt: new Date(1659171113919),
+    to: "1-script-setup-vs-define-component"
   },
   {
     title: "Vue 2 vs Vue 3",
@@ -53,7 +56,8 @@ const blogs: BlogItem[] = [
     subtitle:
       "After having created a great divide in the Vue community, how does Vue 3 stand up to its earlier version?",
     tags: ["vue3", "vue2", "vue", "javascript"],
-    createdAt: new Date(1659084740258)
+    createdAt: new Date(1659084740258),
+    to: "1-script-setup-vs-define-component"
   }
 ];
 </script>

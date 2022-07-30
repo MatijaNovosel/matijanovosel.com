@@ -39,4 +39,5 @@ export interface BlogItem {
   blogId: number;
   img: string;
   createdAt: Date;
+  to: string;
 }
