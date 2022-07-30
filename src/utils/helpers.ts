@@ -1,4 +1,20 @@
 import { Screen } from "quasar";
+import { IDictionaryNumber } from "src/models/general";
+
+const month: IDictionaryNumber<string> = {
+  1: "Jan",
+  2: "Feb",
+  3: "Mar",
+  4: "Apr",
+  5: "May",
+  6: "Jun",
+  7: "Jul",
+  8: "Aug",
+  9: "Sep",
+  10: "Oct",
+  11: "Nov",
+  12: "Dec"
+};
 
 export const smAndDown = () => {
   return ["xs", "sm"].includes(Screen.name);
@@ -16,4 +32,8 @@ export const randInt = (min: number, max: number) => {
 
 export const randFloat = (min: number, max: number) => {
   return parseFloat((Math.random() * (max - min) + min).toFixed(4));
+};
+
+export const formatMonth = (date: Date) => {
+  return `${month[date.getMonth()]} ${date.getDay()}`;
 };

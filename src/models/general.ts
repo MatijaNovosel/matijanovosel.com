@@ -15,6 +15,10 @@ export interface IDictionary<T> {
   [index: string]: T;
 }
 
+export interface IDictionaryNumber<T> {
+  [index: number]: T;
+}
+
 export interface TechnologyItem {
   tooltip: string;
   color: string;
@@ -26,4 +30,13 @@ export interface ProjectItem {
   description: string;
   link: string;
   img: string;
+}
+
+export interface BlogItem {
+  title: string;
+  subtitle: string;
+  tags: string[];
+  blogId: number;
+  img: string;
+  createdAt: Date;
 }

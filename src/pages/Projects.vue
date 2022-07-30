@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pt-none q-pb-lg q-pt-md-lg text-center">
-    <div class="text-h4 text-bold q-mt-md" v-if="smAndDown()">Projects</div>
+    <div class="text-h4 text-bold q-mt-md">Projects</div>
     <div
       class="row q-pt-lg q-pt-md-xl text-left"
       v-for="(project, i) in projects"
@@ -23,10 +23,10 @@
       <div class="col-12 col-md-5 q-pl-none q-pl-md-xl q-pt-md q-pt-md-none row align-center">
         <div class="column justify-center">
           <span class="text-h4 text-bold text-left"> {{ project.title }} </span>
-          <span class="text-body1 q-my-md text-orange-2">
+          <span class="text-body1 q-my-md text-grey-5">
             {{ project.description }}
           </span>
-          <q-btn no-caps style="width: 150px" color="dark" class="q-py-sm" :href="project.link">
+          <q-btn no-caps style="width: 150px" color="dark" class="q-py-sm rounded-btn" :href="project.link">
             <div class="text-h6">Visit</div>
             <q-icon right name="mdi-open-in-new" />
           </q-btn>
@@ -57,7 +57,7 @@ const projects: ProjectItem[] = [
   {
     description:
       "Frontend for the GymDash gym management web application, made as a group task for a college course.",
-    img: "/default-proj.jpg",
+    img: "/vue.jpg",
     link: "https://github.com/MatijaNovosel/gym-dash-ui",
     title: "GymDash"
   },
@@ -81,7 +81,7 @@ const projects: ProjectItem[] = [
   },
   {
     description: "Pictionary for mobile devices, made with Flutter.",
-    img: "/default-proj.jpg",
+    img: "/flutter.jpg",
     link: "https://github.com/MatijaNovosel/scribble",
     title: "Scribble"
   },
@@ -94,9 +94,13 @@ const projects: ProjectItem[] = [
 ];
 </script>
 
-<style>
+<style scoped>
 .project-img {
-  border-radius: 8px;
+  border-radius: 16px;
   width: 100%;
+}
+
+.rounded-btn {
+  border-radius: 12px !important;
 }
 </style>
