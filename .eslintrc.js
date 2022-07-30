@@ -30,7 +30,8 @@ module.exports = {
     __QUASAR_SSR_PWA__: "readonly",
     process: "readonly",
     Capacitor: "readonly",
-    chrome: "readonly"
+    chrome: "readonly",
+    defineProps: "readonly"
   },
   rules: {
     "generator-star-spacing": "off",
@@ -42,6 +43,7 @@ module.exports = {
     "one-var": "off",
     "no-void": "off",
     "multiline-ternary": "off",
+    "no-useless-escape": "off",
     "import/first": "off",
     "import/namespace": "error",
     "import/default": "error",
