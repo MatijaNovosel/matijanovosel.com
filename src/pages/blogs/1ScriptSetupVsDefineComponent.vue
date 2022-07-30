@@ -6,7 +6,7 @@
         backgroundImage: 'url(/vue.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
-        height: `${smAndDown() ? 350 : 400}px`
+        height: `${smAndDown() ? 200 : 400}px`
       }"
     />
     <div class="column q-my-lg">
