@@ -9,7 +9,9 @@
     }"
   />
   <div class="column q-my-lg">
-    <span class="text-h3 text-bold"> &lt;script setup&gt; vs defineComponent </span>
+    <span :class="smAndDown() ? 'text-h4' : 'text-h3'" class="text-bold">
+      &lt;script setup&gt; vs defineComponent
+    </span>
     <span class="text-grey-5 q-mt-md">
       Published on
       <span class="text-orange-4">
