@@ -32,6 +32,13 @@
       enforced code organization via option groups.
     </p>
     <code-highlighter :code="optionsApiCode" />
+    <p class="q-pt-md">
+      The Composition API is centered around declaring reactive state variables directly in a function scope,
+      and composing state from multiple functions together to handle complexity. It is more free-form, and
+      requires understanding of how reactivity works in Vue to be used effectively. In return, its flexibility
+      enables more powerful patterns for organizing and reusing logic.
+    </p>
+    <code-highlighter :code="compositionApiCode" />
   </div>
 </template>
 
@@ -56,7 +63,7 @@ export default {
   // Lifecycle hooks are called at different stages of a component's lifecycle.
   // This function will be called when the component is mounted.
   mounted() {
-    console.log()
+    console.log(\`The initial count is \${count.value}.\`)
   }
 }
 <\/script>
@@ -65,6 +72,34 @@ export default {
   <button @click="increment">
     Count is: {{ count }}
   </button>
+</template>
+`;
+
+const compositionApiCode = `<script>
+import { ref, onMounted, defineComponent } from "vue";
+
+export default defineComponent({
+  setup() {
+    // reactive state
+    const count = ref(0);
+
+    // functions that mutate state and trigger updates
+    function increment() {
+      count.value++;
+    }
+
+    // lifecycle hooks
+    onMounted(() => {
+      console.log(\`The initial count is \${count.value}.\`);
+    });
+
+    return {};
+  }
+});
+<\/script>
+
+<template>
+  <button @click="increment">Count is: {{ count }}</button>
 </template>
 `;
 </script>
