@@ -1,5 +1,5 @@
 <template>
-  <prism-editor readonly class="editor" :model-value="props.code" :highlight="highlighter" />
+  <prism-editor lang="html" readonly class="editor" :model-value="props.code" :highlight="highlighter" />
 </template>
 
 <script lang="ts" setup>
@@ -8,9 +8,9 @@ import "vue-prism-editor/dist/prismeditor.min.css";
 
 import { highlight, languages } from "prismjs";
 import "prismjs/components/prism-clike";
+import "prismjs/components/prism-markup";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-css";
-import "prismjs/components/prism-markup";
 import "src/css/oneDarkPrism.css";
 
 const highlighter = (code: string) => {
