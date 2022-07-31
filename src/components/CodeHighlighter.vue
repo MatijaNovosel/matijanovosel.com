@@ -1,12 +1,25 @@
 <template>
-  <prism-editor lang="html" readonly class="editor" :model-value="props.code" :highlight="highlighter" />
+  <div class="pos-rel">
+    <prism-editor lang="html" readonly class="editor" :model-value="code" :highlight="highlighter" />
+    <q-btn
+      flat
+      round
+      icon="mdi-content-copy"
+      color="white"
+      class="top-right"
+      @click="copyToClipboard(code || '')"
+    >
+      <q-tooltip> Copy to clipboard </q-tooltip>
+    </q-btn>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { PrismEditor } from "vue-prism-editor";
-import "vue-prism-editor/dist/prismeditor.min.css";
-
+import { copyToClipboard } from "quasar";
 import { highlight, languages } from "prismjs";
+
+import "vue-prism-editor/dist/prismeditor.min.css";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-markup";
 import "prismjs/components/prism-javascript";
@@ -25,7 +38,7 @@ const highlighter = (code: string) => {
   );
 };
 
-const props = defineProps({
+defineProps({
   code: String
 });
 </script>
@@ -42,5 +55,11 @@ const props = defineProps({
 
 :deep(.prism-editor__textarea):focus {
   outline: none !important;
+}
+
+.top-right {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 </style>
