@@ -60,7 +60,7 @@
       the things that were actually meant to be on the template, but with the amount of reduced boilerplate
       this syntax makes up for that.
     </p>
-    <h6 class="q-mt-md q-mb-sm text-orange-3">In comparison</h6>
+    <h6 class="q-mt-md q-mb-sm text-orange-3">Props and emits</h6>
     <p>
       The defineComponent approach is verbose and very explicit in the way it functions, such as the props
       property where the properties of the component are defined.
@@ -90,6 +90,19 @@
     <p class="q-pt-md">
       In this case, however, only the <span class="text-orange-3">defineEmits</span> macro is neccessary. The
       return value is a function that can be used to emit events.
+    </p>
+    <h6 class="q-mt-md q-mb-sm text-orange-3">In comparison</h6>
+    <div class="row q-mt-md">
+      <div class="col-12 col-md-6 q-pr-xs">
+        <code-highlighter :code="compositionApiCodeNoComment" />
+      </div>
+      <div class="col-12 col-md-6 q-pl-xs">
+        <code-highlighter :code="scriptSetupCode" />
+      </div>
+    </div>
+    <p class="q-mt-md">
+      Comparing the previous blocks of code side by side, we can see a slight decrease in boilerplate. To be
+      exact 29 lines vs 20 lines, a 45% decrease!
     </p>
     <h6 class="q-mt-md q-mb-sm text-orange-3">Conclusion</h6>
     <p>
@@ -156,6 +169,36 @@ export default defineComponent({
     }
 
     // Lifecycle hooks
+    onMounted(() => {
+      console.log(\`The initial count is \${count.value}.\`);
+    });
+
+    return {
+      count,
+      increment
+    };
+  }
+});
+<\/script>
+`;
+
+const compositionApiCodeNoComment = `<template>
+  <button @click="increment">
+    Count is: {{ count }}
+  </button>
+</template>
+
+<script>
+import { ref, onMounted, defineComponent } from "vue";
+
+export default defineComponent({
+  setup() {
+    const count = ref(0);
+
+    function increment() {
+      count.value++;
+    }
+
     onMounted(() => {
       console.log(\`The initial count is \${count.value}.\`);
     });
