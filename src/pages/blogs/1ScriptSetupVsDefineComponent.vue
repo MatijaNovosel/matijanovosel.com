@@ -93,10 +93,10 @@
     </p>
     <h6 class="q-mt-md q-mb-sm text-orange-3">In comparison</h6>
     <div class="row q-mt-md">
-      <div class="col-12 col-md-6 q-pr-xs">
+      <div class="col-12 col-md-6 q-pr-none q-pr-md-xs">
         <code-highlighter :code="compositionApiCodeNoComment" />
       </div>
-      <div class="col-12 col-md-6 q-pl-xs">
+      <div class="col-12 col-md-6 q-pl-none q-pl-md-xs q-pt-md q-pt-md-none">
         <code-highlighter :code="scriptSetupCode" />
       </div>
     </div>

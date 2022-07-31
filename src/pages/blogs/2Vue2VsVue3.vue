@@ -13,7 +13,7 @@
     <span class="text-grey-5 q-mt-md">
       Published on
       <span class="text-orange-4">
-        {{ formatMonth(new Date()) }}
+        {{ formatMonth(new Date(1659084740258)) }}
       </span>
     </span>
   </div>
