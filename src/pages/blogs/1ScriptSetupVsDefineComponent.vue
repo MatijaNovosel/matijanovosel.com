@@ -14,31 +14,68 @@
     </span>
     <span class="text-grey-5 q-mt-md">
       Published on
-      <span class="text-orange-4">
+      <span class="text-orange-3">
         {{ formatMonth(new Date()) }}
       </span>
     </span>
   </div>
   <div class="bg-dark q-py-md q-px-lg q-mb-xl blog-desc text-justify">
+    <h6 class="q-mt-xs q-mb-sm text-orange-3">Introduction</h6>
     <p>
       With the creation of Vue 3 the community has been introduced to a new, more function oriented way of
       organizing component structure dubbed the Composition API. The previous way being named the Options API
       was more akin to an object oriented approach, heavily relying on the
       <span class="text-orange-4">this</span> keyword.
     </p>
+    <h6 class="q-mt-xs q-mb-sm text-orange-3">Options API</h6>
     <p>
       Even though both ways are fully capable of covering common use cases, the options API had its use but in
       the bigger picture it severely limited the developer as it abstracted away the reactivity details and
       enforced code organization via option groups.
     </p>
     <code-highlighter :code="optionsApiCode" />
-    <p class="q-pt-md">
+    <h6 class="q-mt-md q-mb-sm text-orange-3">Composition API</h6>
+    <p>
       The Composition API is centered around declaring reactive state variables directly in a function scope,
       and composing state from multiple functions together to handle complexity. It is more free-form, and
       requires understanding of how reactivity works in Vue to be used effectively. In return, its flexibility
       enables more powerful patterns for organizing and reusing logic.
     </p>
     <code-highlighter :code="compositionApiCode" />
+    <p class="q-pt-md">
+      Data that needs to be used on the template must be manually exposed through the return values of the
+      defineComponent function which is very verbose, but it allows for clearer insight into what is being
+      sent up.
+    </p>
+    <h6 class="q-mt-md q-mb-sm text-orange-3">&lt;script setup&gt;</h6>
+    <p>
+      Additionally, another option was added to the Composition API in the form of syntactic sugar - the
+      <span class="text-orange-3">setup</span>
+      directive. It allows the developer to write top level statements without the additional boilerplate of
+      the defineComponent function.
+    </p>
+    <code-highlighter :code="scriptSetupCode" />
+    <p class="q-pt-md">
+      Unlike the previous entry, everything is exposed to the template which might make it difficult to manage
+      the things that were actually meant to be on the template, but with the amount of reduced boilerplate
+      this syntax makes up for that.
+    </p>
+    <h6 class="q-mt-md q-mb-sm text-orange-3">In comparison</h6>
+    <p>
+      The defineComponent approach is verbose and very explicit in the way it functions, such as the props
+      property where the properties of the component are defined.
+    </p>
+    <code-highlighter :code="propsComparisonCodeComposition" />
+    <p class="q-pt-md">
+      The title prop is immediately available to the template and if it needs to be used in the script it is
+      exposed through the parameters of the setup function. The same can be done with the setup directive,
+      using the defineProps function.
+    </p>
+    <code-highlighter :code="propsComparisonCodeSetup" />
+    <p class="q-pt-md">
+      Notice how we do not need to explicitly write props.title in the template. If the title needs to be used
+      in the script, the defineProps function returns a reactive object with the aforementioned prop.
+    </p>
   </div>
 </template>
 
@@ -46,7 +83,13 @@
 import { smAndDown, formatMonth } from "src/utils/helpers";
 import CodeHighlighter from "src/components/CodeHighlighter.vue";
 
-const optionsApiCode = `<script>
+const optionsApiCode = `<template>
+  <button @click="increment">
+    Count is: {{ count }}
+  </button>
+</template>
+
+<script>
 export default {
   // Properties returned from data() become reactive state and will be exposed on this.
   data() {
@@ -54,7 +97,8 @@ export default {
       count: 0
     }
   },
-  // Methods are functions that mutate state and trigger updates. They can be bound as event listeners in templates.
+  // Methods are functions that mutate state and trigger updates.
+  // They can be bound as event listeners in templates.
   methods: {
     increment() {
       this.count++
@@ -67,40 +111,101 @@ export default {
   }
 }
 <\/script>
+`;
 
-<template>
+const compositionApiCode = `<template>
   <button @click="increment">
     Count is: {{ count }}
   </button>
 </template>
-`;
 
-const compositionApiCode = `<script>
+<script>
 import { ref, onMounted, defineComponent } from "vue";
 
 export default defineComponent({
   setup() {
-    // reactive state
+    // Reactive state
     const count = ref(0);
 
-    // functions that mutate state and trigger updates
+    // Functions that mutate state and trigger updates
     function increment() {
       count.value++;
     }
 
-    // lifecycle hooks
+    // Lifecycle hooks
     onMounted(() => {
       console.log(\`The initial count is \${count.value}.\`);
     });
 
+    return {
+      count,
+      increment
+    };
+  }
+});
+<\/script>
+`;
+
+const scriptSetupCode = `<template>
+  <button @click="increment">
+    Count is: {{ count }}
+  </button>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const count = ref(0)
+
+function increment() {
+  count.value++
+}
+
+onMounted(() => {
+  console.log(\`The initial count is \${count.value}.\`)
+})
+<\/script>
+`;
+
+const propsComparisonCodeComposition = `<template>
+  <span>
+    {{ title }}
+  </span>
+</template>
+
+<script>
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  props: {
+    title: {
+      type: String,
+      default: "",
+      required: false
+    }
+  },
+  setup(props) {
     return {};
   }
 });
 <\/script>
+`;
 
-<template>
-  <button @click="increment">Count is: {{ count }}</button>
+const propsComparisonCodeSetup = `<template>
+  <span>
+    {{ title }}
+  </span>
 </template>
+
+<script setup>
+const props = defineProps({
+  title: {
+    type: String,
+    default: "",
+    required: false
+  }
+});
+<\/script>
 `;
 </script>
 

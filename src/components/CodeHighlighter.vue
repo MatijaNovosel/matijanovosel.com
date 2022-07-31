@@ -11,7 +11,7 @@ import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-css";
 import "prismjs/components/prism-markup";
-import "prismjs/themes/prism-okaidia.css";
+import "src/css/oneDarkPrism.css";
 
 const highlighter = (code: string) => {
   return highlight(
@@ -32,7 +32,7 @@ const props = defineProps({
 
 <style scoped>
 .editor {
-  background: #2d2d2d;
+  background: rgb(40, 44, 52);
   font-family: CascadiaCode;
   font-size: 14px;
   line-height: 1.5;
