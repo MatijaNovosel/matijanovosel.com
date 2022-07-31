@@ -33,7 +33,7 @@ const props = defineProps({
 <style scoped>
 .editor {
   background: #2d2d2d;
-  font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
+  font-family: CascadiaCode;
   font-size: 14px;
   line-height: 1.5;
   border-radius: 12px;

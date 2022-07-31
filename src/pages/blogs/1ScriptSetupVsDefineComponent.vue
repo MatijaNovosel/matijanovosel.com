@@ -61,7 +61,7 @@ export default {
     }
   },
   // Lifecycle hooks are called at different stages of a component's lifecycle.
-  // This function will be called when the component is mounted.
+  // This will be called when the component is mounted.
   mounted() {
     console.log(\`The initial count is \${count.value}.\`)
   }
@@ -112,20 +112,5 @@ export default defineComponent({
 .blog-desc {
   border-radius: 16px;
   font-size: 1rem;
-}
-
-.my-editor {
-  background: #2d2d2d;
-  font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  border-radius: 12px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 25px;
-}
-
-:deep(.prism-editor__textarea):focus {
-  outline: none !important;
 }
 </style>
