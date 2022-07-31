@@ -76,6 +76,29 @@
       Notice how we do not need to explicitly write props.title in the template. If the title needs to be used
       in the script, the defineProps function returns a reactive object with the aforementioned prop.
     </p>
+    <p>
+      The <span class="text-orange-3">defineProps</span> macro is available by default if using the setup
+      directive.
+    </p>
+    <p>The same principle is applied to the emission of events:</p>
+    <code-highlighter :code="emitsComparisonCodeComposition" />
+    <p class="q-pt-md">
+      When not using the setup directive, the emit function must be exposed through the setup function
+      parameters.
+    </p>
+    <code-highlighter :code="emitsComparisonCodeSetup" />
+    <p class="q-pt-md">
+      In this case, however, only the <span class="text-orange-3">defineEmits</span> macro is neccessary. The
+      return value is a function that can be used to emit events.
+    </p>
+    <h6 class="q-mt-md q-mb-sm text-orange-3">Conclusion</h6>
+    <p>
+      The defineComponent approach and the setup macro approach are one in the same in terms of functionality
+      but differ in regards to the way things are set up. One is verbose and the other is not, if the need for
+      more explicit code arises defineComponent is the way to go. When using setup though, a lot of
+      boilerplate is removed and top level code becomes the norm. By personal choice, I go with the setup
+      syntactic sugar.
+    </p>
   </div>
 </template>
 
@@ -205,6 +228,25 @@ const props = defineProps({
     required: false
   }
 });
+<\/script>
+`;
+
+const emitsComparisonCodeComposition = `<script>
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  emits: ["update:value"],
+  setup(props, { emit }) {
+    emit("update:value");
+    return {};
+  }
+});
+<\/script>
+`;
+
+const emitsComparisonCodeSetup = `<script setup>
+const emit = defineEmits(["update:value"]);
+emit("update:value");
 <\/script>
 `;
 </script>
