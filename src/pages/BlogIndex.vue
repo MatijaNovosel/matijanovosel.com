@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pt-none q-pb-lg q-pt-md-lg">
+  <q-page class="q-pt-none q-pb-none q-pb-md-lg q-pt-md-lg">
     <BlogBackButton v-if="$route.name !== RouteNames.BLOGS" />
     <router-view v-slot="{ Component, route }">
       <transition

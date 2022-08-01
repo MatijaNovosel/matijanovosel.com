@@ -1,6 +1,6 @@
 <template>
   <div
-    class="blog-img q-mb-md"
+    class="blog-img"
     :style="{
       backgroundImage: 'url(/vue.jpg)',
       backgroundSize: 'cover',
