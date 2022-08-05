@@ -22,7 +22,7 @@ export interface IDictionaryNumber<T> {
 export interface TechnologyItem {
   tooltip: string;
   color: string;
-  icon: string;
+  icon: any;
 }
 
 export interface ProjectItem {

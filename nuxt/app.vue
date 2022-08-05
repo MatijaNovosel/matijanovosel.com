@@ -11,7 +11,7 @@
           class="relative flex space-x-4 md:space-x-6 items-center text-base md:text-lg font-space z-2"
         >
           <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/aboutMe">About</NuxtLink>
+          <NuxtLink to="/aboutMe">About me</NuxtLink>
           <NuxtLink to="/projects">Project</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>

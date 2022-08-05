@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "roboto";
+  src: url("/roboto.ttf");
+}
+
+* {
+  font-family: "roboto";
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.shrink {
+  transition: all 0.2s ease-in-out;
+}
+
+.shrink:hover {
+  transform: scale(0.98);
+}
