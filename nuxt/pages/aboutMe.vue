@@ -23,13 +23,13 @@
           <span> mnovosel5@gmail.com </span>
           <div class="mt-3">
             <a class="text-white" href="https://github.com/MatijaNovosel">
-              <IconGithub />
+              <IconGithub :style="{ fontSize: '1.6em' }" />
             </a>
             <a
               class="ml-2"
               href="https://www.linkedin.com/in/matija-novosel-616403161/"
             >
-              <IconLinkedin />
+              <IconLinkedin :style="{ fontSize: '1.6em' }" />
             </a>
           </div>
         </div>
@@ -43,6 +43,10 @@
             :key="i"
             :is="technology.icon"
             class="m-1"
+            v-tooltip="{
+              content: technology.tooltip,
+              theme: 'info-tooltip'
+            }"
           />
         </div>
       </div>
@@ -76,7 +80,7 @@ const technologies: TechnologyItem[] = [
     tooltip: "Vue 2, 3, Quasar, Vuetify"
   },
   {
-    color: "blue-3",
+    color: "#4fb1f3",
     icon: IconReact,
     tooltip: "React, React native"
   },
@@ -148,13 +152,5 @@ const meImgStyle = computed(() => {
 <style>
 .me-img {
   border-radius: 14px;
-}
-
-.q-timeline__heading-title {
-  padding: 0px !important;
-}
-
-.q-timeline__content {
-  padding-bottom: 20px !important;
 }
 </style>

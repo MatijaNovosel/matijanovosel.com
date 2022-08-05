@@ -8,9 +8,8 @@
       <p
         class="inline-flex items-center text-center text-lg md:text-2xl text-gray-300 tracking-wide"
       >
-        Hi
-        <span class="wave text-5xl mx-3 max-2">👋🏻</span>
-        I am
+        <span class="wave text-4xl mx-3">👋🏻</span>
+        Hi I'm
       </p>
       <h2 class="text-6xl font-bold my-4 tracking-tight font-space">
         Matija Novosel
