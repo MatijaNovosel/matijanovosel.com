@@ -1,6 +1,5 @@
-<template></template>
-
-<script lang="ts" setup>
-const { setMeta } = useMetadata();
-setMeta("Matija Novosel - Blog");
-</script>
+<template>
+  <section>
+    <NuxtPage :page-key="$route.fullPath" />
+  </section>
+</template>

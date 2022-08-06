@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <div class="text-4xl font-bold mb-4 mt-10">Projects</div>
+    <div class="text-4xl font-bold mb-3 mt-10">Projects</div>
     <ProjectCard
       v-for="(project, i) in projects"
       :project="project"
@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ProjectItem } from "~/models/general";
+import { ProjectItem } from "@/models";
 
 const projects: ProjectItem[] = [
   {

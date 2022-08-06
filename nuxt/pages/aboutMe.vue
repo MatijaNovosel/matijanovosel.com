@@ -1,6 +1,6 @@
 <template>
   <div
-    class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10"
+    class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10 px-6 md:px-0"
   >
     <img class="me-img" src="/me.jpg" :style="meImgStyle" />
     <p class="font-bold mt-6 mb-1 text-5xl">Matija Novosel</p>
@@ -16,7 +16,7 @@
           listening to music.
         </p>
       </div>
-      <div class="col-span-12 md:col-span-6 text-left">
+      <div class="col-span-12 md:col-span-6 text-left mt-4 md:mt-0">
         <span class="text-gray-400 font-bold"> Contact </span>
         <div class="flex flex-col mt-2">
           <span> Zagreb, Croatia </span>
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="col-span-12 md:col-span-6">
+      <div class="col-span-12 md:col-span-6 mt-4 md:mt-0">
         <span class="text-gray-400 font-bold"> Technologies </span>
         <TechnologyList class="mt-2" />
       </div>
@@ -49,8 +49,8 @@ import IconGithub from "~icons/mdi/github";
 
 const meImgStyle = computed(() => {
   return {
-    width: `250px`,
-    height: `250px`
+    width: "250px",
+    height: "250px"
   };
 });
 

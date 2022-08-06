@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 import { PropType } from "vue";
-import { ProjectItem } from "~/models/general.js";
+import { ProjectItem } from "@/models";
 import IconOpenInNew from "~icons/material-symbols/open-in-new";
 
 defineProps({

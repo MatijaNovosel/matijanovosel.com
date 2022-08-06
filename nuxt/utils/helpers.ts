@@ -1,4 +1,4 @@
-import { IDictionaryNumber } from "../models/general";
+import { IDictionaryNumber } from "../models";
 
 const month: IDictionaryNumber<string> = {
   1: "Jan",

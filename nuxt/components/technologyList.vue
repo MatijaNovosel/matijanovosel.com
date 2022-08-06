@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import { TechnologyItem } from "~/models/general";
+import { TechnologyItem } from "@/models";
 import IconVue from "~icons/vscode-icons/file-type-vue";
 import IconReact from "~icons/mdi/react";
 import IconAngular from "~icons/mdi/angular";

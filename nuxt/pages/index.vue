@@ -135,13 +135,6 @@ onBeforeUnmount(() => {
   Render.stop(render);
 });
 
-definePageMeta({
-  pageTransition: {
-    name: "fade",
-    mode: "out-in"
-  }
-});
-
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel");
 </script>
