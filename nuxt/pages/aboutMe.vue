@@ -2,8 +2,8 @@
   <div
     class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10 px-6 md:px-0"
   >
-    <img class="me-img" src="/me.jpg" :style="meImgStyle" />
-    <p class="font-bold mt-6 mb-1 text-5xl">Matija Novosel</p>
+    <img class="me-img" src="/me.jpg" />
+    <p class="font-bold mt-6 mb-1 text-3xl md:text-5xl">Matija Novosel</p>
     <p class="text-xl mt-1 text-gray-400">Fullstack developer</p>
     <div class="grid grid-cols-12">
       <div class="col-span-12 text-left mb-0 md:mb-6 mt-4">
@@ -43,16 +43,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
 import IconLinkedin from "~icons/logos/linkedin-icon";
 import IconGithub from "~icons/mdi/github";
-
-const meImgStyle = computed(() => {
-  return {
-    width: "250px",
-    height: "250px"
-  };
-});
 
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - About me");
@@ -61,5 +53,14 @@ setMeta("Matija Novosel - About me");
 <style scoped>
 .me-img {
   border-radius: 14px;
+  width: 250px;
+  height: 250px;
+}
+
+@media only screen and (max-width: 600px) {
+  .me-img {
+    width: 200px;
+    height: 200px;
+  }
 }
 </style>

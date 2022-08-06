@@ -3,8 +3,7 @@
     <div
       class="project-img col-span-12 md:col-span-7"
       :style="{
-        backgroundImage: `url(${project.img})`,
-        height: `300px`
+        backgroundImage: `url(${project.img})`
       }"
     />
     <div
@@ -44,10 +43,17 @@ defineProps({
   border-radius: 16px;
   background-size: cover;
   background-position: center center;
+  height: 300px;
 }
 
 .project-btn {
   border-radius: 12px !important;
   width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+  .project-img {
+    height: 200px;
+  }
 }
 </style>

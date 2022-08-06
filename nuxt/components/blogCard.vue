@@ -3,8 +3,7 @@
     <div
       class="blog-img mb-5"
       :style="{
-        backgroundImage: `url(${blog.img})`,
-        height: '250px'
+        backgroundImage: `url(${blog.img})`
       }"
     />
     <div class="flex flex-col justify-center">
@@ -43,5 +42,13 @@ defineProps({
   width: 100%;
   background-size: cover;
   background-position: center center;
+  height: 250px;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-img {
+    border-radius: 14px;
+    height: 200px;
+  }
 }
 </style>

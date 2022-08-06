@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex space-x-4 md:space-x-6 text-base md:text-lg font-space z-2 w-full justify-center md:justify-end"
+    class="flex space-x-4 md:space-x-6 text-base md:text-lg font-space z-2 w-full justify-center md:justify-end mt-3 md:mt-0"
   >
     <NuxtLink
       v-for="(link, i) in links"

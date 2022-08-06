@@ -10,9 +10,7 @@
         <span class="wave text-4xl mr-3">👋</span>
         Hi I'm
       </p>
-      <h2 class="text-6xl font-bold my-4 tracking-tight font-space">
-        Matija Novosel
-      </h2>
+      <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
       <h5 class="text-gray-400">A fullstack developer</h5>
     </div>
   </div>
