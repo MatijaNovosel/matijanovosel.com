@@ -1,31 +1,14 @@
 <template>
   <div class="contents">
-    <div class="text-5xl font-bold mt-5">Projects</div>
-    <div
-      class="grid pt-6 md:pt-8 text-left"
+    <div class="text-4xl font-bold mb-4 mt-10">Projects</div>
+    <ProjectCard
       v-for="(project, i) in projects"
+      :project="project"
       :key="i"
       :class="{
         'mt-5': i !== 0
       }"
-    >
-      <div
-        class="project-img col-span-12 md:col-span-7"
-        :style="{
-          backgroundImage: `url(${project.img})`,
-          height: `300px`
-        }"
-      />
-      <div class="col-span-12 md:col-span-5 md:pl-6 pt-5 md:pt-0 flex flex-col">
-        <span class="text-xl font-bold text-left"> {{ project.title }} </span>
-        <span class="mt-2 mb-5 text-gray-300">
-          {{ project.description }}
-        </span>
-        <button class="py-3 rounded-btn">
-          <h6>Visit</h6>
-        </button>
-      </div>
-    </div>
+    />
   </div>
 </template>
 
@@ -89,16 +72,3 @@ const projects: ProjectItem[] = [
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - Projects");
 </script>
-
-<style scoped>
-.project-img {
-  border-radius: 16px;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-}
-
-.rounded-btn {
-  border-radius: 12px !important;
-}
-</style>

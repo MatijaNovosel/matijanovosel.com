@@ -1,9 +1,8 @@
 <template>
   <div class="contents">
-    <canvas ref="matter" id="matter" class="z-1" />
+    <canvas ref="matter" class="z-1" />
     <div
       class="z-2 p-16 max-w-screen-md w-full flex flex-col items-center justify-center rounded-3xl shadow-inset-white shadow-none"
-      ref="page"
     >
       <p
         class="inline-flex items-center text-center text-lg md:text-2xl text-gray-300 tracking-wide"
@@ -29,7 +28,6 @@ let engine = null;
 let runner = null;
 
 const matter = ref<HTMLCanvasElement>();
-const page = ref<HTMLElement | null>(null);
 
 let render: Render;
 let intervalId: ReturnType<typeof setTimeout> | null = null;

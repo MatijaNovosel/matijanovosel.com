@@ -5,7 +5,7 @@
     <img class="me-img" src="/me.jpg" :style="meImgStyle" />
     <p class="font-bold mt-6 mb-1 text-5xl">Matija Novosel</p>
     <p class="text-xl mt-1 text-gray-400">Fullstack developer</p>
-    <div class="grid">
+    <div class="grid grid-cols-12">
       <div class="col-span-12 text-left mb-0 md:mb-6 mt-4">
         <span class="text-subtitle1 text-gray-400 font-bold"> About me </span>
         <p class="text-justify mt-2">
@@ -58,7 +58,7 @@ const { setMeta } = useMetadata();
 setMeta("Matija Novosel - About me");
 </script>
 
-<style>
+<style scoped>
 .me-img {
   border-radius: 14px;
 }
