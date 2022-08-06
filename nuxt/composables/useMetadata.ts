@@ -1,4 +1,4 @@
-export const useCustomMeta = () => {
+export const useMetadata = () => {
   const setMeta = (
     title: string,
     desc = "Matija Novosel - A fullstack developer from Croatia. I like developing applications of all sorts.",
@@ -22,8 +22,7 @@ export const useCustomMeta = () => {
         { name: "twitter:title", content: "Matija Novosel" },
         { name: "twitter:description", content: desc },
         { name: "twitter:image", content: image }
-      ],
-      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }]
+      ]
     });
   };
 

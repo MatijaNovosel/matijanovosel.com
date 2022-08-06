@@ -1,7 +1,7 @@
 <template>
   <Html lang="en-US">
     <div
-      class="min-h-screen flex justify-center bg-black text-light-900 transition duration-300"
+      class="min-h-screen flex justify-center bg-black text-white transition duration-300"
     >
       <div
         ref="page"
@@ -12,14 +12,14 @@
         >
           <NuxtLink to="/">Home</NuxtLink>
           <NuxtLink to="/aboutMe">About me</NuxtLink>
-          <NuxtLink to="/projects">Project</NuxtLink>
+          <NuxtLink to="/projects">Projects</NuxtLink>
           <NuxtLink to="/blog">Blog</NuxtLink>
         </nav>
         <NuxtPage />
         <footer
           class="mt-6 md:mt-12 w-full flex flex-col md:flex-row justify-between"
         >
-          <div class="flex space-x-3 md:space-x-4 text-light-900">
+          <div>
             <span class="text-sm md:text-base"> &copy; Matija Novosel </span>
           </div>
           <a

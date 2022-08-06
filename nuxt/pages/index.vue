@@ -1,5 +1,5 @@
 <template>
-  <div style="display: contents">
+  <div class="contents">
     <canvas ref="matter" id="matter" class="z-1" />
     <div
       class="z-2 p-16 max-w-screen-md w-full flex flex-col items-center justify-center rounded-3xl shadow-inset-white shadow-none"
@@ -8,13 +8,13 @@
       <p
         class="inline-flex items-center text-center text-lg md:text-2xl text-gray-300 tracking-wide"
       >
-        <span class="wave text-4xl mx-3">👋🏻</span>
+        <span class="wave text-4xl mr-3">👋</span>
         Hi I'm
       </p>
       <h2 class="text-6xl font-bold my-4 tracking-tight font-space">
         Matija Novosel
       </h2>
-      <h5>A fullstack developer</h5>
+      <h5 class="text-gray-400">A fullstack developer</h5>
     </div>
   </div>
 </template>
@@ -144,7 +144,8 @@ definePageMeta({
   }
 });
 
-useCustomMeta();
+const { setMeta } = useMetadata();
+setMeta("Matija Novosel");
 </script>
 
 <style>
