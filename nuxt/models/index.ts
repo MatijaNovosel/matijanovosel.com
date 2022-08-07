@@ -35,7 +35,7 @@ export interface BlogListItem {
   blogId: number;
   img: string;
   createdAt: Date;
-  to: string;
+  id: number;
 }
 
 export interface LinkItem {

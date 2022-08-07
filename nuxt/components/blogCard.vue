@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink>
+  <NuxtLink :to="`/blog/${blog.id}`">
     <div
       class="blog-img mb-5"
       :style="{
