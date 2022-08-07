@@ -1,0 +1,64 @@
+.timeline-entry {
+  position: relative;
+}
+
+.timeline-time {
+  padding-left: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.timeline-dot {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 15px;
+}
+
+.timeline-content {
+  padding-bottom: 20px;
+  padding-left: 40px;
+}
+
+.timeline-title {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.timeline-dot:before {
+  border: 3px solid #0000;
+  border-radius: 100%;
+  height: 15px;
+  left: 0;
+  top: 4px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+  width: 15px;
+}
+
+.timeline-dot:after {
+  bottom: 0;
+  left: 6px;
+  opacity: 0.4;
+  top: 24px;
+  width: 3px;
+}
+
+.timeline-dot:after,
+.timeline-dot:before {
+  background: currentColor;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.timeline-dot:after,
+.timeline-dot:before {
+  background: currentColor;
+  content: "";
+  display: block;
+  position: absolute;
+}

@@ -16,6 +16,131 @@
           listening to music.
         </p>
       </div>
+      <div class="col-span-12 mb-0 md:mb-6 mt-6 md:mt-0">
+        <div class="text-subtitle1 text-gray-400 font-bold pb-3">
+          Work experience
+        </div>
+        <Timeline>
+          <TimelineItem time="August 2021 - Current">
+            <template #title>
+              <div class="flex flex-col">
+                <a
+                  href="https://king-ict.com/"
+                  class="text-white font-bold underline"
+                >
+                  King ICT
+                </a>
+                <span class="mt-1 text-sm text-orange-200">
+                  Software developer (student)
+                </span>
+              </div>
+            </template>
+            <div class="flex flex-col text-sm">
+              <div>
+                🔸 Software development using full stack web technologies
+              </div>
+              <div>🔸 Development of mobile applications</div>
+              <div>🔸 Mentoring and creating educational content</div>
+            </div>
+          </TimelineItem>
+          <TimelineItem time="July 2019 - July 2021">
+            <template #title>
+              <div class="flex flex-col">
+                <a
+                  href="https://www.omega-software.hr/"
+                  class="text-white font-bold underline"
+                >
+                  Omega software
+                </a>
+                <span class="mt-1 text-sm text-orange-200">
+                  Junior software developer (student)
+                </span>
+              </div>
+            </template>
+            <div class="flex flex-col text-sm">
+              <div>
+                🔸 Software development on multiple company projects using full
+                stack web technologies
+              </div>
+              <div>
+                🔸 Mentoring and creating educational Javascript content for new
+                and future employees
+              </div>
+            </div>
+          </TimelineItem>
+          <TimelineItem time="July 2019 - July 2021">
+            <template #title>
+              <div class="flex flex-col">
+                <a
+                  href="https://www.maidea.com/"
+                  class="text-white font-bold underline"
+                >
+                  Maidea
+                </a>
+                <span class="mt-1 text-sm text-orange-200">
+                  Junior software developer (student)
+                </span>
+              </div>
+            </template>
+            <div class="flex flex-col text-sm">
+              <div>
+                🔸 Software development using full stack web technologies.
+              </div>
+            </div>
+          </TimelineItem>
+        </Timeline>
+      </div>
+      <div class="col-span-12 mb-0 md:mb-6 mt-6 md:mt-0">
+        <div class="text-subtitle1 text-gray-400 font-bold pb-3">Education</div>
+        <Timeline>
+          <TimelineItem time="September 2020 - Current">
+            <template #title>
+              <div class="flex flex-col">
+                <a
+                  href="https://www.tvz.hr/"
+                  class="text-white font-bold underline"
+                >
+                  Zagreb university of applied sciences
+                </a>
+                <span class="mt-1 text-sm text-orange-200">
+                  Master's degree (struc. spec. ing. techn. inf.)
+                </span>
+              </div>
+            </template>
+          </TimelineItem>
+          <TimelineItem time="September 2017 - July 2020">
+            <template #title>
+              <div class="flex flex-col">
+                <a
+                  href="https://www.tvz.hr/"
+                  class="text-white font-bold underline"
+                >
+                  Zagreb university of applied sciences
+                </a>
+                <span class="mt-1 text-sm text-orange-200">
+                  Bachelor of Engineering in Information Technology (bacc. ing.
+                  techn. inf.)
+                </span>
+              </div>
+            </template>
+          </TimelineItem>
+          <TimelineItem time="September 2013 - July 2017">
+            <template #title>
+              <div class="flex flex-col">
+                <a
+                  href="https://www.tsrb.hr/"
+                  class="text-white font-bold underline"
+                >
+                  Tehnička škola Ruđera Boškovića
+                </a>
+                <span class="mt-1 text-sm text-orange-200">
+                  Computer technician
+                </span>
+              </div>
+            </template>
+          </TimelineItem>
+        </Timeline>
+      </div>
       <div class="col-span-12 md:col-span-6 text-left mt-4 md:mt-0">
         <span class="text-gray-400 font-bold"> Contact </span>
         <div class="flex flex-col mt-2">

@@ -7,14 +7,6 @@
   font-family: "roboto";
 }
 
-.cursor-grab {
-  cursor: grab;
-}
-
-.text-decoration-none {
-  text-decoration: none;
-}
-
 html {
   overflow: scroll;
   overflow-x: hidden;
@@ -120,4 +112,30 @@ html {
 
 .v-popper--theme-info-tooltip .v-popper__arrow-outer {
   visibility: hidden;
+}
+
+.page-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+.layout-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.layout-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
 }
