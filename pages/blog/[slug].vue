@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10">
+  <div class="mt-10 w-full">
     <NuxtLink to="/blog">
       <button
         class="ripple project-btn px-2 py-1 font-medium text-xl text-gray-100 rounded flex items-center justify-center"
@@ -8,7 +8,9 @@
         <h6>Back</h6>
       </button>
     </NuxtLink>
-    <h1>Neka ruta: {{ $route.fullPath }}</h1>
+    <div class="bg-dark-200 mt-5 rounded-lg p-5">
+      <h1>Neka ruta: {{ $route.fullPath }}</h1>
+    </div>
   </div>
 </template>
 
