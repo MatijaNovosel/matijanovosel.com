@@ -34,13 +34,10 @@ const loading = ref(true);
 const error = ref(false);
 
 onMounted(async () => {
-  const { data, pending, error } = await useLazyAsyncData(
-    `blog-${route.params.slug}`,
-    () => $fetch(`/api/blog/${route.params.slug}`)
+  const { data, pending, error } = await useFetch(
+    `/api/blog/${route.params.slug}`
   );
-  setTimeout(() => {
-    loading.value = false;
-  }, 3000);
+  loading.value = false;
 });
 
 const { setMeta } = useMetadata();

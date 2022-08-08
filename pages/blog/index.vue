@@ -41,6 +41,14 @@ const blogs: BlogListItem[] = [
   }
 ];
 
+const loading = ref(true);
+const error = ref(false);
+
+onMounted(async () => {
+  const { data, pending, error } = await useFetch(`/api/blog`);
+  loading.value = false;
+});
+
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - Blog");
 </script>
