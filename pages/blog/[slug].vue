@@ -31,7 +31,7 @@ import IconArrowLeft from "~icons/mdi/arrow-left";
 
 const route = useRoute();
 const loading = ref(true);
-const error = ref(true);
+const error = ref(false);
 
 onMounted(async () => {
   const { data, pending, error } = await useLazyAsyncData(

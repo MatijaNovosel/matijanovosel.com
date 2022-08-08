@@ -41,4 +41,5 @@ export interface BlogListItem {
 export interface LinkItem {
   to: string;
   text: string;
+  icon: any;
 }
