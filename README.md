@@ -6,6 +6,7 @@
 - [Nuxt 3](https://v3.nuxtjs.org/)
 - [Vue 3](https://vuejs.org/)
 - [Supabase](https://supabase.com/)
+- [WindiCSS](https://windicss.org/)
 
 ## Setup
 
