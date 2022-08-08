@@ -23,7 +23,7 @@ const links: LinkItem[] = [
     text: "Home"
   },
   {
-    to: "aboutMe",
+    to: "/aboutMe",
     text: "About me"
   },
   {

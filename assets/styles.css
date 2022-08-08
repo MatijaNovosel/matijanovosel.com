@@ -139,3 +139,19 @@ html {
 .layout-leave-to {
   opacity: 0;
 }
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple:hover {
+  background: #dee2e519 radial-gradient(circle, transparent 1%, #dee2e519 1%)
+    center/15000%;
+}
+
+.ripple:active {
+  background-color: #dee2e582;
+  background-size: 100%;
+  transition: background 0s;
+}

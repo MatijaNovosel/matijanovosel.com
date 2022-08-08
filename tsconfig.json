@@ -1,7 +1,6 @@
 {
-  "extends": "@quasar/app/tsconfig-preset",
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "preserve"
+    "types": ["unplugin-icons/types/vue", "nuxt-windicss"]
   }
 }

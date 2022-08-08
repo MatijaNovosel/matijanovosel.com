@@ -15,7 +15,7 @@
       </span>
       <a :href="project.link">
         <button
-          class="project-btn px-6 py-2 bg-dark-400 font-medium text-xl hover:bg-gray-600 text-gray-100 rounded flex items-center justify-center"
+          class="ripple project-btn px-6 py-2 bg-dark-400 font-medium text-xl text-gray-100 rounded flex items-center justify-center"
         >
           <h6>Visit</h6>
           <IconOpenInNew class="ml-3" />
