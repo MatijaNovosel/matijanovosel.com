@@ -10,15 +10,13 @@ export default defineEventHandler(async (event) => {
   const { data, error } = await supabase
     .from("blogs")
     .select("*")
-    .eq("id", blogId);
-
-  console.log(data);
+    .eq("id", parseInt(blogId));
 
   if (error) {
     throw error;
   }
 
   return {
-    api: "works"
+    data
   };
 });

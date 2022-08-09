@@ -6,15 +6,13 @@ const supabase = createClient(
 );
 
 export default defineEventHandler(async () => {
-  const { data, error } = await supabase.from("blogs_list_view").select("*");
-
-  console.log(data);
+  const { data, error } = await supabase.from("blogs").select("*");
 
   if (error) {
     throw error;
   }
 
   return {
-    api: data
+    data
   };
 });

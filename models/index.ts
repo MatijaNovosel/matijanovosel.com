@@ -32,7 +32,6 @@ export interface BlogListItem {
   title: string;
   subtitle: string;
   tags: string[];
-  blogId: number;
   img: string;
   createdAt: Date;
   id: number;
