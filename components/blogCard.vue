@@ -8,13 +8,19 @@
     />
     <div class="flex flex-col justify-center">
       <span class="text-gray-500 mb-1 text-sm">
-        {{ formatMonth(blog.createdAt) }}
+        {{
+          blog.createdAt.toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "2-digit"
+          })
+        }}'
       </span>
       <span class="text-xl font-bold text-left"> {{ blog.title }} </span>
       <span class="mb-4 mt-3 text-gray-400 text-sm">
         {{ blog.subtitle }}
       </span>
-      <div>
+      <div class="text-sm">
         <span v-for="(tag, j) in blog.tags" :key="j" class="text-gray-600 mr-3">
           #{{ tag }}
         </span>
@@ -26,7 +32,6 @@
 <script lang="ts" setup>
 import { PropType } from "vue";
 import { BlogListItem } from "~/models";
-import { formatMonth } from "~/utils/helpers";
 
 defineProps({
   blog: {
