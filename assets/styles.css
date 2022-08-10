@@ -3,7 +3,12 @@
   src: url("/roboto.ttf");
 }
 
-* {
+@font-face {
+  font-family: "CascadiaCode";
+  src: url("/cascadia.ttf");
+}
+
+body {
   font-family: "roboto";
 }
 

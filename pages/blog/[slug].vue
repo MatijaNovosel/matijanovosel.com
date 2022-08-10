@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 w-full">
+  <div class="mt-10 w-full px-6 md:px-0">
     <NuxtLink to="/blog">
       <button
         class="ripple project-btn pr-3 pl-2 py-1 font-medium text-xl text-gray-100 rounded flex items-center justify-center"
@@ -27,8 +27,8 @@
           backgroundImage: `url(${blog.img})`
         }"
       />
-      <div class="flex flex-col my-5">
-        <span class="font-bold text-3xl">
+      <div class="flex flex-col my-7">
+        <span class="font-bold text-xl md:text-3xl">
           {{ blog.title }}
         </span>
         <span class="text-gray-500 mt-2 text-sm">
@@ -38,14 +38,16 @@
           </span>
         </span>
       </div>
-      <div class="bg-dark-400 rounded-lg p-5 blog-content" v-html="blog.html" />
+      <div class="bg-dark-800 rounded-lg p-5 blog-content">
+        <MarkdownRenderer :source="blog.html" />
+      </div>
     </template>
   </div>
 </template>
 
 <script lang="ts" setup>
 import IconArrowLeft from "~icons/mdi/arrow-left";
-import { BlogListItem } from "~~/models";
+import { BlogListItem } from "~/models";
 
 const route = useRoute();
 const loading = ref(true);
@@ -78,6 +80,7 @@ setMeta("Matija Novosel - Blogs");
 }
 
 :deep(.blog-content) h6 {
+  font-size: 20px;
   padding-bottom: 5px;
 }
 

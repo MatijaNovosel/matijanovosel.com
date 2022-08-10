@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-6 md:pt-8 text-left w-full grid grid-cols-12 px-8 md:px-0">
+  <div class="pt-6 md:pt-8 text-left w-full grid grid-cols-12 px-6 md:px-0">
     <div
       class="project-img col-span-12 md:col-span-7"
       :style="{

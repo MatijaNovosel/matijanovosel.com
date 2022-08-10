@@ -9,16 +9,23 @@
   "devDependencies": {
     "@iconify/json": "^2.0.30",
     "@types/matter-js": "^0.17.7",
-    "@types/prismjs": "^1.26.0",
     "nuxt": "3.0.0-rc.6",
     "nuxt-windicss": "^2.2.2",
     "unplugin-icons": "^0.13.0"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.35.4",
     "@vueuse/core": "^7.6.2",
     "floating-vue": "^2.0.0-beta.19",
-    "matter-js": "^0.18.0",
-    "@supabase/supabase-js": "^1.35.4",
-    "vue-prism-editor": "^2.0.0-alpha.2"
+    "markdown-it": "^13.0.1",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^8.6.4",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-highlightjs": "^4.0.1",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "markdown-it-toc-done-right": "^4.2.0",
+    "matter-js": "^0.18.0"
   }
 }
