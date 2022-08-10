@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
-        <MarkdownRenderer :source="blog.html" />
+        <MarkdownRenderer :source="'# Hi!!'" />
       </div>
     </template>
   </div>
@@ -60,24 +60,25 @@
 <script lang="ts" setup>
 import IconArrowLeft from "~icons/mdi/arrow-left";
 import { BlogListItem } from "~/models";
+const { setMeta } = useMetadata();
 
 const route = useRoute();
 const loading = ref(true);
 const error = ref(false);
 const blog = ref<BlogListItem>();
 
+setMeta("Matija Novosel - Blogs");
+
 onMounted(async () => {
   try {
     blog.value = await $fetch<BlogListItem>(`/api/blog/${route.params.slug}`);
+    setMeta(`Matija Novosel - ${blog.value.title}`);
   } catch {
     error.value = true;
   } finally {
     loading.value = false;
   }
 });
-
-const { setMeta } = useMetadata();
-setMeta("Matija Novosel - Blogs");
 </script>
 
 <style scoped>
