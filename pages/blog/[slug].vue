@@ -22,23 +22,26 @@
     />
     <template v-else>
       <div
-        class="blog-img rounded-lg mt-5"
+        class="blog-img rounded-t-lg mt-5 relative"
         :style="{
           backgroundImage: `url(${blog.img})`
         }"
-      />
-      <div class="flex flex-col my-7">
-        <span class="font-bold text-xl md:text-3xl">
-          {{ blog.title }}
-        </span>
-        <span class="text-gray-500 mt-2 text-sm">
-          Published on
-          <span class="text-gray-400">
-            {{ blog.createdAt }}
+      >
+        <div
+          class="flex flex-col absolute title-box px-5 py-3 rounded-tr-none md:rounded-tr-lg w-full md:w-auto"
+        >
+          <span class="font-bold text-xl md:text-3xl">
+            {{ blog.title }}
           </span>
-        </span>
+          <span class="text-gray-300 mt-2 text-sm">
+            Published on
+            <span class="text-orange-300">
+              {{ blog.createdAt }}
+            </span>
+          </span>
+        </div>
       </div>
-      <div class="bg-dark-800 rounded-lg p-5 blog-content">
+      <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
         <MarkdownRenderer :source="blog.html" />
       </div>
     </template>
@@ -73,6 +76,11 @@ setMeta("Matija Novosel - Blogs");
   background-size: cover;
   background-position: center center;
   height: 400px;
+}
+
+.title-box {
+  background-color: rgba(0, 0, 0, 0.505);
+  bottom: 0px;
 }
 
 :deep(.blog-content) h6:not(:first-child) {
