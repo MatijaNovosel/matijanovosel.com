@@ -20,23 +20,41 @@
       class="mt-5"
       v-else-if="error"
     />
-    <div class="bg-dark-200 mt-5 rounded-lg p-5" v-else>
-      <h1>Neka ruta: {{ $route.fullPath }}</h1>
-    </div>
+    <template v-else>
+      <div
+        class="blog-img rounded-lg mt-5"
+        :style="{
+          backgroundImage: `url(${blog.img})`
+        }"
+      />
+      <div class="flex flex-col my-5">
+        <span class="font-bold text-3xl">
+          {{ blog.title }}
+        </span>
+        <span class="text-gray-500 mt-2 text-sm">
+          Published on
+          <span class="text-gray-400">
+            {{ blog.createdAt }}
+          </span>
+        </span>
+      </div>
+      <div class="bg-dark-400 rounded-lg p-5" v-html="blog.html" />
+    </template>
   </div>
 </template>
 
 <script lang="ts" setup>
 import IconArrowLeft from "~icons/mdi/arrow-left";
+import { BlogListItem } from "~~/models";
 
 const route = useRoute();
 const loading = ref(true);
 const error = ref(false);
+const blog = ref<BlogListItem>();
 
 onMounted(async () => {
   try {
-    const { data } = await useFetch(`/api/blog/${route.params.slug}`);
-    console.log(data);
+    blog.value = await $fetch<BlogListItem>(`/api/blog/${route.params.slug}`);
   } catch {
     error.value = true;
   } finally {
@@ -47,3 +65,11 @@ onMounted(async () => {
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - Blogs");
 </script>
+
+<style scoped>
+.blog-img {
+  background-size: cover;
+  background-position: center center;
+  height: 400px;
+}
+</style>

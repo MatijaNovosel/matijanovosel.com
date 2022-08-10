@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { BlogListItem } from "~/models";
 
 const supabase = createClient(
   process.env.supabaseUrl,
@@ -14,7 +15,16 @@ export default defineEventHandler(async () => {
     throw error;
   }
 
-  return {
-    data
-  };
+  return data.map<BlogListItem>((blog) => ({
+    createdAt: `${new Date(blog.created_at).toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "2-digit"
+    })}'`,
+    title: blog.title,
+    id: blog.id,
+    img: blog.image_url,
+    subtitle: blog.subtitle,
+    tags: blog.tags.split(",")
+  }));
 });

@@ -36,16 +36,7 @@ const blogs = ref<BlogListItem[]>([]);
 
 onMounted(async () => {
   try {
-    const { data } = await $fetch("/api/blog");
-
-    blogs.value = data.map<BlogListItem>((blog) => ({
-      createdAt: new Date(blog.created_at),
-      title: blog.title,
-      id: blog.id,
-      img: blog.image_url,
-      subtitle: blog.subtitle,
-      tags: blog.tags.split(",")
-    }));
+    blogs.value = await $fetch("/api/blog");
   } catch {
     error.value = true;
   } finally {

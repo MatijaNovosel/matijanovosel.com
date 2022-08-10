@@ -16,7 +16,8 @@ export interface BlogListItem {
   subtitle: string;
   tags: string[];
   img: string;
-  createdAt: Date;
+  createdAt: string;
+  html?: string;
   id: number;
 }
 
