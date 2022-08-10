@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
     id: data.id,
     img: data.image_url,
     subtitle: data.subtitle,
-    tags: data.tags,
+    tags: data.tags.split(","),
     title: data.title,
     html: data.html
   } as BlogListItem;

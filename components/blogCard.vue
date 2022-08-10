@@ -13,7 +13,7 @@
         {{ blog.subtitle }}
       </span>
       <div class="text-sm">
-        <span v-for="(tag, j) in blog.tags" :key="j" class="text-gray-600 mr-3">
+        <span v-for="(tag, j) in blog.tags" :key="j" class="text-gray-600 mr-1">
           #{{ tag }}
         </span>
       </div>

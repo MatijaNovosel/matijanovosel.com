@@ -28,7 +28,7 @@
         }"
       >
         <div
-          class="flex flex-col absolute title-box px-5 py-3 rounded-tr-none md:rounded-tr-lg w-full md:w-auto"
+          class="flex flex-col absolute title-box bg-dark-400 px-5 py-3 rounded-tr-none md:rounded-tr-lg w-full md:w-auto"
         >
           <span class="font-bold text-sm md:text-3xl">
             {{ blog.title }}
@@ -39,6 +39,15 @@
               {{ blog.createdAt }}
             </span>
           </span>
+          <div class="text-xs mt-3">
+            <span
+              v-for="(tag, j) in blog.tags"
+              :key="j"
+              class="mr-1 px-3 py-1 bg-dark-300 rounded-md"
+            >
+              {{ tag }}
+            </span>
+          </div>
         </div>
       </div>
       <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
