@@ -38,7 +38,7 @@
           </span>
         </span>
       </div>
-      <div class="bg-dark-400 rounded-lg p-5" v-html="blog.html" />
+      <div class="bg-dark-400 rounded-lg p-5 blog-content" v-html="blog.html" />
     </template>
   </div>
 </template>
@@ -71,5 +71,19 @@ setMeta("Matija Novosel - Blogs");
   background-size: cover;
   background-position: center center;
   height: 400px;
+}
+
+:deep(.blog-content) h6:not(:first-child) {
+  padding-top: 15px;
+}
+
+:deep(.blog-content) h6 {
+  padding-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-img {
+    height: 200px;
+  }
 }
 </style>

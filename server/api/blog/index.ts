@@ -9,7 +9,10 @@ const supabase = createClient(
 export default defineEventHandler(async () => {
   const { data, error } = await supabase
     .from("blogs")
-    .select("created_at, title, id, image_url, subtitle, tags");
+    .select("created_at, title, id, image_url, subtitle, tags")
+    .order("created_at", {
+      ascending: false
+    });
 
   if (error) {
     throw error;
