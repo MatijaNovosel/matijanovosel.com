@@ -23,16 +23,16 @@ const links: LinkItem[] = [
     text: "Home"
   },
   {
+    to: "/blog",
+    text: "Blog"
+  },
+  {
     to: "/aboutMe",
     text: "About me"
   },
   {
     to: "/projects",
     text: "Projects"
-  },
-  {
-    to: "/blog",
-    text: "Blog"
   }
 ];
 </script>
