@@ -7,6 +7,7 @@
 - [Vue 3](https://vuejs.org/)
 - [Supabase](https://supabase.com/)
 - [WindiCSS](https://windicss.org/)
+- [Vercel](https://vercel.com/)
 
 ## Setup
 
