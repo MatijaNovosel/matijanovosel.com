@@ -7,7 +7,7 @@
       :key="i"
       active-class="text-orange-300"
       :to="link.to"
-      class="link relative flex items-center text-sm md:text-base"
+      class="link relative flex items-center text-sm md:text-base font-bold"
     >
       {{ link.text }}
     </NuxtLink>
