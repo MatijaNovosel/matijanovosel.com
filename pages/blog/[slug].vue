@@ -30,7 +30,7 @@
         <div
           class="flex flex-col absolute title-box px-5 py-3 rounded-tr-none md:rounded-tr-lg w-full md:w-auto"
         >
-          <span class="font-bold text-xl md:text-3xl">
+          <span class="font-bold text-sm md:text-3xl">
             {{ blog.title }}
           </span>
           <span class="text-gray-300 mt-2 text-sm">
