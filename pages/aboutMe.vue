@@ -1,6 +1,6 @@
 <template>
   <div
-    class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10 px-6 md:px-0"
+    class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10 px-3 md:px-0"
   >
     <img class="me-img" src="/me.jpg" />
     <p class="font-bold mt-6 mb-1 text-3xl md:text-5xl">Matija Novosel</p>
@@ -12,8 +12,8 @@
           Hi. I'm a programmer from Croatia. I like developing applications of
           all sorts and have been interested in doing so from a young age.
           Currently finishing my Masters degree at the Zagreb university of
-          applied sciences. Besides programming I enjoy video games, drawing and
-          listening to music.
+          applied sciences. Besides programming I enjoy video games, reading,
+          drawing and listening to music.
         </p>
       </div>
       <div class="col-span-12 mb-0 md:mb-6 mt-6 md:mt-0">

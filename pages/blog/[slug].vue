@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 w-full px-6 md:px-0">
+  <div class="mt-4 md:mt-10 w-full px-3 md:px-0">
     <NuxtLink to="/blog">
       <button
         class="ripple project-btn pr-3 pl-2 py-1 font-medium text-xl text-gray-100 rounded flex items-center justify-center"

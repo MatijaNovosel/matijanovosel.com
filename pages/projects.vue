@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <div class="text-4xl font-bold mb-3 mt-10">Projects</div>
+    <div class="text-4xl font-bold mb-3 mt-6 md:mt-10">Projects</div>
     <ProjectCard
       v-for="(project, i) in projects"
       :project="project"

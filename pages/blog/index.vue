@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <div class="text-4xl font-bold mb-8 mt-10 text-center">Blog</div>
+    <div class="text-4xl font-bold mb-8 mt-6 md:mt-10 text-center">Blog</div>
     <h1
       class="font-bold text-5xl md:text-7xl text-center font-space"
       v-if="loading"
@@ -13,7 +13,7 @@
       class="mt-5"
       v-else-if="error"
     />
-    <div class="grid grid-cols-12 md:space-x-6 px-6 md:px-0" v-else>
+    <div class="grid grid-cols-12 md:space-x-6 px-3 md:px-0" v-else>
       <BlogCard
         class="col-span-12 md:col-span-6 shrink cursor-pointer"
         v-for="(blog, i) in blogs"
