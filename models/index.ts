@@ -1,20 +1,3 @@
-export interface SelectItem<T> {
-  label: string;
-  value: T;
-}
-
-export interface TabItem {
-  name: string | undefined;
-  icon: string;
-  to: {
-    name: string;
-  };
-}
-
-export interface IDictionaryNumber<T> {
-  [index: number]: T;
-}
-
 export interface TechnologyItem {
   tooltip: string;
   color: string;
@@ -40,5 +23,4 @@ export interface BlogListItem {
 export interface LinkItem {
   to: string;
   text: string;
-  icon: any;
 }

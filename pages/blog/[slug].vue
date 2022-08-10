@@ -34,10 +34,14 @@ const loading = ref(true);
 const error = ref(false);
 
 onMounted(async () => {
-  const { data, pending, error } = await useFetch(
-    `/api/blog/${route.params.slug}`
-  );
-  loading.value = false;
+  try {
+    const { data } = await useFetch(`/api/blog/${route.params.slug}`);
+    console.log(data);
+  } catch {
+    error.value = true;
+  } finally {
+    loading.value = false;
+  }
 });
 
 const { setMeta } = useMetadata();

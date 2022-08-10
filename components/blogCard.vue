@@ -1,17 +1,17 @@
 <template>
   <NuxtLink :to="`/blog/${blog.id}`">
     <div
-      class="blog-img mb-5"
+      class="blog-img mb-5 w-full"
       :style="{
         backgroundImage: `url(${blog.img})`
       }"
     />
     <div class="flex flex-col justify-center">
-      <span class="text-gray-500">
+      <span class="text-gray-500 mb-1 text-sm">
         {{ formatMonth(blog.createdAt) }}
       </span>
       <span class="text-xl font-bold text-left"> {{ blog.title }} </span>
-      <span class="mb-4 mt-3 text-gray-400">
+      <span class="mb-4 mt-3 text-gray-400 text-sm">
         {{ blog.subtitle }}
       </span>
       <div>
@@ -39,7 +39,6 @@ defineProps({
 <style scoped>
 .blog-img {
   border-radius: 16px;
-  width: 100%;
   background-size: cover;
   background-position: center center;
   height: 250px;

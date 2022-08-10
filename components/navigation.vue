@@ -9,41 +9,30 @@
       :to="link.to"
       class="link relative flex items-center text-lg md:text-base"
     >
-      <component :is="link.icon" class="mx-2 md:mx-0" />
-      <span class="hidden md:block ml-2">
-        {{ link.text }}
-      </span>
+      {{ link.text }}
     </NuxtLink>
   </nav>
 </template>
 
 <script lang="ts" setup>
 import { LinkItem } from "@/models";
-import IconHome from "~icons/bi/house-fill";
-import IconAboutMe from "~icons/ion/person-sharp";
-import IconProjects from "~icons/fa-solid/boxes";
-import IconBlog from "~icons/mdi/library-books";
 
 const links: LinkItem[] = [
   {
     to: "/",
-    text: "Home",
-    icon: IconHome
+    text: "Home"
   },
   {
     to: "/aboutMe",
-    text: "About me",
-    icon: IconAboutMe
+    text: "About me"
   },
   {
     to: "/projects",
-    text: "Projects",
-    icon: IconProjects
+    text: "Projects"
   },
   {
     to: "/blog",
-    text: "Blog",
-    icon: IconBlog
+    text: "Blog"
   }
 ];
 </script>
