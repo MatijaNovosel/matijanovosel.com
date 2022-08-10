@@ -20,14 +20,14 @@
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
 import { randInt } from "../utils/helpers";
 import emojis from "../utils/emojis";
-import { Engine, Runner, Render, Composite, Bodies } from "matter-js";
+import Matter from "matter-js";
 
 let engine = null;
 let runner = null;
 
 const matter = ref<HTMLCanvasElement>();
 
-let render: Render;
+let render: Matter.Render;
 let intervalId: ReturnType<typeof setTimeout> | null = null;
 
 const offset = 30;
@@ -78,10 +78,10 @@ watch([pageDimensions.width, pageDimensions.height], async () => {
 });
 
 onMounted(() => {
-  engine = Engine.create();
-  runner = Runner.create();
+  engine = Matter.Engine.create();
+  runner = Matter.Runner.create();
 
-  render = Render.create({
+  render = Matter.Render.create({
     canvas: matter.value,
     engine,
     options: {
@@ -92,13 +92,13 @@ onMounted(() => {
     }
   });
 
-  Render.run(render);
-  Runner.run(runner, engine);
+  Matter.Render.run(render);
+  Matter.Runner.run(runner, engine);
 
   intervalId = setInterval(() => {
     const url = createEmojiImage();
 
-    const obj = Bodies.circle(
+    const obj = Matter.Bodies.circle(
       randInt(offset, pageDimensions.width.value - offset),
       60,
       20,
@@ -117,10 +117,10 @@ onMounted(() => {
       }
     );
 
-    Composite.add(engine.world, obj);
+    Matter.Composite.add(engine.world, obj);
 
     setTimeout(() => {
-      Composite.remove(engine.world, obj);
+      Matter.Composite.remove(engine.world, obj);
     }, 8000);
   }, 200);
 });
@@ -128,9 +128,9 @@ onMounted(() => {
 onBeforeUnmount(() => {
   clearTimeout(intervalId || -1);
   engine.world.bodies.forEach((body) => {
-    Composite.remove(engine.world, body);
+    Matter.Composite.remove(engine.world, body);
   });
-  Render.stop(render);
+  Matter.Render.stop(render);
 });
 
 const { setMeta } = useMetadata();
