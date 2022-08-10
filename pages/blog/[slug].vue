@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
-        <MarkdownRenderer :source="'# Hi!!'" />
+        <MarkdownRenderer :source="blog.html" />
       </div>
     </template>
   </div>
