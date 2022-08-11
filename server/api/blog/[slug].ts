@@ -8,10 +8,11 @@ const supabase = createClient(
 
 export default defineEventHandler(async (event) => {
   const blogId = event.context.params.slug;
+
   const { data, error } = await supabase
     .from("blogs")
     .select("*")
-    .eq("id", parseInt(blogId))
+    .eq("uid", blogId)
     .single();
 
   if (error) {
@@ -24,7 +25,7 @@ export default defineEventHandler(async (event) => {
       day: "numeric",
       year: "2-digit"
     })}'`,
-    id: data.id,
+    id: data.uid,
     img: data.image_url,
     subtitle: data.subtitle,
     tags: data.tags.split(","),

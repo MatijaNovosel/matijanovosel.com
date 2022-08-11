@@ -32,7 +32,7 @@ const projects: ProjectItem[] = [
   {
     description:
       "Frontend for the GymDash gym management web application, made as a group task for a college course.",
-    img: "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/62f38afcacc60-min.jpg",
+    img: "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/genericVue.jpg",
     link: "https://github.com/MatijaNovosel/gym-dash-ui",
     title: "GymDash"
   },
