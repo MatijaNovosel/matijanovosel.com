@@ -19,7 +19,7 @@ const projects: ProjectItem[] = [
   {
     description:
       "An application intended for both teachers and students with the purpose of making learning easier.",
-    img: "/lms.jpg",
+    img: "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/LMS.jpg",
     link: "https://github.com/MatijaNovosel/lms",
     title: "LMS"
   },
