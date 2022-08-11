@@ -1,6 +1,6 @@
 export interface TechnologyItem {
   tooltip: string;
-  color: string;
+  color: string | null;
   icon: any;
 }
 

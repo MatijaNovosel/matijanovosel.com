@@ -1,11 +1,11 @@
 <template>
   <div>
     <component
-      :style="{ fontSize: '1.6em', color: technology.color }"
+      :style="{ fontSize: '1.6em', color: technology.color || 'transparent' }"
       v-for="(technology, i) in technologies"
       :key="i"
       :is="technology.icon"
-      class="m-1"
+      class="m-1 icon"
       v-tooltip="{
         content: technology.tooltip,
         theme: 'info-tooltip'
@@ -98,3 +98,9 @@ const technologies: TechnologyItem[] = [
   }
 ];
 </script>
+
+<style scoped>
+.icon {
+  outline: none;
+}
+</style>

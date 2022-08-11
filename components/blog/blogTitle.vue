@@ -7,7 +7,7 @@
     </div>
     <div class="text-gray-300 mt-2 text-xs">
       Published on
-      <span class="text-orange-300">
+      <span class="text-green-vue">
         {{ createdAt }}
       </span>
     </div>

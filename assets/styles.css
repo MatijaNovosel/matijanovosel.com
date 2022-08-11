@@ -160,3 +160,7 @@ html {
   background-size: 100%;
   transition: background 0s;
 }
+
+.text-green-vue {
+  color: #42b883;
+}

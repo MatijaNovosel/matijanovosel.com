@@ -5,7 +5,7 @@
         {{ time }}
       </span>
     </div>
-    <div class="timeline-dot text-orange-400" />
+    <div class="timeline-dot text-green-vue" />
     <div class="timeline-content">
       <h6 class="timeline-title">
         <slot name="title" />

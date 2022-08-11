@@ -26,21 +26,21 @@
               <div class="flex flex-col">
                 <a
                   href="https://king-ict.com/"
-                  class="text-white font-bold underline"
+                  class="text-white font-bold decoration-dotted underline underline-offset-5"
                 >
                   King ICT
                 </a>
-                <span class="mt-1 text-sm text-orange-200">
+                <span class="mt-1 text-xs text-green-vue">
                   Software developer (student)
                 </span>
               </div>
             </template>
-            <div class="flex flex-col text-sm">
+            <div class="flex flex-col text-sm space-y-1 text-gray-300">
               <div>
-                🔸 Software development using full stack web technologies
+                • Software development using full stack web technologies
               </div>
-              <div>🔸 Development of mobile applications</div>
-              <div>🔸 Mentoring and creating educational content</div>
+              <div>• Development of mobile applications</div>
+              <div>• Mentoring and creating educational content</div>
             </div>
           </TimelineItem>
           <TimelineItem time="July 2019 - July 2021">
@@ -48,22 +48,22 @@
               <div class="flex flex-col">
                 <a
                   href="https://www.omega-software.hr/"
-                  class="text-white font-bold underline"
+                  class="text-white font-bold decoration-dotted underline underline-offset-5"
                 >
                   Omega software
                 </a>
-                <span class="mt-1 text-sm text-orange-200">
+                <span class="mt-1 text-xs text-green-vue">
                   Junior software developer (student)
                 </span>
               </div>
             </template>
-            <div class="flex flex-col text-sm">
+            <div class="flex flex-col text-sm space-y-1 text-gray-300">
               <div>
-                🔸 Software development on multiple company projects using full
+                • Software development on multiple company projects using full
                 stack web technologies
               </div>
               <div>
-                🔸 Mentoring and creating educational Javascript content for new
+                • Mentoring and creating educational Javascript content for new
                 and future employees
               </div>
             </div>
@@ -73,19 +73,17 @@
               <div class="flex flex-col">
                 <a
                   href="https://www.maidea.com/"
-                  class="text-white font-bold underline"
+                  class="text-white font-bold decoration-dotted underline underline-offset-5"
                 >
                   Maidea
                 </a>
-                <span class="mt-1 text-sm text-orange-200">
+                <span class="mt-1 text-xs text-green-vue">
                   Junior software developer (student)
                 </span>
               </div>
             </template>
-            <div class="flex flex-col text-sm">
-              <div>
-                🔸 Software development using full stack web technologies.
-              </div>
+            <div class="flex flex-col text-sm space-y-1 text-gray-300">
+              <div>Software development using full stack web technologies.</div>
             </div>
           </TimelineItem>
         </Timeline>
@@ -98,11 +96,11 @@
               <div class="flex flex-col">
                 <a
                   href="https://www.tvz.hr/"
-                  class="text-white font-bold underline"
+                  class="text-white font-bold decoration-dotted underline underline-offset-5"
                 >
                   Zagreb university of applied sciences
                 </a>
-                <span class="mt-1 text-sm text-orange-200">
+                <span class="mt-1 text-xs text-green-vue">
                   Master's degree (struc. spec. ing. techn. inf.)
                 </span>
               </div>
@@ -113,11 +111,11 @@
               <div class="flex flex-col">
                 <a
                   href="https://www.tvz.hr/"
-                  class="text-white font-bold underline"
+                  class="text-white font-bold decoration-dotted underline underline-offset-5"
                 >
                   Zagreb university of applied sciences
                 </a>
-                <span class="mt-1 text-sm text-orange-200">
+                <span class="mt-1 text-xs text-green-vue">
                   Bachelor of Engineering in Information Technology (bacc. ing.
                   techn. inf.)
                 </span>
@@ -129,11 +127,11 @@
               <div class="flex flex-col">
                 <a
                   href="https://www.tsrb.hr/"
-                  class="text-white font-bold underline"
+                  class="text-white font-bold decoration-dotted underline underline-offset-5"
                 >
                   Tehnička škola Ruđera Boškovića
                 </a>
-                <span class="mt-1 text-sm text-orange-200">
+                <span class="mt-1 text-xs text-green-vue">
                   Computer technician
                 </span>
               </div>

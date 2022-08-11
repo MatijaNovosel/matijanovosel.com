@@ -7,7 +7,7 @@
       }"
     />
     <div class="flex flex-col justify-center">
-      <span class="text-gray-500 mb-1 text-sm"> {{ blog.createdAt }} </span>
+      <span class="mb-1 text-sm text-green-vue"> {{ blog.createdAt }} </span>
       <span class="text-xl font-bold text-left"> {{ blog.title }} </span>
       <span class="mb-4 mt-3 text-gray-400 text-sm">
         {{ blog.subtitle }}

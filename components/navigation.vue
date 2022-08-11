@@ -5,7 +5,7 @@
     <NuxtLink
       v-for="(link, i) in links"
       :key="i"
-      active-class="text-orange-300"
+      active-class="text-green-vue"
       :to="link.to"
       class="link relative flex items-center text-sm md:text-base font-bold"
     >
