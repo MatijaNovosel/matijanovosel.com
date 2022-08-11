@@ -22,35 +22,27 @@
     />
     <template v-else>
       <div
-        class="blog-img rounded-t-lg mt-5 relative"
+        class="blog-img rounded-b-lg md:rounded-b-none rounded-t-lg mt-5 relative"
         :style="{
           backgroundImage: `url(${blog.img})`
         }"
       >
-        <div
-          class="flex flex-col absolute title-box bg-dark-400 px-5 py-3 rounded-tr-none md:rounded-tr-lg w-full md:w-auto"
-        >
-          <span class="font-bold text-sm md:text-3xl">
-            {{ blog.title }}
-          </span>
-          <span class="text-gray-300 mt-2 text-sm">
-            Published on
-            <span class="text-orange-300">
-              {{ blog.createdAt }}
-            </span>
-          </span>
-          <div class="text-xs mt-3">
-            <span
-              v-for="(tag, j) in blog.tags"
-              :key="j"
-              class="mr-1 px-3 py-1 bg-dark-300 rounded-md"
-            >
-              {{ tag }}
-            </span>
-          </div>
-        </div>
+        <BlogTitle
+          class="absolute hidden md:block"
+          :title="blog.title"
+          :created-at="blog.createdAt"
+          :tags="blog.tags"
+        />
       </div>
-      <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
+      <BlogTitle
+        class="my-3 md:hidden"
+        :title="blog.title"
+        :created-at="blog.createdAt"
+        :tags="blog.tags"
+      />
+      <div
+        class="bg-dark-800 rounded-b-lg rounded-t-lg md:rounded-t-none p-5 blog-content"
+      >
         <MarkdownRenderer :source="blog.html" />
       </div>
     </template>
@@ -86,11 +78,6 @@ onMounted(async () => {
   background-size: cover;
   background-position: center center;
   height: 400px;
-}
-
-.title-box {
-  background-color: rgba(0, 0, 0, 0.505);
-  bottom: 0px;
 }
 
 :deep(.blog-content) h6:not(:first-child) {
