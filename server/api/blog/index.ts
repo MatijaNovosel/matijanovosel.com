@@ -9,7 +9,7 @@ const supabase = createClient(
 export default defineEventHandler(async () => {
   const { data, error } = await supabase
     .from("blogs")
-    .select("created_at, title, uid, image_url, subtitle, tags")
+    .select("created_at, title, title_id, image_url, subtitle, tags")
     .order("created_at", {
       ascending: false
     });
@@ -25,7 +25,7 @@ export default defineEventHandler(async () => {
       year: "2-digit"
     })}'`,
     title: blog.title,
-    id: blog.uid,
+    id: blog.title_id,
     img: blog.image_url,
     subtitle: blog.subtitle,
     tags: blog.tags.split(",")

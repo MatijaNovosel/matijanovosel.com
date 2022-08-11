@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   const { data, error } = await supabase
     .from("blogs")
     .select("*")
-    .eq("uid", blogId)
+    .eq("title_id", blogId)
     .single();
 
   if (error) {
@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
       day: "numeric",
       year: "2-digit"
     })}'`,
-    id: data.uid,
+    id: data.title_id,
     img: data.image_url,
     subtitle: data.subtitle,
     tags: data.tags.split(","),
