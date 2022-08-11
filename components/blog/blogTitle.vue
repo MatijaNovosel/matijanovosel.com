@@ -11,20 +11,17 @@
         {{ createdAt }}
       </span>
     </div>
-    <div class="text-xs mt-4 md:mt-3">
-      <span
-        v-for="(tag, j) in tags"
-        :key="j"
-        class="mr-1 px-3 py-1 bg-dark-300 rounded-md"
-      >
+    <div class="mt-4 md:mt-3">
+      <Tag :background-color="tagColors[tag]" v-for="(tag, j) in tags" :key="j">
         {{ tag }}
-      </span>
+      </Tag>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { PropType } from "vue";
+import { tagColors } from "~/utils/helpers";
 
 defineProps({
   title: {

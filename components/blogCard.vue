@@ -12,10 +12,14 @@
       <span class="mb-4 mt-3 text-gray-400 text-sm">
         {{ blog.subtitle }}
       </span>
-      <div class="text-sm">
-        <span v-for="(tag, j) in blog.tags" :key="j" class="text-gray-600 mr-1">
-          #{{ tag }}
-        </span>
+      <div>
+        <Tag
+          :background-color="tagColors[tag]"
+          v-for="(tag, j) in blog.tags"
+          :key="j"
+        >
+          {{ tag }}
+        </Tag>
       </div>
     </div>
   </NuxtLink>
@@ -24,6 +28,7 @@
 <script lang="ts" setup>
 import { PropType } from "vue";
 import { BlogListItem } from "~/models";
+import { tagColors } from "~/utils/helpers";
 
 defineProps({
   blog: {
