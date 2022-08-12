@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full flex justify-between">
+  <footer class="w-full flex justify-between z-2 md:pb-5">
     <div>
       <span class="text-sm md:text-base"> &copy; Matija Novosel </span>
     </div>

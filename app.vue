@@ -1,9 +1,11 @@
 <template>
   <Html lang="en-US">
-    <div class="min-h-screen flex justify-center bg-black text-white">
+    <div
+      class="min-h-screen flex justify-center bg-black text-white px-5 pb-5 md:px-0 md:pb-0"
+    >
       <div
         ref="page"
-        class="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center"
+        class="max-w-screen-lg w-full relative flex flex-col items-center"
         :class="isIndex && 'justify-between'"
       >
         <Navigation />
