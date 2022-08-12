@@ -1,7 +1,7 @@
 <template>
   <Html lang="en-US">
     <div
-      class="min-h-screen flex justify-center bg-black text-white px-5 pb-5 md:px-0 md:pb-0"
+      class="min-h-screen flex justify-center bg-black text-white px-5 pb-5 md:px-0"
     >
       <div
         ref="page"
