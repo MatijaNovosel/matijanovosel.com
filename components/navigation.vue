@@ -1,12 +1,14 @@
 <template>
-  <nav class="flex z-2 w-full justify-center md:justify-end pt-4">
-    <div class="nav-slider" />
+  <nav class="flex z-2 w-full justify-center md:justify-end pt-4 relative">
+    <div class="nav-slider" :style="navSliderStyle" />
     <NuxtLink
+      :id="link.to"
       v-for="(link, i) in links"
       :key="i"
       active-class="active-tab"
       :to="link.to"
       class="link relative flex items-center text-base md:text-lg font-bold nav-tab"
+      @mouseover="tabHover(link.to)"
     >
       {{ link.text }}
     </NuxtLink>
@@ -15,6 +17,19 @@
 
 <script lang="ts" setup>
 import { LinkItem } from "@/models";
+import { useElementSize } from "@vueuse/core";
+import { Ref } from "vue";
+
+const navSliderOffset = ref<number>(0);
+const navSliderWidth = ref<number>(0);
+
+let widths: {
+  dimensions: {
+    width: Ref<number>;
+    height: Ref<number>;
+  };
+  id: string;
+}[] = [];
 
 const links: LinkItem[] = [
   {
@@ -34,19 +49,59 @@ const links: LinkItem[] = [
     text: "Projects"
   }
 ];
+
+const tabHover = (id: string) => {
+  let offsetCalc = 0;
+
+  for (let i = widths.length - 1; i >= 0; i--) {
+    const tabId = widths[i].id;
+    const w = widths[i].dimensions.width.value;
+
+    console.log(w, tabId, id);
+
+    if (tabId === id) {
+      navSliderWidth.value = w;
+      break;
+    }
+
+    offsetCalc += widths[i].dimensions.width.value + 24;
+  }
+
+  navSliderOffset.value = offsetCalc;
+};
+
+const navSliderStyle = computed(() => {
+  return {
+    transform: `translateX(${-navSliderOffset.value}px)`,
+    width: `${navSliderWidth.value + 20}px`
+  };
+});
+
+onMounted(() => {
+  links.forEach((link) => {
+    widths.push({
+      id: link.to,
+      dimensions: useElementSize(document.getElementById(link.to))
+    });
+  });
+});
 </script>
 
 <style scoped>
+nav:hover .nav-slider {
+  opacity: 1;
+}
+
 .nav-slider {
   width: 86px;
   transform: translateX(0px);
   transition-duration: 150ms;
   opacity: 0;
   contain: strict;
-  background: rgba(128, 128, 128, 0.368);
+  background: rgba(171, 154, 154, 0.25);
   position: absolute;
-  top: 9px;
-  left: 0;
+  top: 24px;
+  right: 3px;
   border-radius: 4px;
   z-index: -1;
   height: 32px;
