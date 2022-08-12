@@ -57,8 +57,6 @@ const tabHover = (id: string) => {
     const tabId = widths[i].id;
     const w = widths[i].dimensions.width.value;
 
-    console.log(w, tabId, id);
-
     if (tabId === id) {
       navSliderWidth.value = w;
       break;
