@@ -21,7 +21,7 @@ import { useElementSize } from "@vueuse/core";
 import { Ref } from "vue";
 
 const navSliderOffset = ref<number>(0);
-const navSliderWidth = ref<number>(0);
+const navSliderWidth = ref<number>(54);
 
 let widths: {
   dimensions: {
@@ -136,5 +136,11 @@ nav:hover .nav-slider {
   right: 9px;
   bottom: 0;
   border-bottom: 2px solid #42b883;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-slider {
+    visibility: hidden;
+  }
 }
 </style>

@@ -1,8 +1,6 @@
 <template>
   <Html lang="en-US">
-    <div
-      class="min-h-screen flex justify-center bg-black text-white px-5 pb-5 md:px-0"
-    >
+    <div class="min-h-screen flex justify-center bg-black text-white px-5 pb-5">
       <div
         ref="page"
         class="max-w-screen-lg w-full relative flex flex-col items-center"
