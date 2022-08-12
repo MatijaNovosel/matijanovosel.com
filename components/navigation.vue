@@ -41,12 +41,12 @@ const links: LinkItem[] = [
     text: "Blog"
   },
   {
-    to: "/aboutMe",
-    text: "About me"
-  },
-  {
     to: "/projects",
     text: "Projects"
+  },
+  {
+    to: "/aboutMe",
+    text: "About me"
   }
 ];
 
