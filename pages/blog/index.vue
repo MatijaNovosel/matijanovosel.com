@@ -3,7 +3,7 @@
     <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
       Blogs
     </div>
-    <div class="flex px-2 md:px-0">
+    <div class="flex px-1 md:px-0">
       <div
         class="bg-dark-800 icon flex items-center justify-center rounded-l-lg"
       >
@@ -36,7 +36,7 @@
       class="mt-5"
       v-else-if="error"
     />
-    <div class="grid grid-cols-12 px-3 md:px-0 mt-6" v-else>
+    <div class="grid grid-cols-12 px-1 md:px-0 mt-6" v-else>
       <div class="contents md:space-x-6" v-if="blogs.length > 0">
         <BlogCard
           class="col-span-12 md:col-span-6"
