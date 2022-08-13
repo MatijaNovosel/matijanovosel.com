@@ -1,4 +1,4 @@
-<h1 align=center>CV</h1>
+<h1 align=center>matijanovosel.com</h1>
 <p align=center>CV website.</p>
 
 ## 🔨 Built With
