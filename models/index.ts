@@ -8,7 +8,7 @@ export interface ProjectItem {
   title: string;
   description: string;
   link: string;
-  img: string;
+  tags: string[];
 }
 
 export interface BlogListItem {

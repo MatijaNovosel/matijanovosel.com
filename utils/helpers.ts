@@ -9,5 +9,17 @@ export const tagColors = {
   vue2: "#3da677",
   vue3: "#228056",
   typescript: "#3178c6",
-  markdown: "#ff4200"
+  markdown: "#ff4200",
+  flutter: "#027DFD",
+  dotnet: "#67217a",
+  dotnetcore: "#673f94",
+  mssql: "#a91d22",
+  supabase: "#3da677",
+  quasar: "#00b4ff",
+  vuetify: "#6dcbf2",
+  spring: "#77bc1f",
+  unity: "#202a34",
+  electron: "#437d88",
+  express: "#4f9640",
+  socketio: "#3d3e34"
 };

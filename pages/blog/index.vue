@@ -15,7 +15,7 @@
     />
     <div class="grid grid-cols-12 md:space-x-6 px-3 md:px-0" v-else>
       <BlogCard
-        class="col-span-12 md:col-span-6 shrink cursor-pointer"
+        class="col-span-12 md:col-span-6"
         v-for="(blog, i) in blogs"
         :blog="blog"
         :key="i"

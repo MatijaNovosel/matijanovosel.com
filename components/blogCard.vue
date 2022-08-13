@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/blog/${blog.id}`">
+  <NuxtLink :to="`/blog/${blog.id}`" class="shrink">
     <div
       class="blog-img mb-5 w-full"
       :style="{
@@ -43,13 +43,13 @@ defineProps({
   border-radius: 16px;
   background-size: cover;
   background-position: center center;
-  height: 250px;
+  height: 220px;
 }
 
 @media only screen and (max-width: 600px) {
   .blog-img {
     border-radius: 14px;
-    height: 200px;
+    height: 170px;
   }
 }
 </style>
