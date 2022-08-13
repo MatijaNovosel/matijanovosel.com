@@ -1,5 +1,7 @@
 <template>
-  <nav class="flex z-2 pt-4 relative justify-start">
+  <nav
+    class="flex z-3 mt-4 relative justify-start bg-dark-400 md:bg-black rounded-lg md:rounded-none"
+  >
     <div class="nav-slider" :style="navSliderStyle" />
     <NuxtLink
       :id="link.to"
@@ -86,6 +88,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
+nav {
+  position: fixed;
+}
+
 nav:hover .nav-slider {
   opacity: 1;
 }
@@ -98,7 +104,7 @@ nav:hover .nav-slider {
   contain: strict;
   background: rgba(171, 154, 154, 0.25);
   position: absolute;
-  top: 24px;
+  top: 8px;
   right: 3px;
   border-radius: 4px;
   z-index: -1;

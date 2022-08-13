@@ -1,6 +1,6 @@
 <template>
   <div
-    class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10 px-3 md:px-0"
+    class="justify-center items-center mx-auto w-full flex flex-col max-w-xl mt-10 px-3 md:px-0 offset"
   >
     <img class="me-img" src="/me.jpg" />
     <p class="font-bold mt-6 mb-1 text-3xl md:text-5xl">Matija Novosel</p>

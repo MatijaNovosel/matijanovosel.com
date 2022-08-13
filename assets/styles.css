@@ -164,3 +164,7 @@ html {
 .text-green-vue {
   color: #42b883;
 }
+
+.offset {
+  padding-top: 60px;
+}
