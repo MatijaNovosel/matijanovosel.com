@@ -1,13 +1,13 @@
 <template>
   <div class="offset">
-    <div class="text-4xl font-bold mb-3 mt-6 md:pl-4 text-center md:text-left">
+    <div class="text-4xl font-bold mb-5 mt-6 text-center md:text-left">
       Projects
     </div>
-    <div class="grid grid-cols-12 md:pb-5">
+    <div class="grid grid-cols-12">
       <div
         v-for="(project, i) in projects"
         :key="i"
-        class="col-span-12 md:col-span-6 px-4"
+        class="col-span-12 md:col-span-6 mb-5 md:pr-4"
       >
         <ProjectCard :project="project" />
       </div>

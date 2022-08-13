@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="flex">
     <component
-      :style="{ fontSize: '1.6em', color: technology.color || 'transparent' }"
+      :style="{ color: technology.color || 'transparent' }"
       v-for="(technology, i) in technologies"
       :key="i"
       :is="technology.icon"
-      class="m-1 icon"
+      class="m-1 icon text-lg"
       v-tooltip="{
         content: technology.tooltip,
         theme: 'info-tooltip'

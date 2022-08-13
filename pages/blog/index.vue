@@ -1,20 +1,28 @@
 <template>
   <div class="contents">
-    <div class="text-4xl font-bold mb-4 mt-6 md:mt-10 text-center md:text-left">
+    <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
       Blogs
     </div>
     <div class="flex px-2 md:px-0">
       <div
         class="bg-dark-800 icon flex items-center justify-center rounded-l-lg"
       >
-        <IconSearch />
+        <IconSearch class="text-lg" />
       </div>
       <input
         placeholder="Search blog entries"
-        class="w-full rounded-r-lg bg-dark-800"
+        class="w-full bg-dark-800"
         @input="searchEntries"
         v-model="searchText"
       />
+      <div
+        class="bg-dark-800 icon flex items-center justify-center rounded-r-lg"
+      >
+        <IconClear
+          @click="clearSearch"
+          class="rounded-full clear-icon ripple text-xl"
+        />
+      </div>
     </div>
     <h1
       class="font-bold text-5xl md:text-7xl text-center font-space"
@@ -50,6 +58,7 @@
 <script lang="ts" setup>
 import { BlogListItem } from "@/models";
 import IconSearch from "~icons/material-symbols/search";
+import IconClear from "~icons/ic/round-clear";
 
 const loading = ref(true);
 const error = ref(false);
@@ -57,9 +66,16 @@ const searchText = ref<string | null>(null);
 const allBlogs = ref<BlogListItem[]>([]);
 const blogs = ref<BlogListItem[]>([]);
 
+const clearSearch = () => {
+  searchText.value = null;
+  searchEntries();
+};
+
 const searchEntries = () => {
   blogs.value = allBlogs.value.filter((blog) =>
-    blog.title.toLowerCase().includes(searchText.value.toLowerCase())
+    blog.title
+      .toLowerCase()
+      .includes(searchText.value ? searchText.value.toLowerCase() : "")
   );
 };
 
@@ -79,6 +95,10 @@ setMeta("Matija Novosel - Blog");
 </script>
 
 <style scoped>
+.clear-icon:hover {
+  cursor: pointer;
+}
+
 input {
   height: 50px;
   -webkit-tap-highlight-color: transparent;

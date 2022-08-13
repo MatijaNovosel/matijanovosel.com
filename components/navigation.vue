@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex z-3 mt-4 relative justify-start bg-dark-400 md:bg-black rounded-lg md:rounded-none"
+    class="flex z-3 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute"
   >
     <div class="nav-slider" :style="navSliderStyle" />
     <NuxtLink
@@ -47,7 +47,7 @@ const links: LinkItem[] = [
     text: "Projects"
   },
   {
-    to: "/aboutMe",
+    to: "/about",
     text: "About me"
   }
 ];
@@ -88,10 +88,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-nav {
-  position: fixed;
-}
-
 nav:hover .nav-slider {
   opacity: 1;
 }
