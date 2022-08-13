@@ -29,6 +29,7 @@ import IconVisualStudioCode from "~icons/mdi/microsoft-visual-studio-code";
 import IconGit from "~icons/mdi/git";
 import IconFlutter from "~icons/logos/flutter";
 import IconDatabase from "~icons/mdi/database";
+import IconSupabase from "~icons/logos/supabase-icon";
 
 const technologies: TechnologyItem[] = [
   {
@@ -95,6 +96,11 @@ const technologies: TechnologyItem[] = [
     color: "purple",
     icon: IconDatabase,
     tooltip: "MySQL, MSSQL, PostgreSQL"
+  },
+  {
+    color: "",
+    icon: IconSupabase,
+    tooltip: "Supabase"
   }
 ];
 </script>
