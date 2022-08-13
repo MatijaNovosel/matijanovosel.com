@@ -2,7 +2,7 @@
   <div class="contents">
     <canvas ref="matter" class="z-1" />
     <div
-      class="z-2 p-16 max-w-screen-md w-full flex flex-col items-center justify-center rounded-3xl shadow-inset-white shadow-none"
+      class="z-2 p-16 w-full flex flex-col items-center justify-center rounded-3xl"
     >
       <p
         class="inline-flex items-center text-center text-lg md:text-2xl text-gray-300 tracking-wide"

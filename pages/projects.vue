@@ -1,6 +1,8 @@
 <template>
-  <div class="contents">
-    <div class="text-4xl font-bold mb-3 mt-6">Projects</div>
+  <div>
+    <div class="text-4xl font-bold mb-3 mt-6 pl-4 text-center md:text-left">
+      Projects
+    </div>
     <div class="grid grid-cols-12 md:pb-5">
       <div
         v-for="(project, i) in projects"

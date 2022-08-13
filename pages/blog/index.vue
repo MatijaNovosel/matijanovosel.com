@@ -1,6 +1,8 @@
 <template>
   <div class="contents">
-    <div class="text-4xl font-bold mb-8 mt-6 md:mt-10 text-center">Blog</div>
+    <div class="text-4xl font-bold mb-8 mt-6 md:mt-10 text-center md:text-left">
+      Blogs
+    </div>
     <h1
       class="font-bold text-5xl md:text-7xl text-center font-space"
       v-if="loading"

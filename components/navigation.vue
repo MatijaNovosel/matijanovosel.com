@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex z-2 w-full justify-center md:justify-end pt-4 relative">
+  <nav class="flex z-2 pt-4 relative justify-start">
     <div class="nav-slider" :style="navSliderStyle" />
     <NuxtLink
       :id="link.to"
