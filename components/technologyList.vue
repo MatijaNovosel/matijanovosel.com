@@ -1,7 +1,7 @@
 <template>
-  <div class="flex">
+  <div>
     <component
-      :style="{ color: technology.color || 'transparent' }"
+      :style="{ fontSize: '25px', color: technology.color || 'transparent' }"
       v-for="(technology, i) in technologies"
       :key="i"
       :is="technology.icon"
