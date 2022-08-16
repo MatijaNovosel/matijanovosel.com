@@ -15,7 +15,7 @@ export const tagColors = {
   flutter: "#027DFD",
   dotnet: "#67217a",
   dotnetcore: "#673f94",
-  mssql: "#a91d22",
+  mssql: "#e38c00",
   supabase: "#3da677",
   quasar: "#00b4ff",
   vuetify: "#6dcbf2",
@@ -26,7 +26,9 @@ export const tagColors = {
   socketio: "#3d3e34",
   windicss: "#3b82f6",
   vercel: "#000000",
-  nuxt3: "#66bd99"
+  nuxt3: "#66bd99",
+  js: "#f1e05a",
+  "c#": "#178600"
 };
 
 export const createEmojiImage = (): string => {
@@ -46,7 +48,6 @@ export const createEmojiImage = (): string => {
     ctx.font = "32pt sans-serif";
     ctx.textAlign = "center";
     ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
-
     url = drawing.toDataURL("image/png");
   }
 

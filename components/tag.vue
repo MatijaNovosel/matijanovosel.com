@@ -3,7 +3,7 @@
     :style="{
       backgroundColor
     }"
-    class="mr-1 px-3 py-1 rounded-md text-xs"
+    class="mr-1 px-3 py-1 rounded-md text-xs font-mono"
   >
     <slot />
   </span>
