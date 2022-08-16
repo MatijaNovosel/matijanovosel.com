@@ -7,7 +7,7 @@
       <div class="mt-2 text-gray-400 text-sm md:text-xs">
         {{ project.description }}
       </div>
-      <div class="mt-3">
+      <div class="mt-3 flex">
         <Tag
           :background-color="tagColors[tag]"
           v-for="(tag, j) in project.tags"
