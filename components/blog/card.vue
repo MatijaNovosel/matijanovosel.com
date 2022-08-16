@@ -12,7 +12,7 @@
       <span class="mb-4 mt-3 text-gray-400 text-sm">
         {{ blog.subtitle }}
       </span>
-      <div>
+      <div class="flex flex-wrap">
         <Tag
           :background-color="tagColors[tag]"
           v-for="(tag, j) in blog.tags"
