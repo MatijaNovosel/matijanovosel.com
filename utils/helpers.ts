@@ -21,5 +21,7 @@ export const tagColors = {
   unity: "#202a34",
   electron: "#437d88",
   express: "#4f9640",
-  socketio: "#3d3e34"
+  socketio: "#3d3e34",
+  windicss: "#3b82f6",
+  vercel: "#000000"
 };

@@ -27,10 +27,22 @@ const projects: ProjectItem[] = [
     tags: ["vue2", "dotnetcore", "mssql"]
   },
   {
+    description: "Personal website.",
+    tags: ["supabase", "vue3", "windicss", "vercel"],
+    link: "https://github.com/MatijaNovosel/matijanovosel.com",
+    title: "matijanovosel.com"
+  },
+  {
     description: "Messaging service for the web, based on WhatsApp.",
     tags: ["supabase", "vue3", "quasar"],
     link: "https://github.com/MatijaNovosel/chat-app-web",
     title: "Chat app web"
+  },
+  {
+    description: "App for tracking personal finances.",
+    tags: ["dotnetcore", "vue3", "quasar"],
+    link: "https://github.com/MatijaNovosel/fin-app",
+    title: "FinApp"
   },
   {
     description:
@@ -38,12 +50,6 @@ const projects: ProjectItem[] = [
     tags: ["vue2", "vuetify", "spring"],
     link: "https://github.com/MatijaNovosel/gym-dash-ui",
     title: "GymDash"
-  },
-  {
-    description: "App for tracking personal finances.",
-    tags: ["dotnetcore", "vue3", "quasar"],
-    link: "https://github.com/MatijaNovosel/fin-app",
-    title: "FinApp"
   },
   {
     description: "Bullet hell RPG roguelike.",
