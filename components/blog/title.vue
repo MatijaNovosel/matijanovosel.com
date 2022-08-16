@@ -11,7 +11,7 @@
         {{ createdAt }}
       </span>
     </div>
-    <div class="mt-4 md:mt-3">
+    <div class="mt-4 md:mt-3 flex flex-wrap">
       <Tag :background-color="tagColors[tag]" v-for="(tag, j) in tags" :key="j">
         {{ tag }}
       </Tag>
