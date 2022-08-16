@@ -1,12 +1,12 @@
 <template>
-  <span
+  <div
     :style="{
       backgroundColor
     }"
-    class="mr-1 px-3 py-1 rounded-md text-xs font-mono"
+    class="px-3 py-1 rounded-md text-xs font-mono m-1"
   >
     <slot />
-  </span>
+  </div>
 </template>
 
 <script lang="ts" setup>
