@@ -10,6 +10,7 @@
         <IconSearch class="text-lg" />
       </div>
       <input
+        :disabled="loading || error"
         placeholder="Search blog entries"
         class="w-full bg-dark-800"
         @input="searchEntries"
@@ -82,7 +83,7 @@ const searchEntries = () => {
 onMounted(async () => {
   try {
     allBlogs.value = await $fetch("/api/blog");
-    blogs.value = await $fetch("/api/blog");
+    blogs.value = allBlogs.value;
   } catch {
     error.value = true;
   } finally {
