@@ -1,3 +1,5 @@
+import emojis from "./emojis";
+
 export const randInt = (min: number, max: number) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -24,4 +26,30 @@ export const tagColors = {
   socketio: "#3d3e34",
   windicss: "#3b82f6",
   vercel: "#000000"
+};
+
+export const createEmojiImage = (): string => {
+  const drawing = document.createElement("canvas");
+
+  drawing.width = 150;
+  drawing.height = 150;
+
+  const ctx = drawing.getContext("2d");
+  let url = "";
+
+  if (ctx) {
+    ctx.beginPath();
+    ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fill();
+    ctx.font = "32pt sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
+
+    url = drawing.toDataURL("image/png");
+  }
+
+  drawing.remove();
+
+  return url;
 };

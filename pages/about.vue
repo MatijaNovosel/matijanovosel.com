@@ -5,7 +5,7 @@
     </div>
     <div class="grid grid-cols-12">
       <div class="col-span-12 md:col-span-7 md:pr-5">
-        <Picture class="md:hidden mt-2" />
+        <BlogPicture class="md:hidden mt-2" />
         <p class="text-justify mt-5 md:mt-0">
           Hi. I'm a programmer from Croatia. I like developing applications of
           all sorts and have been interested in doing so from a young age.
@@ -14,8 +14,8 @@
           drawing and listening to music.
         </p>
         <div class="font-bold pt-5 text-xl">Technologies</div>
-        <TechnologyList class="mt-2" />
-        <Contact class="md:hidden" />
+        <BlogTechnologyList class="mt-2" />
+        <BlogContact class="md:hidden" />
         <div class="font-bold py-5 text-xl">Work experience</div>
         <Timeline>
           <TimelineItem time="August 2021 - Current">
@@ -135,8 +135,8 @@
         </Timeline>
       </div>
       <div class="col-span-12 md:col-span-5 hidden md:block text-center">
-        <Picture />
-        <Contact />
+        <BlogPicture />
+        <BlogContact />
       </div>
     </div>
   </div>

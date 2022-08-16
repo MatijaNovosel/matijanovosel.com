@@ -5,7 +5,7 @@
         ref="page"
         class="max-w-screen-lg w-full relative flex flex-col items-center md:items-end justify-between"
       >
-        <Navigation />
+        <AppNavigation />
         <div v-if="isIndex" />
         <NuxtPage />
         <AppFooter />

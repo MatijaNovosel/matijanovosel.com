@@ -1,12 +1,8 @@
 <template>
   <div class="contents">
     <canvas ref="matter" class="z-1" />
-    <div
-      class="z-2 p-16 w-full flex flex-col items-center justify-center rounded-3xl"
-    >
-      <p
-        class="inline-flex items-center text-center text-lg md:text-2xl text-gray-300 tracking-wide"
-      >
+    <div class="z-2 p-16 w-full flex flex-col items-center justify-center">
+      <p class="text-center text-lg md:text-2xl text-gray-300">
         <span class="wave text-4xl mr-3">👋</span>
         Hi, I'm
       </p>
@@ -18,8 +14,7 @@
 
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
-import { randInt } from "../utils/helpers";
-import emojis from "../utils/emojis";
+import { createEmojiImage, randInt } from "../utils/helpers";
 import Matter from "matter-js";
 
 let engine = null;
@@ -35,32 +30,6 @@ const pageDimensions = inject<{
   width: Ref<number>;
   height: Ref<number>;
 }>("pageDimensions");
-
-const createEmojiImage = (): string => {
-  const drawing = document.createElement("canvas");
-
-  drawing.width = 150;
-  drawing.height = 150;
-
-  const ctx = drawing.getContext("2d");
-  let url = "";
-
-  if (ctx) {
-    ctx.beginPath();
-    ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fill();
-    ctx.font = "32pt sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
-
-    url = drawing.toDataURL("image/png");
-  }
-
-  drawing.remove();
-
-  return url;
-};
 
 watch([pageDimensions.width, pageDimensions.height], async () => {
   const width = pageDimensions.width;
