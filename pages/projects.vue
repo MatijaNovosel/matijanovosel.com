@@ -22,7 +22,7 @@ const projects: ProjectItem[] = [
   {
     description:
       "An application intended for both teachers and students with the purpose of making learning easier.",
-    link: "https://github.com/MatijaNovosel/lms",
+    link: "https://github.com/MatijaNovosel/learning-management-system",
     title: "LMS",
     tags: ["vue2", "dotnetcore", "mssql"]
   },
