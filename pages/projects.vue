@@ -28,7 +28,7 @@ const projects: ProjectItem[] = [
   },
   {
     description: "Personal website.",
-    tags: ["supabase", "vue3", "windicss", "vercel"],
+    tags: ["supabase", "vue3", "windicss", "vercel", "nuxt3"],
     link: "https://github.com/MatijaNovosel/matijanovosel.com",
     title: "matijanovosel.com"
   },

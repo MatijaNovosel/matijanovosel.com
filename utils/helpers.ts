@@ -25,7 +25,8 @@ export const tagColors = {
   express: "#4f9640",
   socketio: "#3d3e34",
   windicss: "#3b82f6",
-  vercel: "#000000"
+  vercel: "#000000",
+  nuxt3: "#66bd99"
 };
 
 export const createEmojiImage = (): string => {

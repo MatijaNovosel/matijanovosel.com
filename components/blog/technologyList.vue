@@ -30,6 +30,7 @@ import IconGit from "~icons/mdi/git";
 import IconFlutter from "~icons/logos/flutter";
 import IconDatabase from "~icons/mdi/database";
 import IconSupabase from "~icons/logos/supabase-icon";
+import IconNuxt from "~icons/logos/nuxt-icon";
 
 const technologies: TechnologyItem[] = [
   {
@@ -101,6 +102,11 @@ const technologies: TechnologyItem[] = [
     color: "",
     icon: IconSupabase,
     tooltip: "Supabase"
+  },
+  {
+    color: "",
+    icon: IconNuxt,
+    tooltip: "Nuxt"
   }
 ];
 </script>
