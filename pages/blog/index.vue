@@ -4,29 +4,14 @@
       Blogs
     </div>
     <div class="flex px-1 md:px-0">
-      <div class="flex flex-1 pr-3">
-        <div
-          class="bg-dark-800 icon flex items-center justify-center rounded-l-lg px-3"
-        >
-          <IconSearch class="text-lg text-gray-700" />
-        </div>
-        <input
-          :disabled="loading || error"
-          placeholder="Search blog entries"
-          class="bg-dark-800 w-full pl-3 md:pl-0"
-          v-model="searchText"
-        />
-        <div
-          class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
-        >
-          <IconClear
-            @click="clearSearch"
-            class="text-xl ripple cursor-pointer rounded-full"
-          />
-        </div>
-      </div>
+      <BlogSearchInput
+        class="flex-grow pr-3"
+        :loading="loading"
+        :error="error"
+        v-model:text="searchText"
+      />
       <div
-        class="tag-search-btn flex-shrink bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer"
+        class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer"
       >
         <IconTag />
       </div>
@@ -64,8 +49,6 @@
 
 <script lang="ts" setup>
 import { BlogListItem } from "@/models";
-import IconSearch from "~icons/material-symbols/search";
-import IconClear from "~icons/ic/round-clear";
 import IconTag from "~icons/mdi/tag-multiple";
 
 const loading = ref(true);
@@ -80,10 +63,6 @@ const blogs = computed(() =>
       .includes(searchText.value ? searchText.value.toLowerCase() : "")
   )
 );
-
-const clearSearch = () => {
-  searchText.value = null;
-};
 
 onMounted(async () => {
   try {
@@ -100,25 +79,6 @@ setMeta("Matija Novosel - Blog");
 </script>
 
 <style scoped>
-input {
-  height: 50px;
-  -webkit-tap-highlight-color: transparent;
-  line-height: 48px;
-  appearance: none;
-  resize: none;
-  box-sizing: border-box;
-  font-size: 18px;
-  color: rgb(193, 194, 197);
-  text-align: left;
-  min-height: 50px;
-  outline: none;
-}
-
-.icon {
-  height: 50px;
-  width: 50px;
-}
-
 .tag-search-btn {
   height: 50px;
   width: 50px;
