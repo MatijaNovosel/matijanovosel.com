@@ -1,5 +1,19 @@
 <template>
   <div class="contents">
+    <transition name="modal">
+      <modal title="Filter by tags" v-if="modalOpen" @close="modalOpen = false">
+        <div class="flex flex-wrap">
+          <Tag
+            :background-color="tag.color"
+            v-for="(tag, i) in modalTags"
+            :key="i"
+            class="ripple cursor-pointer"
+          >
+            {{ tag.name }}
+          </Tag>
+        </div>
+      </modal>
+    </transition>
     <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
       Blogs
     </div>
@@ -11,6 +25,7 @@
         v-model:text="searchText"
       />
       <div
+        @click="modalOpen = true"
         class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer"
       >
         <IconTag />
@@ -48,11 +63,13 @@
 </template>
 
 <script lang="ts" setup>
-import { BlogListItem } from "@/models";
+import { BlogListItem } from "~/models";
+import { tags } from "~/utils/helpers";
 import IconTag from "~icons/mdi/tag-multiple";
 
 const loading = ref(true);
 const error = ref(false);
+const modalOpen = ref<boolean>(false);
 const searchText = ref<string | null>(null);
 const allBlogs = ref<BlogListItem[]>([]);
 
@@ -63,6 +80,18 @@ const blogs = computed(() =>
       .includes(searchText.value ? searchText.value.toLowerCase() : "")
   )
 );
+
+const modalTags = computed(() => {
+  return Object.entries(tags)
+    .map((entry) => {
+      const [name, color] = entry;
+      return {
+        name,
+        color
+      };
+    })
+    .sort((a, b) => a.name.length - b.name.length);
+});
 
 onMounted(async () => {
   try {
