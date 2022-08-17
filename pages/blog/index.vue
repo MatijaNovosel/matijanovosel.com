@@ -87,16 +87,30 @@ const modalTags = Object.entries(tags)
 
 let allBlogs: BlogListItem[] = [];
 
-const blogs = computed(() =>
-  allBlogs.filter((blog) =>
-    blog.title
-      .toLowerCase()
-      .includes(searchText.value ? searchText.value.toLowerCase() : "") &&
-    selectedTags.value.length > 0
-      ? blog.tags.some((tag) => selectedTags.value.includes(tag))
-      : true
-  )
-);
+const blogs = computed(() => {
+  const predicate = [
+    (blog: BlogListItem) =>
+      blog.title
+        .toLowerCase()
+        .includes(searchText.value ? searchText.value.toLowerCase() : "")
+  ];
+
+  if (selectedTags.value.length > 0) {
+    predicate.push((blog: BlogListItem) =>
+      blog.tags.some((t) => selectedTags.value.includes(t))
+    );
+  }
+
+  return allBlogs.filter((b) => {
+    let match = true;
+
+    predicate.forEach((p) => {
+      match = match && p(b);
+    });
+
+    return match;
+  });
+});
 
 const selectTag = (tag: string) => {
   if (selectedTags.value.includes(tag)) {
