@@ -8,7 +8,8 @@
             : '#121111'
           : backgroundColor
     }"
-    class="px-3 py-1 rounded-full text-xs font-mono m-1"
+    class="px-3 py-1 rounded-full text-xs font-mono m-1 select-none"
+    @click="$emit('clicked')"
   >
     <slot />
   </div>
@@ -26,4 +27,6 @@ defineProps({
     default: undefined
   }
 });
+
+defineEmits(["clicked"]);
 </script>

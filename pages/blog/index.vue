@@ -7,8 +7,8 @@
             :background-color="tag.color"
             v-for="(tag, i) in modalTags"
             :key="i"
-            class="ripple cursor-pointer"
-            @click="selectTag(tag.name)"
+            class="cursor-pointer tag ripple"
+            @clicked="selectTag(tag.name)"
             :selected="selectedTags.includes(tag.name)"
           >
             {{ tag.name }}
@@ -124,5 +124,15 @@ setMeta("Matija Novosel - Blog");
 .tag-search-btn {
   height: 50px;
   width: 50px;
+}
+
+.tag {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-img {
+    height: 200px;
+  }
 }
 </style>
