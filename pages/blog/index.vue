@@ -70,11 +70,12 @@ import IconTag from "~icons/mdi/tag-multiple";
 const loading = ref(true);
 const error = ref(false);
 const modalOpen = ref<boolean>(false);
+const selectedTags = ref<string[]>([]);
 const searchText = ref<string | null>(null);
-const allBlogs = ref<BlogListItem[]>([]);
+let allBlogs: BlogListItem[] = [];
 
 const blogs = computed(() =>
-  allBlogs.value.filter((blog) =>
+  allBlogs.filter((blog) =>
     blog.title
       .toLowerCase()
       .includes(searchText.value ? searchText.value.toLowerCase() : "")
@@ -95,7 +96,7 @@ const modalTags = computed(() => {
 
 onMounted(async () => {
   try {
-    allBlogs.value = await $fetch("/api/blog");
+    allBlogs = await $fetch("/api/blog");
   } catch {
     error.value = true;
   } finally {
