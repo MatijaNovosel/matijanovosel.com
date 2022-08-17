@@ -6,17 +6,20 @@
     <div class="grid grid-cols-12">
       <div class="col-span-12 md:col-span-7 md:pr-5">
         <BlogPicture class="md:hidden mt-2" />
-        <p class="text-justify mt-5 md:mt-0">
+        <p class="mt-5 md:mt-0">
           Hi. I'm a programmer from Croatia. I like developing applications of
           all sorts and have been interested in doing so from a young age.
           Currently finishing my Masters degree at the Zagreb university of
-          applied sciences. Besides programming I enjoy video games, reading,
-          drawing and listening to music.
+          applied sciences.
         </p>
-        <div class="font-bold pt-5 text-xl">Technologies</div>
+        <p class="mt-2">
+          Besides programming I enjoy video games, reading, drawing and
+          listening to music.
+        </p>
+        <div class="font-bold pt-4 text-xl">Technologies</div>
         <BlogTechnologyList class="mt-2" />
         <BlogContact class="md:hidden" />
-        <div class="font-bold py-5 text-xl">Work experience</div>
+        <div class="font-bold py-4 text-xl">Work experience</div>
         <Timeline>
           <TimelineItem time="August 2021 - Current">
             <template #title>
