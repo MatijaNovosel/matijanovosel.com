@@ -8,6 +8,8 @@
             v-for="(tag, i) in modalTags"
             :key="i"
             class="ripple cursor-pointer"
+            @click="selectTag(tag.name)"
+            :selected="selectedTags.includes(tag.name)"
           >
             {{ tag.name }}
           </Tag>
@@ -69,30 +71,40 @@ import IconTag from "~icons/mdi/tag-multiple";
 
 const loading = ref(true);
 const error = ref(false);
-const modalOpen = ref<boolean>(false);
+const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
 const searchText = ref<string | null>(null);
+
+const modalTags = Object.entries(tags)
+  .map((entry) => {
+    const [name, color] = entry;
+    return {
+      name,
+      color
+    };
+  })
+  .sort((a, b) => a.name.length - b.name.length);
+
 let allBlogs: BlogListItem[] = [];
 
 const blogs = computed(() =>
   allBlogs.filter((blog) =>
     blog.title
       .toLowerCase()
-      .includes(searchText.value ? searchText.value.toLowerCase() : "")
+      .includes(searchText.value ? searchText.value.toLowerCase() : "") &&
+    selectedTags.value.length > 0
+      ? blog.tags.some((tag) => selectedTags.value.includes(tag))
+      : true
   )
 );
 
-const modalTags = computed(() => {
-  return Object.entries(tags)
-    .map((entry) => {
-      const [name, color] = entry;
-      return {
-        name,
-        color
-      };
-    })
-    .sort((a, b) => a.name.length - b.name.length);
-});
+const selectTag = (tag: string) => {
+  if (selectedTags.value.includes(tag)) {
+    selectedTags.value = selectedTags.value.filter((t) => t !== tag);
+    return;
+  }
+  selectedTags.value.push(tag);
+};
 
 onMounted(async () => {
   try {

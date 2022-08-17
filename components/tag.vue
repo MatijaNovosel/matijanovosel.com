@@ -1,9 +1,14 @@
 <template>
   <div
     :style="{
-      backgroundColor
+      backgroundColor:
+        selected !== undefined
+          ? selected
+            ? backgroundColor
+            : '#121111'
+          : backgroundColor
     }"
-    class="px-3 py-1 rounded-md text-xs font-mono m-1"
+    class="px-3 py-1 rounded-full text-xs font-mono m-1"
   >
     <slot />
   </div>
@@ -14,6 +19,11 @@ defineProps({
   backgroundColor: {
     type: String,
     default: "#000000"
+  },
+  selected: {
+    type: Boolean,
+    required: false,
+    default: undefined
   }
 });
 </script>

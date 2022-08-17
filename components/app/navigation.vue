@@ -22,8 +22,8 @@ import { LinkItem } from "@/models";
 import { useElementSize } from "@vueuse/core";
 import { Ref } from "vue";
 
-const navSliderOffset = ref<number>(0);
-const navSliderWidth = ref<number>(54);
+const navSliderOffset = ref(0);
+const navSliderWidth = ref(54);
 
 let widths: {
   dimensions: {
