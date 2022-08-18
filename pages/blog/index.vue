@@ -48,13 +48,16 @@
       class="mt-5"
       v-else-if="error"
     />
-    <div class="grid grid-cols-12 px-1 md:px-0 mt-6 gap-8" v-else>
+    <div class="grid grid-cols-12 px-1 md:px-0 mt-6 md:gap-8" v-else>
       <div class="contents" v-if="blogs.length > 0">
         <BlogCard
           class="col-span-12 md:col-span-6"
           v-for="(blog, i) in blogs"
           :blog="blog"
           :key="i"
+          :class="{
+            'mt-6 md:mt-0': i !== 0
+          }"
         />
       </div>
       <div class="col-span-12" v-else>
