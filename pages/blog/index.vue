@@ -55,9 +55,6 @@
           v-for="(blog, i) in blogs"
           :blog="blog"
           :key="i"
-          :class="{
-            'mt-6 md:mt-0': i !== 0
-          }"
         />
       </div>
       <div class="col-span-12" v-else>
