@@ -6,7 +6,8 @@
           ? selected
             ? backgroundColor
             : '#121111'
-          : backgroundColor
+          : backgroundColor,
+      color: textColor !== undefined ? textColor : 'white'
     }"
     class="px-3 py-1 rounded-full text-xs font-mono m-1 select-none"
     @click="$emit('clicked')"
@@ -23,6 +24,11 @@ defineProps({
   },
   selected: {
     type: Boolean,
+    required: false,
+    default: undefined
+  },
+  textColor: {
+    type: String,
     required: false,
     default: undefined
   }

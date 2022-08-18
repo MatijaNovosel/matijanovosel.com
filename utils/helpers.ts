@@ -10,7 +10,7 @@ export const tags = {
   vue: "#42b883",
   vue2: "#3da677",
   vue3: "#228056",
-  typescript: "#3178c6",
+  ts: "#3178c6",
   markdown: "#ff4200",
   flutter: "#027DFD",
   dotnet: "#67217a",
@@ -27,7 +27,7 @@ export const tags = {
   windicss: "#3b82f6",
   vercel: "#000000",
   nuxt3: "#66bd99",
-  js: "#f1e05a",
+  js: "#e0d053",
   "c#": "#178600"
 };
 

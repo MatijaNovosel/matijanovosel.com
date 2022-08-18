@@ -3,11 +3,11 @@
     <div class="text-4xl font-bold mb-5 mt-6 text-center md:text-left">
       Projects
     </div>
-    <div class="grid grid-cols-12">
+    <div class="grid grid-cols-12 gap-4">
       <div
         v-for="(project, i) in projects"
         :key="i"
-        class="col-span-12 md:col-span-6 mb-5 md:pr-4"
+        class="col-span-12 md:col-span-6"
       >
         <ProjectCard :project="project" />
       </div>

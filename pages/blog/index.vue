@@ -19,7 +19,7 @@
     <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
       Blogs
     </div>
-    <div class="flex px-1 md:px-0">
+    <div class="flex">
       <BlogSearchInput
         class="flex-grow pr-3"
         :loading="loading"
@@ -48,8 +48,8 @@
       class="mt-5"
       v-else-if="error"
     />
-    <div class="grid grid-cols-12 px-1 md:px-0 mt-6" v-else>
-      <div class="contents md:space-x-6" v-if="blogs.length > 0">
+    <div class="grid grid-cols-12 px-1 md:px-0 mt-6 gap-8" v-else>
+      <div class="contents" v-if="blogs.length > 0">
         <BlogCard
           class="col-span-12 md:col-span-6"
           v-for="(blog, i) in blogs"
