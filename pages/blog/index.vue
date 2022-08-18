@@ -28,7 +28,10 @@
       />
       <div
         @click="modalOpen = true"
-        class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer"
+        class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer relative"
+        :class="{
+          badge: selectedTags.length > 0
+        }"
       >
         <IconTag />
       </div>
@@ -138,6 +141,15 @@ setMeta("Matija Novosel - Blog");
 .tag-search-btn {
   height: 50px;
   width: 50px;
+}
+
+.badge::after {
+  content: "";
+  border-radius: 100%;
+  border: 7px solid var(--vue-green);
+  top: -3px;
+  right: -3px;
+  position: absolute;
 }
 
 .tag {

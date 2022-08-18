@@ -137,7 +137,7 @@ nav:hover .nav-slider {
   left: 9px;
   right: 9px;
   bottom: 0;
-  border-bottom: 2px solid #42b883;
+  border-bottom: 2px solid var(--vue-green);
 }
 
 @media only screen and (max-width: 600px) {

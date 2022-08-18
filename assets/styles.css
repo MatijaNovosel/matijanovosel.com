@@ -1,3 +1,7 @@
+:root {
+  --vue-green: #42b883;
+}
+
 @font-face {
   font-family: "roboto";
   src: url("/roboto.ttf");
@@ -162,7 +166,7 @@ html {
 }
 
 .text-green-vue {
-  color: #42b883;
+  color: var(--vue-green);
 }
 
 .offset {
