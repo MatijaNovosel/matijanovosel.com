@@ -14,11 +14,17 @@
 
 body {
   font-family: "roboto";
+  height: 100%;
 }
 
 html {
   overflow: scroll;
   overflow-x: hidden;
+  height: 100%;
+}
+
+#__nuxt {
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
