@@ -25,13 +25,16 @@ import { tags as tagEnum } from "~/utils/helpers";
 
 defineProps({
   title: {
-    type: String
+    type: String,
+    default: ""
   },
   createdAt: {
-    type: String
+    type: String,
+    default: ""
   },
   tags: {
-    type: Array as PropType<string[]>
+    type: Array as PropType<string[]>,
+    default: []
   }
 });
 </script>

@@ -10,7 +10,7 @@
     </NuxtLink>
     <h1
       class="font-bold text-5xl md:text-7xl text-center font-space"
-      v-if="loading"
+      v-if="pending"
     >
       <Spinner />
     </h1>
@@ -55,22 +55,28 @@ import { BlogListItem } from "~/models";
 const { setMeta } = useMetadata();
 
 const route = useRoute();
-const loading = ref(true);
-const error = ref(false);
-const blog = ref<BlogListItem>();
 
 setMeta("Matija Novosel - Blogs");
 
-onMounted(async () => {
-  try {
-    blog.value = await $fetch<BlogListItem>(`/api/blog/${route.params.slug}`);
-    setMeta(`Matija Novosel - ${blog.value.title}`);
-  } catch {
-    error.value = true;
-  } finally {
-    loading.value = false;
-  }
-});
+const {
+  data: blog,
+  pending,
+  error
+} = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
+  $fetch<BlogListItem>(`/api/blog/${route.params.slug}`)
+);
+
+watch(
+  pending,
+  () => {
+    if (blog.value) {
+      setMeta(blog.value.title, blog.value.subtitle, blog.value.img);
+    } else {
+      setMeta("Loading ...");
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped>
