@@ -17,14 +17,14 @@ import "~/assets/one-dark-highlight.css";
 import "~/assets/github-markdown.css";
 
 const markdown = new MarkdownIt()
+  .use(MarkdownItTOC)
   .use(MarkdownItAbbr)
   .use(MarkdownItAnchor)
   .use(MarkdownItFootnote)
   .use(MarkdownItHighlightjs)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
-  .use(MarkdownItTasklists)
-  .use(MarkdownItTOC);
+  .use(MarkdownItTasklists);
 
 const props = defineProps({
   source: {

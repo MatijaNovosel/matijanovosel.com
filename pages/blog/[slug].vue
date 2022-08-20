@@ -1,13 +1,6 @@
 <template>
   <div class="mt-4 md:mt-10 w-full px-3 md:px-0">
-    <NuxtLink to="/blog">
-      <button
-        class="ripple project-btn pr-3 pl-2 py-1 font-medium text-xl text-gray-100 rounded flex items-center justify-center"
-      >
-        <IconArrowLeft class="mr-2" />
-        <h6>Back</h6>
-      </button>
-    </NuxtLink>
+    <BackBtn />
     <h1
       class="font-bold text-5xl md:text-7xl text-center font-space"
       v-if="pending"
@@ -50,8 +43,8 @@
 </template>
 
 <script lang="ts" setup>
-import IconArrowLeft from "~icons/mdi/arrow-left";
 import { BlogListItem } from "~/models";
+import BackBtn from "~/components/blog/backBtn.vue";
 const { setMeta } = useMetadata();
 
 const route = useRoute();
