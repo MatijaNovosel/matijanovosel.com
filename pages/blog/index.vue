@@ -4,14 +4,14 @@
       <modal title="Filter by tags" v-if="modalOpen" @close="modalOpen = false">
         <div class="flex flex-wrap">
           <Tag
-            :background-color="tag.color"
+            :background-color="tags[tag]"
             v-for="(tag, i) in modalTags"
             :key="i"
             class="cursor-pointer tag ripple"
-            @clicked="selectTag(tag.name)"
-            :selected="selectedTags.includes(tag.name)"
+            @clicked="selectTag(tag)"
+            :selected="selectedTags.includes(tag)"
           >
-            {{ tag.name }}
+            {{ tag }}
           </Tag>
         </div>
       </modal>
@@ -82,15 +82,9 @@ const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
 const searchText = ref<string | null>(null);
 
-const modalTags = Object.entries(tags)
-  .map((entry) => {
-    const [name, color] = entry;
-    return {
-      name,
-      color
-    };
-  })
-  .sort((a, b) => a.name.length - b.name.length);
+const modalTags = computed(() => {
+  return [...new Set(allBlogs.value.flatMap((blog) => blog.tags))];
+});
 
 const blogs = computed(() => {
   const predicate = [
