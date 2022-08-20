@@ -22,8 +22,8 @@
     <div class="flex">
       <BlogSearchInput
         class="flex-grow pr-3"
-        :loading="loading"
-        :error="error"
+        :loading="pending"
+        :error="!!error"
         v-model:text="searchText"
       />
       <div
@@ -38,7 +38,7 @@
     </div>
     <h1
       class="font-bold text-5xl md:text-7xl text-center font-space"
-      v-if="loading"
+      v-if="pending"
     >
       <Spinner />
     </h1>
@@ -72,8 +72,12 @@ import { BlogListItem } from "~/models";
 import { tags } from "~/utils/helpers";
 import IconTag from "~icons/mdi/tag-multiple";
 
-const loading = ref(true);
-const error = ref(false);
+const {
+  data: allBlogs,
+  pending,
+  error
+} = useLazyAsyncData("blog", () => $fetch<BlogListItem[]>("/api/blog"));
+
 const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
 const searchText = ref<string | null>(null);
@@ -87,8 +91,6 @@ const modalTags = Object.entries(tags)
     };
   })
   .sort((a, b) => a.name.length - b.name.length);
-
-let allBlogs: BlogListItem[] = [];
 
 const blogs = computed(() => {
   const predicate = [
@@ -104,7 +106,7 @@ const blogs = computed(() => {
     );
   }
 
-  return allBlogs.filter((b) => {
+  return allBlogs.value.filter((b) => {
     let match = true;
 
     predicate.forEach((p) => {
@@ -122,16 +124,6 @@ const selectTag = (tag: string) => {
   }
   selectedTags.value.push(tag);
 };
-
-onMounted(async () => {
-  try {
-    allBlogs = await $fetch("/api/blog");
-  } catch {
-    error.value = true;
-  } finally {
-    loading.value = false;
-  }
-});
 
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - Blog");
