@@ -31,6 +31,8 @@ export const tags = {
   "c#": "#178600"
 };
 
+const emojiLen = 626;
+
 export const createEmojiImage = (): string => {
   const drawing = document.createElement("canvas");
 
@@ -47,7 +49,7 @@ export const createEmojiImage = (): string => {
     ctx.fill();
     ctx.font = "32pt sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText(emojis[randInt(0, emojis.length - 1)], 75, 85);
+    ctx.fillText(emojis[randInt(0, emojiLen)], 75, 75);
     url = drawing.toDataURL("image/png");
   }
 

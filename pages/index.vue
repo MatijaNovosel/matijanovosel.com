@@ -101,9 +101,6 @@ onBeforeUnmount(() => {
   });
   Matter.Render.stop(render);
 });
-
-const { setMeta } = useMetadata();
-setMeta("Matija Novosel");
 </script>
 
 <style>

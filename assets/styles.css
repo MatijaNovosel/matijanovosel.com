@@ -5,6 +5,7 @@
 @font-face {
   font-family: "roboto";
   src: url("/roboto.ttf");
+  font-display: swap;
 }
 
 @font-face {

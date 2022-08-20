@@ -21,7 +21,14 @@ export const useMetadata = () => {
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Matija Novosel" },
         { name: "twitter:description", content: desc },
-        { name: "twitter:image", content: image }
+        { name: "twitter:image", content: image },
+        { name: "theme-color", content: "#000000" }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://matijanovosel.com/"
+        }
       ]
     });
   };
