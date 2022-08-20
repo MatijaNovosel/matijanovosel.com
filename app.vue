@@ -30,4 +30,7 @@ const route = useRoute();
 const isIndex = computed(() => {
   return route.name === "index";
 });
+
+const { setMeta } = useMetadata();
+setMeta("Matija Novosel");
 </script>
