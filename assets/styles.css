@@ -2,6 +2,10 @@
   --vue-green: #42b883;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "roboto";
   src: url("/roboto.ttf");
