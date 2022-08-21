@@ -7,7 +7,7 @@
         Hi, I'm
       </p>
       <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
-      <h5 class="text-gray-400">A fullstack developer</h5>
+      <span class="text-gray-400">A fullstack developer</span>
     </div>
   </div>
 </template>
