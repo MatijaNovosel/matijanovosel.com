@@ -1,13 +1,13 @@
 <template>
-  <div class="timeline-entry">
-    <div class="timeline-time">
+  <div class="relative">
+    <div class="timeline-time text-xs font-bold tracking-wider text-gray-400">
       <span>
         {{ time }}
       </span>
     </div>
     <div class="timeline-dot text-green-vue" />
-    <div class="timeline-content">
-      <h6 class="timeline-title">
+    <div class="timeline-content pb-5">
+      <h6 class="mb-4 mt-0">
         <slot name="title" />
       </h6>
       <slot />
