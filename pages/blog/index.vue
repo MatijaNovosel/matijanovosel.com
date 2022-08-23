@@ -24,7 +24,7 @@
         class="flex-grow pr-3"
         :loading="pending"
         :error="!!error"
-        v-model:text="searchText"
+        v-model="searchText"
       />
       <div
         @click="modalOpen = true"

@@ -9,8 +9,11 @@
       :disabled="loading || error"
       placeholder="Search blog entries"
       class="bg-dark-800"
-      v-model="text"
-      @keyup="onInput"
+      :value="modelValue"
+      @input="
+        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
+      "
+      type="search"
     />
     <div
       class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
@@ -27,8 +30,8 @@
 import IconSearch from "~icons/material-symbols/search";
 import IconClear from "~icons/ic/round-clear";
 
-const props = defineProps({
-  text: {
+defineProps({
+  modelValue: {
     type: String
   },
   loading: {
@@ -39,16 +42,10 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(["update:text", "input", "clear"]);
-
-const onInput = () => {
-  emit("update:text", props.text);
-  emit("input");
-};
+const emit = defineEmits(["update:modelValue"]);
 
 const clearSearch = () => {
-  emit("update:text", null);
-  emit("clear");
+  emit("update:modelValue", "");
 };
 </script>
 
@@ -56,14 +53,8 @@ const clearSearch = () => {
 input {
   height: 50px;
   -webkit-tap-highlight-color: transparent;
-  line-height: 48px;
-  appearance: none;
-  resize: none;
-  box-sizing: border-box;
   font-size: 18px;
   color: rgb(193, 194, 197);
-  text-align: left;
-  min-height: 50px;
   outline: none;
   width: calc(100% - 100px);
 }
@@ -71,11 +62,18 @@ input {
 .icon {
   height: 50px;
   width: 50px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .tag-search-btn {
   height: 50px;
   width: 50px;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
 </style>
