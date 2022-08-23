@@ -60,8 +60,8 @@
           }"
         />
       </div>
-      <div class="col-span-12" v-else>
-        <span class="text-xl">No blog entries found.</span>
+      <div class="col-span-12 text-xl text-center md:text-left" v-else>
+        No blog entries found.
       </div>
     </div>
   </div>

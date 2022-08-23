@@ -10,7 +10,7 @@
       placeholder="Search blog entries"
       class="bg-dark-800"
       v-model="text"
-      @input="$emit('update:text', text)"
+      @keyup="onInput"
     />
     <div
       class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
@@ -27,7 +27,7 @@
 import IconSearch from "~icons/material-symbols/search";
 import IconClear from "~icons/ic/round-clear";
 
-defineProps({
+const props = defineProps({
   text: {
     type: String
   },
@@ -39,10 +39,16 @@ defineProps({
   }
 });
 
-const emit = defineEmits(["clear", "update:text"]);
+const emit = defineEmits(["update:text", "input", "clear"]);
+
+const onInput = () => {
+  emit("update:text", props.text);
+  emit("input");
+};
 
 const clearSearch = () => {
   emit("update:text", null);
+  emit("clear");
 };
 </script>
 
@@ -65,6 +71,7 @@ input {
 .icon {
   height: 50px;
   width: 50px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .tag-search-btn {
