@@ -68,7 +68,7 @@
               </div>
             </div>
           </TimelineItem>
-          <TimelineItem time="July 2019 - July 2021">
+          <TimelineItem time="May 2018 - February 2019">
             <template #title>
               <div class="flex flex-col">
                 <a
