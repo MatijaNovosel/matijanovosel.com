@@ -46,6 +46,9 @@ watch([pageDimensions.width, pageDimensions.height], async () => {
   });
 });
 
+const { setMeta } = useMetadata();
+setMeta("Matija Novosel");
+
 onMounted(() => {
   engine = Matter.Engine.create();
   runner = Matter.Runner.create();
