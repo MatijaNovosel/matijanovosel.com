@@ -63,8 +63,8 @@
                 stack web technologies
               </div>
               <div>
-                • Mentoring and creating educational Javascript content for new
-                and future employees
+                • Mentoring and creating educational content for new and future
+                employees
               </div>
             </div>
           </TimelineItem>
