@@ -28,7 +28,8 @@ export const tags = {
   vercel: "#000000",
   nuxt3: "#66bd99",
   js: "#e0d053",
-  "c#": "#178600"
+  "c#": "#178600",
+  github: "#242121"
 };
 
 const emojiLen = 626;
