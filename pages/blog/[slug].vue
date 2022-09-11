@@ -15,27 +15,18 @@
     />
     <template v-else>
       <div
-        class="blog-img rounded-b-lg md:rounded-b-none rounded-t-lg mt-5 relative"
+        class="blog-img rounded-t-lg mt-5 relative"
         :style="{
           backgroundImage: `url(${blog.img})`
         }"
-      >
+      />
+      <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
         <BlogTitle
-          class="absolute hidden md:block"
+          class="my-3"
           :title="blog.title"
           :created-at="blog.createdAt"
           :tags="blog.tags"
         />
-      </div>
-      <BlogTitle
-        class="my-3 md:hidden"
-        :title="blog.title"
-        :created-at="blog.createdAt"
-        :tags="blog.tags"
-      />
-      <div
-        class="bg-dark-800 rounded-b-lg rounded-t-lg md:rounded-t-none p-5 blog-content"
-      >
         <MarkdownRenderer :source="blog.html" />
       </div>
     </template>
