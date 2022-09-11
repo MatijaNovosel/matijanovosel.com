@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex flex-col title-box bg-dark-400 md:px-5 py-3 rounded-tr-none md:rounded-tr-lg w-full md:w-auto"
+    class="flex flex-col title-box pb-3 rounded-tr-none md:rounded-tr-lg w-full"
   >
-    <div class="font-bold md:text-3xl">
+    <div class="font-bold text-2xl md:text-3xl">
       {{ title }}
     </div>
     <div class="text-gray-300 mt-2 text-xs">
@@ -41,7 +41,6 @@ defineProps({
 
 <style scoped>
 .title-box {
-  background-color: rgba(0, 0, 0, 0.505);
   bottom: 0px;
 }
 
