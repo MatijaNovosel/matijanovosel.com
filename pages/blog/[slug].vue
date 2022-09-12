@@ -65,7 +65,7 @@ watch(
 
 <style scoped>
 .blog-img {
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   height: 400px;
 }
