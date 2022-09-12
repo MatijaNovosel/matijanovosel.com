@@ -8,10 +8,7 @@
         <a class="text-white" href="https://github.com/MatijaNovosel">
           <IconGithub :style="{ fontSize: '1.6em' }" />
         </a>
-        <a
-          class="ml-2"
-          href="https://www.linkedin.com/in/matija-novosel-616403161/"
-        >
+        <a class="ml-2" href="www.linkedin.com/in/matijanovosel">
           <IconLinkedin :style="{ fontSize: '1.6em' }" />
         </a>
       </div>
