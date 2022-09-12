@@ -41,7 +41,7 @@ defineProps({
 <style scoped>
 .blog-img {
   border-radius: 16px;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
   height: 220px;
 }
