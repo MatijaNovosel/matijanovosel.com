@@ -58,7 +58,7 @@ const projects: ProjectItem[] = [
     title: "Heroes of crimson"
   },
   {
-    description: "A video editor made with javascript.",
+    description: "A video editor made with Tauri.",
     tags: ["tauri", "vue3", "vite"],
     link: "https://github.com/MatijaNovosel/video-editor",
     title: "Video editor"
