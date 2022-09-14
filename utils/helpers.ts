@@ -29,7 +29,9 @@ export const tags = {
   nuxt3: "#66bd99",
   js: "#e0d053",
   "c#": "#178600",
-  github: "#242121"
+  github: "#242121",
+  tauri: "#3f3d56",
+  vite: "#b241fe"
 };
 
 const emojiLen = 626;

@@ -59,7 +59,7 @@ const projects: ProjectItem[] = [
   },
   {
     description: "A video editor made with javascript.",
-    tags: ["electron", "vue3", "quasar"],
+    tags: ["tauri", "vue3", "vite"],
     link: "https://github.com/MatijaNovosel/video-editor",
     title: "Video editor"
   },
