@@ -7,7 +7,7 @@
     />
     <div class="flex flex-col">
       <p class="font-bold mb-1 mt-5 text-3xl">Matija Novosel</p>
-      <p class="text-xl text-gray-400">Fullstack developer</p>
+      <p class="text-xl text-green-vue">Fullstack developer</p>
     </div>
   </div>
 </template>

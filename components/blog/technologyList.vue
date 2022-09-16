@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="bg-dark-800 px-6 py-3 rounded-lg">
+    <div class="font-bold text-xl pb-4 pt-2">Technologies</div>
     <component
       :style="{ fontSize: '25px', color: technology.color || 'transparent' }"
       v-for="(technology, i) in technologies"
