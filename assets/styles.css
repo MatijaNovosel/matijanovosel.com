@@ -180,6 +180,10 @@ html {
   color: var(--vue-green);
 }
 
+.bg-green-vue {
+  background-color: var(--vue-green);
+}
+
 .offset {
   padding-top: 60px;
 }

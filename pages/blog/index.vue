@@ -59,6 +59,9 @@
             'mt-6 md:mt-0': i !== 0
           }"
         />
+        <div class="col-span-12 flex justify-center items-center">
+          <pagination class="my-5" v-model="page" :length="pages" />
+        </div>
       </div>
       <div class="col-span-12 text-xl text-center md:text-left" v-else>
         No blog entries found.
@@ -81,7 +84,11 @@ const {
 const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
 const searchText = ref<string | null>(null);
+const page = ref(1);
 
+const itemsPerPage = 4;
+
+const pages = computed(() => Math.ceil(allBlogs.value.length / itemsPerPage));
 const modalTags = computed(() => {
   return [...new Set(allBlogs.value.flatMap((blog) => blog.tags))];
 });
@@ -100,7 +107,7 @@ const blogs = computed(() => {
     );
   }
 
-  return allBlogs.value.filter((b) => {
+  const filtered = allBlogs.value.filter((b) => {
     let match = true;
 
     predicate.forEach((p) => {
@@ -109,6 +116,11 @@ const blogs = computed(() => {
 
     return match;
   });
+
+  const start = (page.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  return filtered.slice(start, end);
 });
 
 const selectTag = (tag: string) => {
