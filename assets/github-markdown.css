@@ -9,6 +9,10 @@
   word-wrap: break-word;
 }
 
+.markdown-body img {
+  margin: 20px auto;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
