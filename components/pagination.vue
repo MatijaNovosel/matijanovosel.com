@@ -12,7 +12,7 @@
     </div>
     <div
       @click="setPage(element)"
-      class="pagination-element cursor-pointer"
+      class="pagination-element cursor-pointer font-bold"
       :class="{
         'ml-3': i >= 0 && i <= elements.length - 1,
         'mr-3': i === elements.length - 1,
@@ -27,8 +27,8 @@
     <div
       class="pagination-element text-3xl"
       :class="{
-        'bg-dark-800 cursor-pointer': page != length,
-        'bg-gray-400 text-black': page == length
+        'bg-dark-800 cursor-pointer': page != numberOfPages,
+        'bg-gray-400 text-black': page == numberOfPages
       }"
       @click="traverse()"
     >
@@ -39,7 +39,7 @@
 
 <script lang="ts" setup>
 const props = defineProps({
-  length: { type: Number, required: true, default: 0 },
+  numberOfPages: { type: Number, required: true, default: 0 },
   modelValue: {
     type: Number
   }
@@ -47,7 +47,9 @@ const props = defineProps({
 
 const emit = defineEmits(["update:modelValue"]);
 
-const elements = [...new Array(props.length)].map((_, i) => i + 1);
+const elements = computed(() =>
+  [...new Array(props.numberOfPages)].map((_, i) => i + 1)
+);
 const page = ref(props.modelValue);
 
 const setPage = (n: number) => {
@@ -63,11 +65,18 @@ const traverse = (left?: boolean) => {
     setPage(page.value - 1);
     return;
   }
-  if (page.value + 1 > props.length) {
+  if (page.value + 1 > props.numberOfPages) {
     return;
   }
   setPage(page.value + 1);
 };
+
+watch(
+  () => props.modelValue,
+  (val) => {
+    page.value = val;
+  }
+);
 </script>
 
 <style scoped>
