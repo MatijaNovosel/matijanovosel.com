@@ -49,16 +49,23 @@
       v-else-if="error"
     />
     <div class="grid grid-cols-12 px-1 md:px-0 mt-6 md:gap-8" v-else>
-      <div class="contents" v-if="blogs.length > 0">
+      <div class="contents" v-if="paginatedBlogs.length > 0">
         <BlogCard
           class="col-span-12 md:col-span-6"
-          v-for="(blog, i) in blogs"
+          v-for="(blog, i) in paginatedBlogs"
           :blog="blog"
           :key="i"
           :class="{
             'mt-6 md:mt-0': i !== 0
           }"
         />
+        <div class="col-span-12 flex justify-center items-center">
+          <pagination
+            class="my-5"
+            v-model="page"
+            :number-of-pages="numberOfPages"
+          />
+        </div>
       </div>
       <div class="col-span-12 text-xl text-center md:text-left" v-else>
         No blog entries found.
@@ -81,12 +88,19 @@ const {
 const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
 const searchText = ref<string | null>(null);
+const page = ref(1);
+
+const itemsPerPage = 4;
+
+const numberOfPages = computed(() =>
+  Math.ceil(filteredBlogs.value.length / itemsPerPage)
+);
 
 const modalTags = computed(() => {
   return [...new Set(allBlogs.value.flatMap((blog) => blog.tags))];
 });
 
-const blogs = computed(() => {
+const filteredBlogs = computed(() => {
   const predicate = [
     (blog: BlogListItem) =>
       blog.title
@@ -111,6 +125,12 @@ const blogs = computed(() => {
   });
 });
 
+const paginatedBlogs = computed(() => {
+  const start = (page.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return filteredBlogs.value.slice(start, end);
+});
+
 const selectTag = (tag: string) => {
   if (selectedTags.value.includes(tag)) {
     selectedTags.value = selectedTags.value.filter((t) => t !== tag);
@@ -118,6 +138,10 @@ const selectTag = (tag: string) => {
   }
   selectedTags.value.push(tag);
 };
+
+watch([searchText, selectedTags], () => {
+  page.value = 1;
+});
 
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - Blog");
