@@ -31,7 +31,8 @@ export const tags = {
   "c#": "#178600",
   github: "#242121",
   tauri: "#3f3d56",
-  vite: "#b241fe"
+  vite: "#b241fe",
+  devops: "#f0a224"
 };
 
 const emojiLen = 626;
