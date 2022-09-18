@@ -139,8 +139,22 @@ const selectTag = (tag: string) => {
   selectedTags.value.push(tag);
 };
 
+const handleKeyPress = (e: KeyboardEvent) => {
+  if (e.key === "Escape") {
+    modalOpen.value = false;
+  }
+};
+
 watch([searchText, selectedTags], () => {
   page.value = 1;
+});
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeyPress);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleKeyPress);
 });
 
 const { setMeta } = useMetadata();
