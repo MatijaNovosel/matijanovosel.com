@@ -1,6 +1,6 @@
 <template>
-  <Html lang="en-US">
-    <div class="flex justify-center bg-black text-white px-5 pb-5 min-h-full">
+  <Html lang="en-US" class="bg-black">
+    <div class="flex justify-center text-white px-5 pb-5 min-h-full">
       <div
         ref="page"
         class="max-w-screen-lg w-full relative flex flex-col items-center md:items-end justify-between"

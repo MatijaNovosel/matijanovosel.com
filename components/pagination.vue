@@ -90,5 +90,6 @@ watch(
   align-items: center;
   user-select: none;
   transition: background 0.8s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 </style>
