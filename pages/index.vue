@@ -42,16 +42,7 @@ let render: Matter.Render;
 let intervalId: ReturnType<typeof setTimeout> | null = null;
 
 const emojisMurdered = ref(0);
-const emojiMurderStatus = computed(() => {
-  const val = emojisMurdered.value;
-  if (val >= 0 && val <= 25) {
-    return "... keep going";
-  } else if (val >= 26 && val <= 49) {
-    return "A little bit more ...";
-  } else {
-    return "All done. Are you ready for your reward?";
-  }
-});
+const emojiMurderStatus = ref("");
 
 const OFFSET = 30;
 const EMOJI_MURDER_LIMIT = 50;
@@ -152,9 +143,17 @@ onBeforeUnmount(() => {
 watch(
   () => emojisMurdered.value,
   (val) => {
-    if (val === EMOJI_MURDER_LIMIT) {
+    if (val >= 0 && val <= EMOJI_MURDER_LIMIT / 2 - 1) {
+      emojiMurderStatus.value = "... keep going";
+    } else if (
+      EMOJI_MURDER_LIMIT / 2 + 1 >= 26 &&
+      val <= EMOJI_MURDER_LIMIT - 1
+    ) {
+      emojiMurderStatus.value = "A little bit more ...";
+    } else {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
+      emojiMurderStatus.value = "All done. Are you ready for your reward?";
     }
   }
 );
