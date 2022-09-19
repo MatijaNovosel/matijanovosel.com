@@ -2698,6 +2698,11 @@ jiti@^1.13.0, jiti@^1.14.0:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.14.0.tgz#5350fff532a4d891ca4bcd700c47c1f40e6ee326"
   integrity sha512-4IwstlaKQc9vCTC+qUXLM1hajy2ImiL9KnLvVYiaHOtS/v3wRjhLlGl121AmgDgx/O43uKmxownJghS5XMya2A==
 
+js-confetti@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/js-confetti/-/js-confetti-0.10.2.tgz#f30aab309735284d5694845f24a6a3a3d4221984"
+  integrity sha512-/ppeGV3sOJ/DDH43ABbqe8V/9Fx5TUNkywPlXr9YK9OK6++olMtRP/yRdXftl49iTIAAdoNopkgAy3SLOgSE+A==
+
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
