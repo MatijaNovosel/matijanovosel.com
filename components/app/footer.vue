@@ -1,5 +1,7 @@
 <template>
-  <footer class="w-full flex justify-between z-2 md:pb-5 pt-7 px-1 md:px-0">
+  <footer
+    class="w-full flex justify-between z-2 md:pb-5 pt-7 px-1 md:px-0 user-select-none"
+  >
     <div>
       <span class="text-sm md:text-base">
         &copy; Matija Novosel {{ new Date().getFullYear() }}
