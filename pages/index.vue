@@ -12,6 +12,14 @@
         <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
         <span class="text-gray-400">A fullstack developer</span>
       </template>
+      <template v-else-if="murderComplete">
+        <img
+          class="p-2 bg-white rounded-lg"
+          width="200"
+          height="200"
+          src="/qr.svg"
+        />
+      </template>
       <template v-else>
         <p class="text-center text-lg md:text-2xl text-gray-300">
           You have murdered
@@ -43,9 +51,11 @@ let intervalId: ReturnType<typeof setTimeout> | null = null;
 
 const emojisMurdered = ref(0);
 const emojiMurderStatus = ref("");
+const murderComplete = ref(false);
 
 const OFFSET = 30;
 const EMOJI_MURDER_LIMIT = 50;
+
 const pageDimensions = inject<{
   width: Ref<number>;
   height: Ref<number>;
@@ -146,14 +156,17 @@ watch(
     if (val >= 0 && val <= EMOJI_MURDER_LIMIT / 2 - 1) {
       emojiMurderStatus.value = "... keep going";
     } else if (
-      EMOJI_MURDER_LIMIT / 2 + 1 >= 26 &&
+      val >= EMOJI_MURDER_LIMIT / 2 + 1 &&
       val <= EMOJI_MURDER_LIMIT - 1
     ) {
-      emojiMurderStatus.value = "A little bit more ...";
-    } else {
+      emojiMurderStatus.value = "Just a little bit more ...";
+    } else if (val === EMOJI_MURDER_LIMIT) {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
-      emojiMurderStatus.value = "All done. Are you ready for your reward?";
+      emojiMurderStatus.value = "Well done. Are you ready for your reward?";
+      setTimeout(() => {
+        murderComplete.value = true;
+      }, 2000);
     }
   }
 );
