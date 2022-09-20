@@ -25,7 +25,7 @@
           You have murdered
         </p>
         <h2 class="text-3xl md:text-6xl font-bold my-4 text-green-vue">
-          {{ emojisMurdered }} emojis
+          {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
         </h2>
         <span class="text-gray-400">{{ emojiMurderStatus }}</span>
       </template>
@@ -75,9 +75,6 @@ watch([pageDimensions.width, pageDimensions.height], async () => {
     }
   });
 });
-
-const { setMeta } = useMetadata();
-setMeta("Matija Novosel");
 
 onMounted(() => {
   engine = Matter.Engine.create();
@@ -166,10 +163,13 @@ watch(
       emojiMurderStatus.value = "Well done. Are you ready for your reward?";
       setTimeout(() => {
         murderComplete.value = true;
-      }, 2000);
+      }, 4000);
     }
   }
 );
+
+const { setMeta } = useMetadata();
+setMeta("Matija Novosel");
 </script>
 
 <style>
