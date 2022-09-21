@@ -47,7 +47,7 @@ let mouseConstraint = null;
 const matter = ref<HTMLCanvasElement>();
 
 let render: Matter.Render;
-let intervalId: ReturnType<typeof setTimeout> | null = null;
+let emojiCreateInterval: ReturnType<typeof setTimeout> | null = null;
 
 const emojisMurdered = ref(0);
 const emojiMurderStatus = ref("");
@@ -60,21 +60,6 @@ const pageDimensions = inject<{
   width: Ref<number>;
   height: Ref<number>;
 }>("pageDimensions");
-
-watch([pageDimensions.width, pageDimensions.height], async () => {
-  const width = pageDimensions.width;
-  const height = pageDimensions.height;
-  await nextTick(() => {
-    if (render) {
-      render.bounds.max.x = width.value;
-      render.bounds.max.y = height.value - OFFSET;
-      render.options.width = width.value;
-      render.options.height = height.value - OFFSET;
-      render.canvas.width = width.value;
-      render.canvas.height = height.value - OFFSET;
-    }
-  });
-});
 
 onMounted(() => {
   engine = Matter.Engine.create();
@@ -94,21 +79,32 @@ onMounted(() => {
   Matter.Render.run(render);
   Matter.Runner.run(runner, engine);
 
+  const constraint: any = {
+    render: {
+      visible: false
+    }
+  };
+
   mouse = Matter.Mouse.create(matter.value);
-  mouseConstraint = Matter.MouseConstraint.create(engine, mouse);
+  mouseConstraint = Matter.MouseConstraint.create(engine, {
+    mouse,
+    constraint: { ...constraint }
+  });
+
   Matter.Composite.add(engine.world, mouseConstraint);
 
   Matter.Events.on(runner, "tick", () => {
-    if (mouseConstraint.body) {
-      if (mouseConstraint.body.render.sprite.texture === skullEmojiUrl) {
-        return;
-      }
+    if (
+      mouseConstraint.body &&
+      emojisMurdered.value != EMOJI_MURDER_LIMIT &&
+      mouseConstraint.body.render.sprite.texture !== skullEmojiUrl
+    ) {
       mouseConstraint.body.render.sprite.texture = skullEmojiUrl;
       emojisMurdered.value++;
     }
   });
 
-  intervalId = setInterval(() => {
+  emojiCreateInterval = setInterval(() => {
     const url = createEmojiImage();
 
     const obj = Matter.Bodies.circle(
@@ -139,12 +135,27 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  clearTimeout(intervalId || -1);
+  clearTimeout(emojiCreateInterval || -1);
   Matter.Composite.remove(engine.world, mouseConstraint);
   engine.world.bodies.forEach((body) => {
     Matter.Composite.remove(engine.world, body);
   });
   Matter.Render.stop(render);
+});
+
+watch([pageDimensions.width, pageDimensions.height], async () => {
+  const width = pageDimensions.width;
+  const height = pageDimensions.height;
+  await nextTick(() => {
+    if (render) {
+      render.bounds.max.x = width.value;
+      render.bounds.max.y = height.value - OFFSET;
+      render.options.width = width.value;
+      render.options.height = height.value - OFFSET;
+      render.canvas.width = width.value;
+      render.canvas.height = height.value - OFFSET;
+    }
+  });
 });
 
 watch(
