@@ -41,20 +41,23 @@ const { setMeta } = useMetadata();
 
 const route = useRoute();
 
+console.log(route.params.slug);
+
 setMeta("Matija Novosel - Blogs");
 
 const {
   data: blog,
   pending,
   error
-} = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
-  $fetch<BlogListItem>(`/api/blog/${route.params.slug}`)
-);
+} = await useLazyFetch<BlogListItem>(`/api/blog/${route.params.slug}`, {
+  key: `api/blog/${route.params.slug}`
+});
 
 watch(
   pending,
   () => {
     if (blog.value) {
+      console.log(blog.value);
       setMeta(blog.value.title, blog.value.subtitle, blog.value.img);
     } else {
       setMeta("Loading ...");

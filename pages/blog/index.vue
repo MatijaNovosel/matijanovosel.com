@@ -79,7 +79,13 @@
 import { tags } from "~/utils/helpers";
 import IconTag from "~icons/mdi/tag-multiple";
 
-const { data: allBlogs, pending, error } = useLazyFetch("/api/blog");
+const {
+  data: allBlogs,
+  pending,
+  error
+} = useLazyFetch("/api/blog", {
+  key: "/api/blog"
+});
 
 const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
