@@ -40,9 +40,6 @@ import BackBtn from "~/components/blog/backBtn.vue";
 const { setMeta } = useMetadata();
 
 const route = useRoute();
-
-console.log(route.params.slug);
-
 setMeta("Matija Novosel - Blogs");
 
 const {
@@ -57,7 +54,6 @@ watch(
   pending,
   () => {
     if (blog.value) {
-      console.log(blog.value);
       setMeta(blog.value.title, blog.value.subtitle, blog.value.img);
     } else {
       setMeta("Loading ...");
