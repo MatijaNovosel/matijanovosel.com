@@ -79,17 +79,23 @@
 import { tags } from "~/utils/helpers";
 import IconTag from "~icons/mdi/tag-multiple";
 
-const { data: allBlogs, pending, error } = useLazyFetch("/api/blog");
+const {
+  data: allBlogs,
+  pending,
+  error
+} = useLazyFetch("/api/blog", {
+  key: "/api/blog"
+});
 
 const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
 const searchText = ref<string>("");
 const page = ref(1);
 
-const itemsPerPage = 4;
+const ITEMS_PER_PAGE = 4;
 
 const numberOfPages = computed(() =>
-  Math.ceil(filteredBlogs.value.length / itemsPerPage)
+  Math.ceil(filteredBlogs.value.length / ITEMS_PER_PAGE)
 );
 
 const modalTags = computed(() => {
@@ -107,8 +113,8 @@ const filteredBlogs = computed(() =>
 );
 
 const paginatedBlogs = computed(() => {
-  const start = (page.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
+  const start = (page.value - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
   return filteredBlogs.value.slice(start, end);
 });
 

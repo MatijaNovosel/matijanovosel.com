@@ -40,16 +40,15 @@ import BackBtn from "~/components/blog/backBtn.vue";
 const { setMeta } = useMetadata();
 
 const route = useRoute();
-
 setMeta("Matija Novosel - Blogs");
 
 const {
   data: blog,
   pending,
   error
-} = await useLazyAsyncData(`blog-${route.params.slug}`, () =>
-  $fetch<BlogListItem>(`/api/blog/${route.params.slug}`)
-);
+} = await useLazyFetch<BlogListItem>(`/api/blog/${route.params.slug}`, {
+  key: `api/blog/${route.params.slug}`
+});
 
 watch(
   pending,
