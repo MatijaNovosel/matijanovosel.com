@@ -10,10 +10,11 @@
         </div>
         <div class="bg-dark-800 mt-5 md:mt-0 p-5 rounded-lg text-gray-300">
           <p>
-            Hi. I'm a programmer from Croatia. I like developing applications of
-            all sorts and have been interested in doing so from a young age.
-            Currently finishing my Masters degree at the Zagreb university of
-            applied sciences.
+            Hi. I'm a {{ getAge(new Date("1998-09-25T00:00:00")) }} year old
+            programmer from Croatia. I like developing applications of all sorts
+            and have been interested in doing so from a young age. Currently
+            finishing my Masters degree at the Zagreb university of applied
+            sciences.
           </p>
           <p class="mt-2">
             Besides programming I enjoy video games, reading, drawing and
@@ -35,6 +36,8 @@
 </template>
 
 <script lang="ts" setup>
+import { getAge } from "~/utils/helpers";
+
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel - About me");
 </script>
