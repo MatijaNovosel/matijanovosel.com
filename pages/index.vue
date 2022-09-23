@@ -1,18 +1,10 @@
 <template>
-  <div class="contents">
+  <div class="w-full h-full flex justify-center items-center">
     <canvas ref="matter" class="z-1" />
     <div
       class="z-2 flex flex-col items-center justify-center user-select-none mx-auto"
     >
-      <template v-if="emojisMurdered === 0">
-        <p class="text-center text-lg md:text-2xl text-gray-300">
-          <span class="wave text-4xl mr-3">👋</span>
-          Hi, I'm
-        </p>
-        <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
-        <span class="text-gray-400">A fullstack developer</span>
-      </template>
-      <template v-else-if="murderComplete">
+      <template v-if="murderComplete">
         <img
           class="p-2 bg-white rounded-lg"
           width="200"
@@ -21,13 +13,23 @@
         />
       </template>
       <template v-else>
-        <p class="text-center text-lg md:text-2xl text-gray-300">
-          You have murdered
-        </p>
-        <h2 class="text-3xl md:text-6xl font-bold my-4 text-green-vue">
-          {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
-        </h2>
-        <span class="text-gray-400">{{ emojiMurderStatus }}</span>
+        <template v-if="emojisMurdered === 0">
+          <p class="text-center text-lg md:text-2xl text-gray-300">
+            <span class="wave text-4xl mr-3">👋</span>
+            Hi, I'm
+          </p>
+          <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
+          <span class="text-gray-400">A fullstack developer</span>
+        </template>
+        <template v-else>
+          <p class="text-center text-lg md:text-2xl text-gray-300">
+            You have murdered
+          </p>
+          <h2 class="text-3xl md:text-6xl font-bold my-4 text-green-vue">
+            {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
+          </h2>
+          <span class="text-gray-400">{{ emojiMurderStatus }}</span>
+        </template>
       </template>
     </div>
   </div>
@@ -41,12 +43,11 @@ import JSConfetti from "js-confetti";
 
 let engine = null;
 let runner = null;
+let render = null;
 let mouse = null;
 let mouseConstraint = null;
 
 const matter = ref<HTMLCanvasElement>();
-
-let render: Matter.Render;
 let emojiCreateInterval: ReturnType<typeof setTimeout> | null = null;
 
 const emojisMurdered = ref(0);
@@ -54,7 +55,7 @@ const emojiMurderStatus = ref("");
 const murderComplete = ref(false);
 
 const OFFSET = 30;
-const EMOJI_MURDER_LIMIT = 50;
+const EMOJI_MURDER_LIMIT = 40;
 
 const pageDimensions = inject<{
   width: Ref<number>;

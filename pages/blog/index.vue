@@ -7,7 +7,7 @@
             :background-color="tags[tag]"
             v-for="(tag, i) in modalTags"
             :key="i"
-            class="cursor-pointer tag ripple"
+            class="cursor-pointer no-highlight ripple"
             @clicked="selectTag(tag)"
             :selected="selectedTags.includes(tag)"
           >
@@ -17,7 +17,7 @@
       </modal>
     </transition>
     <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
-      Blogs
+      Blog
     </div>
     <div class="flex">
       <BlogSearchInput
@@ -43,6 +43,7 @@
       <Spinner />
     </h1>
     <alert
+      text-color="#ff0033"
       title="Something went wrong"
       subtitle="An error ocurred while loading blog entries."
       class="mt-5"
@@ -68,26 +69,21 @@
         </div>
       </div>
       <div class="col-span-12 text-xl text-center md:text-left" v-else>
-        No blog entries found.
+        <alert leading="😥" title="No blog entries found." />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { BlogListItem } from "~/models";
 import { tags } from "~/utils/helpers";
 import IconTag from "~icons/mdi/tag-multiple";
 
-const {
-  data: allBlogs,
-  pending,
-  error
-} = useLazyAsyncData("blog", () => $fetch<BlogListItem[]>("/api/blog"));
+const { data: allBlogs, pending, error } = useLazyFetch("/api/blog");
 
 const modalOpen = ref(false);
 const selectedTags = ref<string[]>([]);
-const searchText = ref<string | null>(null);
+const searchText = ref<string>("");
 const page = ref(1);
 
 const itemsPerPage = 4;
@@ -100,30 +96,15 @@ const modalTags = computed(() => {
   return [...new Set(allBlogs.value.flatMap((blog) => blog.tags))];
 });
 
-const filteredBlogs = computed(() => {
-  const predicate = [
-    (blog: BlogListItem) =>
-      blog.title
-        .toLowerCase()
-        .includes(searchText.value ? searchText.value.toLowerCase() : "")
-  ];
-
-  if (selectedTags.value.length > 0) {
-    predicate.push((blog: BlogListItem) =>
-      blog.tags.some((t) => selectedTags.value.includes(t))
-    );
-  }
-
-  return allBlogs.value.filter((b) => {
-    let match = true;
-
-    predicate.forEach((p) => {
-      match = match && p(b);
-    });
-
-    return match;
-  });
-});
+const filteredBlogs = computed(() =>
+  allBlogs.value.filter(
+    (b) =>
+      b.title.toLowerCase().includes(searchText.value.toLowerCase()) &&
+      b.tags.some((t) =>
+        selectedTags.value.length > 0 ? selectedTags.value.includes(t) : true
+      )
+  )
+);
 
 const paginatedBlogs = computed(() => {
   const start = (page.value - 1) * itemsPerPage;
@@ -145,16 +126,16 @@ const handleKeyPress = (e: KeyboardEvent) => {
   }
 };
 
-watch([searchText, selectedTags], () => {
-  page.value = 1;
-});
-
 onMounted(() => {
   window.addEventListener("keydown", handleKeyPress);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("keydown", handleKeyPress);
+});
+
+watch([searchText, selectedTags], () => {
+  page.value = 1;
 });
 
 const { setMeta } = useMetadata();
@@ -174,10 +155,6 @@ setMeta("Matija Novosel - Blog");
   top: -3px;
   right: -3px;
   position: absolute;
-}
-
-.tag {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @media only screen and (max-width: 600px) {
