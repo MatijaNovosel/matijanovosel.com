@@ -70,12 +70,10 @@ const tabHover = (id: string) => {
   navSliderOffset.value = offsetCalc;
 };
 
-const navSliderStyle = computed(() => {
-  return {
-    transform: `translateX(${-navSliderOffset.value}px)`,
-    width: `${navSliderWidth.value + 20}px`
-  };
-});
+const navSliderStyle = computed(() => ({
+  transform: `translateX(${-navSliderOffset.value}px)`,
+  width: `${navSliderWidth.value + 20}px`
+}));
 
 onMounted(() => {
   links.forEach((link) => {
