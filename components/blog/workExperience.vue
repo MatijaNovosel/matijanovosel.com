@@ -16,9 +16,15 @@
         </div>
       </template>
       <div class="flex flex-col text-sm space-y-1 text-gray-300">
-        <div>• Software development using full stack web technologies</div>
-        <div>• Development of mobile applications</div>
-        <div>• Mentoring and creating educational content</div>
+        <div>⚫ Developed software using full stack web technologies</div>
+        <div>
+          ⚫ Developed and deployed mobile applications for both Android and iOS
+        </div>
+        <div>
+          ⚫ Mentored employees and created educational content for teaching
+          purposes
+        </div>
+        <div>⚫ Worked efficiently in an Agile team</div>
       </div>
     </TimelineItem>
     <TimelineItem time="July 2019 - July 2021">
@@ -37,13 +43,14 @@
       </template>
       <div class="flex flex-col text-sm space-y-1 text-gray-300">
         <div>
-          • Software development on multiple company projects using full stack
-          web technologies
+          ⚫ Developed software on multiple company projects for the Croatian
+          government using full stack web technologies
         </div>
         <div>
-          • Mentoring and creating educational content for new and future
+          ⚫ Mentored and created educational content for new and future
           employees
         </div>
+        <div>⚫ Worked efficiently in an Agile team</div>
       </div>
     </TimelineItem>
     <TimelineItem time="May 2018 - February 2019">
@@ -61,7 +68,7 @@
         </div>
       </template>
       <div class="flex flex-col text-sm space-y-1 text-gray-300">
-        <div>Software development using full stack web technologies.</div>
+        <div>⚫ Developed software using full stack web technologies</div>
       </div>
     </TimelineItem>
   </Timeline>
