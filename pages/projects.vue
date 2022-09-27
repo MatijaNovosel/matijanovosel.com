@@ -22,8 +22,8 @@ const projects: ProjectItem[] = [
   {
     description:
       "An application intended for both teachers and students with the purpose of making learning easier.",
-    link: "https://github.com/MatijaNovosel/learning-management-system",
-    title: "📚 LMS",
+    link: "https://github.com/MatijaNovosel/dilligence",
+    title: "📚 Dilligence",
     tags: ["vue2", "dotnetcore", "mssql"]
   },
   {
@@ -35,14 +35,14 @@ const projects: ProjectItem[] = [
   {
     description: "Messaging service for the web, based on WhatsApp.",
     tags: ["supabase", "vue3", "quasar"],
-    link: "https://github.com/MatijaNovosel/chat-app-web",
-    title: "💬 Chat app web"
+    link: "https://github.com/MatijaNovosel/shout",
+    title: "💬 Shout"
   },
   {
     description: "App for tracking personal finances.",
     tags: ["dotnetcore", "vue3", "quasar"],
-    link: "https://github.com/MatijaNovosel/fin-app",
-    title: "💸 FinApp"
+    link: "https://github.com/MatijaNovosel/avarice",
+    title: "💸 Avarice"
   },
   {
     description:
@@ -60,8 +60,8 @@ const projects: ProjectItem[] = [
   {
     description: "A video editor made with Tauri.",
     tags: ["tauri", "vue3", "vite"],
-    link: "https://github.com/MatijaNovosel/video-editor",
-    title: "🎥 Video editor"
+    link: "https://github.com/MatijaNovosel/montage",
+    title: "🎥 Montage"
   },
   {
     description: "Pictionary for mobile devices, made with Flutter.",
@@ -71,10 +71,10 @@ const projects: ProjectItem[] = [
   },
   {
     description:
-      "Finapp mobile implementation, an app for tracking personal finances.",
+      "Avarice mobile implementation, an app for tracking personal finances.",
     tags: ["flutter"],
-    link: "https://github.com/MatijaNovosel/fin-app-mobile",
-    title: "📱 FinApp mobile"
+    link: "https://github.com/MatijaNovosel/avarice-mobile",
+    title: "📱 Avarice mobile"
   }
 ];
 
