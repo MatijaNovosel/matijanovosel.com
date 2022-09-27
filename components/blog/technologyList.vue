@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark-800 px-6 py-3 rounded-lg">
-    <div class="font-bold text-xl pb-4 pt-2">Technologies</div>
+    <div class="font-bold text-xl pb-4 pt-2">⚙️ Technologies</div>
     <component
       :style="{ fontSize: '25px', color: technology.color || 'transparent' }"
       v-for="(technology, i) in technologies"
@@ -32,6 +32,7 @@ import IconFlutter from "~icons/logos/flutter";
 import IconDatabase from "~icons/mdi/database";
 import IconSupabase from "~icons/logos/supabase-icon";
 import IconNuxt from "~icons/logos/nuxt-icon";
+import IconTauri from "~icons/logos/tauri";
 
 const technologies: TechnologyItem[] = [
   {
@@ -108,6 +109,11 @@ const technologies: TechnologyItem[] = [
     color: "",
     icon: IconNuxt,
     tooltip: "Nuxt"
+  },
+  {
+    color: "",
+    icon: IconTauri,
+    tooltip: "Tauri"
   }
 ];
 </script>

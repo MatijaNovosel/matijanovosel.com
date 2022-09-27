@@ -6,7 +6,7 @@
     <div class="grid grid-cols-12">
       <div class="col-span-12 md:col-span-5 md:pr-5 mb-5">
         <div class="bg-dark-800 rounded-lg py-6">
-          <BlogPicture />
+          <BlogInfo />
         </div>
       </div>
       <div class="col-span-12 md:col-span-7">
