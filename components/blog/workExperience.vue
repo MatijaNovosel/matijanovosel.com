@@ -1,5 +1,5 @@
 <template>
-  <div class="font-bold pb-4 text-xl">Work experience</div>
+  <div class="font-bold pb-4 text-xl">💼 Work experience</div>
   <Timeline>
     <TimelineItem time="August 2021 - Current">
       <template #title>

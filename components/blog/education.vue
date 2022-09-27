@@ -1,5 +1,5 @@
 <template>
-  <div class="font-bold pb-5 text-xl">Education</div>
+  <div class="font-bold pb-5 text-xl">🎓 Education</div>
   <Timeline>
     <TimelineItem time="September 2020 - Current">
       <template #title>

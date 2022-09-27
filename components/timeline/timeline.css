@@ -1,3 +1,7 @@
+.timeline a {
+  width: fit-content;
+}
+
 .timeline-time {
   padding-left: 40px;
 }
