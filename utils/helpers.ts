@@ -66,3 +66,23 @@ export const createEmojiImage = (): string => {
 
   return url;
 };
+
+export const monthDiff = (dateFrom: Date, dateTo: Date) => {
+  return (
+    dateTo.getMonth() -
+    dateFrom.getMonth() +
+    12 * (dateTo.getFullYear() - dateFrom.getFullYear())
+  );
+};
+
+export const dateDiffReadable = (from: Date, to: Date): string => {
+  const monthDifference = monthDiff(from, to);
+  const years = Math.floor(monthDifference / 12);
+  const months = monthDifference % 12;
+
+  return `${years > 0 ? `${years} year${years > 1 ? "s" : ""}` : ""}${
+    months > 0
+      ? `${years > 0 ? " " : ""}${months} month${months > 1 ? "s" : ""}`
+      : ""
+  }`;
+};

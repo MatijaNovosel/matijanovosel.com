@@ -10,12 +10,17 @@
           >
             King ICT
           </a>
-          <span class="mt-1 text-xs text-green-vue">
+          <span class="my-1 text-xs text-green-vue">
             Software developer (student)
+          </span>
+          <span class="text-xs text-gray-400">
+            August 2021 - Current ({{
+              dateDiffReadable(new Date("2021-08-01"), new Date())
+            }})
           </span>
         </div>
       </template>
-      <div class="flex flex-col text-sm space-y-1 text-gray-300">
+      <div class="flex flex-col text-sm space-y-1 text-gray-300 mt-3">
         <div>⚫ Developed software using full stack web technologies</div>
         <div>
           ⚫ Developed and deployed mobile applications for both Android and iOS
@@ -27,7 +32,7 @@
         <div>⚫ Worked efficiently in an Agile team</div>
       </div>
     </TimelineItem>
-    <TimelineItem time="July 2019 - July 2021">
+    <TimelineItem>
       <template #title>
         <div class="flex flex-col">
           <a
@@ -36,12 +41,17 @@
           >
             Omega software
           </a>
-          <span class="mt-1 text-xs text-green-vue">
+          <span class="my-1 text-xs text-green-vue">
             Junior software developer (student)
+          </span>
+          <span class="text-xs text-gray-400">
+            July 2019 - July 2021 ({{
+              dateDiffReadable(new Date("2019-07-01"), new Date("2021-07-01"))
+            }})
           </span>
         </div>
       </template>
-      <div class="flex flex-col text-sm space-y-1 text-gray-300">
+      <div class="flex flex-col text-sm space-y-1 text-gray-300 mt-3">
         <div>
           ⚫ Developed software on multiple company projects for the Croatian
           government using full stack web technologies
@@ -53,7 +63,7 @@
         <div>⚫ Worked efficiently in an Agile team</div>
       </div>
     </TimelineItem>
-    <TimelineItem time="May 2018 - February 2019">
+    <TimelineItem>
       <template #title>
         <div class="flex flex-col">
           <a
@@ -62,14 +72,23 @@
           >
             Maidea
           </a>
-          <span class="mt-1 text-xs text-green-vue">
+          <span class="my-1 text-xs text-green-vue">
             Junior software developer (student)
+          </span>
+          <span class="text-xs text-gray-400">
+            May 2018 - February 2019 ({{
+              dateDiffReadable(new Date("2018-05-01"), new Date("2019-02-01"))
+            }})
           </span>
         </div>
       </template>
-      <div class="flex flex-col text-sm space-y-1 text-gray-300">
+      <div class="flex flex-col text-sm space-y-1 text-gray-300 mt-3">
         <div>⚫ Developed software using full stack web technologies</div>
       </div>
     </TimelineItem>
   </Timeline>
 </template>
+
+<script lang="ts" setup>
+import { dateDiffReadable } from "~/utils/helpers";
+</script>

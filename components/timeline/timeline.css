@@ -2,10 +2,6 @@
   width: fit-content;
 }
 
-.timeline-time {
-  padding-left: 40px;
-}
-
 .timeline-dot {
   bottom: 0;
   position: absolute;
