@@ -27,6 +27,7 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-toc-done-right": "^4.2.0",
-    "matter-js": "^0.18.0"
+    "matter-js": "^0.18.0",
+    "motion": "^10.14.2"
   }
 }
