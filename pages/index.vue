@@ -2,44 +2,34 @@
   <div class="w-full h-full flex justify-center items-center">
     <canvas ref="matter" class="z-1" />
     <div
-      class="z-2 flex flex-col items-center justify-center user-select-none mx-auto text-center"
+      class="z-2 flex flex-col items-center justify-center user-select-none mx-auto"
     >
-      <Motion
-        :initial="{ opacity: 0, scale: 0 }"
-        :animate="{ opacity: 1, scale: 1 }"
-        v-if="murderComplete"
-      >
+      <template v-if="murderComplete">
         <img
           class="p-2 bg-white rounded-lg"
           width="200"
           height="200"
           src="/qr.svg"
         />
-      </Motion>
+      </template>
       <template v-else>
-        <Motion
-          :initial="{ opacity: 0, scale: 0 }"
-          :animate="{ opacity: 1, scale: 1 }"
-          v-if="emojisMurdered === 0"
-        >
-          <p class="text-lg md:text-2xl text-gray-300">
+        <template v-if="emojisMurdered === 0">
+          <p class="text-center text-lg md:text-2xl text-gray-300">
             <span class="wave text-4xl mr-3">👋</span>
             Hi, I'm
           </p>
           <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
           <span class="text-gray-400">A fullstack developer</span>
-        </Motion>
-        <Motion
-          :initial="{ opacity: 0, scale: 0 }"
-          :animate="{ opacity: 1, scale: 1 }"
-          v-else
-        >
-          <p class="text-lg md:text-2xl text-gray-300">You have murdered</p>
+        </template>
+        <template v-else>
+          <p class="text-center text-lg md:text-2xl text-gray-300">
+            You have murdered
+          </p>
           <h2 class="text-3xl md:text-6xl font-bold my-4 text-green-vue">
             {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
           </h2>
           <span class="text-gray-400">{{ emojiMurderStatus }}</span>
-        </Motion>
+        </template>
       </template>
     </div>
   </div>
@@ -48,7 +38,6 @@
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
 import { createEmojiImage, randInt, skullEmojiUrl } from "../utils/helpers";
-import { Motion } from "motion/vue";
 import Matter from "matter-js";
 import JSConfetti from "js-confetti";
 
