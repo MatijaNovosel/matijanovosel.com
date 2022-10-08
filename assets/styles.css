@@ -139,19 +139,6 @@ html {
   opacity: 0;
 }
 
-.layout-enter-active {
-  transition: all 0.2s ease-out;
-}
-
-.layout-leave-active {
-  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.layout-enter-from,
-.layout-leave-to {
-  opacity: 0;
-}
-
 .ripple {
   background-position: center;
   transition: background 0.8s;
@@ -159,7 +146,7 @@ html {
 
 .ripple:hover {
   background: #dee2e519 radial-gradient(circle, transparent 1%, #dee2e519 1%)
-    center/15000%;
+    center / 15000%;
 }
 
 .ripple:active {
@@ -197,4 +184,30 @@ html {
 
 .no-highlight {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+.bounce-leave-active {
+  display: none;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dot {
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
 }

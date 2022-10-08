@@ -43,7 +43,7 @@
       <Spinner />
     </h1>
     <alert
-      text-color="#ff0033"
+      text-color="#d91139"
       title="Something went wrong"
       subtitle="An error ocurred while loading blog entries."
       class="mt-5"

@@ -1,17 +1,21 @@
 <template>
-  <div class="bg-dark-800 px-6 py-3 rounded-lg">
-    <div class="font-bold text-xl pb-4 pt-2">⚙️ Technologies</div>
-    <component
-      :style="{ fontSize: '25px', color: technology.color || 'transparent' }"
-      v-for="(technology, i) in technologies"
-      :key="i"
-      :is="technology.icon"
-      class="m-1 icon text-lg"
-      v-tooltip="{
-        content: technology.tooltip,
-        theme: 'info-tooltip'
-      }"
-    />
+  <div class="bg-dark-800 rounded-lg">
+    <div class="font-bold text-xl p-3 bg-dark-500 rounded-t-lg">
+      ⚙️ Technologies
+    </div>
+    <div class="p-3">
+      <component
+        :style="{ fontSize: '25px', color: technology.color || 'transparent' }"
+        v-for="(technology, i) in technologies"
+        :key="i"
+        :is="technology.icon"
+        class="m-1 icon text-lg"
+        v-tooltip="{
+          content: technology.tooltip,
+          theme: 'info-tooltip'
+        }"
+      />
+    </div>
   </div>
 </template>
 
