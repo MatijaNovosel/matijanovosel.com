@@ -5,18 +5,12 @@
     </div>
     <div class="grid grid-cols-12">
       <div class="col-span-12 md:col-span-5 md:pr-5 mb-5">
-        <div class="bg-dark-800 rounded-lg py-6">
-          <BlogInfo />
-        </div>
+        <AboutMeInfo />
       </div>
       <div class="col-span-12 md:col-span-7">
-        <BlogTechnologyList />
-        <div class="bg-dark-800 rounded-lg p-5 mt-5">
-          <BlogWorkExperience />
-        </div>
-        <div class="bg-dark-800 rounded-lg p-5 mt-5">
-          <BlogEducation />
-        </div>
+        <AboutMeTechnologyList />
+        <AboutMeWorkExperience />
+        <AboutMeEducation />
       </div>
     </div>
   </div>

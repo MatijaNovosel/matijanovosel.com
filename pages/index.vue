@@ -2,35 +2,36 @@
   <div class="w-full h-full flex justify-center items-center">
     <canvas ref="matter" class="z-1" />
     <div
-      class="z-2 flex flex-col items-center justify-center user-select-none mx-auto"
+      class="z-2 flex flex-col items-center justify-center user-select-none mx-auto text-center"
     >
-      <template v-if="murderComplete">
+      <transition name="bounce" appear>
         <img
+          v-if="murderComplete"
           class="p-2 bg-white rounded-lg"
           width="200"
           height="200"
           src="/qr.svg"
         />
-      </template>
-      <template v-else>
-        <template v-if="emojisMurdered === 0">
+        <div v-else-if="emojisMurdered === 0">
           <p class="text-center text-lg md:text-2xl text-gray-300">
             <span class="wave text-4xl mr-3">👋</span>
             Hi, I'm
           </p>
           <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
           <span class="text-gray-400">A fullstack developer</span>
-        </template>
-        <template v-else>
+        </div>
+        <div v-else>
           <p class="text-center text-lg md:text-2xl text-gray-300">
             You have murdered
           </p>
           <h2 class="text-3xl md:text-6xl font-bold my-4 text-green-vue">
             {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
           </h2>
-          <span class="text-gray-400">{{ emojiMurderStatus }}</span>
-        </template>
-      </template>
+          <span class="text-gray-400">
+            {{ emojiMurderStatus }}
+          </span>
+        </div>
+      </transition>
     </div>
   </div>
 </template>

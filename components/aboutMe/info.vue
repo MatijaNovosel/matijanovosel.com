@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="bg-dark-800 rounded-lg text-center py-6">
     <div class="outer mx-auto">
       <img
         class="me-img rounded-full inner"
