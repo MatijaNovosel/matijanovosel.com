@@ -1,5 +1,7 @@
 <template>
-  <nav class="flex z-3 mt-4 justify-start rounded-lg bg-dark-300 fixed px-2">
+  <nav
+    class="flex z-3 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute"
+  >
     <div class="nav-slider" :style="navSliderStyle" />
     <NuxtLink
       :id="link.to"
@@ -69,7 +71,7 @@ const tabHover = (id: string) => {
 };
 
 const navSliderStyle = computed(() => ({
-  transform: `translateX(${-navSliderOffset.value - 7}px)`,
+  transform: `translateX(${-navSliderOffset.value}px)`,
   width: `${navSliderWidth.value + 20}px`
 }));
 
@@ -94,11 +96,11 @@ nav:hover .nav-slider {
   transition-duration: 150ms;
   opacity: 0;
   contain: strict;
-  background: #ab9a9a40;
+  background: rgba(171, 154, 154, 0.25);
   position: absolute;
   top: 8px;
   right: 3px;
-  border-radius: 8px;
+  border-radius: 4px;
   z-index: -1;
   height: 32px;
   transition: 0.15s ease;
@@ -106,7 +108,7 @@ nav:hover .nav-slider {
 }
 
 .nav-tab {
-  color: #7a6767;
+  color: grey;
   position: relative;
   display: inline-block;
   padding: 10px 12px;
