@@ -4,11 +4,11 @@
       About me
     </div>
     <div class="grid grid-cols-12">
-      <div class="col-span-12 md:col-span-5 md:pr-5 mb-5">
+      <div class="col-span-12 md:col-span-5 md:pr-5">
         <AboutMeInfo />
-      </div>
-      <div class="col-span-12 md:col-span-7">
         <AboutMeTechnologyList />
+      </div>
+      <div class="col-span-12 md:col-span-7 mt-5 md:mt-0">
         <AboutMeWorkExperience />
         <AboutMeEducation />
       </div>
@@ -18,5 +18,5 @@
 
 <script lang="ts" setup>
 const { setMeta } = useMetadata();
-setMeta("Matija Novosel - About me");
+setMeta("About me | Matija Novosel");
 </script>

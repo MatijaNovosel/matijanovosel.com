@@ -49,7 +49,7 @@
               Tehnička škola Ruđera Boškovića
             </a>
             <span class="mt-1 text-xs text-green-vue">
-              Computer technician
+              Computer technician (Tehničar za računarstvo)
             </span>
             <span class="text-xs text-gray-400">
               September 2013 - July 2017

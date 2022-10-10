@@ -145,7 +145,7 @@ watch([searchText, selectedTags], () => {
 });
 
 const { setMeta } = useMetadata();
-setMeta("Matija Novosel - Blog");
+setMeta("Blog | Matija Novosel");
 </script>
 
 <style scoped>

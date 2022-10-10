@@ -40,7 +40,7 @@ import BackBtn from "~/components/blog/backBtn.vue";
 const { setMeta } = useMetadata();
 
 const route = useRoute();
-setMeta("Matija Novosel - Blogs");
+setMeta("Blog | Matija Novosel");
 
 const {
   data: blog,

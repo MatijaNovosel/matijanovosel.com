@@ -7,18 +7,12 @@ html {
 }
 
 @font-face {
-  font-family: "roboto";
-  src: url("/roboto.ttf");
-  font-display: swap;
-}
-
-@font-face {
   font-family: "CascadiaCode";
   src: url("/cascadia.ttf");
 }
 
 body {
-  font-family: "roboto";
+  font-family: "Roboto", sans-serif;
   height: 100%;
 }
 
