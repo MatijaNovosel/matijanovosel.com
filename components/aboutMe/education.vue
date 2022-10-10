@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark-800 rounded-lg mt-5">
-    <div class="font-bold p-3 text-xl rounded-t-lg bg-dark-500">
+    <div class="font-bold p-3 text-xl rounded-t-lg bg-dark-400">
       🎓 Education
     </div>
     <Timeline class="p-5">

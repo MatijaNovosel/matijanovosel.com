@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-dark-800 rounded-lg">
-    <div class="font-bold p-3 text-xl bg-dark-500 rounded-t-lg">
+  <div class="bg-dark-800 rounded-lg mt-5">
+    <div class="font-bold p-3 text-xl bg-dark-400 rounded-t-lg">
       💼 Work experience
     </div>
     <Timeline class="p-5">
