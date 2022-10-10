@@ -79,5 +79,5 @@ const projects: ProjectItem[] = [
 ];
 
 const { setMeta } = useMetadata();
-setMeta("Matija Novosel - Projects");
+setMeta("Projects | Matija Novosel");
 </script>

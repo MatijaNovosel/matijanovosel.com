@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex justify-center items-center">
-    <canvas ref="matter" class="z-1" />
+    <canvas ref="matterCanvas" class="z-1" />
     <div
       class="z-2 flex flex-col items-center justify-center user-select-none mx-auto text-center"
     >
@@ -10,24 +10,26 @@
           class="p-2 bg-white rounded-lg"
           width="200"
           height="200"
-          src="/qr.svg"
+          src="https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/qr.svg"
         />
         <div v-else-if="emojisMurdered === 0">
           <p class="text-center text-lg md:text-2xl text-gray-300">
             <span class="wave text-4xl mr-3">👋</span>
             Hi, I'm
           </p>
-          <h2 class="text-3xl md:text-6xl font-bold my-4">Matija Novosel</h2>
-          <span class="text-gray-400">A fullstack developer</span>
+          <h2 class="text-3xl md:text-7xl font-bold my-4 text-green-vue">
+            Matija Novosel
+          </h2>
+          <span>A fullstack developer</span>
         </div>
         <div v-else>
           <p class="text-center text-lg md:text-2xl text-gray-300">
             You have murdered
           </p>
-          <h2 class="text-3xl md:text-6xl font-bold my-4 text-green-vue">
+          <h2 class="text-3xl md:text-7xl font-bold my-4 text-green-vue">
             {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
           </h2>
-          <span class="text-gray-400">
+          <span>
             {{ emojiMurderStatus }}
           </span>
         </div>
@@ -38,7 +40,17 @@
 
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
-import { createEmojiImage, randInt, skullEmojiUrl } from "../utils/helpers";
+import {
+  CANVAS_OFFSET,
+  createEmojiImage,
+  EMOJI_CLEANUP_INTERVAL,
+  EMOJI_INACTIVITY_INTERVAL,
+  EMOJI_MURDER_LIMIT,
+  EMOJI_SPAWN_INTERVAL,
+  randInt,
+  REWARD_TIMEOUT,
+  skullEmojiUrl
+} from "../utils/helpers";
 import Matter from "matter-js";
 import JSConfetti from "js-confetti";
 
@@ -47,16 +59,14 @@ let runner = null;
 let render = null;
 let mouse = null;
 let mouseConstraint = null;
+let inactivityInterval = null;
+let emojiCreateInterval = null;
 
-const matter = ref<HTMLCanvasElement>();
-let emojiCreateInterval: ReturnType<typeof setTimeout> | null = null;
-
+const matterCanvas = ref<HTMLCanvasElement>();
 const emojisMurdered = ref(0);
 const emojiMurderStatus = ref("");
 const murderComplete = ref(false);
-
-const OFFSET = 30;
-const EMOJI_MURDER_LIMIT = 40;
+const inactive = ref(false);
 
 const pageDimensions = inject<{
   width: Ref<number>;
@@ -68,29 +78,27 @@ onMounted(() => {
   runner = Matter.Runner.create();
 
   render = Matter.Render.create({
-    canvas: matter.value,
+    canvas: matterCanvas.value,
     engine,
     options: {
       wireframes: false,
       background: "black",
       width: pageDimensions.width.value,
-      height: pageDimensions.height.value - OFFSET
+      height: pageDimensions.height.value - CANVAS_OFFSET
     }
   });
 
   Matter.Render.run(render);
   Matter.Runner.run(runner, engine);
 
-  const constraint: any = {
-    render: {
-      visible: false
-    }
-  };
-
-  mouse = Matter.Mouse.create(matter.value);
+  mouse = Matter.Mouse.create(matterCanvas.value);
   mouseConstraint = Matter.MouseConstraint.create(engine, {
     mouse,
-    constraint: { ...constraint }
+    constraint: {
+      render: {
+        visible: false
+      }
+    } as any
   });
 
   Matter.Composite.add(engine.world, mouseConstraint);
@@ -110,7 +118,7 @@ onMounted(() => {
     const url = createEmojiImage();
 
     const obj = Matter.Bodies.circle(
-      randInt(OFFSET, pageDimensions.width.value - OFFSET),
+      randInt(CANVAS_OFFSET, pageDimensions.width.value - CANVAS_OFFSET),
       60,
       20,
       {
@@ -132,12 +140,20 @@ onMounted(() => {
 
     setTimeout(() => {
       Matter.Composite.remove(engine.world, obj);
-    }, 8000);
-  }, 200);
+    }, EMOJI_CLEANUP_INTERVAL);
+  }, EMOJI_SPAWN_INTERVAL);
+
+  inactivityInterval = setInterval(() => {
+    if (inactive.value && !murderComplete.value) {
+      emojisMurdered.value = 0;
+    }
+    inactive.value = true;
+  }, EMOJI_INACTIVITY_INTERVAL);
 });
 
 onBeforeUnmount(() => {
   clearTimeout(emojiCreateInterval || -1);
+  clearTimeout(inactivityInterval || -1);
   Matter.Composite.remove(engine.world, mouseConstraint);
   engine.world.bodies.forEach((body) => {
     Matter.Composite.remove(engine.world, body);
@@ -151,11 +167,11 @@ watch([pageDimensions.width, pageDimensions.height], async () => {
   await nextTick(() => {
     if (render) {
       render.bounds.max.x = width.value;
-      render.bounds.max.y = height.value - OFFSET;
+      render.bounds.max.y = height.value - CANVAS_OFFSET;
       render.options.width = width.value;
-      render.options.height = height.value - OFFSET;
+      render.options.height = height.value - CANVAS_OFFSET;
       render.canvas.width = width.value;
-      render.canvas.height = height.value - OFFSET;
+      render.canvas.height = height.value - CANVAS_OFFSET;
     }
   });
 });
@@ -163,6 +179,7 @@ watch([pageDimensions.width, pageDimensions.height], async () => {
 watch(
   () => emojisMurdered.value,
   (val) => {
+    inactive.value = false;
     if (val >= 0 && val <= EMOJI_MURDER_LIMIT / 2 - 1) {
       emojiMurderStatus.value = "... keep going";
     } else if (
@@ -174,9 +191,10 @@ watch(
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
       emojiMurderStatus.value = "Well done. Are you ready for your reward?";
+      clearTimeout(inactivityInterval || -1);
       setTimeout(() => {
         murderComplete.value = true;
-      }, 4000);
+      }, REWARD_TIMEOUT);
     }
   }
 );
