@@ -19,29 +19,7 @@
     <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
       Blog
     </div>
-    <div class="flex">
-      <BlogSearchInput
-        class="flex-grow pr-3"
-        :loading="pending"
-        :error="!!error"
-        v-model="searchText"
-      />
-      <div
-        @click="modalOpen = true"
-        class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer relative"
-        :class="{
-          badge: selectedTags.length > 0
-        }"
-      >
-        <IconTag />
-      </div>
-    </div>
-    <h1
-      class="font-bold text-5xl md:text-7xl text-center font-space"
-      v-if="pending"
-    >
-      <Spinner />
-    </h1>
+    <AppSpinner v-if="pending" />
     <alert
       text-color="#d91139"
       title="Something went wrong"
@@ -49,29 +27,48 @@
       class="mt-5"
       v-else-if="error"
     />
-    <div class="grid grid-cols-12 px-1 md:px-0 mt-6 md:gap-8" v-else>
-      <div class="contents" v-if="paginatedBlogs.length > 0">
-        <BlogCard
-          class="col-span-12 md:col-span-6"
-          v-for="(blog, i) in paginatedBlogs"
-          :blog="blog"
-          :key="i"
-          :class="{
-            'mt-6 md:mt-0': i !== 0
-          }"
+    <template v-else>
+      <div class="flex">
+        <BlogSearchInput
+          class="flex-grow pr-3"
+          :loading="pending"
+          :error="!!error"
+          v-model="searchText"
         />
-        <div class="col-span-12 flex justify-center items-center">
-          <pagination
-            class="my-5"
-            v-model="page"
-            :number-of-pages="numberOfPages"
-          />
+        <div
+          @click="modalOpen = true"
+          class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer relative"
+          :class="{
+            badge: selectedTags.length > 0
+          }"
+        >
+          <IconTag />
         </div>
       </div>
-      <div class="col-span-12 text-xl text-center md:text-left" v-else>
-        <alert leading="😥" title="No blog entries found." />
+      <div class="grid grid-cols-12 px-1 md:px-0 mt-6 md:gap-8">
+        <div class="contents" v-if="paginatedBlogs.length > 0">
+          <BlogCard
+            class="col-span-12 md:col-span-6"
+            v-for="(blog, i) in paginatedBlogs"
+            :blog="blog"
+            :key="i"
+            :class="{
+              'mt-6 md:mt-0': i !== 0
+            }"
+          />
+          <div class="col-span-12 flex justify-center items-center">
+            <pagination
+              class="my-5"
+              v-model="page"
+              :number-of-pages="numberOfPages"
+            />
+          </div>
+        </div>
+        <div class="col-span-12 text-xl text-center md:text-left" v-else>
+          <alert leading="😥" title="No blog entries found." />
+        </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 

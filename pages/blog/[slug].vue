@@ -1,12 +1,7 @@
 <template>
   <div class="mt-4 md:mt-10 w-full px-3 md:px-0">
     <BackBtn />
-    <h1
-      class="font-bold text-5xl md:text-7xl text-center font-space"
-      v-if="pending"
-    >
-      <Spinner />
-    </h1>
+    <AppSpinner class="mx-auto mt-4" v-if="pending" />
     <alert
       text-color="#d91139"
       title="Something went wrong"
