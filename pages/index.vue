@@ -17,10 +17,8 @@
             <span class="wave text-4xl mr-3">👋</span>
             Hi, I'm
           </p>
-          <h2 class="text-3xl md:text-7xl font-bold my-4 text-green-vue">
-            Matija Novosel
-          </h2>
-          <span>A fullstack developer</span>
+          <h2 class="text-3xl md:text-7xl font-bold my-4">Matija Novosel</h2>
+          <span class="text-gray-400">A fullstack developer</span>
         </div>
         <div v-else>
           <p class="text-center text-lg md:text-2xl text-gray-300">
