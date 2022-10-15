@@ -1,4 +1,4 @@
-const emojis: string[] = [
+export default [
   "😄",
   "😃",
   "😀",
@@ -626,5 +626,3 @@ const emojis: string[] = [
   "🔸",
   "🔹"
 ];
-
-export default emojis;

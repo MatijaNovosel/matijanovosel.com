@@ -30,17 +30,11 @@
 import IconSearch from "~icons/material-symbols/search";
 import IconClear from "~icons/ic/round-clear";
 
-defineProps({
-  modelValue: {
-    type: String
-  },
-  loading: {
-    type: Boolean
-  },
-  error: {
-    type: Boolean
-  }
-});
+defineProps<{
+  modelValue: string;
+  loading: boolean;
+  error: boolean;
+}>();
 
 const emit = defineEmits(["update:modelValue"]);
 

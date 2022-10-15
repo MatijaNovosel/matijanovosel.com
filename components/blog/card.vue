@@ -14,7 +14,7 @@
       </span>
       <div class="flex flex-wrap">
         <Tag
-          :background-color="tags[tag]"
+          :background-color="TAGS[tag]"
           v-for="(tag, j) in blog.tags"
           :key="j"
         >
@@ -28,14 +28,11 @@
 <script lang="ts" setup>
 import { PropType } from "vue";
 import { BlogListItem } from "~/models";
-import { tags } from "~/utils/helpers";
+import { TAGS } from "~/utils/constants";
 
-defineProps({
-  blog: {
-    type: Object as PropType<BlogListItem>,
-    required: true
-  }
-});
+defineProps<{
+  blog: BlogListItem;
+}>();
 </script>
 
 <style scoped>

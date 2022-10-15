@@ -11,6 +11,13 @@ export interface ProjectItem {
   tags: string[];
 }
 
+export interface EducationItem {
+  name: string;
+  title: string;
+  duration: string;
+  link: string;
+}
+
 export interface BlogListItem {
   title: string;
   subtitle: string;

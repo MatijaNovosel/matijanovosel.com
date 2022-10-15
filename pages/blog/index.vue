@@ -4,7 +4,7 @@
       <modal title="Filter by tags" v-if="modalOpen" @close="modalOpen = false">
         <div class="flex flex-wrap">
           <Tag
-            :background-color="tags[tag]"
+            :background-color="TAGS[tag]"
             v-for="(tag, i) in modalTags"
             :key="i"
             class="cursor-pointer no-highlight ripple"
@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts" setup>
-import { tags } from "~/utils/helpers";
+import { TAGS } from "~/utils/constants";
 import IconTag from "~icons/mdi/tag-multiple";
 
 const {

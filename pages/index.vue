@@ -38,17 +38,16 @@
 
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
+import { createEmojiImage, randInt } from "~/utils/helpers";
 import {
-  CANVAS_OFFSET,
-  createEmojiImage,
+  REWARD_TIMEOUT,
+  SKULL_EMOJI_URL,
   EMOJI_CLEANUP_INTERVAL,
   EMOJI_INACTIVITY_INTERVAL,
   EMOJI_MURDER_LIMIT,
   EMOJI_SPAWN_INTERVAL,
-  randInt,
-  REWARD_TIMEOUT,
-  skullEmojiUrl
-} from "../utils/helpers";
+  CANVAS_OFFSET
+} from "~/utils/constants";
 import Matter from "matter-js";
 import JSConfetti from "js-confetti";
 
@@ -105,9 +104,9 @@ onMounted(() => {
     if (
       mouseConstraint.body &&
       emojisMurdered.value != EMOJI_MURDER_LIMIT &&
-      mouseConstraint.body.render.sprite.texture !== skullEmojiUrl
+      mouseConstraint.body.render.sprite.texture !== SKULL_EMOJI_URL
     ) {
-      mouseConstraint.body.render.sprite.texture = skullEmojiUrl;
+      mouseConstraint.body.render.sprite.texture = SKULL_EMOJI_URL;
       emojisMurdered.value++;
     }
   });

@@ -26,10 +26,7 @@ const markdown = new MarkdownIt()
   .use(MarkdownItSup)
   .use(MarkdownItTasklists);
 
-const props = defineProps({
-  source: {
-    type: String,
-    default: ""
-  }
-});
+const props = defineProps<{
+  source: string;
+}>();
 </script>

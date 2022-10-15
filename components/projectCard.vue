@@ -9,7 +9,7 @@
       </div>
       <div class="mt-3 flex flex-wrap">
         <Tag
-          :background-color="tags[tag]"
+          :background-color="TAGS[tag]"
           v-for="(tag, j) in project.tags"
           :key="j"
         >
@@ -21,14 +21,10 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
 import { ProjectItem } from "~/models";
-import { tags } from "~/utils/helpers";
+import { TAGS } from "~/utils/constants";
 
-defineProps({
-  project: {
-    type: Object as PropType<ProjectItem>,
-    required: true
-  }
-});
+defineProps<{
+  project: ProjectItem;
+}>();
 </script>
