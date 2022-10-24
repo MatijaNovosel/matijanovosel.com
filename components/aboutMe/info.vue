@@ -1,7 +1,7 @@
 <template>
   <div class="bg-dark-800 rounded-lg text-left">
     <div class="font-bold py-5 text-xl bg-green-vue rounded-t-lg header"></div>
-    <div class="pt-3 text-gray-300 p-5">
+    <div class="pt-3 text-gray-300 p-5 text-sm md:text-base">
       <div class="me" />
       <p class="mt-5 text-4xl text-white font-bold text-center">
         Matija Novosel
