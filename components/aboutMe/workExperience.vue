@@ -46,7 +46,7 @@
               Omega software
             </a>
             <span class="my-1 text-xs text-green-vue">
-              Junior software developer (student)
+              Software developer (student)
             </span>
             <span class="text-xs text-gray-400">
               July 2019 - July 2021 ({{

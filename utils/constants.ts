@@ -68,11 +68,10 @@ export const PROJECTS: ProjectItem[] = [
     title: "💸 Avarice"
   },
   {
-    description:
-      "Frontend for the GymDash gym management web application, made as a group task for a college course.",
-    tags: ["vue2", "vuetify", "spring"],
-    link: "https://github.com/MatijaNovosel/gym-dash-ui",
-    title: "🏋🏽‍♂️ GymDash"
+    description: "A web app for checking off Realm of the mad god loot items.",
+    tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
+    link: "https://github.com/MatijaNovosel/realm-trove",
+    title: "👑 Realm trove"
   },
   {
     description: "Bullet hell RPG roguelike.",
@@ -87,6 +86,13 @@ export const PROJECTS: ProjectItem[] = [
     title: "🎥 Montage"
   },
   {
+    description:
+      "Frontend for the GymDash gym management web application, made as a group task for a college course.",
+    tags: ["vue2", "vuetify", "spring"],
+    link: "https://github.com/MatijaNovosel/gym-dash-ui",
+    title: "🏋🏽‍♂️ GymDash"
+  },
+  {
     description: "Pictionary for mobile devices, made with Flutter.",
     tags: ["flutter", "express", "socketio"],
     link: "https://github.com/MatijaNovosel/scribble",
@@ -98,12 +104,6 @@ export const PROJECTS: ProjectItem[] = [
     tags: ["flutter"],
     link: "https://github.com/MatijaNovosel/avarice-mobile",
     title: "📱 Avarice mobile"
-  },
-  {
-    description: "A web app for checking off Realm of the mad god loot items.",
-    tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
-    link: "https://github.com/MatijaNovosel/realm-trove",
-    title: "👑 Realm trove"
   }
 ];
 
