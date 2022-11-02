@@ -1,4 +1,26 @@
-import { EducationItem, ProjectItem } from "~/models";
+import {
+  EducationItem,
+  ProjectItem,
+  TechnologyItem,
+  WorkExperienceItem
+} from "~/models";
+import { dateDiffReadable } from "./helpers";
+import IconVue from "~icons/vscode-icons/file-type-vue";
+import IconReact from "~icons/mdi/react";
+import IconAngular from "~icons/mdi/angular";
+import IconElectron from "~icons/logos/electron";
+import IconDotNet from "~icons/mdi/dot-net";
+import IconPhp from "~icons/mdi/language-php";
+import IconNode from "~icons/mdi/nodejs";
+import IconFirebase from "~icons/logos/firebase";
+import IconGraphQl from "~icons/logos/graphql";
+import IconVisualStudioCode from "~icons/mdi/microsoft-visual-studio-code";
+import IconGit from "~icons/mdi/git";
+import IconFlutter from "~icons/logos/flutter";
+import IconDatabase from "~icons/mdi/database";
+import IconSupabase from "~icons/logos/supabase-icon";
+import IconNuxt from "~icons/logos/nuxt-icon";
+import IconTauri from "~icons/logos/tauri";
 
 export const CANVAS_OFFSET = 30;
 export const EMOJI_MURDER_LIMIT = 40;
@@ -126,5 +148,124 @@ export const EDUCATION: EducationItem[] = [
     title: "Computer technician (Tehničar za računarstvo)",
     name: "Tehnička škola Ruđera Boškovića",
     link: "https://www.tsrb.hr/"
+  }
+];
+
+export const WORK_EXPERIENCE: WorkExperienceItem[] = [
+  {
+    company: "King ICT",
+    position: "Software developer (student)",
+    from: new Date("2021-08-01"),
+    to: null,
+    link: "https://king-ict.com/",
+    description: [
+      "Developed software using full stack web technologies",
+      "Developed and deployed mobile applications for both Android and iOS",
+      "Mentored employees and created educational content for teaching purposes",
+      "Worked efficiently in an Agile team"
+    ]
+  },
+  {
+    company: "Omega Software",
+    position: "Software developer (student)",
+    from: new Date("2019-07-01"),
+    to: new Date("2021-07-01"),
+    link: "https://www.omega-software.hr/",
+    description: [
+      "Developed software on multiple company projects for the Croatian government using full stack web technologies",
+      "Mentored and created educational content for new and future employees",
+      "Worked efficiently in an Agile team"
+    ]
+  },
+  {
+    company: "Maidea",
+    position: "Junior Software developer (student)",
+    from: new Date("2018-05-01"),
+    to: new Date("2019-02-01"),
+    link: "https://www.maidea.com/",
+    description: ["Developed software using full stack web technologies"]
+  }
+];
+
+export const TECHNOLOGIES: TechnologyItem[] = [
+  {
+    color: "",
+    icon: IconVue,
+    tooltip: "Vue 2, 3, Quasar, Vuetify"
+  },
+  {
+    color: "#4fb1f3",
+    icon: IconReact,
+    tooltip: "React, React native"
+  },
+  {
+    color: "red",
+    icon: IconAngular,
+    tooltip: "Angular"
+  },
+  {
+    color: "cyan",
+    icon: IconElectron,
+    tooltip: "Electron"
+  },
+  {
+    color: "purple",
+    icon: IconDotNet,
+    tooltip: ".NET Core, MVC"
+  },
+  {
+    color: "grey",
+    icon: IconPhp,
+    tooltip: "PHP, CakePHP & Symphony"
+  },
+  {
+    color: "green",
+    icon: IconNode,
+    tooltip: "NodeJS, Express, NestJS"
+  },
+  {
+    color: "",
+    icon: IconFirebase,
+    tooltip: "Firebase"
+  },
+  {
+    color: "pink",
+    icon: IconGraphQl,
+    tooltip: "GraphQL"
+  },
+  {
+    color: "#4fb1f3",
+    icon: IconVisualStudioCode,
+    tooltip: "Visual Studio & Visual Studio Code"
+  },
+  {
+    color: "red",
+    icon: IconGit,
+    tooltip: "Git"
+  },
+  {
+    color: "",
+    icon: IconFlutter,
+    tooltip: "Flutter"
+  },
+  {
+    color: "purple",
+    icon: IconDatabase,
+    tooltip: "MySQL, MSSQL, PostgreSQL"
+  },
+  {
+    color: "",
+    icon: IconSupabase,
+    tooltip: "Supabase"
+  },
+  {
+    color: "",
+    icon: IconNuxt,
+    tooltip: "Nuxt"
+  },
+  {
+    color: "",
+    icon: IconTauri,
+    tooltip: "Tauri"
   }
 ];

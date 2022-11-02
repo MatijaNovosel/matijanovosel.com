@@ -18,6 +18,15 @@ export interface EducationItem {
   link: string;
 }
 
+export interface WorkExperienceItem {
+  company: string;
+  position: string;
+  link: string;
+  description: string[];
+  from: Date;
+  to: Date | null;
+}
+
 export interface BlogListItem {
   title: string;
   subtitle: string;

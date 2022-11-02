@@ -54,3 +54,16 @@ export const dateDiffReadable = (from: Date, to: Date): string => {
       : ""
   }`;
 };
+
+export const getMonth = (date: Date | null) => {
+  if (date) {
+    return date.toLocaleString("en", { month: "long" });
+  }
+  return new Date().toLocaleString("en", { month: "long" });
+};
+
+export const formatDuration = (from: Date, to: Date | null) => {
+  return `${`${getMonth(from)} ${from.getFullYear()}`} - ${
+    to ? `${getMonth(to)} ${to.getFullYear()}` : "Current"
+  } (${dateDiffReadable(from, to || new Date())})`;
+};

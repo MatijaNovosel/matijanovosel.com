@@ -11,7 +11,7 @@
       <NuxtLink to="https://github.com/MatijaNovosel">
         <IconGithub />
       </NuxtLink>
-      <NuxtLink class="text-white px-1" to="https://dev.to/matijanovosel">
+      <NuxtLink class="px-1" to="https://dev.to/matijanovosel">
         <IconDevTo />
       </NuxtLink>
       <NuxtLink class="pr-1" to="mailto:mnovosel5@gmail.com">
