@@ -4,7 +4,6 @@ import {
   TechnologyItem,
   WorkExperienceItem
 } from "~/models";
-import { dateDiffReadable } from "./helpers";
 import IconVue from "~icons/vscode-icons/file-type-vue";
 import IconReact from "~icons/mdi/react";
 import IconAngular from "~icons/mdi/angular";
