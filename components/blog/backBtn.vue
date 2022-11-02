@@ -1,7 +1,7 @@
 <template>
   <NuxtLink to="/blog">
     <button
-      class="ripple project-btn pr-3 pl-2 py-1 font-medium text-xl text-gray-100 rounded flex items-center justify-center"
+      class="ripple project-btn pr-3 pl-2 py-1 font-medium text-xl text-gray-100 rounded flex-center"
     >
       <IconArrowLeft class="mr-2" />
       <h6>Back</h6>

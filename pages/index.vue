@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-center items-center">
+  <div class="w-full h-full flex-center">
     <canvas ref="matterCanvas" class="z-1" />
     <div
       class="z-2 flex flex-col items-center justify-center user-select-none mx-auto text-center"

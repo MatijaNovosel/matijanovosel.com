@@ -3,7 +3,7 @@
     <div class="text-4xl font-bold mb-5 mt-6 text-center md:text-left">
       Projects
     </div>
-    <div class="grid grid-cols-12 gap-4">
+    <div class="row gap-4">
       <div
         v-for="(project, i) in PROJECTS"
         :key="i"

@@ -205,3 +205,11 @@ html {
   width: 10px;
   height: 10px;
 }
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.row {
+  @apply grid grid-cols-12;
+}

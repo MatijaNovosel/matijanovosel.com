@@ -37,7 +37,7 @@
         />
         <div
           @click="modalOpen = true"
-          class="tag-search-btn bg-dark-600 ripple flex justify-center items-center rounded-lg cursor-pointer relative"
+          class="tag-search-btn bg-dark-600 ripple flex-center rounded-lg cursor-pointer relative"
           :class="{
             badge: selectedTags.length > 0
           }"
@@ -45,7 +45,7 @@
           <IconTag />
         </div>
       </div>
-      <div class="grid grid-cols-12 px-1 md:px-0 mt-6 md:gap-8">
+      <div class="row px-1 md:px-0 mt-6 md:gap-8">
         <div class="contents" v-if="paginatedBlogs.length > 0">
           <BlogCard
             class="col-span-12 md:col-span-6"
@@ -56,7 +56,7 @@
               'mt-6 md:mt-0': i !== 0
             }"
           />
-          <div class="col-span-12 flex justify-center items-center">
+          <div class="col-span-12 flex-center">
             <pagination
               class="my-5"
               v-model="page"

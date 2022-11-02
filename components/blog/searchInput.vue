@@ -1,8 +1,6 @@
 <template>
   <div class="flex">
-    <div
-      class="bg-dark-800 icon flex items-center justify-center rounded-l-lg px-3"
-    >
+    <div class="bg-dark-800 icon flex-center rounded-l-lg px-3">
       <IconSearch class="text-lg text-gray-700" />
     </div>
     <input
@@ -15,9 +13,7 @@
       "
       type="search"
     />
-    <div
-      class="bg-dark-800 icon flex items-center justify-center rounded-r-lg px-3"
-    >
+    <div class="bg-dark-800 icon flex-center rounded-r-lg px-3">
       <IconClear
         @click="clearSearch"
         class="text-xl ripple cursor-pointer rounded-full"
