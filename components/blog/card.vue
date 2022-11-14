@@ -26,7 +26,6 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
 import { BlogListItem } from "~/models";
 import { TAGS } from "~/utils/constants";
 

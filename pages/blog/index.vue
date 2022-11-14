@@ -7,9 +7,9 @@
             :background-color="TAGS[tag]"
             v-for="(tag, i) in modalTags"
             :key="i"
-            class="cursor-pointer no-highlight ripple"
+            class="cursor-pointer ripple"
             @clicked="selectTag(tag)"
-            :selected="selectedTags.includes(tag)"
+            :selected="selectedTags.has(tag)"
           >
             {{ tag }}
           </Tag>
@@ -39,7 +39,7 @@
           @click="modalOpen = true"
           class="tag-search-btn bg-dark-600 ripple flex-center rounded-lg cursor-pointer relative"
           :class="{
-            badge: selectedTags.length > 0
+            badge: selectedTags.size > 0
           }"
         >
           <IconTag />
@@ -85,7 +85,7 @@ const {
 });
 
 const modalOpen = ref(false);
-const selectedTags = ref<string[]>([]);
+const selectedTags = ref<Set<string>>(new Set());
 const searchText = ref<string>("");
 const page = ref(1);
 
@@ -104,7 +104,7 @@ const filteredBlogs = computed(() =>
     (b) =>
       b.title.toLowerCase().includes(searchText.value.toLowerCase()) &&
       b.tags.some((t) =>
-        selectedTags.value.length > 0 ? selectedTags.value.includes(t) : true
+        selectedTags.value.size > 0 ? selectedTags.value.has(t) : true
       )
   )
 );
@@ -116,11 +116,11 @@ const paginatedBlogs = computed(() => {
 });
 
 const selectTag = (tag: string) => {
-  if (selectedTags.value.includes(tag)) {
-    selectedTags.value = selectedTags.value.filter((t) => t !== tag);
+  if (selectedTags.value.has(tag)) {
+    selectedTags.value.delete(tag);
     return;
   }
-  selectedTags.value.push(tag);
+  selectedTags.value.add(tag);
 };
 
 const handleKeyPress = (e: KeyboardEvent) => {

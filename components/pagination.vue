@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="pagination-element no-highlight text-3xl"
+      class="pagination-element text-3xl"
       :class="{
         'bg-dark-800 cursor-pointer': page != 1,
         'bg-gray-400 text-black': page == 1
@@ -12,7 +12,7 @@
     </div>
     <div
       @click="setPage(element)"
-      class="pagination-element no-highlight cursor-pointer font-bold"
+      class="pagination-element cursor-pointer font-bold"
       :class="{
         'ml-3': i >= 0 && i <= elements.length - 1,
         'mr-3': i === elements.length - 1,
@@ -25,7 +25,7 @@
       {{ element }}
     </div>
     <div
-      class="pagination-element no-highlight text-3xl"
+      class="pagination-element text-3xl"
       :class="{
         'bg-dark-800 cursor-pointer': page != numberOfPages,
         'bg-gray-400 text-black': page == numberOfPages

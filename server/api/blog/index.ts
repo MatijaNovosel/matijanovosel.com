@@ -2,8 +2,8 @@ import { createClient } from "@supabase/supabase-js";
 import { BlogListItem } from "~/models";
 
 const supabase = createClient(
-  process.env.supabaseUrl,
-  process.env.supabaseAnon
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON
 );
 
 export default defineEventHandler(async () => {
