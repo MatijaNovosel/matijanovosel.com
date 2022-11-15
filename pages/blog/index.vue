@@ -16,9 +16,7 @@
         </div>
       </modal>
     </transition>
-    <div class="text-4xl mt-6 font-bold mb-5 text-center md:text-left">
-      Blog
-    </div>
+    <div class="title">Blog</div>
     <AppSpinner v-if="pending" />
     <alert
       text-color="#d91139"
@@ -45,20 +43,17 @@
           <IconTag />
         </div>
       </div>
-      <div class="row px-1 md:px-0 mt-6 md:gap-8">
+      <div class="row px-1 md:px-0 mt-6 gap-8">
         <div class="contents" v-if="paginatedBlogs.length > 0">
           <BlogCard
             class="col-span-12 md:col-span-6"
             v-for="(blog, i) in paginatedBlogs"
             :blog="blog"
             :key="i"
-            :class="{
-              'mt-6 md:mt-0': i !== 0
-            }"
           />
           <div class="col-span-12 flex-center">
             <pagination
-              class="my-5"
+              class="mt-3"
               v-model="page"
               :number-of-pages="numberOfPages"
             />
@@ -129,16 +124,16 @@ const handleKeyPress = (e: KeyboardEvent) => {
   }
 };
 
+watch([searchText, selectedTags], () => {
+  page.value = 1;
+});
+
 onMounted(() => {
   window.addEventListener("keydown", handleKeyPress);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("keydown", handleKeyPress);
-});
-
-watch([searchText, selectedTags], () => {
-  page.value = 1;
 });
 
 const { setMeta } = useMetadata();

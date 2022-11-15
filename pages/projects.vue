@@ -1,8 +1,6 @@
 <template>
   <div class="offset">
-    <div class="text-4xl font-bold mb-5 mt-6 text-center md:text-left">
-      Projects
-    </div>
+    <div class="title">Projects</div>
     <div class="row gap-4">
       <div
         v-for="(project, i) in PROJECTS"
