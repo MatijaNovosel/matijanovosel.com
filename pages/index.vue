@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
-import { createEmojiImage, randInt } from "~/utils/helpers";
+import { createCanvasEmoji, createEmojiImage, randInt } from "~/utils/helpers";
 import {
   REWARD_TIMEOUT,
   SKULL_EMOJI_URL,
@@ -112,29 +112,9 @@ onMounted(() => {
   });
 
   emojiCreateInterval = setInterval(() => {
-    const url = createEmojiImage();
-
-    const obj = Matter.Bodies.circle(
-      randInt(CANVAS_OFFSET, pageDimensions.width.value - CANVAS_OFFSET),
-      60,
-      20,
-      {
-        frictionAir: 0.1,
-        friction: 1,
-        density: 0.6,
-        angle: randInt(0, 360),
-        render: {
-          sprite: {
-            texture: url,
-            xScale: 1,
-            yScale: 1
-          }
-        }
-      }
-    );
-
+    const texture = createEmojiImage();
+    const obj = createCanvasEmoji(pageDimensions.width.value, texture);
     Matter.Composite.add(engine.world, obj);
-
     setTimeout(() => {
       Matter.Composite.remove(engine.world, obj);
     }, EMOJI_CLEANUP_INTERVAL);
@@ -158,55 +138,40 @@ onBeforeUnmount(() => {
   Matter.Render.stop(render);
 });
 
-watch([pageDimensions.width, pageDimensions.height], async () => {
-  const width = pageDimensions.width;
-  const height = pageDimensions.height;
+watch([pageDimensions.width, pageDimensions.height], async (val) => {
+  const [width, height] = val;
   await nextTick(() => {
     if (render) {
-      render.bounds.max.x = width.value;
-      render.bounds.max.y = height.value - CANVAS_OFFSET;
-      render.options.width = width.value;
-      render.options.height = height.value - CANVAS_OFFSET;
-      render.canvas.width = width.value;
-      render.canvas.height = height.value - CANVAS_OFFSET;
+      render.bounds.max.x = width;
+      render.bounds.max.y = height - CANVAS_OFFSET;
+      render.options.width = width;
+      render.options.height = height - CANVAS_OFFSET;
+      render.canvas.width = width;
+      render.canvas.height = height - CANVAS_OFFSET;
     }
   });
 });
 
-watch(
-  () => emojisMurdered.value,
-  (val) => {
-    inactive.value = false;
-    if (val >= 0 && val <= EMOJI_MURDER_LIMIT / 2 - 1) {
-      emojiMurderStatus.value = "... keep going";
-    } else if (
-      val >= EMOJI_MURDER_LIMIT / 2 + 1 &&
-      val <= EMOJI_MURDER_LIMIT - 1
-    ) {
-      emojiMurderStatus.value = "Just a little bit more ...";
-    } else if (val === EMOJI_MURDER_LIMIT) {
-      const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti();
-      emojiMurderStatus.value = "Well done. Are you ready for your reward?";
-      clearTimeout(inactivityInterval || -1);
-      setTimeout(() => {
-        murderComplete.value = true;
-      }, REWARD_TIMEOUT);
-    }
+watch(emojisMurdered, (val) => {
+  inactive.value = false;
+  if (val >= 0 && val <= EMOJI_MURDER_LIMIT / 2 - 1) {
+    emojiMurderStatus.value = "... keep going";
+  } else if (
+    val >= EMOJI_MURDER_LIMIT / 2 + 1 &&
+    val <= EMOJI_MURDER_LIMIT - 1
+  ) {
+    emojiMurderStatus.value = "Just a little bit more ...";
+  } else if (val === EMOJI_MURDER_LIMIT) {
+    const jsConfetti = new JSConfetti();
+    jsConfetti.addConfetti();
+    emojiMurderStatus.value = "Well done. Are you ready for your reward?";
+    clearTimeout(inactivityInterval || -1);
+    setTimeout(() => {
+      murderComplete.value = true;
+    }, REWARD_TIMEOUT);
   }
-);
+});
 
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel");
 </script>
-
-<style>
-canvas {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>

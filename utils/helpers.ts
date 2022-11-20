@@ -1,4 +1,5 @@
-import { EMOJI_LEN } from "./constants";
+import Matter from "matter-js";
+import { CANVAS_OFFSET, EMOJI_LEN } from "./constants";
 import EMOJIS from "./emojis";
 
 export const randInt = (min: number, max: number) => {
@@ -33,6 +34,27 @@ export const createEmojiImage = (): string => {
   drawing.remove();
 
   return url;
+};
+
+export const createCanvasEmoji = (pageWidth: number, texture: string) => {
+  return Matter.Bodies.circle(
+    randInt(CANVAS_OFFSET, pageWidth - CANVAS_OFFSET),
+    60,
+    20,
+    {
+      frictionAir: 0.1,
+      friction: 1,
+      density: 0.6,
+      angle: randInt(0, 360),
+      render: {
+        sprite: {
+          texture,
+          xScale: 1,
+          yScale: 1
+        }
+      }
+    }
+  );
 };
 
 export const monthDiff = (dateFrom: Date, dateTo: Date) => {

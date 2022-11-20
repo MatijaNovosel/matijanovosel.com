@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex gap-3">
     <div
       class="pagination-element text-3xl"
       :class="{
@@ -14,8 +14,6 @@
       @click="setPage(element)"
       class="pagination-element cursor-pointer font-bold"
       :class="{
-        'ml-3': i >= 0 && i <= elements.length - 1,
-        'mr-3': i === elements.length - 1,
         'bg-dark-800': page !== element,
         'bg-green-vue': page === element
       }"
@@ -48,6 +46,7 @@ const emit = defineEmits(["update:modelValue"]);
 const elements = computed(() =>
   [...new Array(props.numberOfPages)].map((_, i) => i + 1)
 );
+
 const page = ref(props.modelValue);
 
 const setPage = (n: number) => {
@@ -71,9 +70,7 @@ const traverse = (left?: boolean) => {
 
 watch(
   () => props.modelValue,
-  (val) => {
-    page.value = val;
-  }
+  (val) => (page.value = val)
 );
 </script>
 
