@@ -30,8 +30,8 @@
 </template>
 
 <script lang="ts" setup>
-import { BlogListItem } from "~/models";
 import BackBtn from "~/components/blog/backBtn.vue";
+import { BlogListItem } from "~/models";
 const { setMeta } = useMetadata();
 
 const route = useRoute();

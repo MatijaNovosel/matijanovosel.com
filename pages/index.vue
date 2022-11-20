@@ -37,19 +37,19 @@
 </template>
 
 <script setup lang="ts">
+import JSConfetti from "js-confetti";
+import Matter from "matter-js";
 import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
-import { createCanvasEmoji, createEmojiImage, randInt } from "~/utils/helpers";
 import {
-  REWARD_TIMEOUT,
-  SKULL_EMOJI_URL,
+  CANVAS_OFFSET,
   EMOJI_CLEANUP_INTERVAL,
   EMOJI_INACTIVITY_INTERVAL,
   EMOJI_MURDER_LIMIT,
   EMOJI_SPAWN_INTERVAL,
-  CANVAS_OFFSET
+  REWARD_TIMEOUT,
+  SKULL_EMOJI_URL
 } from "~/utils/constants";
-import Matter from "matter-js";
-import JSConfetti from "js-confetti";
+import { createCanvasEmoji, createEmojiImage } from "~/utils/helpers";
 
 let engine = null;
 let runner = null;

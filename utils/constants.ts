@@ -4,22 +4,22 @@ import {
   TechnologyItem,
   WorkExperienceItem
 } from "~/models";
-import IconVue from "~icons/vscode-icons/file-type-vue";
-import IconReact from "~icons/mdi/react";
-import IconAngular from "~icons/mdi/angular";
 import IconElectron from "~icons/logos/electron";
-import IconDotNet from "~icons/mdi/dot-net";
-import IconPhp from "~icons/mdi/language-php";
-import IconNode from "~icons/mdi/nodejs";
 import IconFirebase from "~icons/logos/firebase";
-import IconGraphQl from "~icons/logos/graphql";
-import IconVisualStudioCode from "~icons/mdi/microsoft-visual-studio-code";
-import IconGit from "~icons/mdi/git";
 import IconFlutter from "~icons/logos/flutter";
-import IconDatabase from "~icons/mdi/database";
-import IconSupabase from "~icons/logos/supabase-icon";
+import IconGraphQl from "~icons/logos/graphql";
 import IconNuxt from "~icons/logos/nuxt-icon";
+import IconSupabase from "~icons/logos/supabase-icon";
 import IconTauri from "~icons/logos/tauri";
+import IconAngular from "~icons/mdi/angular";
+import IconDatabase from "~icons/mdi/database";
+import IconDotNet from "~icons/mdi/dot-net";
+import IconGit from "~icons/mdi/git";
+import IconPhp from "~icons/mdi/language-php";
+import IconVisualStudioCode from "~icons/mdi/microsoft-visual-studio-code";
+import IconNode from "~icons/mdi/nodejs";
+import IconReact from "~icons/mdi/react";
+import IconVue from "~icons/vscode-icons/file-type-vue";
 
 export const CANVAS_OFFSET = 30;
 export const EMOJI_MURDER_LIMIT = 40;

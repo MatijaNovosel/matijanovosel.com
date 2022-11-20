@@ -13,8 +13,8 @@ import MarkdownItSup from "markdown-it-sup";
 import MarkdownItTasklists from "markdown-it-task-lists";
 import MarkdownItTOC from "markdown-it-toc-done-right";
 
-import "~/assets/one-dark-highlight.css";
 import "~/assets/github-markdown.css";
+import "~/assets/one-dark-highlight.css";
 
 const markdown = new MarkdownIt()
   .use(MarkdownItTOC)
