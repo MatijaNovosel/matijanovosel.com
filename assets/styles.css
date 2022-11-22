@@ -6,10 +6,6 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 @font-face {
   font-family: "CascadiaCode";
   src: url("/cascadia.ttf");
@@ -24,6 +20,7 @@ html {
   overflow: scroll;
   overflow-x: hidden;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 #__nuxt {
