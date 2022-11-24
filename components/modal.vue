@@ -19,9 +19,12 @@ import { onClickOutside } from "@vueuse/core";
 const modal = ref(null);
 const emit = defineEmits(["close"]);
 
-defineProps<{
-  title: string;
-}>();
+defineProps({
+  title: {
+    type: String,
+    required: true
+  }
+});
 
 onClickOutside(modal, () => {
   emit("close");

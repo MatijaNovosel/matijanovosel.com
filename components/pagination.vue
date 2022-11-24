@@ -36,10 +36,16 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
-  numberOfPages: number;
-  modelValue: number;
-}>();
+const props = defineProps({
+  numberOfPages: {
+    type: Number,
+    required: true
+  },
+  modelValue: {
+    type: Number,
+    required: true
+  }
+});
 
 const emit = defineEmits(["update:modelValue"]);
 

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/blog/${blog.id}`" class="shrink">
+  <nuxt-link :to="`/blog/${blog.id}`" class="shrink">
     <div
       class="blog-img mb-5 w-full"
       :style="{
@@ -13,25 +13,28 @@
         {{ blog.subtitle }}
       </span>
       <div class="flex flex-wrap">
-        <Tag
+        <tag
           :background-color="TAGS[tag]"
           v-for="(tag, j) in blog.tags"
           :key="j"
         >
           {{ tag }}
-        </Tag>
+        </tag>
       </div>
     </div>
-  </NuxtLink>
+  </nuxt-link>
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import { BlogListItem } from "~/models";
 import { TAGS } from "~/utils/constants";
 
-defineProps<{
-  blog: BlogListItem;
-}>();
+defineProps({
+  blog: {
+    type: Object as PropType<BlogListItem>
+  }
+});
 </script>
 
 <style scoped>

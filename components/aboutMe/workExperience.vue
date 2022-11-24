@@ -3,8 +3,8 @@
     <div class="font-bold p-3 text-xl bg-dark-400 rounded-t-lg">
       💼 Work experience
     </div>
-    <Timeline class="p-5">
-      <TimelineItem
+    <timeline class="p-5">
+      <timeline-item
         v-for="(
           { company, description, from, to, link, position }, i
         ) in WORK_EXPERIENCE"
@@ -12,12 +12,12 @@
       >
         <template #title>
           <div class="flex flex-col">
-            <NuxtLink
+            <nuxt-link
               :to="link"
               class="text-white font-bold decoration-dotted underline underline-offset-5"
             >
               {{ company }}
-            </NuxtLink>
+            </nuxt-link>
             <span class="my-1 text-xs text-green-vue">
               {{ position }}
             </span>
@@ -29,8 +29,8 @@
         <div class="flex flex-col text-sm space-y-1 text-gray-300 mt-3">
           <div v-for="(line, j) in description" :key="j">⚫ {{ line }}</div>
         </div>
-      </TimelineItem>
-    </Timeline>
+      </timeline-item>
+    </timeline>
   </div>
 </template>
 

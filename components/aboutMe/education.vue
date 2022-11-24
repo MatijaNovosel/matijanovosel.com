@@ -3,8 +3,8 @@
     <div class="font-bold p-3 text-xl rounded-t-lg bg-dark-400">
       🎓 Education
     </div>
-    <Timeline class="p-5">
-      <TimelineItem
+    <timeline class="p-5">
+      <timeline-item
         v-for="({ name, duration, link, title }, i) in EDUCATION"
         :key="i"
       >
@@ -24,8 +24,8 @@
             </span>
           </div>
         </template>
-      </TimelineItem>
-    </Timeline>
+      </timeline-item>
+    </timeline>
   </div>
 </template>
 

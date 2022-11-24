@@ -8,27 +8,27 @@
       </span>
     </div>
     <div class="flex-center">
-      <NuxtLink to="https://github.com/MatijaNovosel">
-        <IconGithub />
-      </NuxtLink>
-      <NuxtLink class="px-1" to="https://dev.to/matijanovosel">
-        <IconDevTo />
-      </NuxtLink>
-      <NuxtLink class="pr-1" to="mailto:mnovosel5@gmail.com">
-        <IconEmail />
-      </NuxtLink>
-      <NuxtLink to="https://www.linkedin.com/in/matijanovosel/">
-        <IconLinkedin />
-      </NuxtLink>
+      <nuxt-link to="https://github.com/MatijaNovosel">
+        <icon-github />
+      </nuxt-link>
+      <nuxt-link class="px-1" to="https://dev.to/matijanovosel">
+        <icon-dev-to />
+      </nuxt-link>
+      <nuxt-link class="pr-1" to="mailto:mnovosel5@gmail.com">
+        <icon-email />
+      </nuxt-link>
+      <nuxt-link to="https://www.linkedin.com/in/matijanovosel/">
+        <icon-linkedin />
+      </nuxt-link>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-import IconLinkedin from "~icons/mdi/linkedin";
-import IconGithub from "~icons/mdi/github";
 import IconDevTo from "~icons/material-symbols/logo-dev";
 import IconEmail from "~icons/mdi/email";
+import IconGithub from "~icons/mdi/github";
+import IconLinkedin from "~icons/mdi/linkedin";
 </script>
 
 <style scoped>

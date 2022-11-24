@@ -3,7 +3,7 @@
     class="flex z-3 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute"
   >
     <div class="nav-slider" :style="navSliderStyle" />
-    <NuxtLink
+    <nuxt-link
       :id="link.to"
       v-for="(link, i) in links"
       :key="i"
@@ -13,14 +13,14 @@
       @mouseover="tabHover(link.to)"
     >
       {{ link.text }}
-    </NuxtLink>
+    </nuxt-link>
   </nav>
 </template>
 
 <script lang="ts" setup>
-import { LinkItem } from "@/models";
 import { useElementSize } from "@vueuse/core";
 import { Ref } from "vue";
+import { links } from "~/utils/constants";
 
 const navSliderOffset = ref(0);
 const navSliderWidth = ref(54);
@@ -32,25 +32,6 @@ let widths: {
   };
   id: string;
 }[] = [];
-
-const links: LinkItem[] = [
-  {
-    to: "/",
-    text: "Home"
-  },
-  {
-    to: "/blog",
-    text: "Blog"
-  },
-  {
-    to: "/projects",
-    text: "Projects"
-  },
-  {
-    to: "/about",
-    text: "About me"
-  }
-];
 
 const tabHover = (id: string) => {
   let offsetCalc = 0;

@@ -1,5 +1,6 @@
 import {
   EducationItem,
+  LinkItem,
   ProjectItem,
   TechnologyItem,
   WorkExperienceItem
@@ -266,5 +267,24 @@ export const TECHNOLOGIES: TechnologyItem[] = [
     color: "",
     icon: IconTauri,
     tooltip: "Tauri"
+  }
+];
+
+export const links: LinkItem[] = [
+  {
+    to: "/",
+    text: "Home"
+  },
+  {
+    to: "/blog",
+    text: "Blog"
+  },
+  {
+    to: "/projects",
+    text: "Projects"
+  },
+  {
+    to: "/about",
+    text: "About me"
   }
 ];

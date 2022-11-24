@@ -12,21 +12,22 @@
       </span>
     </div>
     <div class="mt-4 md:mt-3 flex flex-wrap">
-      <Tag :background-color="tagEnum[tag]" v-for="(tag, j) in tags" :key="j">
+      <tag :background-color="tagEnum[tag]" v-for="(tag, j) in tags" :key="j">
         {{ tag }}
-      </Tag>
+      </tag>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { PropType } from "vue";
 import { TAGS as tagEnum } from "~/utils/constants";
 
-defineProps<{
-  title: string;
-  createdAt: string;
-  tags: string[];
-}>();
+defineProps({
+  title: String,
+  createdAt: String,
+  tags: Array as PropType<string[]>
+});
 </script>
 
 <style scoped>

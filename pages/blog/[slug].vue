@@ -1,7 +1,7 @@
 <template>
   <div class="mt-4 md:mt-10 w-full px-3 md:px-0">
-    <BackBtn />
-    <AppSpinner class="mx-auto mt-4" v-if="pending" />
+    <blog-back-btn />
+    <app-spinner class="mx-auto mt-4" v-if="pending" />
     <alert
       text-color="#d91139"
       title="Something went wrong"
@@ -17,20 +17,19 @@
         }"
       />
       <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
-        <BlogTitle
+        <blog-title
           class="my-3"
           :title="blog.title"
           :created-at="blog.createdAt"
           :tags="blog.tags"
         />
-        <MarkdownRenderer :source="blog.html" />
+        <markdown-renderer :source="blog.html" />
       </div>
     </template>
   </div>
 </template>
 
 <script lang="ts" setup>
-import BackBtn from "~/components/blog/backBtn.vue";
 import { BlogListItem } from "~/models";
 const { setMeta } = useMetadata();
 
@@ -46,10 +45,10 @@ const {
 });
 
 watch(
-  pending,
-  () => {
-    if (blog.value) {
-      setMeta(blog.value.title, blog.value.subtitle, blog.value.img);
+  blog,
+  (val) => {
+    if (val) {
+      setMeta(val.title, val.subtitle, val.img);
     } else {
       setMeta("Loading ...");
     }

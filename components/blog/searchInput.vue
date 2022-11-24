@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div class="bg-dark-800 icon flex-center rounded-l-lg px-3">
-      <IconSearch class="text-lg text-gray-700" />
+      <icon-search class="text-lg text-gray-700" />
     </div>
     <input
       :disabled="loading || error"
@@ -14,8 +14,8 @@
       type="search"
     />
     <div class="bg-dark-800 icon flex-center rounded-r-lg px-3">
-      <IconClear
-        @click="clearSearch"
+      <icon-clear
+        @click="$emit('update:modelValue', '')"
         class="text-xl ripple cursor-pointer rounded-full"
       />
     </div>
@@ -23,20 +23,19 @@
 </template>
 
 <script lang="ts" setup>
-import IconSearch from "~icons/material-symbols/search";
 import IconClear from "~icons/ic/round-clear";
+import IconSearch from "~icons/material-symbols/search";
 
-defineProps<{
-  modelValue: string;
-  loading: boolean;
-  error: boolean;
-}>();
+defineProps({
+  modelValue: {
+    type: String,
+    required: true
+  },
+  loading: Boolean,
+  error: Boolean
+});
 
-const emit = defineEmits(["update:modelValue"]);
-
-const clearSearch = () => {
-  emit("update:modelValue", "");
-};
+defineEmits(["update:modelValue"]);
 </script>
 
 <style scoped>
@@ -53,11 +52,6 @@ input {
   height: 50px;
   width: 50px;
   -webkit-tap-highlight-color: transparent;
-}
-
-.tag-search-btn {
-  height: 50px;
-  width: 50px;
 }
 
 input[type="search"]::-webkit-search-decoration,

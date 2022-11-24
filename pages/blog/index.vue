@@ -3,7 +3,7 @@
     <transition name="modal">
       <modal title="Filter by tags" v-if="modalOpen" @close="modalOpen = false">
         <div class="flex flex-wrap">
-          <Tag
+          <tag
             :background-color="TAGS[tag]"
             v-for="(tag, i) in modalTags"
             :key="i"
@@ -12,12 +12,12 @@
             :selected="selectedTags.has(tag)"
           >
             {{ tag }}
-          </Tag>
+          </tag>
         </div>
       </modal>
     </transition>
     <div class="title">Blog</div>
-    <AppSpinner v-if="pending" />
+    <app-spinner v-if="pending" />
     <alert
       text-color="#d91139"
       title="Something went wrong"
@@ -27,7 +27,7 @@
     />
     <template v-else>
       <div class="flex">
-        <BlogSearchInput
+        <blog-search-input
           class="flex-grow pr-3"
           :loading="pending"
           :error="!!error"
@@ -40,12 +40,12 @@
             badge: selectedTags.size > 0
           }"
         >
-          <IconTag />
+          <icon-tag />
         </div>
       </div>
       <div class="row px-1 md:px-0 mt-6 gap-8">
         <div class="contents" v-if="paginatedBlogs.length > 0">
-          <BlogCard
+          <blog-card
             class="col-span-12 md:col-span-6"
             v-for="(blog, i) in paginatedBlogs"
             :blog="blog"
