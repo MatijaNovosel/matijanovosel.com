@@ -386,7 +386,9 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-const appName = computed(() => route.query.app);
+const appName = computed(() =>
+  (route.query.app as string).replace(/([A-Z])/g, " $1").trim()
+);
 
 const { setMeta } = useMetadata();
 setMeta("Privacy policy | Matija Novosel");
