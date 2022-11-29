@@ -17,7 +17,7 @@
           <h2 class="text-4xl md:text-7xl font-bold my-4">Matija Novosel</h2>
           <glitch-text text="A software developer" />
         </div>
-        <div v-else>
+        <div class="z-1" v-else>
           <p class="text-center text-lg md:text-2xl text-gray-300">
             You have murdered
           </p>
