@@ -26,12 +26,6 @@ export const useMetadata = () => {
         { name: "twitter:description", content: desc },
         { name: "twitter:image", content: image },
         { name: "theme-color", content: "#000000" }
-      ],
-      link: [
-        {
-          rel: "canonical",
-          href: "https://matijanovosel.com/"
-        }
       ]
     });
   };

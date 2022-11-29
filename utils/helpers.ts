@@ -23,8 +23,8 @@ export const createEmojiImage = (): string => {
   if (ctx) {
     ctx.beginPath();
     ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
-    ctx.closePath();
     ctx.fill();
+    ctx.closePath();
     ctx.font = "32pt sans-serif";
     ctx.textAlign = "center";
     ctx.fillText(EMOJIS[randInt(0, EMOJI_LEN)], 75, 75);

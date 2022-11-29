@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex z-3 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute"
+    class="flex z-4 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute"
   >
     <div class="nav-slider" :style="navSliderStyle" />
     <nuxt-link
