@@ -120,6 +120,10 @@ html {
   display: none;
 }
 
+.bounce {
+  animation: bounce-in 0.8s ease-in-out forwards;
+}
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);

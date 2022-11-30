@@ -12,7 +12,7 @@
           height="200"
           src="https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/qr.svg"
         />
-        <div v-else-if="emojisMurdered === 0" class="z-1">
+        <div v-else-if="emojisMurdered === 0" class="z-1 bounce">
           <p class="text-center text-lg md:text-2xl text-gray-300">Hi, I'm</p>
           <h2 class="text-4xl md:text-7xl font-bold my-4">Matija Novosel</h2>
           <glitch-text text="A software developer" />
