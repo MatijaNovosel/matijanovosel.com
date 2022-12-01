@@ -90,7 +90,8 @@ export const PROJECTS: ProjectItem[] = [
     title: "💸 Avarice"
   },
   {
-    description: "A web app for checking off Realm of the mad god loot items.",
+    description:
+      "A web app for tracking Realm of Mad God loot items and quests.",
     tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
     link: "https://github.com/MatijaNovosel/realm-trove",
     title: "👑 Realm trove"
