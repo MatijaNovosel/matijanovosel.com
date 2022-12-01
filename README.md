@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/36193643/205051189-9aa45858-4ec9-47bf-a5ed-9e63537b7033.png" />
+</div>
+
 <h1 align=center>matijanovosel.com</h1>
 <p align=center>CV website.</p>
 
