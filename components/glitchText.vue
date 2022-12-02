@@ -26,7 +26,6 @@ defineProps({
 }
 
 .stack span {
-  font-weight: bold;
   grid-row-start: 1;
   grid-column-start: 1;
   --stack-height: calc(100% / var(--stacks) - 1px);

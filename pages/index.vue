@@ -2,7 +2,7 @@
   <div class="w-full h-full flex-center">
     <canvas ref="matterCanvas" />
     <div
-      class="flex flex-col items-center justify-center user-select-none mx-auto text-center"
+      class="flex flex-col items-center justify-center user-select-none mx-auto text-center z-1"
     >
       <transition name="bounce" appear>
         <img
@@ -12,12 +12,12 @@
           height="200"
           src="https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/qr.svg"
         />
-        <div v-else-if="emojisMurdered === 0" class="z-1 bounce">
+        <div v-else-if="emojisMurdered === 0" class="bounce">
           <p class="text-center text-lg md:text-2xl text-gray-300">Hi, I'm</p>
           <h2 class="text-4xl md:text-7xl font-bold my-4">Matija Novosel</h2>
           <glitch-text text="A software developer" />
         </div>
-        <div class="z-1" v-else>
+        <div v-else>
           <p class="text-center text-lg md:text-2xl text-gray-300">
             You have murdered
           </p>
