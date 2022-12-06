@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-full flex items-center justify-between z-2 md:pb-5 pt-7 px-1 md:px-0 user-select-none"
+    class="w-full flex items-center justify-between z-2 px-1 md:px-0 user-select-none"
   >
     <div>
       <span class="text-sm md:text-base">

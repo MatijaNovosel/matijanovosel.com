@@ -24,8 +24,8 @@ import IconVue from "~icons/vscode-icons/file-type-vue";
 
 export const CANVAS_OFFSET = 30;
 export const EMOJI_MURDER_LIMIT = 40;
-export const EMOJI_SPAWN_INTERVAL = 200;
-export const EMOJI_CLEANUP_INTERVAL = 8000;
+export const EMOJI_SPAWN_INTERVAL = 100;
+export const EMOJI_CLEANUP_INTERVAL = 4000;
 export const EMOJI_INACTIVITY_INTERVAL = 6000;
 export const EMOJI_LEN = 626;
 export const REWARD_TIMEOUT = 4000;

@@ -9,7 +9,6 @@
     />
     <div class="flex justify-center text-white px-5 pb-5 min-h-full">
       <div
-        ref="page"
         class="max-w-screen-lg w-full flex flex-col items-center md:items-end justify-between"
       >
         <AppNavigation />
@@ -21,16 +20,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useElementSize } from "@vueuse/core";
-
-const page = ref<HTMLElement | null>(null);
-const { width, height } = useElementSize(page);
-
-provide("pageDimensions", {
-  width,
-  height
-});
-
 const { setMeta } = useMetadata();
 setMeta("Matija Novosel");
 </script>

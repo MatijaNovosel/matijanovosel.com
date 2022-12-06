@@ -24,9 +24,7 @@
           <h2 class="text-3xl md:text-7xl font-bold my-4 text-green-vue">
             {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
           </h2>
-          <span>
-            {{ emojiMurderStatus }}
-          </span>
+          {{ emojiMurderStatus }}
         </div>
       </transition>
     </div>
@@ -34,11 +32,11 @@
 </template>
 
 <script setup lang="ts">
+import { useWindowSize } from "@vueuse/core";
 import JSConfetti from "js-confetti";
 import Matter from "matter-js";
-import { nextTick, onBeforeUnmount, onMounted, Ref, ref, watch } from "vue";
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import {
-  CANVAS_OFFSET,
   EMOJI_CLEANUP_INTERVAL,
   EMOJI_INACTIVITY_INTERVAL,
   EMOJI_MURDER_LIMIT,
@@ -62,10 +60,7 @@ const emojiMurderStatus = ref("");
 const murderComplete = ref(false);
 const inactive = ref(false);
 
-const pageDimensions = inject<{
-  width: Ref<number>;
-  height: Ref<number>;
-}>("pageDimensions");
+const { width, height } = useWindowSize();
 
 onMounted(() => {
   engine = Matter.Engine.create();
@@ -77,8 +72,8 @@ onMounted(() => {
     options: {
       wireframes: false,
       background: "none",
-      width: pageDimensions.width.value,
-      height: pageDimensions.height.value - CANVAS_OFFSET
+      width: width.value,
+      height: height.value
     }
   });
 
@@ -110,7 +105,7 @@ onMounted(() => {
 
   emojiCreateInterval = setInterval(() => {
     const texture = createEmojiImage();
-    const obj = createCanvasEmoji(pageDimensions.width.value, texture);
+    const obj = createCanvasEmoji(width.value, texture);
     Matter.Composite.add(engine.world, obj);
     setTimeout(() => {
       Matter.Composite.remove(engine.world, obj);
@@ -135,16 +130,16 @@ onBeforeUnmount(() => {
   Matter.Render.stop(render);
 });
 
-watch([pageDimensions.width, pageDimensions.height], async (val) => {
+watch([width, height], async (val) => {
   const [width, height] = val;
   await nextTick(() => {
     if (render) {
       render.bounds.max.x = width;
-      render.bounds.max.y = height - CANVAS_OFFSET;
+      render.bounds.max.y = height;
       render.options.width = width;
-      render.options.height = height - CANVAS_OFFSET;
+      render.options.height = height;
       render.canvas.width = width;
-      render.canvas.height = height - CANVAS_OFFSET;
+      render.canvas.height = height;
     }
   });
 });
