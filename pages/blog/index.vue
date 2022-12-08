@@ -43,7 +43,7 @@
           <icon-tag />
         </div>
       </div>
-      <div class="row px-1 md:px-0 mt-6 gap-8">
+      <div class="row mt-6 gap-8">
         <div class="contents" v-if="paginatedBlogs.length > 0">
           <blog-card
             class="col-span-12 md:col-span-6"

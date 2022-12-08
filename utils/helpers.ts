@@ -8,9 +8,6 @@ export const randInt = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-export const getAge = (birthDate: Date) =>
-  Math.floor((new Date().getTime() - birthDate.getTime()) / 3.15576e10);
-
 export const createEmojiImage = (): string => {
   const drawing = document.createElement("canvas");
 
@@ -78,9 +75,7 @@ export const dateDiffReadable = (from: Date, to: Date): string => {
 };
 
 export const getMonth = (date: Date | null) => {
-  if (date) {
-    return date.toLocaleString("en", { month: "long" });
-  }
+  if (date) return date.toLocaleString("en", { month: "long" });
   return new Date().toLocaleString("en", { month: "long" });
 };
 

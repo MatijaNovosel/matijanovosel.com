@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3 md:px-0 offset">
+  <div class="offset">
     <div class="title">About me</div>
     <div class="row">
       <div class="col-span-12">
