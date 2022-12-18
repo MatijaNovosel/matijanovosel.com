@@ -12,8 +12,8 @@
       <div class="mt-3 flex flex-wrap">
         <tag
           :background-color="TAGS[tag]"
-          v-for="(tag, j) in project.tags"
-          :key="j"
+          v-for="tag in project.tags"
+          :key="tag"
         >
           {{ tag }}
         </tag>

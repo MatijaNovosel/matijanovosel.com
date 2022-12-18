@@ -56,8 +56,9 @@ export const TAGS = {
   github: "#242121",
   tauri: "#3f3d56",
   vite: "#b241fe",
-  devops: "#f0a224",
-  firebase: "#f0a224"
+  devops: "#e3971b",
+  firebase: "#f0a224",
+  npm: "#fb8817"
 };
 
 export const SKULL_EMOJI_URL =
@@ -74,7 +75,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     description: "Personal website.",
     tags: ["supabase", "vue3", "windicss", "vercel", "nuxt3"],
-    link: "https://github.com/MatijaNovosel/matijanovosel.com",
+    link: "https://matijanovosel.com/",
     title: "👨‍💻 matijanovosel.com"
   },
   {
@@ -91,9 +92,9 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     description:
-      "A web app for tracking Realm of Mad God loot items and quests.",
+      "A web app for tracking Realm of Mad God loot items and quests used by hundreds of people.",
     tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
-    link: "https://github.com/MatijaNovosel/realm-trove",
+    link: "https://www.realm-trove.com/",
     title: "👑 Realm trove"
   },
   {
@@ -127,6 +128,15 @@ export const PROJECTS: ProjectItem[] = [
     tags: ["flutter"],
     link: "https://github.com/MatijaNovosel/avarice-mobile",
     title: "📱 Avarice mobile"
+  }
+];
+
+export const OTHER_PROJECTS: ProjectItem[] = [
+  {
+    description: "My opinionated list of JavaScript utilities.",
+    link: "https://github.com/MatijaNovosel/matija-utils",
+    title: "🛠️ matija-utils",
+    tags: ["ts", "npm"]
   }
 ];
 

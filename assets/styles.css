@@ -166,3 +166,7 @@ canvas {
 .title {
   @apply text-4xl mt-6 font-bold mb-5 text-center md:text-left;
 }
+
+.divider {
+  border: 0.5px solid rgba(128, 128, 128, 0.318);
+}
