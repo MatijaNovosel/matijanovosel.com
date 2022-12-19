@@ -4,7 +4,6 @@
     <projects-grid :projects="PROJECTS" />
     <div class="title">Other</div>
     <projects-grid :projects="OTHER_PROJECTS" />
-    <card />
   </div>
 </template>
 
