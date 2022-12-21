@@ -172,8 +172,8 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
     description: [
       "Developed complex mass transit software using full stack web technologies",
       "Developed, optimized and deployed mobile applications for both Android and iOS used by thousands of people daily",
-      "Mentored employees and created educational content for teaching purposes",
-      "Worked efficiently in an Agile team"
+      "Mentored employees and created educational content for teaching purposes while reviewing pull requests and handling code quality",
+      "Efficiently worked at an independent level whilst contributing to the efforts of an agile team"
     ]
   },
   {
@@ -185,7 +185,7 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
     description: [
       "Developed software on multiple projects for the Croatian government using full stack web technologies",
       "Mentored and created educational content for new and future employees",
-      "Worked efficiently in an Agile team"
+      "Successfully worked at an independent level, while also serving as an effective and enthusiastic collaborator in an agile team"
     ]
   },
   {
@@ -194,7 +194,9 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
     from: new Date("2018-05-01"),
     to: new Date("2019-02-01"),
     link: "https://www.maidea.com/",
-    description: ["Developed software using full stack web technologies"]
+    description: [
+      "Developed software using full stack web technologies under the direction of senior software developers"
+    ]
   }
 ];
 
