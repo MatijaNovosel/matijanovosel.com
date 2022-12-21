@@ -170,8 +170,8 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
     to: null,
     link: "https://king-ict.com/",
     description: [
-      "Developed software using full stack web technologies",
-      "Developed and deployed mobile applications for both Android and iOS",
+      "Developed complex mass transit software using full stack web technologies",
+      "Developed, optimized and deployed mobile applications for both Android and iOS used by thousands of people daily",
       "Mentored employees and created educational content for teaching purposes",
       "Worked efficiently in an Agile team"
     ]
@@ -183,7 +183,7 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
     to: new Date("2021-07-01"),
     link: "https://www.omega-software.hr/",
     description: [
-      "Developed software on multiple company projects for the Croatian government using full stack web technologies",
+      "Developed software on multiple projects for the Croatian government using full stack web technologies",
       "Mentored and created educational content for new and future employees",
       "Worked efficiently in an Agile team"
     ]
