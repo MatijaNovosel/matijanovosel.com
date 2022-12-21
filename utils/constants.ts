@@ -143,14 +143,13 @@ export const OTHER_PROJECTS: ProjectItem[] = [
 export const EDUCATION: EducationItem[] = [
   {
     duration: "September 2020 - Current",
-    title: "Master's degree (struc. spec. ing. techn. inf.)",
+    title: "Master of engineering in information technology",
     name: "Zagreb university of applied sciences",
     link: "https://www.tvz.hr/"
   },
   {
     duration: "September 2017 - July 2020",
-    title:
-      "Bachelor of Engineering in Information Technology (bacc. ing. techn. inf.)",
+    title: "Bachelor of engineering in information technology",
     name: "Zagreb university of applied sciences",
     link: "https://www.tvz.hr/"
   },
