@@ -155,6 +155,10 @@ canvas {
   margin-right: auto;
 }
 
+ul {
+  list-style: circle;
+}
+
 .flex-center {
   @apply flex justify-center items-center;
 }
