@@ -134,7 +134,7 @@ export const PROJECTS: ProjectItem[] = [
 export const OTHER_PROJECTS: ProjectItem[] = [
   {
     description: "My opinionated list of JavaScript utilities.",
-    link: "https://github.com/MatijaNovosel/matija-utils",
+    link: "https://matija-utils-docs.vercel.app/",
     title: "🛠️ matija-utils",
     tags: ["ts", "npm"]
   }
