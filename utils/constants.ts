@@ -104,10 +104,10 @@ export const PROJECTS: ProjectItem[] = [
     title: "⚔️ Heroes of crimson"
   },
   {
-    description: "A video editor made with Tauri.",
+    description: "A clip editor made with Tauri.",
     tags: ["tauri", "vue3", "vite"],
     link: "https://github.com/MatijaNovosel/montage",
-    title: "🎥 Montage"
+    title: "🎬 Montage"
   },
   {
     description:
