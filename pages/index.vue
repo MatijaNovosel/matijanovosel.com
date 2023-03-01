@@ -7,10 +7,10 @@
       <transition name="bounce" appear>
         <img
           v-if="murderComplete"
-          class="p-2 bg-white rounded-lg"
+          class="bg-white rounded-lg"
           width="200"
           height="200"
-          src="https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/qr.svg"
+          :src="qrCode"
         />
         <div v-else-if="emojisMurdered === 0" class="bounce">
           <p class="text-center text-lg md:text-2xl text-gray-300">Hi, I'm</p>
@@ -33,6 +33,7 @@
 
 <script setup lang="ts">
 import { useWindowSize } from "@vueuse/core";
+import { useQRCode } from "@vueuse/integrations/useQRCode";
 import JSConfetti from "js-confetti";
 import Matter from "matter-js";
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
@@ -59,6 +60,7 @@ const emojisMurdered = ref(0);
 const emojiMurderStatus = ref("");
 const murderComplete = ref(false);
 const inactive = ref(false);
+const qrCode = useQRCode("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 
 const { width, height } = useWindowSize();
 
