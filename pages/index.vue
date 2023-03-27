@@ -13,19 +13,15 @@
           src="https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/qr.svg"
         />
         <div v-else-if="emojisMurdered === 0" class="bounce">
-          <p class="text-center text-lg md:text-2xl text-gray-500 font-bold">
-            Hi, I'm
-          </p>
-          <h2 class="text-4xl md:text-7xl mb-4 mt-2 font-bold">
-            Matija Novosel
-          </h2>
-          <p class="text-green-vue">Sometimes I make stuff</p>
+          <p class="text-center text-4xl text-gray-500">Hi, I'm</p>
+          <h2 class="text-4xl md:text-9xl">Matija Novosel</h2>
+          <p class="text-green-vue text-3xl">Sometimes I make stuff</p>
         </div>
         <div v-else>
           <p class="text-center text-lg md:text-2xl text-gray-400">
             You have murdered
           </p>
-          <h2 class="text-3xl md:text-7xl font-bold my-4 text-green-vue">
+          <h2 class="text-3xl md:text-7xl my-4 text-green-vue">
             {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
           </h2>
           {{ emojiMurderStatus }}

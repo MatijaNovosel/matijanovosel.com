@@ -9,7 +9,7 @@
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="relative flex items-center text-base md:text-lg font-bold nav-tab"
+      class="relative flex items-center text-xl md:text-3xl font-bold nav-tab"
       @mouseover="tabHover(link.to)"
     >
       {{ link.text }}
@@ -35,19 +35,15 @@ let widths: {
 
 const tabHover = (id: string) => {
   let offsetCalc = 0;
-
   for (let i = widths.length - 1; i >= 0; i--) {
     const tabId = widths[i].id;
     const w = widths[i].dimensions.width.value;
-
     if (tabId === id) {
       navSliderWidth.value = w;
       break;
     }
-
     offsetCalc += widths[i].dimensions.width.value + 24;
   }
-
   navSliderOffset.value = offsetCalc;
 };
 
@@ -92,7 +88,7 @@ nav:hover .nav-slider {
   color: grey;
   position: relative;
   display: inline-block;
-  padding: 10px 12px;
+  padding: 6px 12px;
   text-decoration: none;
   transition: color 0.2s ease;
   outline: none;

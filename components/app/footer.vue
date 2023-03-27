@@ -3,8 +3,8 @@
     class="w-full flex items-center justify-between z-2 px-1 md:px-0 user-select-none pt-5"
   >
     <div>
-      <span class="text-sm md:text-base">
-        &copy; Matija Novosel {{ new Date().getFullYear() }}
+      <span class="text-2xl">
+        &copy; &nbsp; Matija Novosel {{ new Date().getFullYear() }}
       </span>
     </div>
     <div class="flex-center">
