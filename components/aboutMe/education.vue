@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-dark-800 rounded-lg mt-5">
-    <div class="font-bold p-3 text-3xl border-b-2">Education</div>
+  <div>
+    <div class="pl-2 pb-2 text-3xl border-b-2">Education</div>
     <timeline class="p-5">
       <timeline-item
         v-for="({ name, duration, link, title }, i) in EDUCATION"

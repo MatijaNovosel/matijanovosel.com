@@ -43,7 +43,7 @@
           <icon-tag />
         </div>
       </div>
-      <div class="row mt-6 gap-8">
+      <div class="row mt-6 gap-4">
         <div class="contents" v-if="paginatedBlogs.length > 0">
           <blog-card
             class="col-span-12 md:col-span-6"
@@ -53,7 +53,7 @@
           />
           <div class="col-span-12 flex-center">
             <pagination
-              class="mt-3"
+              class="my-5"
               v-model="page"
               :number-of-pages="numberOfPages"
             />

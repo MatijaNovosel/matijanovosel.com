@@ -1,10 +1,10 @@
 <template>
   <div class="flex gap-3">
     <div
-      class="pagination-element text-3xl"
+      class="pagination-element text-5xl border-2 border-gray-500"
       :class="{
         'bg-dark-800 cursor-pointer': page != 1,
-        'bg-gray-400 text-black': page == 1
+        'bg-gray-500 text-black': page == 1
       }"
       @click="traverse(true)"
     >
@@ -12,10 +12,9 @@
     </div>
     <div
       @click="setPage(element)"
-      class="pagination-element cursor-pointer font-bold"
+      class="pagination-element cursor-pointer font-bold text-3xl border-2"
       :class="{
-        'bg-dark-800': page !== element,
-        'bg-green-vue': page === element
+        'bg-white text-black': page === element
       }"
       v-for="(element, i) in elements"
       :key="i"
@@ -23,10 +22,10 @@
       {{ element }}
     </div>
     <div
-      class="pagination-element text-3xl"
+      class="pagination-element text-5xl border-2 border-gray-500"
       :class="{
         'bg-dark-800 cursor-pointer': page != numberOfPages,
-        'bg-gray-400 text-black': page == numberOfPages
+        'bg-gray-500 text-black': page == numberOfPages
       }"
       @click="traverse()"
     >
@@ -62,15 +61,11 @@ const setPage = (n: number) => {
 
 const traverse = (left?: boolean) => {
   if (left) {
-    if (page.value - 1 <= 0) {
-      return;
-    }
+    if (page.value - 1 <= 0) return;
     setPage(page.value - 1);
     return;
   }
-  if (page.value + 1 > props.numberOfPages) {
-    return;
-  }
+  if (page.value + 1 > props.numberOfPages) return;
   setPage(page.value + 1);
 };
 

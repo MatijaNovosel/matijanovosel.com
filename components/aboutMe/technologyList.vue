@@ -1,8 +1,6 @@
 <template>
-  <div class="bg-dark-800 rounded-lg mt-5">
-    <div class="font-bold text-3xl p-3 rounded-t-lg border-b-2">
-      Technologies
-    </div>
+  <div>
+    <div class="text-3xl pl-2 pb-2 border-b-2">Technologies</div>
     <div class="p-3">
       <component
         :style="{ fontSize: '25px', color: color || 'transparent' }"
