@@ -141,7 +141,7 @@ setMeta("Blog | Matija Novosel");
 .badge::after {
   content: "";
   border-radius: 100%;
-  border: 7px solid var(--vue-green);
+  border: 7px solid white;
   top: -3px;
   right: -3px;
   position: absolute;

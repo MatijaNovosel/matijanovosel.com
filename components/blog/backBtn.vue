@@ -1,10 +1,10 @@
 <template>
   <nuxt-link to="/blog">
     <button
-      class="ripple project-btn pr-3 pl-2 py-1 font-medium text-xl text-gray-100 rounded flex-center"
+      class="pr-3 pl-2 py-1 text-3xl text-black bg-white rounded flex-center"
     >
-      <icon-arrow-left class="mr-2" />
-      <h6>Back</h6>
+      <icon-arrow-left class="mr-2 text-xl" />
+      Back
     </button>
   </nuxt-link>
 </template>

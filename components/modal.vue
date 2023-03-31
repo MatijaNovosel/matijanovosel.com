@@ -2,7 +2,7 @@
   <div class="mask">
     <div class="wrapper">
       <div class="container bg-dark-600 rounded-lg mx-auto" ref="modal">
-        <div class="px-4 pt-4 pb-3 text-sm">
+        <div class="px-4 pt-4 pb-3 text-3xl">
           {{ title }}
         </div>
         <hr class="divider" />

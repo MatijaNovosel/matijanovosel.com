@@ -5,14 +5,14 @@
     </div>
     <div>
       <div
-        class="text-lg"
+        class="text-3xl"
         :style="{
           color: textColor
         }"
       >
         {{ title }}
       </div>
-      <div class="text-sm mt-1">
+      <div class="text-xl mt-1">
         {{ subtitle }}
       </div>
     </div>

@@ -1,7 +1,8 @@
 .hljs {
   color: #abb2bf;
   background: #282c34;
-  font-family: "Sevastopol" !important;
+  font-family: "CascadiaCode" !important;
+  font-size: 12px !important;
 }
 
 .hljs-comment,

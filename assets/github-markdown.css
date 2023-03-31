@@ -4,7 +4,7 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   color: #c9d1d9;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.5;
   word-wrap: break-word;
 }
@@ -324,8 +324,6 @@
 
 .markdown-body tt,
 .markdown-body code {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
-    Liberation Mono, monospace;
   font-size: 12px;
 }
 
@@ -791,7 +789,6 @@
 .markdown-body tt {
   padding: 0.2em 0.4em;
   margin: 0;
-  font-size: 85%;
   background-color: rgba(110, 118, 129, 0.4);
   border-radius: 6px;
 }

@@ -25,7 +25,7 @@
           </div>
         </template>
         <div class="flex flex-col text-xl text-gray-300">
-          <div v-for="(line, j) in description" :key="j">⚫ {{ line }}</div>
+          <div v-for="(line, j) in description" :key="j">◻️ {{ line }}</div>
         </div>
       </timeline-item>
     </timeline>
