@@ -14,7 +14,7 @@
         />
         <div v-else-if="emojisMurdered === 0" class="bounce">
           <p class="text-center text-4xl text-gray-500">Hi, I'm</p>
-          <h2 class="text-4xl md:text-9xl">Matija Novosel</h2>
+          <h2 class="text-7xl md:text-9xl">Matija Novosel</h2>
           <p class="text-green-vue text-3xl">Sometimes I make stuff</p>
         </div>
         <div v-else>

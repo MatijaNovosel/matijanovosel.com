@@ -35,9 +35,9 @@
         />
         <div
           @click="modalOpen = true"
-          class="tag-search-btn bg-dark-600 ripple flex-center rounded-lg cursor-pointer relative"
+          class="tag-search-btn bg-dark-300 ripple flex-center rounded-lg cursor-pointer relative"
           :class="{
-            badge: selectedTags.size > 0
+            badge: !!selectedTags.size
           }"
         >
           <icon-tag />
@@ -90,9 +90,9 @@ const numberOfPages = computed(() =>
   Math.ceil(filteredBlogs.value.length / ITEMS_PER_PAGE)
 );
 
-const modalTags = computed(() => {
-  return [...new Set(allBlogs.value.flatMap((blog) => blog.tags))];
-});
+const modalTags = computed(() => [
+  ...new Set(allBlogs.value.flatMap((blog) => blog.tags))
+]);
 
 const filteredBlogs = computed(() =>
   allBlogs.value.filter(
@@ -119,22 +119,14 @@ const selectTag = (tag: string) => {
 };
 
 const handleKeyPress = (e: KeyboardEvent) => {
-  if (e.key === "Escape") {
-    modalOpen.value = false;
-  }
+  if (e.key === "Escape") modalOpen.value = false;
 };
 
-watch([searchText, selectedTags], () => {
-  page.value = 1;
-});
+watch([searchText, selectedTags], () => (page.value = 1));
 
-onMounted(() => {
-  window.addEventListener("keydown", handleKeyPress);
-});
+onMounted(() => window.addEventListener("keydown", handleKeyPress));
 
-onBeforeUnmount(() => {
-  window.removeEventListener("keydown", handleKeyPress);
-});
+onBeforeUnmount(() => window.removeEventListener("keydown", handleKeyPress));
 
 const { setMeta } = useMetadata();
 setMeta("Blog | Matija Novosel");

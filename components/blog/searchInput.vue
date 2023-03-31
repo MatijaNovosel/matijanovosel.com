@@ -1,19 +1,19 @@
 <template>
   <div class="flex">
-    <div class="bg-dark-800 icon flex-center rounded-l-lg px-3">
-      <icon-search class="text-lg text-gray-700" />
+    <div class="bg-dark-300 icon flex-center rounded-l-lg px-3">
+      <icon-search class="text-lg text-gray-200" />
     </div>
     <input
       :disabled="loading || error"
       placeholder="Search blog entries"
-      class="bg-dark-800"
+      class="bg-dark-300"
       :value="modelValue"
       @input="
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
       "
       type="search"
     />
-    <div class="bg-dark-800 icon flex-center rounded-r-lg px-3">
+    <div class="bg-dark-300 icon flex-center rounded-r-lg px-3">
       <icon-clear
         @click="$emit('update:modelValue', '')"
         class="text-xl ripple cursor-pointer rounded-full"
@@ -42,7 +42,7 @@ defineEmits(["update:modelValue"]);
 input {
   height: 50px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 18px;
+  font-size: 24px;
   color: rgb(193, 194, 197);
   outline: none;
   width: calc(100% - 100px);

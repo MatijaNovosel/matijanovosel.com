@@ -1,7 +1,7 @@
 <template>
   <div class="bg-dark-800 rounded-lg mt-5">
-    <div class="font-bold text-xl p-3 bg-dark-400 rounded-t-lg">
-      ⚙️ Technologies
+    <div class="font-bold text-3xl p-3 rounded-t-lg border-b-2">
+      Technologies
     </div>
     <div class="p-3">
       <component

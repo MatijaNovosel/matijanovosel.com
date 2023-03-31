@@ -1,8 +1,6 @@
 <template>
   <div class="bg-dark-800 rounded-lg mt-5">
-    <div class="font-bold p-3 text-xl bg-dark-400 rounded-t-lg">
-      💼 Work experience
-    </div>
+    <div class="font-bold p-3 text-3xl border-b-2">Work experience</div>
     <timeline class="p-5">
       <timeline-item
         v-for="(
@@ -14,19 +12,19 @@
           <div class="flex flex-col">
             <nuxt-link
               :to="link"
-              class="text-white font-bold decoration-dotted underline underline-offset-5"
+              class="text-white text-2xl font-bold decoration-dotted underline underline-offset-5"
             >
               {{ company }}
             </nuxt-link>
-            <span class="my-1 text-xs text-green-vue">
+            <span class="text-xl text-green-vue">
               {{ position }}
             </span>
-            <span class="text-xs text-gray-400">
+            <span class="text-lg text-gray-400">
               {{ formatDuration(from, to) }}
             </span>
           </div>
         </template>
-        <div class="flex flex-col text-sm space-y-1 text-gray-300 mt-3">
+        <div class="flex flex-col text-lg text-gray-300">
           <div v-for="(line, j) in description" :key="j">⚫ {{ line }}</div>
         </div>
       </timeline-item>

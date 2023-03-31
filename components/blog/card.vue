@@ -7,9 +7,9 @@
       }"
     />
     <div class="flex flex-col justify-center">
-      <span class="mb-1 text-sm text-green-vue"> {{ blog.createdAt }} </span>
-      <span class="text-xl font-bold text-left"> {{ blog.title }} </span>
-      <span class="mb-4 mt-3 text-gray-400 text-sm">
+      <span class="mb-1 text-xl text-green-vue"> {{ blog.createdAt }} </span>
+      <span class="text-3xl font-bold text-left"> {{ blog.title }} </span>
+      <span class="mb-4 mt-3 text-gray-400 text-xl">
         {{ blog.subtitle }}
       </span>
       <div class="flex flex-wrap">

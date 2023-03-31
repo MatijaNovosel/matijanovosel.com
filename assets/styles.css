@@ -227,7 +227,7 @@ ul {
 }
 
 .title {
-  @apply text-4xl mt-6 font-bold mb-5 text-center md:text-left;
+  @apply text-4xl mt-6 font-bold mb-5 text-center md:text-left text-6xl;
 }
 
 .divider {

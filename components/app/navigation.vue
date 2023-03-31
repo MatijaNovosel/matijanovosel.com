@@ -53,12 +53,12 @@ const navSliderStyle = computed(() => ({
 }));
 
 onMounted(() => {
-  links.forEach((link) => {
+  links.forEach((link) =>
     widths.push({
       id: link.to,
       dimensions: useElementSize(document.getElementById(link.to))
-    });
-  });
+    })
+  );
 });
 </script>
 
@@ -75,7 +75,7 @@ nav:hover .nav-slider {
   contain: strict;
   background: rgba(171, 154, 154, 0.25);
   position: absolute;
-  top: 8px;
+  top: 6px;
   right: 3px;
   border-radius: 4px;
   z-index: -1;
@@ -98,6 +98,7 @@ nav:hover .nav-slider {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  text-transform: uppercase;
 }
 
 .active-tab {

@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-dark-800 rounded-lg text-left">
-    <div class="font-bold py-5 text-xl bg-green-vue rounded-t-lg header"></div>
+  <div class="rounded-lg text-left">
+    <div class="font-bold py-5 text-xl bg-white rounded-t-lg header"></div>
     <div class="pt-3 text-gray-300 p-5 text-sm md:text-base">
       <div class="me" />
-      <h6 class="my-5 text-4xl text-white font-bold text-center">
+      <h6 class="my-5 text-6xl text-white font-bold text-center">
         Matija Novosel
       </h6>
       <p>
@@ -23,10 +23,10 @@
       </p>
       <div class="flex justify-center md:justify-end mt-5">
         <nuxt-link
-          class="ripple rounded px-4 py-2 bg-dark-300 text-sm"
+          class="ripple rounded px-4 py-1 bg-white text-2xl uppercase text-black"
           to="https://drive.google.com/file/d/1g89PylKfvLmG-XlSuA-xnER3fCW2OWk0/view?usp=sharing"
         >
-          👷🏽‍♂️ Get my CV!
+          Get my CV!
         </nuxt-link>
       </div>
     </div>
@@ -37,7 +37,7 @@
 
 <style scoped>
 p {
-  @apply mt-2;
+  @apply mt-2 text-xl;
 }
 
 .header {
@@ -49,7 +49,7 @@ p {
   height: 160px;
   border-radius: 100%;
   margin: -110px auto 0px auto;
-  border: 12px solid var(--vue-green);
+  border: 12px solid white;
   background: url("https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/me.jpg");
   background-size: contain;
 }

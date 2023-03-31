@@ -1,15 +1,15 @@
 <template>
   <nuxt-link :href="project.link">
     <div
-      class="text-left w-full bg-dark-800 shrink p-5 flex flex-col rounded-lg h-full justify-center"
+      class="text-left w-full shrink px-5 py-3 flex flex-col rounded-lg h-full justify-center border-2"
     >
-      <div class="text-md font-bold text-left">
+      <div class="text-md font-bold text-left text-2xl">
         {{ project.title }}
       </div>
-      <div class="mt-2 text-gray-400 text-sm md:text-xs">
+      <div class="text-gray-400 text-xl my-3">
         {{ project.description }}
       </div>
-      <div class="mt-3 flex flex-wrap">
+      <div class="flex flex-wrap">
         <tag
           :background-color="TAGS[tag]"
           v-for="tag in project.tags"

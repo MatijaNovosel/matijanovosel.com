@@ -9,7 +9,7 @@
           : backgroundColor,
       color: textColor
     }"
-    class="px-3 py-1 rounded-full text-xs font-mono m-1 select-none font-bold"
+    class="px-3 rounded-full text-lg m-1 select-none font-bold tracking-wider"
     @click="$emit('clicked')"
   >
     <slot />
