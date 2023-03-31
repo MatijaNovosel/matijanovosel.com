@@ -14,7 +14,7 @@
             >
               {{ name }}
             </a>
-            <span class="my-1 text-xl text-green-vue">
+            <span class="text-xl">
               {{ title }}
             </span>
             <span class="text-xl text-gray-400">

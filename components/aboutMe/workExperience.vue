@@ -16,7 +16,7 @@
             >
               {{ company }}
             </nuxt-link>
-            <span class="text-xl text-green-vue">
+            <span class="text-2xl">
               {{ position }}
             </span>
             <span class="text-lg text-gray-400">
@@ -24,7 +24,7 @@
             </span>
           </div>
         </template>
-        <div class="flex flex-col text-lg text-gray-300">
+        <div class="flex flex-col text-xl text-gray-300">
           <div v-for="(line, j) in description" :key="j">⚫ {{ line }}</div>
         </div>
       </timeline-item>

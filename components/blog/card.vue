@@ -9,32 +9,19 @@
     <div class="flex flex-col justify-center">
       <span class="mb-1 text-xl text-green-vue"> {{ blog.createdAt }} </span>
       <span class="text-3xl font-bold text-left"> {{ blog.title }} </span>
-      <span class="mb-4 mt-3 text-gray-400 text-xl">
+      <span class="mb-4 mt-3 text-gray-400 text-2xl">
         {{ blog.subtitle }}
       </span>
-      <div class="flex flex-wrap">
-        <tag
-          :background-color="TAGS[tag]"
-          v-for="(tag, j) in blog.tags"
-          :key="j"
-        >
-          {{ tag }}
-        </tag>
-      </div>
     </div>
   </nuxt-link>
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
 import { BlogListItem } from "~/models";
-import { TAGS } from "~/utils/constants";
 
-defineProps({
-  blog: {
-    type: Object as PropType<BlogListItem>
-  }
-});
+defineProps<{
+  blog: BlogListItem;
+}>();
 </script>
 
 <style scoped>

@@ -1,16 +1,14 @@
 <template>
   <nav
-    class="flex z-4 mt-4 justify-start rounded-lg md:rounded-none bg-dark-400 md:bg-transparent fixed md:absolute"
+    class="flex z-4 mt-5 bg-dark-400 md:bg-transparent fixed md:absolute text-white gap-2"
   >
-    <div class="nav-slider" :style="navSliderStyle" />
     <nuxt-link
       :id="link.to"
       v-for="(link, i) in links"
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="relative flex items-center text-xl md:text-3xl font-bold nav-tab"
-      @mouseover="tabHover(link.to)"
+      class="relative flex items-center text-xl md:text-3xl nav-tab border-1"
     >
       {{ link.text }}
     </nuxt-link>
@@ -18,78 +16,14 @@
 </template>
 
 <script lang="ts" setup>
-import { useElementSize } from "@vueuse/core";
-import { Ref } from "vue";
 import { links } from "~/utils/constants";
-
-const navSliderOffset = ref(0);
-const navSliderWidth = ref(54);
-
-let widths: {
-  dimensions: {
-    width: Ref<number>;
-    height: Ref<number>;
-  };
-  id: string;
-}[] = [];
-
-const tabHover = (id: string) => {
-  let offsetCalc = 0;
-  for (let i = widths.length - 1; i >= 0; i--) {
-    const tabId = widths[i].id;
-    const w = widths[i].dimensions.width.value;
-    if (tabId === id) {
-      navSliderWidth.value = w;
-      break;
-    }
-    offsetCalc += widths[i].dimensions.width.value + 24;
-  }
-  navSliderOffset.value = offsetCalc;
-};
-
-const navSliderStyle = computed(() => ({
-  transform: `translateX(${-navSliderOffset.value}px)`,
-  width: `${navSliderWidth.value + 20}px`
-}));
-
-onMounted(() => {
-  links.forEach((link) =>
-    widths.push({
-      id: link.to,
-      dimensions: useElementSize(document.getElementById(link.to))
-    })
-  );
-});
 </script>
 
 <style scoped>
-nav:hover .nav-slider {
-  opacity: 1;
-}
-
-.nav-slider {
-  width: 86px;
-  transform: translateX(0px);
-  transition-duration: 150ms;
-  opacity: 0;
-  contain: strict;
-  background: rgba(171, 154, 154, 0.25);
-  position: absolute;
-  top: 6px;
-  right: 3px;
-  border-radius: 4px;
-  z-index: -1;
-  height: 32px;
-  transition: 0.15s ease;
-  transition-property: width, transform, opacity;
-}
-
 .nav-tab {
-  color: grey;
   position: relative;
   display: inline-block;
-  padding: 6px 12px;
-  text-decoration: none;
+  padding: 0px 12px;
   transition: color 0.2s ease;
   outline: none;
   cursor: pointer;
@@ -102,23 +36,7 @@ nav:hover .nav-slider {
 }
 
 .active-tab {
-  color: white;
-}
-
-.active-tab::before {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 0;
-  left: 9px;
-  right: 9px;
-  bottom: 0;
-  border-bottom: 2px solid var(--vue-green);
-}
-
-@media only screen and (max-width: 600px) {
-  .nav-slider {
-    visibility: hidden;
-  }
+  background-color: white;
+  color: black;
 }
 </style>

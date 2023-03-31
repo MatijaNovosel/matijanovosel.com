@@ -33,11 +33,9 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
 <style scoped>
 p {
-  @apply mt-2 text-xl;
+  @apply mt-2 text-2xl;
 }
 
 .header {

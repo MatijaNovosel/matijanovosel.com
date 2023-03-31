@@ -9,7 +9,6 @@
 
 <script lang="ts" setup>
 import { OTHER_PROJECTS, PROJECTS } from "~/utils/constants";
-
 const { setMeta } = useMetadata();
 setMeta("Projects | Matija Novosel");
 </script>

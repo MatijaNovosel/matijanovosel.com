@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div class="timeline-dot text-green-vue" />
+    <div class="timeline-dot" />
     <div class="timeline-content pb-5">
       <slot name="title" />
       <slot />

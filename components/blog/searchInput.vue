@@ -1,19 +1,23 @@
 <template>
   <div class="flex">
-    <div class="bg-dark-300 icon flex-center rounded-l-lg px-3">
+    <div
+      class="bg-dark-300 icon flex-center rounded-l-lg px-3 border-t-2 border-b-2 border-l-2"
+    >
       <icon-search class="text-lg text-gray-200" />
     </div>
     <input
       :disabled="loading || error"
       placeholder="Search blog entries"
-      class="bg-dark-300"
+      class="bg-dark-300 border-t-2 border-b-2"
       :value="modelValue"
       @input="
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
       "
       type="search"
     />
-    <div class="bg-dark-300 icon flex-center rounded-r-lg px-3">
+    <div
+      class="bg-dark-300 icon flex-center rounded-r-lg px-3 border-t-2 border-b-2 border-r-2"
+    >
       <icon-clear
         @click="$emit('update:modelValue', '')"
         class="text-xl ripple cursor-pointer rounded-full"
