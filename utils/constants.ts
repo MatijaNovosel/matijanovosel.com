@@ -154,8 +154,8 @@ export const EDUCATION: EducationItem[] = [
   },
   {
     duration: "September 2013 - July 2017",
-    title: "Computer technician (Tehničar za računarstvo)",
-    name: "Tehnička škola Ruđera Boškovića",
+    title: "Computer technician (Tehnicar za racunarstvo)",
+    name: "Tehnicka skola Rudera Boskovica",
     link: "https://www.tsrb.hr/"
   }
 ];

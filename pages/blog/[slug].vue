@@ -11,12 +11,12 @@
     />
     <template v-else>
       <div
-        class="blog-img rounded-t-lg mt-5 relative"
+        class="blog-img rounded-lg mt-5 relative"
         :style="{
           backgroundImage: `url(${blog.img})`
         }"
       />
-      <div class="bg-dark-800 rounded-b-lg p-5 blog-content">
+      <div class="rounded-b-lg p-5 blog-content">
         <blog-title
           class="my-3"
           :title="blog.title"
@@ -47,11 +47,8 @@ const {
 watch(
   blog,
   (val) => {
-    if (val) {
-      setMeta(val.title, val.subtitle, val.img);
-    } else {
-      setMeta("Loading ...");
-    }
+    if (val) setMeta(val.title, val.subtitle, val.img);
+    else setMeta("Loading ...");
   },
   { immediate: true }
 );

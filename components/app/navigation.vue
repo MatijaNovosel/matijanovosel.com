@@ -6,7 +6,7 @@
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="relative flex items-center text-xl md:text-3xl nav-tab border-1 bg-dark-400"
+      class="relative flex items-center text-xl md:text-3xl nav-tab border-1 bg-dark-400 hover:bg-dark-800"
     >
       {{ link.text }}
     </nuxt-link>

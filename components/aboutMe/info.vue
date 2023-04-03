@@ -13,6 +13,12 @@
     Besides programming I enjoy video games, reading, drawing and listening to
     music.
   </p>
+  <p>
+    Page style inspired by
+    <a href="https://www.gameuidatabase.com/gameData.php?id=381#&gid=1&pid=24">
+      Alien: Isolation!
+    </a>
+  </p>
   <div class="flex justify-center md:justify-end my-5">
     <nuxt-link
       class="ripple rounded px-4 py-1 bg-white text-2xl uppercase text-black"
@@ -26,5 +32,9 @@
 <style scoped>
 p {
   @apply mt-2 text-2xl;
+}
+
+a {
+  color: rgb(124, 124, 128);
 }
 </style>
