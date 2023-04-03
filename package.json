@@ -28,7 +28,7 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-toc-done-right": "^4.2.0",
-    "matija-utils": "^1.0.17",
+    "matija-utils": "^1.0.29",
     "matter-js": "^0.18.0"
   }
 }

@@ -1,29 +1,8 @@
-import { dateDiffReadable, getMonth, randInt } from "matija-utils";
+import { dateDiffReadable, getMonth, randInt, sample } from "matija-utils";
 import Matter from "matter-js";
-import { CANVAS_OFFSET, EMOJI_LEN } from "./constants";
-import EMOJIS from "./emojis";
+import { CANVAS_OFFSET, emojis } from "./constants";
 
-export const createEmojiImage = (): string => {
-  const drawing = document.createElement("canvas");
-  drawing.width = 150;
-  drawing.height = 150;
-  const ctx = drawing.getContext("2d");
-  let url = "";
-  if (ctx) {
-    ctx.beginPath();
-    ctx.arc(75, 75, 15, 0, Math.PI * 2, true);
-    ctx.fill();
-    ctx.closePath();
-    ctx.font = "32pt sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText(EMOJIS[randInt(0, EMOJI_LEN)], 75, 75);
-    url = drawing.toDataURL("image/png");
-  }
-  drawing.remove();
-  return url;
-};
-
-export const createCanvasEmoji = (pageWidth: number, texture: string) => {
+export const createCanvasEmoji = (pageWidth: number) => {
   return Matter.Bodies.circle(
     randInt(CANVAS_OFFSET, pageWidth - CANVAS_OFFSET),
     60,
@@ -35,7 +14,7 @@ export const createCanvasEmoji = (pageWidth: number, texture: string) => {
       angle: randInt(0, 360),
       render: {
         sprite: {
-          texture,
+          texture: `/emojis/${sample(emojis)}.png`,
           xScale: 1,
           yScale: 1
         }

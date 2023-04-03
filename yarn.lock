@@ -3014,10 +3014,10 @@ markdown-it@^13.0.1:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-matija-utils@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/matija-utils/-/matija-utils-1.0.17.tgz#7c19eb32c28ee30bf8a6522cdc5df7de9875dfb0"
-  integrity sha512-2zYj33cFU1v87zOYwL0fcRXFA520Y9Lq+EKOda8VRAse4KJNTBAoFu5tyeP5onkqwNOkhK/EbyxE7s7fcmtVWQ==
+matija-utils@^1.0.29:
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/matija-utils/-/matija-utils-1.0.29.tgz#2392a77cdbe5067aa5383969a753e4d304f74bc1"
+  integrity sha512-iYVdiJj51ljOIL1KpbcDwb4gOqydPwKX+DlvRT44hJrC89tkR7n4xteiLXnY1UwqSLTDFxt3tUMjMduDqkT/eA==
 
 matter-js@^0.18.0:
   version "0.18.0"

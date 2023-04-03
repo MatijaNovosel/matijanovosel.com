@@ -300,3 +300,16 @@ export const links: LinkItem[] = [
     text: "About me"
   }
 ];
+
+export const emojis = [
+  "heart",
+  "laugh",
+  "cool",
+  "weary",
+  "angry",
+  "suggestive",
+  "surprised",
+  "ok",
+  "glad",
+  "befuddled"
+];

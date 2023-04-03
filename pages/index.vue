@@ -44,7 +44,7 @@ import {
   REWARD_TIMEOUT,
   SKULL_EMOJI_URL
 } from "~/utils/constants";
-import { createCanvasEmoji, createEmojiImage } from "~/utils/helpers";
+import { createCanvasEmoji } from "~/utils/helpers";
 
 let engine = null;
 let runner = null;
@@ -104,18 +104,16 @@ onMounted(() => {
   });
 
   emojiCreateInterval = setInterval(() => {
-    const texture = createEmojiImage();
-    const obj = createCanvasEmoji(width.value, texture);
+    const obj = createCanvasEmoji(width.value);
     Matter.Composite.add(engine.world, obj);
-    setTimeout(() => {
-      Matter.Composite.remove(engine.world, obj);
-    }, EMOJI_CLEANUP_INTERVAL);
+    setTimeout(
+      () => Matter.Composite.remove(engine.world, obj),
+      EMOJI_CLEANUP_INTERVAL
+    );
   }, EMOJI_SPAWN_INTERVAL);
 
   inactivityInterval = setInterval(() => {
-    if (inactive.value && !murderComplete.value) {
-      emojisMurdered.value = 0;
-    }
+    if (inactive.value && !murderComplete.value) emojisMurdered.value = 0;
     inactive.value = true;
   }, EMOJI_INACTIVITY_INTERVAL);
 });
@@ -124,9 +122,9 @@ onBeforeUnmount(() => {
   clearTimeout(emojiCreateInterval || -1);
   clearTimeout(inactivityInterval || -1);
   Matter.Composite.remove(engine.world, mouseConstraint);
-  engine.world.bodies.forEach((body) => {
-    Matter.Composite.remove(engine.world, body);
-  });
+  engine.world.bodies.forEach((body) =>
+    Matter.Composite.remove(engine.world, body)
+  );
   Matter.Render.stop(render);
 });
 
@@ -158,9 +156,7 @@ watch(emojisMurdered, (val) => {
     jsConfetti.addConfetti();
     emojiMurderStatus.value = "Well done. Are you ready for your reward?";
     clearTimeout(inactivityInterval || -1);
-    setTimeout(() => {
-      murderComplete.value = true;
-    }, REWARD_TIMEOUT);
+    setTimeout(() => (murderComplete.value = true), REWARD_TIMEOUT);
   }
 });
 
