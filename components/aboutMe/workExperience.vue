@@ -24,9 +24,11 @@
             </span>
           </div>
         </template>
-        <div class="flex flex-col text-xl text-gray-300">
-          <div v-for="(line, j) in description" :key="j">◻️ {{ line }}</div>
-        </div>
+        <ul class="text-xl text-gray-300">
+          <li v-for="(line, j) in description" class="ml-5" :key="j">
+            {{ line }}
+          </li>
+        </ul>
       </timeline-item>
     </timeline>
   </div>
@@ -36,3 +38,9 @@
 import { WORK_EXPERIENCE } from "~/utils/constants";
 import { formatDuration } from "~/utils/helpers";
 </script>
+
+<style scoped>
+ul {
+  list-style-image: url("/bullet.png");
+}
+</style>
