@@ -310,5 +310,11 @@ export const emojis = [
   "surprised",
   "ok",
   "glad",
-  "befuddled"
+  "befuddled",
+  "tongue",
+  "wink",
+  "ooh",
+  "crying",
+  "joy",
+  "nerd"
 ];

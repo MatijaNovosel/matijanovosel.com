@@ -26,9 +26,7 @@ defineProps({
   }
 });
 
-onClickOutside(modal, () => {
-  emit("close");
-});
+onClickOutside(modal, () => emit("close"));
 </script>
 
 <style scoped>

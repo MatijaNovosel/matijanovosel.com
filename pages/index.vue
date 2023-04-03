@@ -10,7 +10,7 @@
           class="p-2 bg-white rounded-lg"
           width="200"
           height="200"
-          src="https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/qr.svg"
+          src="/qr.svg"
         />
         <div v-else-if="emojisMurdered === 0" class="bounce">
           <p class="text-center text-4xl text-gray-500">Hi, I'm</p>
@@ -18,13 +18,13 @@
           <p class="text-3xl">Sometimes I make stuff</p>
         </div>
         <div v-else>
-          <p class="text-center text-lg md:text-4xl text-gray-400">
-            You have murdered
-          </p>
-          <h2 class="text-3xl md:text-9xl">
+          <p class="text-center text-4xl text-gray-500">You have murdered</p>
+          <h2 class="text-7xl md:text-9xl">
             {{ emojisMurdered }} {{ `emoji${emojisMurdered > 1 ? "s" : ""}` }}
           </h2>
-          {{ emojiMurderStatus }}
+          <p class="text-2xl">
+            {{ emojiMurderStatus }}
+          </p>
         </div>
       </transition>
     </div>
@@ -65,7 +65,6 @@ const { width, height } = useWindowSize();
 onMounted(() => {
   engine = Matter.Engine.create();
   runner = Matter.Runner.create();
-
   render = Matter.Render.create({
     canvas: matterCanvas.value,
     engine,
