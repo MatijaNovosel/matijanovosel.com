@@ -75,10 +75,8 @@ onMounted(() => {
       height: height.value
     }
   });
-
   Matter.Render.run(render);
   Matter.Runner.run(runner, engine);
-
   mouse = Matter.Mouse.create(matterCanvas.value);
   mouseConstraint = Matter.MouseConstraint.create(engine, {
     mouse,
@@ -88,9 +86,7 @@ onMounted(() => {
       }
     } as any
   });
-
   Matter.Composite.add(engine.world, mouseConstraint);
-
   Matter.Events.on(runner, "tick", () => {
     if (
       mouseConstraint.body &&

@@ -316,5 +316,9 @@ export const emojis = [
   "ooh",
   "crying",
   "joy",
-  "nerd"
+  "nerd",
+  "laughCry",
+  "yum",
+  "sunglasses",
+  "dead"
 ];
