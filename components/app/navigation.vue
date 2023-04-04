@@ -6,7 +6,7 @@
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="relative flex items-center text-xl md:text-3xl nav-tab border-1 bg-dark-400 hover:bg-dark-800"
+      class="flex items-center text-xl md:text-3xl nav-tab border-1 bg-dark-400 ripple uppercase"
     >
       {{ link.text }}
     </nuxt-link>
@@ -19,18 +19,13 @@ import { links } from "~/utils/constants";
 
 <style scoped>
 .nav-tab {
-  position: relative;
-  display: inline-block;
   padding: 0px 12px;
-  transition: color 0.2s ease;
-  outline: none;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  text-transform: uppercase;
 }
 
 .active-tab {

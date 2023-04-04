@@ -1,7 +1,7 @@
 <template>
   <nuxt-link to="/blog">
     <button
-      class="pr-3 pl-2 py-1 text-xl md:text-3xl text-black bg-white rounded flex-center uppercase"
+      class="pr-3 pl-2 py-1 text-xl md:text-3xl text-black bg-white rounded flex-center uppercase ripple"
     >
       <icon-arrow-left class="mr-2 text-xl" />
       Back
