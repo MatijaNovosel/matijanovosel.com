@@ -320,5 +320,9 @@ export const emojis = [
   "laughCry",
   "yum",
   "sunglasses",
-  "dead"
+  "dead",
+  "sleep",
+  "xd",
+  "ayo",
+  "cringe"
 ];
