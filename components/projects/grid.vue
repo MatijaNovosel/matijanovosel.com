@@ -11,10 +11,9 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
 import { ProjectItem } from "~/models";
 
-defineProps({
-  projects: Array as PropType<ProjectItem[]>
-});
+defineProps<{
+  projects: ProjectItem[]
+}>();
 </script>

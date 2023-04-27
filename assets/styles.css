@@ -192,6 +192,13 @@ ul {
   list-style: circle;
 }
 
+input[type="search"] {
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0px !important;
+  appearance: none !important;
+  border-radius: 0 px !important;
+}
+
 .flex-center {
   @apply flex justify-center items-center;
 }

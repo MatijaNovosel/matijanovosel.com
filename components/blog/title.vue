@@ -20,14 +20,13 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType } from "vue";
 import { TAGS as tagEnum } from "~/utils/constants";
 
-defineProps({
-  title: String,
-  createdAt: String,
-  tags: Array as PropType<string[]>
-});
+defineProps<{
+  title: string;
+  createdAt: string;
+  tags: string[];
+}>();
 </script>
 
 <style scoped>
