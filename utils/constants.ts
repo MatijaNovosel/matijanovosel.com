@@ -139,6 +139,15 @@ export const OTHER_PROJECTS: ProjectItem[] = [
   }
 ];
 
+export const COMPONENTS: ProjectItem[] = [
+  {
+    description: "A degree picker component for Vue 3.",
+    link: "https://github.com/MatijaNovosel/vue-degree-picker",
+    title: "🕜 vue-degree-picker",
+    tags: ["ts", "npm", "vue"]
+  }
+];
+
 export const EDUCATION: EducationItem[] = [
   {
     duration: "September 2020 - Current",

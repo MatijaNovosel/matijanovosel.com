@@ -4,11 +4,13 @@
     <projects-grid :projects="PROJECTS" />
     <div class="title">Other</div>
     <projects-grid :projects="OTHER_PROJECTS" />
+    <div class="title">Components</div>
+    <projects-grid :projects="COMPONENTS" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { OTHER_PROJECTS, PROJECTS } from "~/utils/constants";
+import { COMPONENTS, OTHER_PROJECTS, PROJECTS } from "~/utils/constants";
 const { setMeta } = useMetadata();
 setMeta("Projects | Matija Novosel");
 </script>
