@@ -143,13 +143,19 @@ export const COMPONENTS: ProjectItem[] = [
   {
     description: "A degree picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-degree-picker",
-    title: "🕜 vue-degree-picker",
+    title: "📐 vue-degree-picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A tree view component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-tree-view",
     title: "🌳 vue-tree-view",
+    tags: ["ts", "npm", "vue"]
+  },
+  {
+    description: "A material time picker component for Vue 3.",
+    link: "https://github.com/MatijaNovosel/vue-material-time-picker",
+    title: "🕗 vue-material-time-picker",
     tags: ["ts", "npm", "vue"]
   }
 ];
