@@ -3,7 +3,6 @@
     <Link rel="canonical" href="https://matijanovosel.com/" />
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <div class="scanline" />
     <div class="flex justify-center text-white px-5 pb-5 min-h-full">
       <div
         class="max-w-screen-lg w-full flex flex-col items-center justify-between"
