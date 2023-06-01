@@ -11,8 +11,13 @@
         {{ createdAt }}
       </span>
     </div>
-    <div class="mt-4 md:mt-3 flex flex-wrap">
-      <tag :background-color="tagEnum[tag]" v-for="(tag, j) in tags" :key="j">
+    <div class="mt-4 md:mt-3 flex flex-wrap gap-x-3">
+      <tag
+        :selected="true"
+        :background-color="tagEnum[tag]"
+        v-for="(tag, j) in tags"
+        :key="j"
+      >
         {{ tag }}
       </tag>
     </div>

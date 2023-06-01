@@ -2,7 +2,7 @@
   <div class="contents">
     <transition name="modal">
       <modal title="Filter by tags" v-if="modalOpen" @close="modalOpen = false">
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap gap-3">
           <tag
             :background-color="TAGS[tag]"
             v-for="(tag, i) in modalTags"
@@ -46,7 +46,7 @@
       <div class="row mt-6 gap-4">
         <div class="contents" v-if="paginatedBlogs.length > 0">
           <blog-card
-            class="col-span-12 md:col-span-6"
+            class="col-span-12 md:col-span-6 pb-5"
             v-for="(blog, i) in paginatedBlogs"
             :blog="blog"
             :key="i"

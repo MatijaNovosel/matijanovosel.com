@@ -13,11 +13,22 @@
         {{ blog.subtitle }}
       </span>
     </div>
+    <div class="flex flex-wrap gap-x-3 mt-3">
+      <tag
+        :selected="true"
+        :background-color="TAGS[tag]"
+        v-for="(tag, j) in blog.tags"
+        :key="j"
+      >
+        {{ tag }}
+      </tag>
+    </div>
   </nuxt-link>
 </template>
 
 <script lang="ts" setup>
 import { BlogListItem } from "~/models";
+import { TAGS } from "~/utils/constants";
 
 defineProps<{
   blog: BlogListItem;
