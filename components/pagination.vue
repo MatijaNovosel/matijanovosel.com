@@ -8,7 +8,7 @@
       }"
       @click="traverse(true)"
     >
-      &#8249;
+      <span class="mt-2"> &#8249; </span>
     </div>
     <div
       @click="setPage(element)"
@@ -29,7 +29,7 @@
       }"
       @click="traverse()"
     >
-      &#8250;
+      <span class="mt-2"> &#8250; </span>
     </div>
   </div>
 </template>
