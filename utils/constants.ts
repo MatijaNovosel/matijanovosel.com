@@ -66,6 +66,19 @@ export const SKULL_EMOJI_URL = "/emojis/skull.png";
 export const PROJECTS: ProjectItem[] = [
   {
     description:
+      "A web app for tracking Realm of Mad God loot items and quests used by hundreds of people.",
+    tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
+    link: "https://www.realm-trove.com/",
+    title: "👑 Realm trove"
+  },
+  {
+    description: "A clip editor made with Tauri.",
+    tags: ["tauri", "vue3", "vite"],
+    link: "https://github.com/MatijaNovosel/montage",
+    title: "🎬 Montage"
+  },
+  {
+    description:
       "An application intended for both teachers and students with the purpose of making learning easier.",
     link: "https://github.com/MatijaNovosel/dilligence",
     title: "📚 Dilligence",
@@ -90,23 +103,10 @@ export const PROJECTS: ProjectItem[] = [
     title: "💸 Avarice"
   },
   {
-    description:
-      "A web app for tracking Realm of Mad God loot items and quests used by hundreds of people.",
-    tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
-    link: "https://www.realm-trove.com/",
-    title: "👑 Realm trove"
-  },
-  {
     description: "Bullet hell RPG roguelike.",
     tags: ["unity"],
     link: "https://github.com/MatijaNovosel/heroes-of-crimson",
     title: "⚔️ Heroes of crimson"
-  },
-  {
-    description: "A clip editor made with Tauri.",
-    tags: ["tauri", "vue3", "vite"],
-    link: "https://github.com/MatijaNovosel/montage",
-    title: "🎬 Montage"
   },
   {
     description:
@@ -156,6 +156,12 @@ export const COMPONENTS: ProjectItem[] = [
     description: "A material time picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-material-time-picker",
     title: "🕗 vue-material-time-picker",
+    tags: ["ts", "npm", "vue"]
+  },
+  {
+    description: "A material tri state checkbox component for Vue 3.",
+    link: "https://github.com/MatijaNovosel/tri-state-checkbox",
+    title: "☑️ tri-state-checkbox",
     tags: ["ts", "npm", "vue"]
   }
 ];

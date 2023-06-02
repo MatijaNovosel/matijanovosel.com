@@ -2,10 +2,10 @@
   <div class="offset">
     <div class="title">Projects</div>
     <projects-grid :projects="PROJECTS" />
-    <div class="title">Other</div>
-    <projects-grid :projects="OTHER_PROJECTS" />
     <div class="title">Components</div>
     <projects-grid :projects="COMPONENTS" />
+    <div class="title">Other</div>
+    <projects-grid :projects="OTHER_PROJECTS" />
   </div>
 </template>
 
