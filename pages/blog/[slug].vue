@@ -15,7 +15,9 @@
         :style="{
           backgroundImage: `url(${blog.img})`
         }"
-      />
+      >
+        <blog-dev-to-btn class="bottom-right" :link="blog.devToLink" />
+      </div>
       <div class="rounded-b-lg p-5 blog-content">
         <blog-title
           class="my-3"
@@ -59,6 +61,12 @@ watch(
   background-size: cover;
   background-position: center center;
   height: 400px;
+}
+
+.bottom-right {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
 
 :deep(.blog-content) h6:not(:first-child) {

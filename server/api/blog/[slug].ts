@@ -30,6 +30,7 @@ export default defineEventHandler(async (event) => {
     subtitle: data.subtitle,
     tags: data.tags.split(","),
     title: data.title,
-    html: data.html
+    html: data.html,
+    devToLink: data.dev_to_link
   } as BlogListItem;
 });
