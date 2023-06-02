@@ -4,8 +4,13 @@
 }
 
 @font-face {
+  font-family: "Roboto";
+  src: url("/roboto.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "CascadiaCode";
-  src: url("/cascadia.ttf");
+  src: url("/cascadia.ttf") format("truetype");
 }
 
 * {
