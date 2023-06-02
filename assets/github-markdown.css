@@ -1,10 +1,11 @@
 .markdown-body {
+  font-family: "Roboto";
   color-scheme: dark;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
   color: #c9d1d9;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.5;
   word-wrap: break-word;
 }
