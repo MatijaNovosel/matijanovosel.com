@@ -6,8 +6,7 @@
   </p>
   <p>
     I like developing applications of all sorts and have been interested in
-    doing so from a young age. Currently finishing my Masters degree at the
-    Zagreb university of applied sciences.
+    doing so from a young age.
   </p>
   <p>
     Besides programming I enjoy video games, reading, drawing and listening to

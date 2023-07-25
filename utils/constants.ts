@@ -168,7 +168,7 @@ export const COMPONENTS: ProjectItem[] = [
 
 export const EDUCATION: EducationItem[] = [
   {
-    duration: "September 2020 - Current",
+    duration: "September 2020 - July 2023",
     title: "Master of engineering in information technology",
     name: "Zagreb university of applied sciences",
     link: "https://www.tvz.hr/"
@@ -190,9 +190,17 @@ export const EDUCATION: EducationItem[] = [
 export const WORK_EXPERIENCE: WorkExperienceItem[] = [
   {
     company: "King ICT",
+    position: "Software developer",
+    from: new Date("2023-07-19"),
+    to: null,
+    link: "https://king-ict.com/",
+    description: []
+  },
+  {
+    company: "King ICT",
     position: "Software developer (student)",
     from: new Date("2021-08-01"),
-    to: null,
+    to: new Date("2023-07-19"),
     link: "https://king-ict.com/",
     description: [
       "Developed complex mass transit software using full stack web technologies",
