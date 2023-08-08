@@ -141,6 +141,12 @@ export const OTHER_PROJECTS: ProjectItem[] = [
 
 export const COMPONENTS: ProjectItem[] = [
   {
+    description: "An avatar editor component for Vue 3.",
+    link: "https://github.com/MatijaNovosel/avatar-editor",
+    title: "🖼️ avatar-editor",
+    tags: ["ts", "npm", "vue"]
+  },
+  {
     description: "A degree picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-degree-picker",
     title: "📐 vue-degree-picker",
