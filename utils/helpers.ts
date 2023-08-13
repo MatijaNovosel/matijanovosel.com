@@ -26,5 +26,5 @@ export const createCanvasEmoji = (pageWidth: number) => {
 export const formatDuration = (from: Date, to: Date | null) => {
   return `${`${getMonth(from)} ${from.getFullYear()}`} - ${
     to ? `${getMonth(to)} ${to.getFullYear()}` : "Current"
-  } ${to ? `(${dateDiffReadable(from, to || new Date())})` : ""}`;
+  } (${dateDiffReadable(from, to || new Date())})`;
 };
