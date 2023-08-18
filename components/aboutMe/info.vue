@@ -3,9 +3,10 @@
     <img src="/me.png" />
     <div class="flex flex-col">
       <p>
-        Hi, I'm a determined and hard working software developer with 4 years of
-        experience in the industry and I continuously strive to improve my
-        skills with side projects and hobbies as well as in any professional
+        Hi, I'm a determined and hard working software developer with
+        {{ yearsOfExperience(WORK_EXPERIENCE) }}
+        years of experience in the industry and I continuously strive to improve
+        my skills with side projects and hobbies as well as in any professional
         environment.
       </p>
       <p>
@@ -35,6 +36,11 @@
     </nuxt-link>
   </div>
 </template>
+
+<script setup lang="ts">
+import { WORK_EXPERIENCE } from "~/utils/constants";
+import { yearsOfExperience } from "~/utils/helpers";
+</script>
 
 <style scoped>
 p {
