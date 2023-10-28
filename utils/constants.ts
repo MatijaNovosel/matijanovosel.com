@@ -147,6 +147,12 @@ export const COMPONENTS: ProjectItem[] = [
     tags: ["ts", "npm", "vue"]
   },
   {
+    description: "A material date picker component for Vue 3.",
+    link: "https://github.com/MatijaNovosel/vue-3-material-date-picker",
+    title: "📆 date-picker",
+    tags: ["ts", "npm", "vue"]
+  },
+  {
     description: "A degree picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-degree-picker",
     title: "📐 vue-degree-picker",
