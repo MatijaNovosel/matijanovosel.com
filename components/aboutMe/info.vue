@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-row justify-center items-center">
     <img src="/me.png" />
-    <div class="flex flex-col">
+    <div class="flex flex-col ml-0 md:ml-4">
       <p>
         Hi, I'm a determined and hard working software developer with
         {{ yearsOfExperience(WORK_EXPERIENCE) }}

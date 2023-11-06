@@ -9,6 +9,7 @@ import IconElectron from "~icons/logos/electron";
 import IconFirebase from "~icons/logos/firebase";
 import IconFlutter from "~icons/logos/flutter";
 import IconGraphQl from "~icons/logos/graphql";
+import IconJest from "~icons/logos/jest";
 import IconNuxt from "~icons/logos/nuxt-icon";
 import IconSupabase from "~icons/logos/supabase-icon";
 import IconTauri from "~icons/logos/tauri";
@@ -20,6 +21,7 @@ import IconPhp from "~icons/mdi/language-php";
 import IconVisualStudioCode from "~icons/mdi/microsoft-visual-studio-code";
 import IconNode from "~icons/mdi/nodejs";
 import IconReact from "~icons/mdi/react";
+import IconCypress from "~icons/vscode-icons/file-type-cypress";
 import IconVue from "~icons/vscode-icons/file-type-vue";
 
 export const CANVAS_OFFSET = 30;
@@ -325,6 +327,16 @@ export const TECHNOLOGIES: TechnologyItem[] = [
     color: "",
     icon: IconTauri,
     tooltip: "Tauri"
+  },
+  {
+    color: "",
+    icon: IconCypress,
+    tooltip: "Cypress"
+  },
+  {
+    color: "",
+    icon: IconJest,
+    tooltip: "Jest"
   }
 ];
 
