@@ -145,37 +145,37 @@ export const COMPONENTS: ProjectItem[] = [
   {
     description: "An avatar editor component for Vue 3.",
     link: "https://github.com/MatijaNovosel/avatar-editor",
-    title: "🖼️ avatar-editor",
+    title: "🖼️ Avatar editor",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A material date picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-3-material-date-picker",
-    title: "📆 date-picker",
+    title: "📆 Date picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A degree picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-degree-picker",
-    title: "📐 vue-degree-picker",
+    title: "📐 Degree picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A tree view component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-tree-view",
-    title: "🌳 vue-tree-view",
+    title: "🌳 Tree view",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A material time picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-material-time-picker",
-    title: "🕗 vue-material-time-picker",
+    title: "🕗 Time picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A material tri state checkbox component for Vue 3.",
     link: "https://github.com/MatijaNovosel/tri-state-checkbox",
-    title: "☑️ tri-state-checkbox",
+    title: "☑️ Tri state checkbox",
     tags: ["ts", "npm", "vue"]
   }
 ];
