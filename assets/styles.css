@@ -65,8 +65,8 @@ html {
 .v-popper--theme-info-tooltip .v-popper__inner {
   background: #2a2a2b;
   color: white;
-  padding: 5px 12px;
-  font-size: 14px;
+  padding: 3px 12px;
+  font-size: 18px;
   border-radius: 8px;
 }
 

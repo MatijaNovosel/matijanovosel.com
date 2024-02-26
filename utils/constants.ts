@@ -9,11 +9,16 @@ import IconElectron from "~icons/logos/electron";
 import IconFirebase from "~icons/logos/firebase";
 import IconFlutter from "~icons/logos/flutter";
 import IconGraphQl from "~icons/logos/graphql";
+import IconJava from "~icons/logos/java";
 import IconJest from "~icons/logos/jest";
 import IconNuxt from "~icons/logos/nuxt-icon";
 import IconSupabase from "~icons/logos/supabase-icon";
+import IconIos from "~icons/logos/swift";
 import IconTauri from "~icons/logos/tauri";
+import IconTypescript from "~icons/logos/typescript-icon";
+import IconVite from "~icons/logos/vitejs";
 import IconAngular from "~icons/mdi/angular";
+import MdiCircleMedium from "~icons/mdi/circle-medium";
 import IconDatabase from "~icons/mdi/database";
 import IconDotNet from "~icons/mdi/dot-net";
 import IconGit from "~icons/mdi/git";
@@ -21,7 +26,10 @@ import IconPhp from "~icons/mdi/language-php";
 import IconVisualStudioCode from "~icons/mdi/microsoft-visual-studio-code";
 import IconNode from "~icons/mdi/nodejs";
 import IconReact from "~icons/mdi/react";
+import IconAndroid from "~icons/uim/android";
 import IconCypress from "~icons/vscode-icons/file-type-cypress";
+import MdiHtml from "~icons/vscode-icons/file-type-html";
+import IconMongo from "~icons/vscode-icons/file-type-mongo";
 import IconVue from "~icons/vscode-icons/file-type-vue";
 
 export const CANVAS_OFFSET = 30;
@@ -68,13 +76,14 @@ export const SKULL_EMOJI_URL = "/emojis/skull.png";
 export const PROJECTS: ProjectItem[] = [
   {
     description:
-      "A web app for tracking Realm of Mad God loot items and quests used by hundreds of people.",
+      "A web application for a popular web game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
     tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
     link: "https://www.realm-trove.com/",
     title: "👑 Realm trove"
   },
   {
-    description: "A clip editor made with Tauri.",
+    description:
+      "A desktop video editor made with Vue and Tauri as a final thesis of my Masters degree, featuring numerous capabilities in a small package.",
     tags: ["tauri", "vue3", "vite"],
     link: "https://github.com/MatijaNovosel/montage",
     title: "🎬 Montage"
@@ -248,20 +257,26 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
 ];
 
 export const TECHNOLOGIES: TechnologyItem[] = [
+  // Frontend
+  {
+    color: "",
+    icon: IconTypescript,
+    tooltip: "JavaScript & TypeScript"
+  },
+  {
+    color: "",
+    icon: MdiHtml,
+    tooltip: "Bootstrap, Material design, UnoCSS, Tailwind, Kendo"
+  },
   {
     color: "",
     icon: IconVue,
-    tooltip: "Vue 2, 3, Quasar, Vuetify"
+    tooltip: "Vuex, Nuxt, Vuetify, Quasar, Pinia"
   },
   {
-    color: "#4fb1f3",
-    icon: IconReact,
-    tooltip: "React, React native"
-  },
-  {
-    color: "red",
-    icon: IconAngular,
-    tooltip: "Angular"
+    color: "",
+    icon: IconVite,
+    tooltip: "Vite"
   },
   {
     color: "cyan",
@@ -269,9 +284,40 @@ export const TECHNOLOGIES: TechnologyItem[] = [
     tooltip: "Electron"
   },
   {
+    color: "",
+    icon: IconTauri,
+    tooltip: "Tauri"
+  },
+  {
+    color: "red",
+    icon: IconAngular,
+    tooltip: "Angular"
+  },
+  {
+    color: "#4fb1f3",
+    icon: IconReact,
+    tooltip: "NextJS, React native, MobX"
+  },
+  {
+    color: "#42b883",
+    icon: MdiCircleMedium,
+    filler: true
+  },
+  // Backend
+  {
     color: "purple",
     icon: IconDotNet,
     tooltip: ".NET Core, MVC"
+  },
+  {
+    color: "",
+    icon: IconJava,
+    tooltip: "Spring, Kotlin"
+  },
+  {
+    color: "pink",
+    icon: IconGraphQl,
+    tooltip: "GraphQL"
   },
   {
     color: "grey",
@@ -285,13 +331,29 @@ export const TECHNOLOGIES: TechnologyItem[] = [
   },
   {
     color: "",
+    icon: IconMongo,
+    tooltip: "MongoDB"
+  },
+  {
+    color: "",
     icon: IconFirebase,
     tooltip: "Firebase"
   },
   {
-    color: "pink",
-    icon: IconGraphQl,
-    tooltip: "GraphQL"
+    color: "purple",
+    icon: IconDatabase,
+    tooltip: "MySQL, MSSQL, PostgreSQL"
+  },
+  {
+    color: "",
+    icon: IconSupabase,
+    tooltip: "Supabase"
+  },
+  // Other
+  {
+    color: "#42b883",
+    icon: MdiCircleMedium,
+    filler: true
   },
   {
     color: "#4fb1f3",
@@ -305,28 +367,8 @@ export const TECHNOLOGIES: TechnologyItem[] = [
   },
   {
     color: "",
-    icon: IconFlutter,
-    tooltip: "Flutter"
-  },
-  {
-    color: "purple",
-    icon: IconDatabase,
-    tooltip: "MySQL, MSSQL, PostgreSQL"
-  },
-  {
-    color: "",
-    icon: IconSupabase,
-    tooltip: "Supabase"
-  },
-  {
-    color: "",
     icon: IconNuxt,
     tooltip: "Nuxt"
-  },
-  {
-    color: "",
-    icon: IconTauri,
-    tooltip: "Tauri"
   },
   {
     color: "",
@@ -337,6 +379,27 @@ export const TECHNOLOGIES: TechnologyItem[] = [
     color: "",
     icon: IconJest,
     tooltip: "Jest"
+  },
+  {
+    color: "#42b883",
+    icon: MdiCircleMedium,
+    filler: true
+  },
+  // Mobile
+  {
+    color: "",
+    icon: IconFlutter,
+    tooltip: "Flutter"
+  },
+  {
+    color: "#42b883",
+    icon: IconAndroid,
+    tooltip: "Android studio, Jetpack"
+  },
+  {
+    color: "",
+    icon: IconIos,
+    tooltip: "iOS (Swift, XCode)"
   }
 ];
 

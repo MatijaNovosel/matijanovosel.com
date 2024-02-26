@@ -5,8 +5,8 @@
       <p>
         Hi, I'm a determined and hard working software developer with
         {{ yearsOfExperience(WORK_EXPERIENCE) }}
-        years of experience in the industry and I continuously strive to improve
-        my skills with side projects and hobbies as well as in any professional
+        years of experience in the industry. I continuously strive to improve my
+        skills with side projects and hobbies as well as in any professional
         environment.
       </p>
       <p>

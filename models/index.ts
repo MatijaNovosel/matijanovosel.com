@@ -1,7 +1,8 @@
 export interface TechnologyItem {
-  tooltip: string;
+  tooltip?: string;
   color: string | null;
   icon: any;
+  filler?: boolean;
 }
 
 export interface ProjectItem {

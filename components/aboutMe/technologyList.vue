@@ -4,14 +4,18 @@
     <div class="p-3">
       <component
         :style="{ fontSize: '25px', color: color || 'transparent' }"
-        v-for="({ color, icon, tooltip }, i) in TECHNOLOGIES"
+        v-for="({ color, icon, tooltip, filler }, i) in TECHNOLOGIES"
         :key="i"
         :is="icon"
         class="m-1 icon text-lg"
-        v-tooltip="{
-          content: tooltip,
-          theme: 'info-tooltip'
-        }"
+        v-tooltip="
+          filler
+            ? null
+            : {
+                content: tooltip,
+                theme: 'info-tooltip'
+              }
+        "
       />
     </div>
   </div>
