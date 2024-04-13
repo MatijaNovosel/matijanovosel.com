@@ -76,17 +76,23 @@ export const SKULL_EMOJI_URL = "/emojis/skull.png";
 export const PROJECTS: ProjectItem[] = [
   {
     description:
-      "A web application for a popular web game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
-    tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
-    link: "https://www.realm-trove.com/",
-    title: "👑 Realm trove"
-  },
-  {
-    description:
       "A desktop video editor made with Vue and Tauri as a final thesis of my Masters degree, featuring numerous capabilities in a small package.",
     tags: ["tauri", "vue3", "vite"],
     link: "https://github.com/MatijaNovosel/montage",
     title: "🎬 Montage"
+  },
+  {
+    description: "A simple app for taking notes on the go.",
+    tags: ["vue3", "vite", "supabase"],
+    link: "https://github.com/MatijaNovosel/neat-memos",
+    title: "🐈 Neat memos"
+  },
+  {
+    description:
+      "A web application for a popular web game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
+    tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
+    link: "https://www.realm-trove.com/",
+    title: "👑 Realm trove"
   },
   {
     description:
