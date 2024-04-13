@@ -78,7 +78,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "A desktop video editor made with Vue and Tauri as a final thesis of my Masters degree, featuring numerous capabilities in a small package.",
     tags: ["tauri", "vue3", "vite"],
-    link: "https://github.com/MatijaNovosel/montage",
+    link: "https://neat-memos.vercel.app/#/",
     title: "🎬 Montage"
   },
   {
