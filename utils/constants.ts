@@ -78,13 +78,13 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "A desktop video editor made with Vue and Tauri as a final thesis of my Masters degree, featuring numerous capabilities in a small package.",
     tags: ["tauri", "vue3", "vite"],
-    link: "https://neat-memos.vercel.app/#/",
+    link: "https://github.com/MatijaNovosel/montage",
     title: "🎬 Montage"
   },
   {
     description: "A simple app for taking notes on the go.",
     tags: ["vue3", "vite", "supabase"],
-    link: "https://github.com/MatijaNovosel/neat-memos",
+    link: "https://neat-memos.vercel.app/#/",
     title: "🐈 Neat memos"
   },
   {
