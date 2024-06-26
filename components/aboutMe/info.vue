@@ -13,8 +13,8 @@
         I have a great passion for frontend development and I excel in
         leveraging various frameworks to create robust web, mobile, and desktop
         applications. My adaptability and experience span a wide range of
-        technologies - including the implementation of microservices,
-        comprehensive testing and continuous deployment of various applications.
+        technologies - including the use of microservices, comprehensive testing
+        and continuous deployment of various applications.
       </p>
       <p>
         Fully committed to mentoring new team members and ensuring smooth
