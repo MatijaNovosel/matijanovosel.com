@@ -5,26 +5,21 @@
       <p>
         Hi, I'm a determined and hard working software developer with
         {{ yearsOfExperience(WORK_EXPERIENCE) }}
-        years of experience in the industry. I continuously strive to improve my
+        years of experience in the industry, continuously striving to improve my
         skills with side projects and hobbies as well as in any professional
         environment.
       </p>
       <p>
-        I like developing applications of all sorts and have been interested in
-        doing so from a young age.
-      </p>
-      <p>
-        As a dedicated frontend developer with a passion for Vue.js I excel in
+        I have a great passion for frontend development and I excel in
         leveraging various frameworks to create robust web, mobile, and desktop
         applications. My adaptability and experience span a wide range of
-        technologies, including the implementation of microservices and
-        comprehensive testing.
+        technologies - including the implementation of microservices,
+        comprehensive testing and continuous deployment of various applications.
       </p>
       <p>
-        I am committed to mentoring new team members and ensuring smooth
+        Fully committed to mentoring new team members and ensuring smooth
         onboarding. Additionally, my involvement in backend development allows
         me to contribute effectively throughout the entire project lifecycle.
-        For more information, check my CV.
       </p>
       <p>
         Besides programming I enjoy video games, reading, drawing and listening
