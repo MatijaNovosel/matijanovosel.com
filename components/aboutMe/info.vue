@@ -14,6 +14,19 @@
         doing so from a young age.
       </p>
       <p>
+        As a dedicated frontend developer with a passion for Vue.js I excel in
+        leveraging various frameworks to create robust web, mobile, and desktop
+        applications. My adaptability and experience span a wide range of
+        technologies, including the implementation of microservices and
+        comprehensive testing.
+      </p>
+      <p>
+        I am committed to mentoring new team members and ensuring smooth
+        onboarding. Additionally, my involvement in backend development allows
+        me to contribute effectively throughout the entire project lifecycle.
+        For more information, check my CV.
+      </p>
+      <p>
         Besides programming I enjoy video games, reading, drawing and listening
         to music.
       </p>
