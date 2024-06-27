@@ -5,21 +5,20 @@
       <p>
         Hi, I'm a determined and hard working software developer with
         {{ yearsOfExperience(WORK_EXPERIENCE) }}
-        years of experience in the industry, continuously striving to improve my
+        years of experience in the industry continuously striving to improve my
         skills with side projects and hobbies as well as in any professional
         environment.
       </p>
       <p>
-        I have a great passion for frontend development and I excel in
-        leveraging various frameworks to create robust web, mobile, and desktop
+        I have a great passion for frontend development and excel in leveraging
+        various frameworks to create robust web, mobile, and desktop
         applications. My adaptability and experience span a wide range of
-        technologies - including the use of microservices, comprehensive testing
-        and continuous deployment of various applications.
+        technologies which helps me contribute effectively throughout the entire
+        project lifecycle.
       </p>
       <p>
-        Fully committed to mentoring new team members and ensuring smooth
-        onboarding. Additionally, my involvement in backend development allows
-        me to contribute effectively throughout the entire project lifecycle.
+        Also fully committed to mentoring new team members and ensuring smooth
+        onboarding.
       </p>
       <p>
         Besides programming I enjoy video games, reading, drawing and listening
