@@ -91,7 +91,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "A web application for a popular web game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
     tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
-    link: "https://www.realm-trove.com/",
+    link: "https://realm-trove.vercel.app/",
     title: "👑 Realm trove"
   },
   {
@@ -220,16 +220,8 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
   {
     company: "King ICT",
     position: "Software developer",
-    from: new Date("2023-07-19"),
-    to: null,
-    link: "https://king-ict.com/",
-    description: []
-  },
-  {
-    company: "King ICT",
-    position: "Software developer (student)",
     from: new Date("2021-08-01"),
-    to: new Date("2023-07-19"),
+    to: null,
     link: "https://king-ict.com/",
     description: [
       "Developed complex mass transit software using full stack web technologies",
