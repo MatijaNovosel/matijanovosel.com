@@ -232,7 +232,7 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
   },
   {
     company: "Omega Software",
-    position: "Software developer (student)",
+    position: "Software developer",
     from: new Date("2019-07-01"),
     to: new Date("2021-07-01"),
     link: "https://www.omega-software.hr/",
