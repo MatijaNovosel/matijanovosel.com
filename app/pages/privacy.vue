@@ -5,7 +5,7 @@
 
     <p>
       This Privacy Policy describes how [Developer/Company Name] (“we”, “us”, or
-      “our”) handles information in [App Name] (the “App”). We respect your
+      “our”) handles information in {{ appName }} (the “App”). We respect your
       privacy. Our App does not collect, store, or share personal data. The only
       information the App may access is your device’s location, and only if you
       choose to grant permission.
@@ -128,7 +128,11 @@
 </template>
 
 <script lang="ts" setup>
-//
+const route = useRoute();
+
+const appName = computed(() => {
+  return route.query.name;
+});
 </script>
 
 <style scoped>
