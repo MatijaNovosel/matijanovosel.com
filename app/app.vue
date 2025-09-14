@@ -7,7 +7,7 @@
       <div
         class="max-w-screen-lg w-full flex flex-col items-center justify-between"
       >
-        <AppNavigation />
+        <AppNavigation v-if="$route.name !== 'privacy'" />
         <NuxtPage />
         <AppFooter />
       </div>
