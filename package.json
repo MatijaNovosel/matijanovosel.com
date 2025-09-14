@@ -9,9 +9,9 @@
   "devDependencies": {
     "@iconify/json": "^2.0.30",
     "@types/matter-js": "^0.17.7",
-    "nuxt": "3.0.0-rc.6",
-    "nuxt-windicss": "^2.2.2",
-    "unplugin-icons": "^0.13.0"
+    "nuxt": "^4.0.0",
+    "nuxt-windicss": "^3.0.0",
+    "unplugin-icons": "^22.3.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.35.4",

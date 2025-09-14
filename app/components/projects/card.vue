@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ProjectItem } from "~/models";
+import type { ProjectItem } from "~/models";
 
 defineProps<{
   project: ProjectItem;

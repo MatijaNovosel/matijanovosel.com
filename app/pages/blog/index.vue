@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="row mt-6 gap-4">
-        <div class="contents" v-if="paginatedBlogs.length > 0">
+        <div class="contents" v-if="paginatedBlogs?.length! > 0">
           <blog-card
             class="col-span-12 md:col-span-6 pb-5"
             v-for="(blog, i) in paginatedBlogs"
@@ -87,15 +87,15 @@ const page = ref(1);
 const ITEMS_PER_PAGE = 4;
 
 const numberOfPages = computed(() =>
-  Math.ceil(filteredBlogs.value.length / ITEMS_PER_PAGE)
+  Math.ceil(filteredBlogs.value?.length! / ITEMS_PER_PAGE)
 );
 
 const modalTags = computed(() => [
-  ...new Set(allBlogs.value.flatMap((blog) => blog.tags))
+  ...new Set(allBlogs.value?.flatMap((blog) => blog.tags))
 ]);
 
 const filteredBlogs = computed(() =>
-  allBlogs.value.filter(
+  allBlogs.value?.filter(
     (b) =>
       b.title.toLowerCase().includes(searchText.value.toLowerCase()) &&
       b.tags.some((t) =>
@@ -107,7 +107,7 @@ const filteredBlogs = computed(() =>
 const paginatedBlogs = computed(() => {
   const start = (page.value - 1) * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
-  return filteredBlogs.value.slice(start, end);
+  return filteredBlogs.value?.slice(start, end);
 });
 
 const selectTag = (tag: string) => {

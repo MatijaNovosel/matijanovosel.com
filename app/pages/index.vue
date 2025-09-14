@@ -46,13 +46,13 @@ import {
 } from "~/utils/constants";
 import { createCanvasEmoji } from "~/utils/helpers";
 
-let engine = null;
-let runner = null;
-let render = null;
-let mouse = null;
-let mouseConstraint = null;
-let inactivityInterval = null;
-let emojiCreateInterval = null;
+let engine: any = null;
+let runner: any = null;
+let render: any = null;
+let mouse: any = null;
+let mouseConstraint: any = null;
+let inactivityInterval: any = null;
+let emojiCreateInterval: any = null;
 
 const matterCanvas = ref<HTMLCanvasElement>();
 const emojisMurdered = ref(0);
@@ -77,7 +77,7 @@ onMounted(() => {
   });
   Matter.Render.run(render);
   Matter.Runner.run(runner, engine);
-  mouse = Matter.Mouse.create(matterCanvas.value);
+  mouse = Matter.Mouse.create(matterCanvas.value!);
   mouseConstraint = Matter.MouseConstraint.create(engine, {
     mouse,
     constraint: {
@@ -117,7 +117,7 @@ onBeforeUnmount(() => {
   clearTimeout(emojiCreateInterval || -1);
   clearTimeout(inactivityInterval || -1);
   Matter.Composite.remove(engine.world, mouseConstraint);
-  engine.world.bodies.forEach((body) =>
+  engine.world.bodies.forEach((body: any) =>
     Matter.Composite.remove(engine.world, body)
   );
   Matter.Render.stop(render);

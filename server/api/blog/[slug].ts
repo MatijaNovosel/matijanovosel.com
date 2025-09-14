@@ -1,13 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
-import { BlogListItem } from "~/models";
+import type { BlogListItem } from "~/models";
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_ANON!
 );
 
 export default defineEventHandler(async (event) => {
-  const blogId = event.context.params.slug;
+  const blogId = event.context.params!.slug;
 
   const { data, error } = await supabase
     .from("blogs")

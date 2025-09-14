@@ -13,26 +13,26 @@
       <div
         class="blog-img rounded-lg mt-5 relative"
         :style="{
-          backgroundImage: `url(${blog.img})`
+          backgroundImage: `url(${blog?.img})`
         }"
       >
-        <blog-dev-to-btn class="bottom-right" :link="blog.devToLink" />
+        <blog-dev-to-btn class="bottom-right" :link="blog!.devToLink" />
       </div>
       <div class="rounded-b-lg p-5 blog-content">
         <blog-title
           class="my-3"
-          :title="blog.title"
-          :created-at="blog.createdAt"
-          :tags="blog.tags"
+          :title="blog!.title"
+          :created-at="blog!.createdAt"
+          :tags="blog!.tags"
         />
-        <markdown-renderer :source="blog.html" />
+        <markdown-renderer :source="blog!.html!" />
       </div>
     </template>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { BlogListItem } from "~/models";
+import type { BlogListItem } from "~/models";
 const { setMeta } = useMetadata();
 
 const route = useRoute();

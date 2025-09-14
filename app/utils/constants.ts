@@ -1,4 +1,4 @@
-import {
+import type {
   EducationItem,
   LinkItem,
   ProjectItem,
@@ -40,7 +40,7 @@ export const EMOJI_INACTIVITY_INTERVAL = 6000;
 export const EMOJI_LEN = 626;
 export const REWARD_TIMEOUT = 4000;
 
-export const TAGS = {
+export const TAGS: Record<string, string> = {
   vue: "#42b883",
   vue2: "#3da677",
   vue3: "#228056",
@@ -118,32 +118,6 @@ export const PROJECTS: ProjectItem[] = [
     tags: ["dotnetcore", "vue3", "quasar"],
     link: "https://github.com/MatijaNovosel/avarice",
     title: "💸 Avarice"
-  },
-  {
-    description: "Bullet hell RPG roguelike.",
-    tags: ["unity"],
-    link: "https://github.com/MatijaNovosel/heroes-of-crimson",
-    title: "⚔️ Heroes of crimson"
-  },
-  {
-    description:
-      "Frontend for the GymDash gym management web application, made as a group task for a college course.",
-    tags: ["vue2", "vuetify", "spring"],
-    link: "https://github.com/MatijaNovosel/gym-dash-ui",
-    title: "🏋🏽‍♂️ GymDash"
-  },
-  {
-    description: "Pictionary for mobile devices, made with Flutter.",
-    tags: ["flutter", "express", "socketio"],
-    link: "https://github.com/MatijaNovosel/scribble",
-    title: "📝 Scribble"
-  },
-  {
-    description:
-      "Avarice mobile implementation, an app for tracking personal finances.",
-    tags: ["flutter"],
-    link: "https://github.com/MatijaNovosel/avarice-mobile",
-    title: "📱 Avarice mobile"
   }
 ];
 

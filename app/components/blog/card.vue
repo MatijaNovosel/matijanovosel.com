@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import { BlogListItem } from "~/models";
+import type { BlogListItem } from "~/models";
 import { TAGS } from "~/utils/constants";
 
 defineProps<{
