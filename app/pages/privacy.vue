@@ -4,18 +4,17 @@
     <p>Effective date: 2025-09-14</p>
 
     <p>
-      This Privacy Policy describes how [Developer/Company Name] (“we”, “us”, or
-      “our”) handles information in {{ appName }} (the “App”). We respect your
-      privacy. Our App does not collect, store, or share personal data. The only
+      This Privacy Policy describes howMatija Novosel (“we”, “us”, or “our”)
+      handles information in {{ appName }} (the “App”). We respect your privacy.
+      Our App does not collect, store, or share personal data. The only
       information the App may access is your device’s location, and only if you
       choose to grant permission.
     </p>
 
     <h2>1) Scope</h2>
     <p>
-      This policy applies to the App published by [Developer/Company Name] on
-      Google Play. If you do not agree with this policy, please do not use the
-      App.
+      This policy applies to the App published byMatija Novosel on Google Play.
+      If you do not agree with this policy, please do not use the App.
     </p>
 
     <h2>2) Data We Do Not Collect</h2>
@@ -71,7 +70,7 @@
         We do not transmit location or other personal data off your device.
       </li>
     </ul>
-    <h2>6) Children’s Privacy</h2>
+    <h2>6) Childrens Privacy</h2>
     <p>
       The App is not directed to children under 13 (or the minimum age in your
       jurisdiction). We do not knowingly collect personal information from
@@ -116,7 +115,7 @@
       contact us:
     </p>
     <ul>
-      <li>Email: [mnovosel325@gmail.com]</li>
+      <li>Email: mnovosel325@gmail.com</li>
       <li>Developer/Company: Matija Novosel</li>
       <li>Address: Ledina 96, Preseka</li>
     </ul>
