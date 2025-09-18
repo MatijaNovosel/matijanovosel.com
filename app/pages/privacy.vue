@@ -4,7 +4,7 @@
     <p>Effective date: 2025-09-14</p>
 
     <p>
-      This Privacy Policy describes howMatija Novosel (“we”, “us”, or “our”)
+      This Privacy Policy describes how Matija Novosel (“we”, “us”, or “our”)
       handles information in {{ appName }} (the “App”). We respect your privacy.
       Our App does not collect, store, or share personal data. The only
       information the App may access is your device’s location, and only if you
@@ -13,7 +13,7 @@
 
     <h2>1) Scope</h2>
     <p>
-      This policy applies to the App published byMatija Novosel on Google Play.
+      This policy applies to the App published by Matija Novosel on Google Play.
       If you do not agree with this policy, please do not use the App.
     </p>
 
