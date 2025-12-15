@@ -1,14 +1,14 @@
 <template>
   <div class="flex">
     <div
-      class="icon flex-center rounded-l-lg px-3 border-t-2 border-b-1 border-l-2"
+      class="icon flex-center rounded-l-lg px-3 border-t-1 border-b-1 border-l-1"
     >
       <icon-search class="text-lg text-gray-500" />
     </div>
     <input
       :disabled="loading || error"
       placeholder="Search blog entries"
-      class="border-t-2 border-b-1"
+      class="border-t-1 border-b-1"
       :value="modelValue"
       @input="
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
@@ -16,7 +16,7 @@
       type="search"
     />
     <div
-      class="icon flex-center rounded-r-lg px-3 border-t-2 border-b-1 border-r-2"
+      class="icon flex-center rounded-r-lg px-3 border-t-1 border-b-1 border-r-1"
     >
       <icon-clear
         @click="$emit('update:modelValue', '')"

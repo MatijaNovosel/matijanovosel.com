@@ -34,7 +34,7 @@
         />
         <div
           @click="modalOpen = true"
-          class="tag-search-btn text-gray-500 ripple flex-center rounded-lg cursor-pointer relative border-2"
+          class="tag-search-btn text-gray-500 ripple flex-center rounded-lg cursor-pointer relative border-1"
           :class="{
             badge: !!selectedTags.size
           }"
