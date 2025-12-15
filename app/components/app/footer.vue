@@ -1,9 +1,9 @@
 <template>
   <footer
-    class="w-full flex items-center justify-between z-2 px-1 md:px-0 user-select-none pt-5"
+    class="w-full flex items-center justify-between z-2 px-1 md:px-0 user-select-none pt-10 pb-5"
   >
     <div>
-      <span class="text-md">
+      <span class="text-md text-gray-500">
         &copy; Matija Novosel {{ new Date().getFullYear() }}
       </span>
     </div>

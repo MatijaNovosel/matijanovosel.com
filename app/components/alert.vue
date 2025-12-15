@@ -1,13 +1,10 @@
 <template>
-  <div class="rounded-lg p-5 text-left flex items-center bg-dark-400">
-    <div class="mr-5 text-3xl">
-      {{ leading || "🛑" }}
-    </div>
+  <div class="rounded-lg text-left flex items-center">
     <div>
       <div
-        class="text-3xl"
+        class="text-xl font-bold"
         :style="{
-          color: textColor || '#fff'
+          color: textColor || '#000'
         }"
       >
         {{ title }}

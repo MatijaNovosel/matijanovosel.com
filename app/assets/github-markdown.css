@@ -49,7 +49,7 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: #58a6ff;
+  color: #70aaed;
   text-decoration: none;
 }
 
@@ -216,6 +216,7 @@
   width: max-content;
   max-width: 100%;
   overflow: auto;
+  color: white;
 }
 
 .markdown-body td,

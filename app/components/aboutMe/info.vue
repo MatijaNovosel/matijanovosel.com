@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col md:flex-row justify-center items-center">
+  <div
+    class="flex flex-col md:flex-row justify-center items-center text-gray-500"
+  >
     <img src="/me.png" />
     <div class="flex flex-col ml-0 md:ml-4">
       <p>
@@ -50,7 +52,7 @@ import { yearsOfExperience } from "~/utils/helpers";
 
 <style scoped>
 p {
-  @apply mt-2 text-md;
+  @apply mt-2 text-sm;
 }
 
 a {

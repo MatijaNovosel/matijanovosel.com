@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full mt-10">
+  <section class="w-full h-full mt-10">
     <NuxtPage />
   </section>
 </template>

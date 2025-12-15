@@ -1,6 +1,6 @@
 <template>
   <div class="h-full w-full pt-15">
-    <div class="text-5xl font-bold">✌ Hi, I'm Matija!</div>
+    <div class="text-5xl font-bold">Hi, I'm Matija!</div>
     <div class="text-xl pt-4 text-gray-700 font-bold">
       A developer from Croatia with a big interest in making applications of all
       sorts.
