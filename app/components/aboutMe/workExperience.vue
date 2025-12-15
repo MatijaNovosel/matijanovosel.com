@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pl-2 pb-2 text-lg font-bold border-b-2">Work experience</div>
+    <div class="pl-2 pb-2 text-lg font-bold border-b-1">Work experience</div>
     <timeline class="p-5">
       <timeline-item
         v-for="(

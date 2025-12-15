@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-lg font-bold pl-2 pb-2 border-b-2">Technologies</div>
+    <div class="text-lg font-bold pl-2 pb-2 border-b-1">Technologies</div>
     <div class="flex flex-wrap py-3">
       <div
         :style="{ fontSize: '25px', color: color || 'transparent' }"
