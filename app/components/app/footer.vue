@@ -3,11 +3,11 @@
     class="w-full flex items-center justify-between z-2 px-1 md:px-0 user-select-none pt-5"
   >
     <div>
-      <span class="text-2xl">
-        &copy; &nbsp; Matija Novosel {{ new Date().getFullYear() }}
+      <span class="text-md">
+        &copy; Matija Novosel {{ new Date().getFullYear() }}
       </span>
     </div>
-    <div class="flex-center">
+    <div class="flex-center text-gray-700">
       <nuxt-link to="https://github.com/MatijaNovosel">
         <icon-github />
       </nuxt-link>

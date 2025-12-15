@@ -1,12 +1,12 @@
 <template>
   <nuxt-link :href="project.link">
     <div
-      class="text-left w-full px-5 pt-4 flex flex-col h-full justify-center rounded-md bg-dark-400 ripple"
+      class="text-left w-full px-5 pt-4 flex flex-col h-full justify-center rounded-md ripple border-1"
     >
-      <div class="text-md font-bold text-left text-2xl">
+      <div class="text-md font-bold text-left">
         {{ project.title }}
       </div>
-      <div class="text-xl mb-3 ml-1 mt-2">
+      <div class="text-sm mb-4 ml-1 mt-3">
         {{ project.description }}
       </div>
     </div>

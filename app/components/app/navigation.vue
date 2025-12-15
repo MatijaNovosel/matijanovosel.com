@@ -1,12 +1,12 @@
 <template>
-  <nav class="flex z-4 mt-5 fixed md:absolute text-white gap-2">
+  <nav class="flex z-4 mt-6 mb-5 w-full justify-end">
     <nuxt-link
       :id="link.to"
       v-for="(link, i) in links"
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="flex items-center text-xl md:text-3xl nav-tab border-1 bg-dark-400 ripple uppercase"
+      class="flex text-xl md:text-md nav-tab"
     >
       {{ link.text }}
     </nuxt-link>
@@ -19,17 +19,13 @@ import { links } from "~/utils/constants";
 
 <style scoped>
 .nav-tab {
-  padding: 0px 12px;
+  padding: 4px 12px;
   cursor: pointer;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+  color: #7373737a;
 }
 
 .active-tab {
-  background-color: white;
   color: black;
 }
 </style>

@@ -7,13 +7,13 @@
       }"
     />
     <div class="flex flex-col justify-center">
-      <span class="text-xl"> {{ blog.createdAt }} </span>
-      <span class="text-3xl font-bold text-left"> {{ blog.title }} </span>
-      <span class="text-gray-400 text-2xl">
+      <span class="text-sm text-gray-500"> {{ blog.createdAt }} </span>
+      <span class="text-md font-bold text-left"> {{ blog.title }} </span>
+      <span class="text-gray-400 text-sm pt-1">
         {{ blog.subtitle }}
       </span>
     </div>
-    <div class="flex flex-wrap gap-x-3 mt-3">
+    <div class="flex flex-wrap gap-x-2 mt-3">
       <tag
         :selected="true"
         :background-color="TAGS[tag]"
@@ -40,7 +40,7 @@ defineProps<{
   border-radius: 16px;
   background-size: cover;
   background-position: center center;
-  height: 180px;
+  height: 220px;
 }
 
 @media only screen and (max-width: 600px) {

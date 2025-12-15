@@ -16,7 +16,6 @@
         </div>
       </modal>
     </transition>
-    <div class="title">Blog</div>
     <app-spinner v-if="pending" />
     <alert
       text-color="#d91139"
@@ -35,7 +34,7 @@
         />
         <div
           @click="modalOpen = true"
-          class="tag-search-btn bg-dark-300 ripple flex-center rounded-lg cursor-pointer relative border-2"
+          class="tag-search-btn text-gray-500 ripple flex-center rounded-lg cursor-pointer relative border-2"
           :class="{
             badge: !!selectedTags.size
           }"
@@ -43,7 +42,7 @@
           <icon-tag />
         </div>
       </div>
-      <div class="row mt-6 gap-4">
+      <div class="row mt-8 gap-4">
         <div class="contents" v-if="paginatedBlogs?.length! > 0">
           <blog-card
             class="col-span-12 md:col-span-6 pb-5"

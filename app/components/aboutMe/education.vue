@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pl-2 pb-2 text-3xl border-b-2">Education</div>
+    <div class="pl-2 pb-2 text-lg font-bold border-b-2">Education</div>
     <timeline class="p-5">
       <timeline-item
         v-for="({ name, duration, link, title }, i) in EDUCATION"
@@ -8,16 +8,13 @@
       >
         <template #title>
           <div class="flex flex-col">
-            <a
-              :href="link"
-              class="text-white text-xl font-bold decoration-dotted underline underline-offset-5"
-            >
+            <a :href="link" class="text-md font-bold underline-offset-5">
               {{ name }}
             </a>
-            <span class="text-xl">
+            <span class="text-sm pt-1">
               {{ title }}
             </span>
-            <span class="text-xl text-gray-400">
+            <span class="text-sm text-gray-400">
               {{ duration }}
             </span>
           </div>

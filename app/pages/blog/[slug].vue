@@ -1,7 +1,6 @@
 <template>
-  <div class="mt-4 md:mt-10 w-full px-3 md:px-0">
-    <blog-back-btn />
-    <app-spinner class="mx-auto mt-4" v-if="pending" />
+  <div class="w-full px-3 md:px-0">
+    <app-spinner class="mx-auto" v-if="pending" />
     <alert
       text-color="#d91139"
       title="Something went wrong"
@@ -10,17 +9,9 @@
       v-else-if="error"
     />
     <template v-else>
-      <div
-        class="blog-img rounded-lg mt-5 relative"
-        :style="{
-          backgroundImage: `url(${blog?.img})`
-        }"
-      >
-        <blog-dev-to-btn class="bottom-right" :link="blog!.devToLink" />
-      </div>
-      <div class="rounded-b-lg p-5 blog-content">
+      <div class="rounded-b-lg blog-content">
         <blog-title
-          class="my-3"
+          class="mb-3"
           :title="blog!.title"
           :created-at="blog!.createdAt"
           :tags="blog!.tags"

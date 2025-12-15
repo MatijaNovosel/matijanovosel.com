@@ -1,5 +1,5 @@
 <template>
-  <div class="offset">
+  <div>
     <div class="title">Projects</div>
     <projects-grid :projects="PROJECTS" />
     <div class="title">Components</div>

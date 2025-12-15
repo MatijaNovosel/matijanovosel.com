@@ -1,14 +1,14 @@
 <template>
   <div class="flex">
     <div
-      class="bg-dark-300 icon flex-center rounded-l-lg px-3 border-t-2 border-b-2 border-l-2"
+      class="icon flex-center rounded-l-lg px-3 border-t-2 border-b-2 border-l-2"
     >
-      <icon-search class="text-lg text-gray-200" />
+      <icon-search class="text-lg text-gray-500" />
     </div>
     <input
       :disabled="loading || error"
       placeholder="Search blog entries"
-      class="bg-dark-300 border-t-2 border-b-2"
+      class="border-t-2 border-b-2"
       :value="modelValue"
       @input="
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
@@ -16,11 +16,11 @@
       type="search"
     />
     <div
-      class="bg-dark-300 icon flex-center rounded-r-lg px-3 border-t-2 border-b-2 border-r-2"
+      class="icon flex-center rounded-r-lg px-3 border-t-2 border-b-2 border-r-2"
     >
       <icon-clear
         @click="$emit('update:modelValue', '')"
-        class="text-xl ripple cursor-pointer rounded-full"
+        class="text-xl ripple cursor-pointer rounded-full text-gray-500"
       />
     </div>
   </div>
@@ -43,8 +43,7 @@ defineEmits(["update:modelValue"]);
 input {
   height: 50px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 24px;
-  color: rgb(193, 194, 197);
+  font-size: 16px;
   outline: none;
   width: calc(100% - 100px);
 }
@@ -52,7 +51,6 @@ input {
 .icon {
   height: 50px;
   width: 50px;
-  -webkit-tap-highlight-color: transparent;
 }
 
 input[type="search"]::-webkit-search-decoration,

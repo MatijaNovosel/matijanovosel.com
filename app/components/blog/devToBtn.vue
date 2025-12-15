@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="link">
     <button
-      class="px-3 py-1 text-xl md:text-4xl text-black bg-white rounded flex-center uppercase ripple"
+      class="dev-to-btn px-3 py-1 text-xl md:text-4xl text-black bg-white flex-center uppercase ripple"
     >
       <icon-dev-to />
     </button>
@@ -15,3 +15,9 @@ defineProps<{
   link: string;
 }>();
 </script>
+
+<style lang="css" scoped>
+.dev-to-btn {
+  border-top-left-radius: 12px;
+}
+</style>

@@ -1,20 +1,21 @@
 <template>
   <div class="flex gap-3">
     <div
-      class="pagination-element text-5xl border-2 border-gray-500"
+      class="pagination-element text-xl border-1 border-gray-200"
       :class="{
-        'bg-dark-800 cursor-pointer': page != 1,
-        'bg-gray-500 text-black': page == 1
+        'text-gray-500': page == 1
       }"
       @click="traverse(true)"
     >
-      <span class="mt-2"> &#8249; </span>
+      <div class="flex-center">
+        <IconChevronLeft />
+      </div>
     </div>
     <div
       @click="setPage(element)"
-      class="pagination-element cursor-pointer font-bold text-3xl border-2"
+      class="pagination-element cursor-pointer font-bold text-md border-1"
       :class="{
-        'bg-white text-black': page === element
+        'bg-gray-100 text-gray-500': page === element
       }"
       v-for="(element, i) in elements"
       :key="i"
@@ -22,19 +23,23 @@
       {{ element }}
     </div>
     <div
-      class="pagination-element text-5xl border-2 border-gray-500"
+      class="pagination-element text-xl border-1 border-gray-200"
       :class="{
-        'bg-dark-800 cursor-pointer': page != numberOfPages,
-        'bg-gray-500 text-black': page == numberOfPages
+        'text-gray-500': page == numberOfPages
       }"
       @click="traverse()"
     >
-      <span class="mt-2"> &#8250; </span>
+      <div class="flex-center">
+        <IconChevronRight />
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import IconChevronLeft from "~icons/mdi/chevronLeft";
+import IconChevronRight from "~icons/mdi/chevronRight";
+
 const props = defineProps<{
   numberOfPages: number;
   modelValue: number;
@@ -78,7 +83,5 @@ watch(
   display: flex;
   justify-content: center;
   align-items: center;
-  user-select: none;
-  transition: background 0.8s;
 }
 </style>

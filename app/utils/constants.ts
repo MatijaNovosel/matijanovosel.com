@@ -11,7 +11,6 @@ import IconFlutter from "~icons/logos/flutter";
 import IconGraphQl from "~icons/logos/graphql";
 import IconJava from "~icons/logos/java";
 import IconJest from "~icons/logos/jest";
-import IconNuxt from "~icons/logos/nuxt-icon";
 import IconSupabase from "~icons/logos/supabase-icon";
 import IconIos from "~icons/logos/swift";
 import IconTauri from "~icons/logos/tauri";
@@ -31,14 +30,6 @@ import IconCypress from "~icons/vscode-icons/file-type-cypress";
 import MdiHtml from "~icons/vscode-icons/file-type-html";
 import IconMongo from "~icons/vscode-icons/file-type-mongo";
 import IconVue from "~icons/vscode-icons/file-type-vue";
-
-export const CANVAS_OFFSET = 30;
-export const EMOJI_MURDER_LIMIT = 40;
-export const EMOJI_SPAWN_INTERVAL = 200;
-export const EMOJI_CLEANUP_INTERVAL = 6000;
-export const EMOJI_INACTIVITY_INTERVAL = 6000;
-export const EMOJI_LEN = 626;
-export const REWARD_TIMEOUT = 4000;
 
 export const TAGS: Record<string, string> = {
   vue: "#42b883",
@@ -70,8 +61,6 @@ export const TAGS: Record<string, string> = {
   firebase: "#f0a224",
   npm: "#fb8817"
 };
-
-export const SKULL_EMOJI_URL = "/emojis/skull.png";
 
 export const PROJECTS: ProjectItem[] = [
   {
@@ -339,11 +328,6 @@ export const TECHNOLOGIES: TechnologyItem[] = [
   },
   {
     color: "",
-    icon: IconNuxt,
-    tooltip: "Nuxt"
-  },
-  {
-    color: "",
     icon: IconCypress,
     tooltip: "Cypress"
   },
@@ -378,45 +362,18 @@ export const TECHNOLOGIES: TechnologyItem[] = [
 export const links: LinkItem[] = [
   {
     to: "/",
-    text: "Home"
+    text: "home"
   },
   {
     to: "/blog",
-    text: "Blog"
+    text: "blog"
   },
   {
     to: "/projects",
-    text: "Projects"
+    text: "projects"
   },
   {
     to: "/about",
-    text: "About me"
+    text: "about me"
   }
-];
-
-export const emojis = [
-  "heart",
-  "laugh",
-  "cool",
-  "weary",
-  "angry",
-  "suggestive",
-  "surprised",
-  "ok",
-  "glad",
-  "befuddled",
-  "tongue",
-  "wink",
-  "ooh",
-  "crying",
-  "joy",
-  "nerd",
-  "laughCry",
-  "yum",
-  "sunglasses",
-  "dead",
-  "sleep",
-  "xd",
-  "ayo",
-  "cringe"
 ];

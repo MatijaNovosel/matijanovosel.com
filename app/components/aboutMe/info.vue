@@ -4,7 +4,14 @@
     <div class="flex flex-col ml-0 md:ml-4">
       <p>
         Hi, I'm a determined and hard working software developer with
-        {{ yearsOfExperience(WORK_EXPERIENCE) }}
+        {{
+          yearsOfExperience(
+            WORK_EXPERIENCE.map((x) => ({
+              from: x.from,
+              to: x.to
+            }))
+          )
+        }}
         years of experience in the industry continuously striving to improve my
         skills with side projects and hobbies as well as in any professional
         environment.
@@ -24,19 +31,11 @@
         Besides programming I enjoy video games, reading, drawing and listening
         to music.
       </p>
-      <p>
-        Page style inspired by
-        <a
-          href="https://www.gameuidatabase.com/gameData.php?id=381#&gid=1&pid=24"
-        >
-          Alien: Isolation!
-        </a>
-      </p>
     </div>
   </div>
   <div class="flex justify-center md:justify-end my-5">
     <nuxt-link
-      class="ripple rounded px-4 py-1 bg-white text-2xl uppercase text-black"
+      class="text-lg font-bold"
       to="https://drive.google.com/file/d/1g89PylKfvLmG-XlSuA-xnER3fCW2OWk0/view?usp=sharing"
     >
       Get my CV!
@@ -51,7 +50,7 @@ import { yearsOfExperience } from "~/utils/helpers";
 
 <style scoped>
 p {
-  @apply mt-2 text-2xl;
+  @apply mt-2 text-md;
 }
 
 a {
