@@ -35,9 +35,3 @@
 import { WORK_EXPERIENCE } from "~/utils/constants";
 import { formatDuration } from "~/utils/helpers";
 </script>
-
-<style scoped>
-ul {
-  list-style-image: url("/bullet.png");
-}
-</style>
