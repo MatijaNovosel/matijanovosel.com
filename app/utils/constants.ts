@@ -66,19 +66,25 @@ export const PROJECTS: ProjectItem[] = [
   {
     description:
       "A desktop video editor made with Vue and Tauri as a final thesis of my Masters degree, featuring numerous capabilities in a small package.",
-    tags: ["tauri", "vue3", "vite"],
+    tags: ["tauri", "vue3"],
     link: "https://github.com/MatijaNovosel/montage",
     title: "🎬 Montage"
   },
   {
     description: "A simple app for taking notes on the go.",
-    tags: ["vue3", "vite", "supabase"],
+    tags: ["vue3", "supabase"],
     link: "https://neat-memos.vercel.app/#/",
     title: "🐈 Neat memos"
   },
   {
+    description: "Live tracking for the public transport of Zagreb city.",
+    tags: ["vue3"],
+    link: "https://zet.knork-studio.com/#/home",
+    title: "🚌 Knork ZET"
+  },
+  {
     description:
-      "A web application for a popular web game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
+      "A web application for a popular game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
     tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
     link: "https://realm-trove.vercel.app/",
     title: "👑 Realm trove"

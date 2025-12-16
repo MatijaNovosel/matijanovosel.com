@@ -25,38 +25,21 @@
       v-else-if="error"
     />
     <template v-else>
-      <div class="flex">
-        <blog-search-input
-          class="flex-grow pr-3"
-          :loading="pending"
-          :error="!!error"
-          v-model="searchText"
-        />
-        <div
-          @click="modalOpen = true"
-          class="tag-search-btn text-gray-500 ripple flex-center rounded-lg cursor-pointer relative border-1"
-          :class="{
-            badge: !!selectedTags.size
-          }"
-        >
-          <icon-tag />
-        </div>
-      </div>
-      <div class="row mt-8 gap-4 flex-grow">
-        <div class="contents" v-if="paginatedBlogs?.length! > 0">
-          <blog-card
-            class="col-span-12 md:col-span-6 pb-5"
-            v-for="(blog, i) in paginatedBlogs"
-            :blog="blog"
+      <div class="flex flex-col gap-4 flex-grow">
+        <div class="contents" v-if="filteredBlogs?.length! > 0">
+          <nuxt-link
+            class="w-full cursor-pointer text-gray-500 hover:(text-gray-400)"
+            v-for="(blog, i) in filteredBlogs"
             :key="i"
-          />
-          <div class="col-span-12 flex-center">
-            <pagination
-              class="my-5"
-              v-model="page"
-              :number-of-pages="numberOfPages"
-            />
-          </div>
+            :to="`/blog/${blog.id}`"
+          >
+            <div class="text-lg font-medium">
+              {{ blog.title }}
+            </div>
+            <div class="text-md text-gray-400 mt-1">
+              {{ blog.createdAt }}
+            </div>
+          </nuxt-link>
         </div>
         <div class="col-span-12 text-xl text-center md:text-left" v-else>
           <alert leading="😥" title="No blog entries found." />
@@ -68,7 +51,6 @@
 
 <script lang="ts" setup>
 import { TAGS } from "~/utils/constants";
-import IconTag from "~icons/mdi/tag-multiple";
 
 const {
   data: allBlogs,
@@ -81,13 +63,6 @@ const {
 const modalOpen = ref(false);
 const selectedTags = ref<Set<string>>(new Set());
 const searchText = ref<string>("");
-const page = ref(1);
-
-const ITEMS_PER_PAGE = 4;
-
-const numberOfPages = computed(() =>
-  Math.ceil(filteredBlogs.value?.length! / ITEMS_PER_PAGE)
-);
 
 const modalTags = computed(() => [
   ...new Set(allBlogs.value?.flatMap((blog) => blog.tags))
@@ -103,12 +78,6 @@ const filteredBlogs = computed(() =>
   )
 );
 
-const paginatedBlogs = computed(() => {
-  const start = (page.value - 1) * ITEMS_PER_PAGE;
-  const end = start + ITEMS_PER_PAGE;
-  return filteredBlogs.value?.slice(start, end);
-});
-
 const selectTag = (tag: string) => {
   if (selectedTags.value.has(tag)) {
     selectedTags.value.delete(tag);
@@ -120,8 +89,6 @@ const selectTag = (tag: string) => {
 const handleKeyPress = (e: KeyboardEvent) => {
   if (e.key === "Escape") modalOpen.value = false;
 };
-
-watch([searchText, selectedTags], () => (page.value = 1));
 
 onMounted(() => window.addEventListener("keydown", handleKeyPress));
 
