@@ -2,7 +2,7 @@
   <div
     class="flex flex-col title-box pb-3 rounded-tr-none md:rounded-tr-lg w-full"
   >
-    <div class="font-bold text-xl md:text-3xl mt-3">
+    <div class="font-bold text-2xl md:text-3xl mt-3">
       {{ title }}
     </div>
     <div class="text-gray-500 mt-1 text-lg">
