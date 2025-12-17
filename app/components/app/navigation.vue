@@ -1,12 +1,12 @@
 <template>
-  <nav class="flex z-4 mt-6 mb-5 w-full justify-end">
+  <nav class="flex z-4 mt-6 mb-5 w-full justify-center md:justify-end">
     <nuxt-link
       :id="link.to"
       v-for="(link, i) in links"
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="flex text-xl md:text-md nav-tab"
+      class="flex text-sm md:text-lg nav-tab"
     >
       {{ link.text }}
     </nuxt-link>

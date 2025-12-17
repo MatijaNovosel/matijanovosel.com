@@ -19,12 +19,51 @@
         Or maybe the
         <nuxt-link to="projects" class="text-black italic">blog</nuxt-link>.
       </div>
+      <div class="flex flex-col gap-2 mt-6 links">
+        <div class="flex justify-between w-full">
+          <div class="text-md text-gray-500">GitHub</div>
+          <nuxt-link
+            class="text-md flex flex-center hover:(text-gray-400)"
+            to="https://github.com/MatijaNovosel"
+          >
+            MatijaNovosel <IconOpenInNew class="text-sm ml-2" />
+          </nuxt-link>
+        </div>
+        <div class="flex justify-between w-full">
+          <div class="text-md text-gray-500">LinkedIn</div>
+          <nuxt-link
+            class="text-md flex flex-center hover:(text-gray-400)"
+            to="www.linkedin.com/in/matijanovosel"
+          >
+            matijanovosel <IconOpenInNew class="text-sm ml-2" />
+          </nuxt-link>
+        </div>
+        <div class="flex justify-between w-full">
+          <div class="text-md text-gray-500">Resume</div>
+          <nuxt-link
+            class="text-md flex flex-center hover:(text-gray-400)"
+            to="https://drive.google.com/file/d/1g89PylKfvLmG-XlSuA-xnER3fCW2OWk0/view?usp=sharing"
+          >
+            cv.pdf <IconOpenInNew class="text-sm ml-2" />
+          </nuxt-link>
+        </div>
+        <div class="flex justify-between w-full">
+          <div class="text-md text-gray-500">Email</div>
+          <nuxt-link
+            class="text-md flex flex-center hover:(text-gray-400)"
+            to="mailto:mnovosel5@gmail.com"
+          >
+            mnovosel5@gmail.com <IconOpenInNew class="text-sm ml-2" />
+          </nuxt-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from "vue";
+import IconOpenInNew from "~icons/mdi/openInNew";
 
 onMounted(() => {
   //
@@ -37,5 +76,9 @@ setMeta("Matija Novosel");
 <style lang="css" scoped>
 .about-me {
   max-width: 750px;
+}
+
+.links {
+  max-width: 450px;
 }
 </style>
