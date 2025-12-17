@@ -1,8 +1,8 @@
 <template>
   <div class="h-full w-full pt-5 md:pt-15">
     <div class="about-me">
-      <div class="text-5xl font-bold">Hi, I'm Matija!</div>
-      <div class="text-xl pt-4 text-gray-700 font-bold">
+      <div class="text-3xl md:text-5xl font-bold">Hi, I'm Matija!</div>
+      <div class="text-lg md:text-xl pt-4 text-gray-700 font-bold">
         A developer from Croatia with a big interest in making applications of
         all sorts.
       </div>

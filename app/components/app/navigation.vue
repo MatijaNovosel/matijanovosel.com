@@ -6,7 +6,7 @@
       :key="i"
       active-class="active-tab"
       :to="link.to"
-      class="flex text-sm md:text-lg nav-tab"
+      class="flex text-md md:text-lg nav-tab"
     >
       {{ link.text }}
     </nuxt-link>
