@@ -33,7 +33,7 @@
           <div class="text-md text-gray-500">LinkedIn</div>
           <nuxt-link
             class="text-md flex flex-center hover:(text-gray-400)"
-            to="www.linkedin.com/in/matijanovosel"
+            to="https://www.linkedin.com/in/matijanovosel"
           >
             matijanovosel <IconOpenInNew class="text-sm ml-2" />
           </nuxt-link>
