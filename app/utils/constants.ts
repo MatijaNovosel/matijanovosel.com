@@ -90,8 +90,14 @@ export const PROJECTS: ProjectItem[] = [
     title: "👑 Realm trove"
   },
   {
+    description: "A bullet hell RPG game, work in progress.",
+    tags: ["unity"],
+    link: "https://github.com/MatijaNovosel/heroes-of-crimson",
+    title: "🩸 Heroes of Crimson"
+  },
+  {
     description:
-      "An application intended for both teachers and students with the purpose of making learning easier.",
+      "An application intended for both teachers and students with the purpose of making learning easier. Made as a bachelor thesis project.",
     link: "https://github.com/MatijaNovosel/dilligence",
     title: "📚 Dilligence",
     tags: ["vue2", "dotnetcore", "mssql"]
