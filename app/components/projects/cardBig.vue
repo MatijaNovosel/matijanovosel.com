@@ -56,7 +56,6 @@ defineProps<{
 
 .project_card_image {
   height: 200px;
-  border-radius: 0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background-position: center;
@@ -69,8 +68,6 @@ defineProps<{
     height: 100%;
     background-size: contain;
     border-radius: 8px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
   }
 
   .project_card {
