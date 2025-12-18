@@ -48,7 +48,7 @@ defineProps<{
 }
 
 .project_card_image {
-  height: 250px;
+  height: 210px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background-position: center;
