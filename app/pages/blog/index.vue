@@ -28,7 +28,7 @@
       <div class="flex flex-col gap-4 flex-grow">
         <div class="contents" v-if="filteredBlogs?.length! > 0">
           <nuxt-link
-            class="w-full cursor-pointer text-gray-500 hover:(text-gray-400)"
+            class="w-full cursor-pointer text-black hover:(text-gray-600)"
             v-for="(blog, i) in filteredBlogs"
             :key="i"
             :to="`/blog/${blog.id}`"
