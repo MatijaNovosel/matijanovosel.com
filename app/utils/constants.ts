@@ -103,7 +103,7 @@ export const PROJECTS: ProjectItem[] = [
     description: "A bullet hell RPG game, work in progress.",
     tags: ["unity"],
     link: "https://github.com/MatijaNovosel/heroes-of-crimson",
-    title: "🩸 Heroes of Crimson",
+    title: "Heroes of Crimson",
     imageUrl:
       "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/520323592-eb0b2020-d40c-480a-aa2a-a8792b198b30.png"
   },
@@ -111,26 +111,26 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "An application intended for both teachers and students with the purpose of making learning easier. Made as a bachelor thesis project.",
     link: "https://github.com/MatijaNovosel/dilligence",
-    title: "📚 Dilligence",
+    title: "Dilligence",
     tags: ["vue2", "dotnetcore", "mssql"]
   },
   {
     description: "Personal website.",
     tags: ["supabase", "vue3", "windicss", "vercel", "nuxt3"],
     link: "https://matijanovosel.com/",
-    title: "👨‍💻 matijanovosel.com"
+    title: "matijanovosel.com"
   },
   {
     description: "Messaging service for the web, based on WhatsApp.",
     tags: ["supabase", "vue3", "quasar"],
     link: "https://github.com/MatijaNovosel/shout",
-    title: "💬 Shout"
+    title: "Shout"
   },
   {
     description: "App for tracking personal finances.",
     tags: ["dotnetcore", "vue3", "quasar"],
     link: "https://github.com/MatijaNovosel/avarice",
-    title: "💸 Avarice"
+    title: "Avarice"
   }
 ];
 
@@ -138,7 +138,7 @@ export const OTHER_PROJECTS: ProjectItem[] = [
   {
     description: "My opinionated list of JavaScript utilities.",
     link: "https://matija-utils-docs.vercel.app/",
-    title: "🛠️ matija-utils",
+    title: "matija-utils",
     tags: ["ts", "npm"]
   }
 ];
@@ -147,37 +147,37 @@ export const COMPONENTS: ProjectItem[] = [
   {
     description: "An avatar editor component for Vue 3.",
     link: "https://github.com/MatijaNovosel/avatar-editor",
-    title: "🖼️ Avatar editor",
+    title: "Avatar editor",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A material date picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-3-material-date-picker",
-    title: "📆 Date picker",
+    title: "Date picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A degree picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-degree-picker",
-    title: "📐 Degree picker",
+    title: "Degree picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A tree view component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-tree-view",
-    title: "🌳 Tree view",
+    title: "Tree view",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A material time picker component for Vue 3.",
     link: "https://github.com/MatijaNovosel/vue-material-time-picker",
-    title: "🕗 Time picker",
+    title: "Time picker",
     tags: ["ts", "npm", "vue"]
   },
   {
     description: "A material tri state checkbox component for Vue 3.",
     link: "https://github.com/MatijaNovosel/tri-state-checkbox",
-    title: "☑️ Tri state checkbox",
+    title: "Tri state checkbox",
     tags: ["ts", "npm", "vue"]
   }
 ];
