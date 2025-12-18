@@ -68,32 +68,44 @@ export const PROJECTS: ProjectItem[] = [
       "A desktop video editor made with Vue and Tauri as a final thesis of my Masters degree, featuring numerous capabilities in a small package.",
     tags: ["tauri", "vue3"],
     link: "https://github.com/MatijaNovosel/montage",
-    title: "🎬 Montage"
+    title: "Montage",
+    imageUrl:
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/248578525-6b97064c-2c77-4589-8292-b65b1551e374.png"
   },
   {
-    description: "A simple app for taking notes on the go.",
+    description:
+      "A simple app for taking notes on the go. Also works as a Kanban tool.",
     tags: ["vue3", "supabase"],
     link: "https://neat-memos.vercel.app/#/",
-    title: "🐈 Neat memos"
+    title: "Neat memos",
+    imageUrl:
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/neat-memos.vercel.app_.png"
   },
   {
-    description: "Live tracking for the public transport of Zagreb city.",
+    description:
+      "Live tracking for the public transport of Zagreb city. Features ride sharing, displaying individual trip lines, schedules and advanced filters.",
     tags: ["vue3"],
     link: "https://zet.knork-studio.com/#/home",
-    title: "🚌 Knork ZET"
+    title: "Knork ZET",
+    imageUrl:
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/knorkStudio.jpg"
   },
   {
     description:
       "A web application for a popular game called Realm of the Mad God used for tracking loot items and quests. It has a wide user retention and is in use by hundreds of people daily.",
     tags: ["firebase", "vue3", "windicss", "vercel", "nuxt3"],
     link: "https://realm-trove.vercel.app/",
-    title: "👑 Realm trove"
+    title: "Realm trove",
+    imageUrl:
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/realm-trove.vercel.app_ULDI6X.png"
   },
   {
     description: "A bullet hell RPG game, work in progress.",
     tags: ["unity"],
     link: "https://github.com/MatijaNovosel/heroes-of-crimson",
-    title: "🩸 Heroes of Crimson"
+    title: "🩸 Heroes of Crimson",
+    imageUrl:
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/520323592-eb0b2020-d40c-480a-aa2a-a8792b198b30.png"
   },
   {
     description:

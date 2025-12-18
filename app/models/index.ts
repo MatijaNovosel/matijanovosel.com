@@ -10,6 +10,7 @@ export interface ProjectItem {
   description: string;
   link: string;
   tags: string[];
+  imageUrl?: string;
 }
 
 export interface EducationItem {
