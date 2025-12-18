@@ -11,7 +11,7 @@
     <div
       class="text-left w-full lg:w-1/2 px-4 pb-2 lg:p-5 flex flex-col justify-start"
     >
-      <div class="mt-5 flex flex-wrap gap-x-2">
+      <div class="mt-5 flex flex-wrap gap-2">
         <tag
           :selected="true"
           :background-color="tagEnum[tag]"
@@ -21,11 +21,9 @@
           {{ tag }}
         </tag>
       </div>
-
       <div class="text-2xl font-bold mt-2">
         {{ project.title }}
       </div>
-
       <div class="text-md text-gray-500 mb-4 ml-1 mt-3">
         {{ project.description }}
       </div>
