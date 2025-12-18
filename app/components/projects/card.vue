@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :href="project.link">
     <div
-      class="text-left w-full px-5 pt-4 flex flex-col h-full justify-center rounded-md ripple border-1"
+      class="text-left w-full px-5 pt-4 flex flex-col h-full justify-center rounded-md ripple border-1 bg-white"
     >
       <div class="text-md font-bold text-left">
         {{ project.title }}

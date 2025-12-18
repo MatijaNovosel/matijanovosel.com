@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :href="project.link"
-    class="project_card flex w-full rounded-md ripple border-1 flex-col lg:flex-row"
+    class="project_card flex w-full rounded-md ripple border-1 flex-col lg:flex-row bg-white"
   >
     <div
       class="w-full lg:w-1/2 lg:h-full lg:order-last border-t-1 lg:border-t-0 lg:border-l-1 flex flex-center lg:p-5"
