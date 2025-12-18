@@ -61,6 +61,7 @@ defineProps<{
   .project_card_image {
     background-size: contain;
     border-radius: 8px;
+    height: 270px;
   }
 
   .project_card {
