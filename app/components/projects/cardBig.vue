@@ -55,6 +55,7 @@ defineProps<{
   background-repeat: no-repeat;
   width: 100%;
   background-size: cover;
+  box-shadow: none;
 }
 
 @media (min-width: 1024px) {
@@ -62,6 +63,7 @@ defineProps<{
     background-size: contain;
     border-radius: 8px;
     height: 270px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   }
 
   .project_card {
