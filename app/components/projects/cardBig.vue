@@ -4,16 +4,9 @@
     class="project_card flex w-full rounded-md ripple border-1 flex-col lg:flex-row"
   >
     <div
-      class="w-full lg:w-1/2 lg:h-full lg:order-last border-t-1 lg:border-t-0 lg:border-l-1"
+      class="w-full lg:w-1/2 lg:h-full lg:order-last border-t-1 lg:border-t-0 lg:border-l-1 flex flex-center lg:p-5"
     >
-      <div class="w-full h-full lg:p-4">
-        <div
-          class="project_card_image"
-          :style="{
-            backgroundImage: `url(${project.imageUrl})`
-          }"
-        ></div>
-      </div>
+      <img :src="project.imageUrl" alt="" class="project_card_image" />
     </div>
     <div
       class="text-left w-full lg:w-1/2 px-4 pb-2 lg:p-5 flex flex-col justify-start"
@@ -55,17 +48,17 @@ defineProps<{
 }
 
 .project_card_image {
-  height: 200px;
+  height: 250px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
   background-size: cover;
 }
 
 @media (min-width: 1024px) {
   .project_card_image {
-    height: 100%;
     background-size: contain;
     border-radius: 8px;
   }
