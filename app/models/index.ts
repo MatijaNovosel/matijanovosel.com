@@ -11,6 +11,7 @@ export interface ProjectItem {
   link: string;
   tags: string[];
   imageUrl?: string;
+  bgColor?: string;
 }
 
 export interface EducationItem {

@@ -4,7 +4,10 @@
     class="project_card flex w-full rounded-md ripple border-1 flex-col lg:flex-row bg-white"
   >
     <div
-      class="w-full lg:w-1/2 lg:h-full lg:order-last border-t-1 lg:border-t-0 lg:border-l-1 flex flex-center lg:p-5"
+      class="w-full lg:w-1/2 lg:h-full lg:order-last lg:border-l-1 flex flex-center lg:p-5 rounded-l-md md:rounded-l-none rounded-r-md"
+      :style="{
+        backgroundColor: project.bgColor
+      }"
     >
       <img :src="project.imageUrl" alt="" class="project_card_image" />
     </div>
@@ -49,6 +52,8 @@ defineProps<{
   height: 210px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;

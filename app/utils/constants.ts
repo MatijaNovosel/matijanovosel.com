@@ -70,7 +70,8 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://github.com/MatijaNovosel/montage",
     title: "Montage",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/248578525-6b97064c-2c77-4589-8292-b65b1551e374.png"
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/248578525-6b97064c-2c77-4589-8292-b65b1551e374.png",
+    bgColor: "#81C784"
   },
   {
     description:
@@ -79,7 +80,8 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://neat-memos.vercel.app/#/",
     title: "Neat memos",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/neat-memos.vercel.app_.png"
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/neat-memos.vercel.app_.png",
+    bgColor: "#FFCC80"
   },
   {
     description:
@@ -88,7 +90,8 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://zet.knork-studio.com/#/home",
     title: "Knork ZET",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/knorkStudio.jpg"
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/knorkStudio.jpg",
+    bgColor: "#FF8A65"
   },
   {
     description:
@@ -97,7 +100,8 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://realm-trove.vercel.app/",
     title: "Realm trove",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/realm-trove.vercel.app_ULDI6X.png"
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/realm-trove.vercel.app_ULDI6X.png",
+    bgColor: "#5C6BC0"
   },
   {
     description: "A bullet hell RPG game, work in progress.",
@@ -105,7 +109,8 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://github.com/MatijaNovosel/heroes-of-crimson",
     title: "Heroes of Crimson",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/520323592-eb0b2020-d40c-480a-aa2a-a8792b198b30.png"
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/520323592-eb0b2020-d40c-480a-aa2a-a8792b198b30.png",
+    bgColor: "#FFCC80"
   },
   {
     description:
