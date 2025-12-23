@@ -10,8 +10,11 @@
       >
         <template #title>
           <div class="flex flex-col">
-            <nuxt-link :to="link" class="text-md font-bold underline-offset-5">
-              {{ company }}
+            <nuxt-link
+              :to="link"
+              class="text-md font-bold underline-offset-5 flex flex-center hover:(text-gray-600) self-baseline"
+            >
+              {{ company }} <IconOpenInNew class="text-xs ml-1 mt-0.5" />
             </nuxt-link>
             <span class="text-sm">
               {{ position }}
@@ -34,4 +37,5 @@
 <script lang="ts" setup>
 import { WORK_EXPERIENCE } from "~/utils/constants";
 import { formatDuration } from "~/utils/helpers";
+import IconOpenInNew from "~icons/mdi/openInNew";
 </script>

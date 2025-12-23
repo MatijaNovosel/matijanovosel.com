@@ -8,9 +8,12 @@
       >
         <template #title>
           <div class="flex flex-col">
-            <a :href="link" class="text-md font-bold underline-offset-5">
-              {{ name }}
-            </a>
+            <nuxt-link
+              :to="link"
+              class="text-md font-bold underline-offset-5 flex flex-center hover:(text-gray-600) self-baseline"
+            >
+              {{ name }} <IconOpenInNew class="text-xs ml-1 mt-0.5" />
+            </nuxt-link>
             <span class="text-sm pt-1">
               {{ title }}
             </span>
@@ -26,4 +29,5 @@
 
 <script lang="ts" setup>
 import { EDUCATION } from "~/utils/constants";
+import IconOpenInNew from "~icons/mdi/openInNew";
 </script>
