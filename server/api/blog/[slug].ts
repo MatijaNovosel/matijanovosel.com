@@ -26,11 +26,9 @@ export default defineEventHandler(async (event) => {
       year: "2-digit"
     })}'`,
     id: data.title_id,
-    img: data.image_url,
     subtitle: data.subtitle,
     tags: data.tags.split(","),
     title: data.title,
-    html: data.html,
-    devToLink: data.dev_to_link
+    html: data.html
   } as BlogListItem;
 });
