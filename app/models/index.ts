@@ -32,10 +32,8 @@ export interface WorkExperienceItem {
 
 export interface BlogListItem {
   title: string;
-  devToLink: string;
   subtitle: string;
   tags: string[];
-  img: string;
   createdAt: string;
   html?: string;
   id: number;

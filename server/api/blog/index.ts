@@ -26,9 +26,7 @@ export default defineEventHandler(async () => {
     })}'`,
     title: blog.title,
     id: blog.title_id,
-    img: blog.image_url,
     subtitle: blog.subtitle,
-    tags: blog.tags.split(","),
-    devToLink: blog.dev_to_link
+    tags: blog.tags.split(",")
   }));
 });
