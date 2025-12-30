@@ -133,4 +133,37 @@
 			0.64
 		</priority>
 	</url>
+	<url>
+		<loc>
+			https://www.matijanovosel.com/blog/unity-rpg-inventory-part-1
+		</loc>
+		<lastmod>
+			2025-12-17T00:09:20+00:00
+		</lastmod>
+		<priority>
+			0.64
+		</priority>
+	</url>
+	<url>
+		<loc>
+			https://www.matijanovosel.com/blog/unity-rpg-inventory-part-2
+		</loc>
+		<lastmod>
+			2025-12-23T00:10:20+00:00
+		</lastmod>
+		<priority>
+			0.64
+		</priority>
+	</url>
+	<url>
+		<loc>
+			https://www.matijanovosel.com/blog/unity-rpg-inventory-part-3
+		</loc>
+		<lastmod>
+			2025-12-30T00:11:20+00:00
+		</lastmod>
+		<priority>
+			0.64
+		</priority>
+	</url>
 </urlset>
