@@ -109,7 +109,7 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://github.com/MatijaNovosel/heroes-of-crimson",
     title: "Heroes of Crimson",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/520323592-eb0b2020-d40c-480a-aa2a-a8792b198b30.png",
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/hoc2.png",
     bgColor: "#FFCC80"
   },
   {
