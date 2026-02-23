@@ -19,7 +19,7 @@
         Or maybe the
         <nuxt-link to="blog" class="text-black italic">blog</nuxt-link>.
       </div>
-      <div class="flex flex-col gap-2 mt-6 links">
+      <div class="flex flex-col gap-2 mt-8 links">
         <div class="flex justify-between w-full">
           <div class="text-md text-gray-500">GitHub</div>
           <nuxt-link
@@ -79,6 +79,6 @@ setMeta("Matija Novosel");
 }
 
 .links {
-  max-width: 450px;
+  max-width: calc(100% - 15px);
 }
 </style>
