@@ -87,8 +87,8 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "Live tracking for the public transport of Zagreb city. Features ride sharing, displaying individual trip lines, schedules and advanced filters.",
     tags: ["vue3"],
-    link: "https://zet.knork-studio.com/#/home",
-    title: "Knork ZET",
+    link: "https://zet-uzivo.com/#/home",
+    title: "ZET Uživo (ZET Live)",
     imageUrl:
       "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/knorkStudio.jpg",
     bgColor: "#FF8A65"
@@ -109,7 +109,7 @@ export const PROJECTS: ProjectItem[] = [
     link: "https://github.com/MatijaNovosel/heroes-of-crimson",
     title: "Heroes of Crimson",
     imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/hoc12226.png",
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/hoc3726.png",
     bgColor: "#FFCC80"
   },
   {
