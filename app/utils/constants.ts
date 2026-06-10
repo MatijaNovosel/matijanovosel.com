@@ -212,12 +212,26 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
   {
     company: "King ICT",
     position: "Software developer",
-    from: new Date("2021-08-01"),
+    from: new Date("2025-07-01"),
     to: null,
+    link: "https://abysalto.eu/",
+    description: [
+      "Developed, optimized and deployed complex mass transit software using full stack web technologies",
+      "Developed, optimized and deployed multiple mobile applications for both Android and iOS",
+      "Mentored employees and created educational content for teaching purposes while reviewing pull requests and handling code quality",
+      "Independently lead the development of multiple projects with detailed documentation"
+    ]
+  },
+  {
+    company: "King ICT",
+    position: "Software developer",
+    from: new Date("2021-08-01"),
+    to: new Date("2025-07-01"),
     link: "https://king-ict.com/",
     description: [
       "Developed complex mass transit software using full stack web technologies",
-      "Developed, optimized and deployed mobile applications for both Android and iOS used by thousands of people daily",
+      "Handled deployment and optimizations of various web & desktop application projects",
+      "Developed, optimized and deployed multiple mobile applications for both Android and iOS used by thousands of people daily",
       "Mentored employees and created educational content for teaching purposes while reviewing pull requests and handling code quality",
       "Efficiently worked at an independent level whilst contributing to the efforts of an agile team"
     ]
