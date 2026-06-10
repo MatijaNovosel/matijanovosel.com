@@ -210,8 +210,8 @@ export const EDUCATION: EducationItem[] = [
 
 export const WORK_EXPERIENCE: WorkExperienceItem[] = [
   {
-    company: "King ICT",
-    position: "Software developer",
+    company: "Abysalto",
+    position: "Senior software developer",
     from: new Date("2025-07-01"),
     to: null,
     link: "https://abysalto.eu/",
