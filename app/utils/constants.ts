@@ -216,10 +216,10 @@ export const WORK_EXPERIENCE: WorkExperienceItem[] = [
     to: null,
     link: "https://abysalto.eu/",
     description: [
-      "Developed, optimized and deployed complex mass transit software using full stack web technologies",
-      "Developed, optimized and deployed multiple mobile applications for both Android and iOS",
+      "Led end-to-end delivery of multiple mass-transit web and mobile projects, covering implementation, optimization, deployment and technical documentation",
+      "Owned delivery and performance optimization for multiple Android and iOS applications serving thousands of daily users, from implementation and release preparation through production deployment",
       "Mentored employees and created educational content for teaching purposes while reviewing pull requests and handling code quality",
-      "Independently lead the development of multiple projects with detailed documentation"
+      "Introduced new testing procedures and architectural practices, resulting in measurable improvements"
     ]
   },
   {
