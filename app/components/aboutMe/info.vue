@@ -19,15 +19,9 @@
         environment.
       </p>
       <p>
-        I have a great passion for frontend development and excel in leveraging
+        I have a great passion for software development and excel in leveraging
         various frameworks to create robust web, mobile, and desktop
-        applications. My adaptability and experience span a wide range of
-        technologies which helps me contribute effectively throughout the entire
-        project lifecycle.
-      </p>
-      <p>
-        Also fully committed to mentoring new team members and ensuring smooth
-        onboarding.
+        applications.
       </p>
       <p>
         Besides programming I enjoy video games, reading, drawing and listening
