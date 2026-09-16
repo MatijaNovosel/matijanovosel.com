@@ -74,6 +74,15 @@ export const PROJECTS: ProjectItem[] = [
     bgColor: "#81C784"
   },
   {
+    description: "A bullet hell RPG game, work in progress.",
+    tags: ["unity"],
+    link: "https://github.com/MatijaNovosel/heroes-of-crimson",
+    title: "Heroes of Crimson",
+    imageUrl:
+      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/652852573-d90b8e3d-8e30-4e50-8505-aed97521da46.png",
+    bgColor: "#000"
+  },
+  {
     description:
       "A simple app for taking notes on the go. Also works as a Kanban tool.",
     tags: ["vue3", "supabase"],
@@ -102,15 +111,6 @@ export const PROJECTS: ProjectItem[] = [
     imageUrl:
       "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/realm-trove.vercel.app_ULDI6X.png",
     bgColor: "#5C6BC0"
-  },
-  {
-    description: "A bullet hell RPG game, work in progress.",
-    tags: ["unity"],
-    link: "https://github.com/MatijaNovosel/heroes-of-crimson",
-    title: "Heroes of Crimson",
-    imageUrl:
-      "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/hoc3726.png",
-    bgColor: "#FFCC80"
   },
   {
     description:
