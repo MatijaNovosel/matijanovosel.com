@@ -76,7 +76,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     description: "A bullet hell RPG game, work in progress.",
     tags: ["unity"],
-    link: "https://github.com/MatijaNovosel/heroes-of-crimson",
+    link: "https://play-hoc.vercel.app/",
     title: "Heroes of Crimson",
     imageUrl:
       "https://jizipjmjieshqxsqkvgw.supabase.co/storage/v1/object/public/bucket/652852573-d90b8e3d-8e30-4e50-8505-aed97521da46.png",
